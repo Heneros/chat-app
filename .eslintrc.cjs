@@ -18,7 +18,7 @@ module.exports = {
         'react/jsx-filename-extension': [
             2,
             {
-                extensions: ['.js', '.jsx', '.tsx'],
+                extensions: ['.js', '.jsx'],
             },
         ],
         // 'react/react-in-jsx-scope': 'off',
@@ -41,6 +41,7 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'no-mixed-spaces-and-tabs': 'off',
         'no-tabs': 'off',
+        'arrow-body-style': 'off',
         'prefer-const': 'off',
         'prefer-arrow-callback': 'off',
         'import/no-mutable-exports': 'off',
