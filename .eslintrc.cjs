@@ -45,5 +45,6 @@ module.exports = {
         'prefer-const': 'off',
         'prefer-arrow-callback': 'off',
         'import/no-mutable-exports': 'off',
+        'no-param-reassign': 'off',
     },
 };

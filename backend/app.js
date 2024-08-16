@@ -12,20 +12,34 @@ import connectDB from './config/connectDB.js';
 
 const app = express();
 
+app.use(
+    cors({
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+        credentials: true,
+    }),
+);
+
+app.use(express.json());
+
 const server = http.createServer(app);
 
 const io = new SocketIO(server, {
     cors: {
         origin: 'http://localhost:3000',
-        methods: ['GET', 'POST', 'PUT'],
+        serveClient: false,
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     },
+});
+app.get('/', (req, res) => {
+    res.send('Socket.IO server running');
 });
 
 io.on('connection', (socket) => {
-    console.log('New client connected');
+    console.log(`a user connected ${socket.id}`);
 
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
+    socket.on('send_message', (data) => {
+        io.emit('receive_message', data);
     });
 
     socket.on('disconnect', () => {
@@ -38,7 +52,7 @@ const port = process.env.PORT || 4001;
 
 const start = async () => {
     try {
-        app.listen(port, console.log(`Working on ${port} port`));
+        server.listen(port, console.log(`Working on ${port} port`));
         await connectDB(MONGO_URI);
     } catch (error) {
         console.log(`Error ${error}`);
