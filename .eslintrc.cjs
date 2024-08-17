@@ -46,5 +46,7 @@ module.exports = {
         'prefer-arrow-callback': 'off',
         'import/no-mutable-exports': 'off',
         'no-param-reassign': 'off',
+        'operator-linebreak': 'off',
+        'object-curly-newline': 'off',
     },
 };

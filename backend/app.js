@@ -7,8 +7,10 @@ import passport from 'passport';
 import http from 'http';
 // import { socketIo } from 'socket.io';
 import { Server as SocketIO } from 'socket.io';
+import cookieParser from 'cookie-parser';
 
 import connectDB from './config/connectDB.js';
+import authRoutes from './routes/usersRoute.js';
 
 const app = express();
 
@@ -21,6 +23,8 @@ app.use(
 );
 
 app.use(express.json());
+app.use(cookieParser());
+app.use('/api/v1/users', authRoutes);
 
 const server = http.createServer(app);
 

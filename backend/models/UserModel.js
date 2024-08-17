@@ -13,8 +13,14 @@ const userSchema = new Schema(
             required: true,
             validate: [validator.isEmail, 'Please provide a valid email'],
         },
-        firstName: String,
-        lastName: String,
+        firstName: {
+            type: String,
+            required: true,
+        },
+        lastName: {
+            type: String,
+            required: true,
+        },
         username: {
             type: String,
             required: true,
@@ -35,6 +41,7 @@ const userSchema = new Schema(
                 message: 'Password do not match',
             },
         },
+        refreshToken: [String],
         googleId: String,
     },
     { timestamps: true },
