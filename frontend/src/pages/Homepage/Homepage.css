@@ -1,0 +1,15 @@
+
+
+.left-side{
+    height: 100vh;
+    background-color: #2e4051;
+    /* border-right: 1px solid #e8e7e7; */
+    max-width: 30%;
+    width: 100%;
+
+}
+.right-side{
+    max-width: 70%;
+    width: 100%;
+        background-color: #1a2835;
+}
