@@ -31,12 +31,16 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new Error('Empty field');
     }
 
-    const userExists = await User.findOne({ email });
+    const userExistsByEmail = await User.findOne({ email });
+    if (userExistsByEmail) {
+        res.status(400).json({ message: 'Email is already registered' });
+        return;
+    }
 
-    if (userExists) {
-        res.status(400).json({
-            message: 'User exists',
-        });
+    const userExistsByUsername = await User.findOne({ username });
+    if (userExistsByUsername) {
+        res.status(400).json({ message: 'Username is already taken' });
+        return;
     }
 
     const newUser = new User({

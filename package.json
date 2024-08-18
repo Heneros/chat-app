@@ -7,8 +7,7 @@
   "scripts": {
     "server": "nodemon backend/app.js",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "jest"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -26,6 +25,7 @@
     "prettier": "^3.3.3"
   },
   "dependencies": {
+    "axios": "^1.7.4",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
