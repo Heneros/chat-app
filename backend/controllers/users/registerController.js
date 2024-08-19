@@ -1,5 +1,13 @@
 import asyncHandler from 'express-async-handler';
+import fs from 'fs';
+import path from 'path';
+
 import User from '../../models/UserModel.js';
+import Chat from '../../models/ChatModel.js';
+
+const predefineChats = JSON.parse(
+    fs.readFileSync(path.resolve('backend/data/defaultChats.json')),
+);
 
 const registerUser = asyncHandler(async (req, res) => {
     const { email, username, firstName, lastName, password, passwordConfirm } =
@@ -53,8 +61,17 @@ const registerUser = asyncHandler(async (req, res) => {
     });
 
     const registeredUser = await newUser.save();
-
-    res.json({
+    if (registeredUser) {
+        await Promise.all(
+            predefineChats.map(async (chatData) => {
+                await Chat.create({
+                    ...chatData,
+                    user: registeredUser._id,
+                });
+            }),
+        );
+    }
+    res.status(201).json({
         success: true,
         message: `A new user ${registeredUser.username} has been registered!`,
     });

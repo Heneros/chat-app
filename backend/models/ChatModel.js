@@ -4,15 +4,6 @@ const { Schema } = mongoose;
 
 const chatSchema = new Schema(
     {
-        // messageId: {
-        //     type: String,
-        //     required: true,
-        //     unique: true,
-        // },
-        // roomId: {
-        //     type: String,
-        //     required: true,
-        // },
         firstName: {
             type: String,
             required: true,
@@ -29,6 +20,11 @@ const chatSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
+        },
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User',
         },
     },
     { timestamps: true },

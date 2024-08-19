@@ -12,8 +12,13 @@ const authUser = asyncHandler(async (req, res) => {
     }
 
     const user = await User.findOne({ email });
-
     if (user && (await user.matchPassword(password))) {
+        if (
+            !process.env.JWT_ACCESS_SECRET_KEY &&
+            !process.env.JWT_REFRESH_SECRET_KEY
+        ) {
+            throw new Error('JWT secret keys are not set');
+        }
         const accessToken = jwt.sign(
             { id: user._id },
             process.env.JWT_ACCESS_SECRET_KEY,

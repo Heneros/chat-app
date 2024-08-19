@@ -53,6 +53,7 @@ app.get('/', (req, res) => {
     res.send('Socket.IO server running');
 });
 
+global.io = io;
 global.onlineUsers = new Map();
 io.on('connection', (socket) => {
     global.chatSocket = socket;

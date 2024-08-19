@@ -7,7 +7,7 @@ const createChat = asyncHandler(async (req, res) => {
     if (!firstName && lastName) {
         res.status(400).json({ message: 'Empty field(s)' });
     }
-    const chat = new Chat({ firstName, lastName });
+    const chat = new Chat({ firstName, lastName, user: req.user._id });
     await chat.save();
     res.status(202).json({ success: true, message: 'Chat created', chat });
 });
