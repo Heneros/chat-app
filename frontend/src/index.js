@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { Layout } from './pages/Layout/Layout';
+
 import './index.css';
-import App from './App';
+
+import { Layout } from './pages/Layout/Layout';
 import { Homepage } from './pages/Homepage/Homepage';
 import { Registration } from './pages/Registration/Registration';
 import { Login } from './pages/Login/Login';

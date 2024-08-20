@@ -1,7 +1,7 @@
 import asyncHandler from 'express-async-handler';
 
 const logoutUser = asyncHandler(async (req, res) => {
-    res.cookies('chat_app', '', {
+    res.cookie('chat_app', '', {
         httpOnly: true,
         expires: new Date(0),
     });

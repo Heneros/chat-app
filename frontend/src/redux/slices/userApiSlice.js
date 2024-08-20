@@ -7,16 +7,17 @@ export const userApiSlice = apiSlice.injectEndpoints({
         logout: builder.query({
             query: () => ({
                 url: `${AUTH_URL}/logout`,
-                // providesTags: ['User']
             }),
         }),
         login: builder.mutation({
-            query: (data) => ({
+            query: (credentials) => ({
                 url: `${AUTH_URL}/login`,
-                body: data,
                 method: 'POST',
-                credentials: true,
-                providesTags: ['User'],
+                body: credentials,
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             }),
         }),
         registration: builder.mutation({
@@ -25,8 +26,8 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 body: data,
                 method: 'POST',
                 credentials: true,
-                providesTags: ['User'],
             }),
+            providesTags: ['User'],
         }),
     }),
 });

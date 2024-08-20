@@ -1,4 +1,5 @@
 import asyncHandler from 'express-async-handler';
+
 import jwt from 'jsonwebtoken';
 import User from '../../models/UserModel.js';
 
@@ -10,15 +11,18 @@ const authUser = asyncHandler(async (req, res) => {
             message: 'Please provide an email and password',
         });
     }
-
+    if (
+        !process.env.JWT_ACCESS_SECRET_KEY &&
+        !process.env.JWT_REFRESH_SECRET_KEY
+    ) {
+        return res.status(500).json({
+            message: 'JWT secret keys are not set',
+        });
+    }
     const user = await User.findOne({ email });
+    console.log(user);
+
     if (user && (await user.matchPassword(password))) {
-        if (
-            !process.env.JWT_ACCESS_SECRET_KEY &&
-            !process.env.JWT_REFRESH_SECRET_KEY
-        ) {
-            throw new Error('JWT secret keys are not set');
-        }
         const accessToken = jwt.sign(
             { id: user._id },
             process.env.JWT_ACCESS_SECRET_KEY,
@@ -50,9 +54,9 @@ const authUser = asyncHandler(async (req, res) => {
             }
 
             const options = {
-                httpOnly: true,
+                // httpOnly: true,
                 maxAge: 24 * 60 * 60 * 1000,
-                secure: true,
+                secure: false,
                 sameSite: 'None',
             };
             res.clearCookie('chat_app', options);
@@ -63,9 +67,9 @@ const authUser = asyncHandler(async (req, res) => {
         await user.save();
 
         const options = {
-            httpOnly: true,
+            httpOnly: false,
             maxAge: 24 * 60 * 60 * 1000,
-            secure: true,
+            secure: false,
             sameSite: 'None',
         };
 
@@ -77,7 +81,14 @@ const authUser = asyncHandler(async (req, res) => {
             email: user.email,
             accessToken,
         });
+    } else {
+        // console.log(error);
+        res.status(401).json({ message: ' Invalid data ' });
     }
+    // } catch (error) {
+    //     res.status(500).json({ message: 'Internal Server Error' });
+    //     console.log(error);
+    // }
 });
 
 export default authUser;
