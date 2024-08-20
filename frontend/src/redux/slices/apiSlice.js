@@ -4,7 +4,15 @@ import { BASE_URL } from './../../utils/constants';
 const baseQuery = fetchBaseQuery({
     baseUrl: BASE_URL,
     credentials: 'include',
-    prepareHeaders:(headers, {getState}) => {
-        
-    }
+    prepareHeaders: (headers, { getState }) => {
+        const token = getState().auth.user?.accessToken;
+        headers.set('authorization', `Bearer ${token}`);
+        return headers;
+    },
+});
+
+export const apiSlice = createApi({
+    baseQuery: baseQuery,
+    tagTypes: ['Chat', 'User'],
+    endpoints: (builder) => ({}),
 });
