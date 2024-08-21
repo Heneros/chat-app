@@ -21,3 +21,9 @@ code {
    padding: 0 25px;
    max-width: 100%;
 }
+
+.error-message{
+  color: red;
+  font-weight: 600;
+  margin: 12px 0;
+}

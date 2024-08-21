@@ -1,6 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import fs from 'fs';
 import path from 'path';
+import jwt from 'jsonwebtoken';
 
 import User from '../../models/UserModel.js';
 import Chat from '../../models/ChatModel.js';
@@ -71,9 +72,20 @@ const registerUser = asyncHandler(async (req, res) => {
             }),
         );
     }
+    const accessToken = jwt.sign(
+        { id: registeredUser._id },
+        process.env.JWT_ACCESS_SECRET_KEY,
+        { expiresIn: '7d' },
+    );
     res.status(201).json({
-        success: true,
-        message: `A new user ${registeredUser.username} has been registered!`,
+        _id: registeredUser._id,
+        username: registeredUser.username,
+        email: registeredUser.email,
+        accessToken,
+
+        // success: true,
+        // registeredUser,
+        // message: `A new user ${registeredUser.username} has been registered!`,
     });
 });
 

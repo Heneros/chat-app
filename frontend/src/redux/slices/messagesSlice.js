@@ -15,8 +15,9 @@ export const chatApiSlice = apiSlice.injectEndpoints({
         getAllChat: builder.query({
             query: () => ({
                 url: `${CHAT_URL}`,
-                providesTags: ['Chat'],
+                method: 'GET',
             }),
+            providesTags: ['Chat'],
         }),
         updateChat: builder.mutation({
             query: ({ postId }) => ({

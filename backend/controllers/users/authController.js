@@ -20,7 +20,7 @@ const authUser = asyncHandler(async (req, res) => {
         });
     }
     const user = await User.findOne({ email });
-    console.log(user);
+    // console.log(user);
 
     if (user && (await user.matchPassword(password))) {
         const accessToken = jwt.sign(

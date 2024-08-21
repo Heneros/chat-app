@@ -9,31 +9,26 @@ import { logIn } from '../../redux/slices/auth';
 
 export const ModalLogin = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
-    const [loginUser, { isLoading, isSuccess, errorLog }] = useLoginMutation();
+    // const [loginUser, { isLoading, isSuccess, error: errorLog }] =
+    //     useLoginMutation();
+    const [loginUser, { isLoading, isSuccess, error: errorLog }] =
+        useLoginMutation();
 
     useEffect(() => {
         if (isSuccess) {
-            // navigate('/');
-            console.log('Success');
+            onClose();
         }
-    }, [isSuccess]);
+    }, [isSuccess, onClose]);
 
     if (!isOpen) return null;
 
-    if (isLoading) {
-        console.log('Loading...');
-    }
-    if (errorLog) {
-        // return 'Error...';
-        console.log('Error...');
-    }
+
+
     return (
         <>
             <Formik
                 initialValues={{
                     email: '',
-                    firstName: '',
-                    lastName: '',
                     password: '',
                     submit: null,
                 }}
@@ -51,7 +46,8 @@ export const ModalLogin = ({ isOpen, onClose }) => {
                         console.log('Success!');
                     } catch (error) {
                         console.log(error);
-                        console.log('Error!');
+
+                        // console.log('Error!');
                         setStatus({ success: false });
                         setSubmitting(false);
                     }
@@ -70,11 +66,18 @@ export const ModalLogin = ({ isOpen, onClose }) => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <h2>Login</h2>
+
                             <form
                                 noValidate
                                 autoComplete="off"
                                 onSubmit={handleSubmit}
                             >
+                                {errorLog && (
+                                    <div className="error-message">
+                                        {errorLog?.data?.message ||
+                                            'Error during auth'}
+                                    </div>
+                                )}
                                 <div className="form-group">
                                     <label htmlFor="email">Email</label>
                                     <input
