@@ -19,6 +19,7 @@ const authUser = asyncHandler(async (req, res) => {
             message: 'JWT secret keys are not set',
         });
     }
+
     const user = await User.findOne({ email });
     // console.log(user);
 
@@ -54,10 +55,12 @@ const authUser = asyncHandler(async (req, res) => {
             }
 
             const options = {
-                // httpOnly: true,
-                maxAge: 24 * 60 * 60 * 1000,
-                secure: false,
-                sameSite: 'None',
+                httpOnly: true,
+                maxAge: 7 * 24 * 60 * 60 * 1000,
+                secure: true,
+                // sameSite: 'Lax',
+                sameSite:
+                    process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
             };
             res.clearCookie('chat_app', options);
         }
@@ -67,10 +70,11 @@ const authUser = asyncHandler(async (req, res) => {
         await user.save();
 
         const options = {
-            httpOnly: false,
-            maxAge: 24 * 60 * 60 * 1000,
-            secure: false,
-            sameSite: 'None',
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+            // secure: process.env.NODE_ENV === 'production',
+            secure: true,
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
         };
 
         res.cookie('chat_app', newRefreshToken, options);
@@ -82,13 +86,8 @@ const authUser = asyncHandler(async (req, res) => {
             accessToken,
         });
     } else {
-        // console.log(error);
         res.status(401).json({ message: ' Invalid data ' });
     }
-    // } catch (error) {
-    //     res.status(500).json({ message: 'Internal Server Error' });
-    //     console.log(error);
-    // }
 });
 
 export default authUser;

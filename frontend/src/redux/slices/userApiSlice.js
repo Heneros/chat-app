@@ -25,9 +25,9 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 method: 'POST',
                 body: credentials,
                 credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                // headers: {
+                //     'Content-Type': 'application/json',
+                // },
             }),
         }),
         registration: builder.mutation({

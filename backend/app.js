@@ -25,6 +25,7 @@ app.use(
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/users', authRoutes);
 app.use('/api/v1/chat', chatRoutes);
@@ -38,9 +39,9 @@ const startServer = async () => {
         await connectDB(process.env.MONGO_URI);
         httpServer = createServer(app);
 
-        httpServer.listen(port, () =>
-            console.log(`Server is running on port ${port}`),
-        );
+        httpServer.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        });
         const io = new SocketIO(httpServer, {
             cors: {
                 origin: 'http://localhost:3000',

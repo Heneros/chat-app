@@ -5,9 +5,11 @@ import { TopBar } from '../../components/TopBar/TopBar';
 import { useGetAllChatQuery } from '../../redux/slices/messagesSlice';
 
 export const Homepage = () => {
-    const { data, isLoading, error } = useGetAllChatQuery();
+    const { data, isLoading, error } = useGetAllChatQuery(undefined, {
+        pollingInterval: 1500,
+    });
 
-    console.log(data);
+    // console.log(data);
     return (
         <div className="parent">
             <div className="left-side">
