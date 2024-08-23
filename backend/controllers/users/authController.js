@@ -1,6 +1,6 @@
+import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 
-import jwt from 'jsonwebtoken';
 import User from '../../models/UserModel.js';
 
 const authUser = asyncHandler(async (req, res) => {
@@ -11,41 +11,43 @@ const authUser = asyncHandler(async (req, res) => {
             message: 'Please provide an email and password',
         });
     }
-    if (
-        !process.env.JWT_ACCESS_SECRET_KEY &&
-        !process.env.JWT_REFRESH_SECRET_KEY
-    ) {
-        return res.status(500).json({
-            message: 'JWT secret keys are not set',
-        });
-    }
+    // if (
+    //     !process.env.JWT_ACCESS_SECRET_KEY &&
+    //     !process.env.JWT_REFRESH_SECRET_KEY
+    // ) {
+    //     return res.status(500).json({
+    //         message: 'JWT secret keys are not set',
+    //     });
+    // }
 
     const user = await User.findOne({ email });
     // console.log(user);
-
+    let newRefreshToken;
     if (user && (await user.matchPassword(password))) {
         const accessToken = jwt.sign(
-            { id: user._id },
+            {
+                id: user._id,
+            },
             process.env.JWT_ACCESS_SECRET_KEY,
-            { expiresIn: '7d' },
+            { expiresIn: '1d' },
         );
 
-        let newRefreshToken = jwt.sign(
+        newRefreshToken = jwt.sign(
             {
                 id: user._id,
             },
             process.env.JWT_REFRESH_SECRET_KEY,
-            { expiresIn: '7d' },
+            { expiresIn: '1d' },
         );
 
         const cookies = req.cookies;
 
         let newRefreshTokenArray = !cookies?.chat_app
             ? user.refreshToken
-            : user.refreshToken.filter((refT) => refT !== cookies.chat_app);
+            : user.refreshToken.filter((refT) => refT !== cookies?.chat_app);
 
         if (cookies?.chat_app) {
-            const refreshToken = cookies.chat_app;
+            const refreshToken = cookies?.chat_app;
             const existingRefreshToken = await User.findOne({
                 refreshToken,
             }).exec();
@@ -56,7 +58,7 @@ const authUser = asyncHandler(async (req, res) => {
 
             const options = {
                 httpOnly: true,
-                maxAge: 7 * 24 * 60 * 60 * 1000,
+                maxAge: 24 * 60 * 60 * 1000,
                 secure: true,
                 // sameSite: 'Lax',
                 sameSite:
@@ -71,7 +73,7 @@ const authUser = asyncHandler(async (req, res) => {
 
         const options = {
             httpOnly: true,
-            maxAge: 7 * 24 * 60 * 60 * 1000,
+            maxAge: 24 * 60 * 60 * 1000,
             // secure: process.env.NODE_ENV === 'production',
             secure: true,
             sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',

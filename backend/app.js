@@ -27,6 +27,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
 app.use('/api/v1/users', authRoutes);
 app.use('/api/v1/chat', chatRoutes);
 

@@ -22,8 +22,6 @@ export const ModalLogin = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
 
-
-
     return (
         <>
             <Formik

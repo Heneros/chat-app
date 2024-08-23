@@ -1,32 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import './Homepage.css';
-import { Chat } from '../../components/Chat/Chat';
 import { TopBar } from '../../components/TopBar/TopBar';
-import { useGetAllChatQuery } from '../../redux/slices/messagesSlice';
+import { selectCurrentUserToken } from '../../redux/slices/auth';
+import { AuthenticatedContent } from '../../components/AuthenticatedContent/AuthenticatedContent';
+import { ChatRoom } from '../../components/ChatRoom/ChatRoom';
 
 export const Homepage = () => {
-    const { data, isLoading, error } = useGetAllChatQuery(undefined, {
-        pollingInterval: 1500,
-    });
-
-    // console.log(data);
+    const token = useSelector(selectCurrentUserToken);
+    const [selectedChat, setSelectedChat] = useState(null);
     return (
         <div className="parent">
             <div className="left-side">
                 <TopBar />
-                {isLoading && <>Loading...</>}
-                {/* {error && <>Error: {error.message}</>} */}
-                {data &&
-                    data?.messages.map((chat, index) => (
-                        <Chat
-                            key={index}
-                            firstName={chat.firstName}
-                            lastName={chat.lastName}
-                            messages={chat.messages}
-                        />
-                    ))}
+                {token ? (
+                    <AuthenticatedContent setSelectedChat={selectedChat} />
+                ) : (
+                    <span>Please log in</span>
+                )}
             </div>
-            <div className="right-side">right-side</div>
+            <div className="right-side">
+                {token ? (
+                    <ChatRoom selectedChat={selectedChat} />
+                ) : (
+                    <span>Please log in</span>
+                )}
+            </div>
         </div>
     );
 };

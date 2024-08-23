@@ -59,4 +59,5 @@ export const {
     useDeleteChatMutation,
     useGetAllChatQuery,
     useGetByIdChatMutation,
+    useSendMessageToChatMutation,
 } = chatApiSlice;

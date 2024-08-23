@@ -20,6 +20,9 @@ const userSlice = createSlice({
             state.user = null;
             localStorage.clear();
         },
+        selectCurrentUser: (state, action) => {
+            // state.user =
+        },
     },
 });
 

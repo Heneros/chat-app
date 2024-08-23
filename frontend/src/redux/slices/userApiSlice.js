@@ -24,7 +24,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 url: `${AUTH_URL}/login`,
                 method: 'POST',
                 body: credentials,
-                credentials: 'include',
+                // credentials: 'include',
                 // headers: {
                 //     'Content-Type': 'application/json',
                 // },
