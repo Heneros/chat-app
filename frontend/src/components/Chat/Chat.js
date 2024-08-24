@@ -1,10 +1,10 @@
 import React from 'react';
 import './Chat.css';
 
-export const Chat = ({ firstName, lastName, messages }) => {
+export const Chat = ({ firstName, lastName, onClick }) => {
     return (
         <>
-            <div className="chat-member">
+            <div className="chat-member" onClick={onClick}>
                 <div className="chat-member__wrapper" data-online="true">
                     <div className="chat-member__avatar">
                         <img

@@ -41,7 +41,7 @@ let httpServer;
 
 const startServer = async () => {
     try {
-        await connectDB(process.env.MONGO_URI);
+        connectDB(process.env.MONGO_URI);
         httpServer = createServer(app);
 
         httpServer.listen(port, () => {
@@ -70,13 +70,15 @@ const startServer = async () => {
             socket.on('add-user', (userId) => {
                 global.onlineUsers.set(userId, socket.id);
             });
-            socket.on('send-msg', (data) => {
+            socket.on('sendMessage', (data) => {
                 const sendUserSocket = global.onlineUsers.get(data.to);
                 if (sendUserSocket) {
-                    socket.to(sendUserSocket).emit('msg-recieve', data.msg);
+                    socket.to(sendUserSocket).emit('receiveMessage', data.msg);
                 }
             });
-
+            socket.on('joinChat', (chatId) => {
+                socket.join(chatId);
+            });
             socket.on('disconnect', () => {
                 console.log('Client disconnected');
             });

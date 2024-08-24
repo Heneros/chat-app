@@ -27,11 +27,10 @@ export const chatApiSlice = apiSlice.injectEndpoints({
             }),
             providesTags: ['Chat'],
         }),
-        getByIdChat: builder.mutation({
+        getByIdChat: builder.query({
             query: ({ postId }) => ({
                 url: `${CHAT_URL}/${postId}`,
                 method: 'GET',
-                credentials: true,
             }),
             providesTags: ['Chat'],
         }),
@@ -58,6 +57,6 @@ export const {
     useCreateChatMutation,
     useDeleteChatMutation,
     useGetAllChatQuery,
-    useGetByIdChatMutation,
+    useGetByIdChatQuery,
     useSendMessageToChatMutation,
 } = chatApiSlice;

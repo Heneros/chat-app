@@ -15,7 +15,7 @@ export const Homepage = () => {
             <div className="left-side">
                 <TopBar />
                 {token ? (
-                    <AuthenticatedContent setSelectedChat={selectedChat} />
+                    <AuthenticatedContent setSelectedChat={setSelectedChat} />
                 ) : (
                     <span>Please log in</span>
                 )}
