@@ -12,6 +12,7 @@ import cookieParser from 'cookie-parser';
 import connectDB from './config/connectDB.js';
 import authRoutes from './routes/usersRoute.js';
 import chatRoutes from './routes/chatRoute.js';
+import Chat from './models/ChatModel.js';
 
 const app = express();
 
@@ -70,15 +71,24 @@ const startServer = async () => {
             socket.on('add-user', (userId) => {
                 global.onlineUsers.set(userId, socket.id);
             });
-            socket.on('sendMessage', (data) => {
-                const sendUserSocket = global.onlineUsers.get(data.to);
-                if (sendUserSocket) {
-                    socket.to(sendUserSocket).emit('receiveMessage', data.msg);
-                }
-            });
+
             socket.on('joinChat', (chatId) => {
                 socket.join(chatId);
             });
+
+            socket.on('sendMessage', async ({ chatId, data }) => {
+                try {
+                    const chat = await Chat.findOne({ chatId });
+                } catch (error) {
+                    console.error('Error saving message:', error);
+                }
+                // console.log(`sendMessage ${socket.id}`);
+                // const sendUserSocket = global.onlineUsers.get(data.to);
+                // if (sendUserSocket) {
+                //     socket.to(sendUserSocket).emit('receiveMessage', data.msg);
+                // }
+            });
+
             socket.on('disconnect', () => {
                 console.log('Client disconnected');
             });

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import './Homepage.css';
@@ -10,6 +10,10 @@ import { ChatRoom } from '../../components/ChatRoom/ChatRoom';
 export const Homepage = () => {
     const token = useSelector(selectCurrentUserToken);
     const [selectedChat, setSelectedChat] = useState(null);
+
+    useEffect(() => {
+        
+    }, []);
     return (
         <div className="parent">
             <div className="left-side">

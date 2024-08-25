@@ -20,16 +20,16 @@ export const chatApiSlice = apiSlice.injectEndpoints({
             providesTags: ['Chat'],
         }),
         updateChat: builder.mutation({
-            query: ({ postId }) => ({
-                url: `${CHAT_URL}/${postId}`,
+            query: ({ chatId }) => ({
+                url: `${CHAT_URL}/${chatId}`,
                 method: 'PUT',
                 credentials: true,
             }),
             providesTags: ['Chat'],
         }),
         getByIdChat: builder.query({
-            query: ({ postId }) => ({
-                url: `${CHAT_URL}/${postId}`,
+            query: ({ chatId }) => ({
+                url: `${CHAT_URL}/${chatId}`,
                 method: 'GET',
             }),
             providesTags: ['Chat'],
@@ -43,9 +43,10 @@ export const chatApiSlice = apiSlice.injectEndpoints({
             providesTags: ['Chat'],
         }),
         sendMessageToChat: builder.mutation({
-            query: ({ postId }) => ({
-                url: `${CHAT_URL}/${postId}/message`,
+            query: ({ chatId, message }) => ({
+                url: `${CHAT_URL}/${chatId}/message`,
                 method: 'POST',
+                body: { message },
                 credentials: true,
             }),
             providesTags: ['Chat'],

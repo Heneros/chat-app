@@ -3,6 +3,7 @@
         "id": "1",
         "firstName": "Home",
         "lastName": "Simpson",
+        "chatId": "1",
         "messages": [
             "I love bear"
         ]
@@ -11,6 +12,7 @@
         "id": "2",
         "firstName": "Leonardo",
         "lastName": "Dicaprio",
+                "chatId": "2",
         "messages": [
             "Ask about cinema"
         ]
@@ -19,6 +21,7 @@
         "id": "3",
         "firstName": "Albert",
         "lastName": "Einstein",
+                    "chatId": "3",
         "messages": [
             "Ask about science"
         ]

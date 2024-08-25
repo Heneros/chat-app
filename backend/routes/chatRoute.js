@@ -11,11 +11,13 @@ import checkAuth from '../middleware/checkAuth.js';
 const router = express.Router();
 
 router.route('/').post(checkAuth, createChat).get(checkAuth, getAll);
+
 router
-    .route('/:id')
+    .route('/:chatId')
     .put(checkAuth, updateChat)
     .get(checkAuth, getChatById)
     .delete(checkAuth, deleteChat);
-router.route('/:id/message').post(checkAuth, sendMessage);
+
+router.route('/:chatId/message').post(checkAuth, sendMessage);
 
 export default router;
