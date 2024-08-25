@@ -10,6 +10,8 @@ const sendMessage = asyncHandler(async (req, res) => {
 
     chat.messages.push(message);
 
+    await chat.save();
+    global.io.to(chat.chatId).emit('receive_message', message);
     setTimeout(async () => {
         const response = await axios.get('https://api.quotable.io/random');
         const quote = response.data.content;
@@ -17,10 +19,10 @@ const sendMessage = asyncHandler(async (req, res) => {
         await chat.save();
 
         global.io
-            .to(global.onlineUsers.get(chatId))
+            .to(global.onlineUsers.get(chat.chatId))
             .emit('receive_message', quote);
     }, 3000);
-    await chat.save();
+    // await chat.save();
     res.status(200).json({ success: true, chat });
 });
 

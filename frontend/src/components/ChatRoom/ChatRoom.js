@@ -12,27 +12,22 @@ import { useSelector } from 'react-redux';
 const socket = io('http://localhost:4000');
 
 export const ChatRoom = ({ selectedChat }) => {
+    const { _id: chatId } = selectedChat || {};
     const currentUserId = useSelector(selectCurrentUserToken);
-
     const decodedToken = decodeToken(currentUserId);
+    const userId = decodedToken?._id;
 
-    const { _id } = decodedToken;
-
-    const { data, isLoading, error } = useGetByIdChatQuery({
-        postId: selectedChat?._id,
-    });
+    const { data, isLoading, error } = useGetByIdChatQuery({ chatId });
     const [sendMessage] = useSendMessageToChatMutation();
     const [messagesChat, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
 
-    const messages = data?.messages.messages || [];
     useEffect(() => {
-        if (selectedChat && _id) {
-            socket.emit('add-user', _id._id);
-            socket.emit('joinChat', _id._id);
+        if (selectedChat && userId) {
+            socket.emit('add-user', userId);
+            socket.emit('joinChat', chatId);
         }
-    }, [selectedChat, _id]);
-    // console.log({ messages });
+    }, [selectedChat, userId]);
 
     useEffect(() => {
         socket.on('receive_message', (message) => {
@@ -49,25 +44,48 @@ export const ChatRoom = ({ selectedChat }) => {
             setMessages(data.messages.messages);
         }
     }, [data]);
+    useEffect(() => {
+        if (selectedChat && userId) {
+            socket.emit('add-user', userId);
+            if (chatId) {
+                socket.emit('joinChat', chatId);
+            } else {
+                console.error('Chat ID is undefined when joining chat');
+            }
+        }
+    }, [selectedChat, userId, chatId]);
     const handleSendMessage = async () => {
-        if (newMessage.trim() === '') return;
+        if (newMessage.trim() === '' || !chatId) return;
+
+        if (!chatId) {
+            console.error('Chat ID is undefined');
+            return;
+        }
 
         try {
+            const messageData = {
+                to: String(chatId),
+                msg: String(newMessage),
+            };
+            // console.log(messageData); ///msg
+            // :
+            // "sad"
+            // to
+            // :
+            // "66cb3c06dca5924d3b0c347d"
             await sendMessage({
-                id: selectedChat._id,
+                chatId: chatId,
                 message: newMessage,
             }).unwrap();
 
-            socket.emit('sendMessage', {
-                to: selectedChat._id,
-                msg: newMessage,
-            });
+            socket.emit('sendMessage', messageData);
 
             setNewMessage('');
         } catch (error) {
             console.error('Failed to send message:', error);
         }
     };
+    // console.log(newMessage);
 
     return (
         <div className="chat-room">
@@ -82,10 +100,13 @@ export const ChatRoom = ({ selectedChat }) => {
                         {isLoading ? (
                             <>Loading...</>
                         ) : error ? (
-                            <>Error happened{error}</>
+                            <div>
+                                Error happened:{' '}
+                                {error.message || JSON.stringify(error)}
+                            </div>
                         ) : (
                             <>
-                                {messages.map((message, index) => (
+                                {data?.messages.map((message, index) => (
                                     <div key={index}>{message}</div>
                                 ))}
                             </>

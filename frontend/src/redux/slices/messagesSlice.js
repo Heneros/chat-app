@@ -35,8 +35,8 @@ export const chatApiSlice = apiSlice.injectEndpoints({
             providesTags: ['Chat'],
         }),
         deleteChat: builder.mutation({
-            query: ({ postId }) => ({
-                url: `${CHAT_URL}/${postId}`,
+            query: ({ chatId }) => ({
+                url: `${CHAT_URL}/${chatId}`,
                 method: 'DELETE',
                 credentials: true,
             }),
@@ -47,7 +47,7 @@ export const chatApiSlice = apiSlice.injectEndpoints({
                 url: `${CHAT_URL}/${chatId}/message`,
                 method: 'POST',
                 body: { message },
-                credentials: true,
+                ///  credentials: 'include',
             }),
             providesTags: ['Chat'],
         }),

@@ -11,9 +11,7 @@ export const Homepage = () => {
     const token = useSelector(selectCurrentUserToken);
     const [selectedChat, setSelectedChat] = useState(null);
 
-    useEffect(() => {
-        
-    }, []);
+
     return (
         <div className="parent">
             <div className="left-side">

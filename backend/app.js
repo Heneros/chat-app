@@ -76,17 +76,30 @@ const startServer = async () => {
                 socket.join(chatId);
             });
 
-            socket.on('sendMessage', async ({ chatId, data }) => {
+            socket.on('sendMessage', async (data) => {
                 try {
-                    const chat = await Chat.findOne({ chatId });
+                    if (
+                        !data ||
+                        typeof data.to !== 'string' ||
+                        typeof data.msg !== 'string'
+                    ) {
+                        throw new Error(
+                            'Invalid data: "to" or "msg" is not a string',
+                        );
+                    }
+                    const { to, msg } = data;
+
+                    console.log(`sendMessage from ${socket.id} to ${to}`);
+
+                    const sendUserSocket = global.onlineUsers.get(to);
+                    if (sendUserSocket) {
+                        socket.to(sendUserSocket).emit('receiveMessage', msg);
+                    } else {
+                        console.error('Recipient socket not found');
+                    }
                 } catch (error) {
                     console.error('Error saving message:', error);
                 }
-                // console.log(`sendMessage ${socket.id}`);
-                // const sendUserSocket = global.onlineUsers.get(data.to);
-                // if (sendUserSocket) {
-                //     socket.to(sendUserSocket).emit('receiveMessage', data.msg);
-                // }
             });
 
             socket.on('disconnect', () => {
