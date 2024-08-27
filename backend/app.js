@@ -93,7 +93,7 @@ const startServer = async () => {
 
                     const sendUserSocket = global.onlineUsers.get(to);
                     if (sendUserSocket) {
-                        socket.to(sendUserSocket).emit('receiveMessage', msg);
+                        socket.to(sendUserSocket).emit('receive_message', msg);
                     } else {
                         console.error('Recipient socket not found');
                     }
