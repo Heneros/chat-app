@@ -79,7 +79,7 @@ export const ChatRoom = ({ selectedChat }) => {
             console.error('Failed to send message:', error);
         }
     };
-    // console.log(newMessage);
+    console.log(messagesChat);
 
     return (
         <div className="chat-room">
