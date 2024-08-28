@@ -21,7 +21,7 @@ const sendMessage = asyncHandler(async (req, res) => {
         global.io
             .to(global.onlineUsers.get(chat.chatId))
             .emit('receive_message', quote);
-    }, 3000);
+    }, 1000);
     // await chat.save();
     res.status(200).json({ success: true, chat });
 });

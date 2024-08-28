@@ -67,12 +67,6 @@ export const ChatRoom = ({ selectedChat }) => {
                 to: String(chatId),
                 msg: String(newMessage),
             };
-            // console.log(messageData); ///msg
-            // :
-            // "sad"
-            // to
-            // :
-            // "66cb3c06dca5924d3b0c347d"
             await sendMessage({
                 chatId: chatId,
                 message: newMessage,
@@ -85,7 +79,7 @@ export const ChatRoom = ({ selectedChat }) => {
             console.error('Failed to send message:', error);
         }
     };
-    // console.log(newMessage);
+    console.log(messagesChat);
 
     return (
         <div className="chat-room">
