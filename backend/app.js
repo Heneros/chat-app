@@ -4,7 +4,7 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import passport from 'passport';
-
+import axios from 'axios';
 import { createServer } from 'http';
 import { Server as SocketIO } from 'socket.io';
 import cookieParser from 'cookie-parser';
@@ -39,6 +39,13 @@ app.use('/api/v1/chat', chatRoutes);
 const port = process.env.PORT || 4001;
 
 let httpServer;
+const fallbackQuotes = [
+    'The only way to do great work is to love what you do.',
+    'Innovation distinguishes between a leader and a follower.',
+    'Stay hungry, stay foolish.',
+    'The future belongs to those who believe in the beauty of their dreams.',
+    'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+];
 
 const startServer = async () => {
     try {
@@ -72,33 +79,59 @@ const startServer = async () => {
                 global.onlineUsers.set(userId, socket.id);
             });
 
-            socket.on('joinChat', (chatId) => {
-                socket.join(chatId);
+            socket.on('joinChat', async (chatId) => {
+                const chat = await Chat.findById(chatId);
+                if (chat) {
+                    socket.join(chatId);
+                    socket.emit('chatHistory', chat.messages);
+                }
             });
 
-            socket.on('sendMessage', async (data) => {
-                try {
-                    if (
-                        !data ||
-                        typeof data.to !== 'string' ||
-                        typeof data.msg !== 'string'
-                    ) {
-                        throw new Error(
-                            'Invalid data: "to" or "msg" is not a string',
-                        );
-                    }
-                    const { to, msg } = data;
+            socket.on('sendMessage', async ({ chatId, message }) => {
+                const chat = await Chat.findById(chatId);
+                if (chat) {
+                    chat.messages.push({ text: message, sender: 'user' });
+                    await chat.save();
+                    io.to(chatId).emit('receiveMessage', {
+                        text: message,
+                        sender: 'user',
+                    });
 
-                    console.log(`sendMessage from ${socket.id} to ${to}`);
-
-                    const sendUserSocket = global.onlineUsers.get(to);
-                    if (sendUserSocket) {
-                        socket.to(sendUserSocket).emit('receive_message', msg);
-                    } else {
-                        console.error('Recipient socket not found');
-                    }
-                } catch (error) {
-                    console.error('Error saving message:', error);
+                    setTimeout(async () => {
+                        try {
+                            const response = await axios.get(
+                                'https://api.quotable.io/random',
+                                { timeout: 5000 },
+                            );
+                            const quote = response.data.content;
+                            chat.messages.push({ text: quote, sender: 'bot' });
+                            await chat.save();
+                            io.to(chatId).emit('receiveMessage', {
+                                text: quote,
+                                sender: 'bot',
+                            });
+                        } catch (error) {
+                            console.error(
+                                'Error fetching quote:',
+                                error.message,
+                            );
+                            const fallbackQuote =
+                                fallbackQuotes[
+                                    Math.floor(
+                                        Math.random() * fallbackQuotes.length,
+                                    )
+                                ];
+                            chat.messages.push({
+                                text: fallbackQuote,
+                                sender: 'bot',
+                            });
+                            await chat.save();
+                            io.to(chatId).emit('receiveMessage', {
+                                text: fallbackQuote,
+                                sender: 'bot',
+                            });
+                        }
+                    }, 3000);
                 }
             });
 

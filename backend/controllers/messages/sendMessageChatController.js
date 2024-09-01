@@ -16,27 +16,30 @@ const sendMessage = asyncHandler(async (req, res) => {
     const chat = await Chat.findById(chatId);
     chat.messages.push(message);
     await chat.save();
-    global.io.to(chat.chatId).emit('receive_message', message);
+    global.io.to(chatId).emit('receive_message', message);
 
     setTimeout(async () => {
         try {
-            const response = await axios.get('https://api.quotable.io/random', { timeout: 5000 });
+            const response = await axios.get('https://api.quotable.io/random', {
+                timeout: 5000,
+            });
             const quote = response.data.content;
             chat.messages.push(quote);
             await chat.save();
-            global.io
-                .to(global.onlineUsers.get(chat.chatId))
-                .emit('receive_message', quote);
+            global.io.to(chatId).emit('receive_message', quote);
         } catch (error) {
             console.error('Error fetching quote:', error.message);
-            const fallbackQuote = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+            const fallbackQuote =
+                fallbackQuotes[
+                    Math.floor(Math.random() * fallbackQuotes.length)
+                ];
             chat.messages.push(fallbackQuote);
             await chat.save();
             global.io
                 .to(global.onlineUsers.get(chat.chatId))
                 .emit('receive_message', fallbackQuote);
         }
-    }, 3000);
+    }, 1000);
 
     res.status(200).json({ chat });
 });
