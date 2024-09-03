@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import { decodeToken } from 'react-jwt';
 import { useSelector } from 'react-redux';
-
 import { selectCurrentUserToken } from '../../redux/slices/auth';
+import { decodeToken } from 'react-jwt';
 import {
     useGetByIdChatQuery,
     useSendMessageToChatMutation,
@@ -12,58 +11,50 @@ import {
 const socket = io('http://localhost:4000');
 
 export const ChatRoom = ({ selectedChat }) => {
-    const { _id: chatId } = selectedChat || {};
-    const currentUserId = useSelector(selectCurrentUserToken);
-    const decodedToken = decodeToken(currentUserId);
-    const userId = decodedToken?._id;
+    const { _id: receiverId } = selectedChat || {};
+    const currentsenderId = useSelector(selectCurrentUserToken);
+    const decodedToken = decodeToken(currentsenderId);
+    const senderId = decodedToken?._id;
 
-    const { data, isLoading, error } = useGetByIdChatQuery({ chatId });
+    const {
+        data: chatHistory,
+        isLoading,
+        error,
+    } = useGetByIdChatQuery({ receiverId });
     const [sendMessage] = useSendMessageToChatMutation();
-    // const [messagesChat, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [chatMessages, setChatMessages] = useState([]);
 
     useEffect(() => {
-        if (chatId) {
-            socket.emit('joinChat', chatId);
-
-            socket.on('chatHistory', (messages) => {
-                setMessages(messages);
-            });
-
-            socket.on('receiveMessage', (message) => {
-                setMessages((prevMessages) => [...prevMessages, message]);
-            });
+        if (messages) {
+            setChatMessages(messages);
         }
+    }, [messages]);
 
-        return () => {
-            socket.off('receiveMessage');
-            socket.off('chatHistory');
-        };
-    }, [chatId]);
+    useEffect(() => {
+        if (senderId) {
+            socket.emit('setup', senderId);
+        }
+        
+    }, [chatHistory]);
 
     const handleSendMessage = async () => {
-        if (newMessage.trim() === '' || !chatId) return;
+        if (newMessage.trim() === '' || !receiverId) return;
 
         try {
-            // const messageData = {
-            //     to: String(chatId),
-            //     msg: String(newMessage),
-            // };
-
-            await sendMessage({
-                chatId: chatId,
+            const sentMessage = await sendMessage({
+                receiverId: receiverId,
                 message: newMessage,
             }).unwrap();
-            socket.emit('sendMessage', { chatId, message: newMessage });
+            console.log(sentMessage);
+            socket.emit('sendMessage', sentMessage);
 
-            // socket.emit('sendMessage', messageData);
             setNewMessage('');
         } catch (error) {
             console.error('Failed to send message:', error);
         }
     };
-
     return (
         <div className="chat-room">
             {selectedChat ? (
@@ -86,26 +77,30 @@ export const ChatRoom = ({ selectedChat }) => {
                                 {messages.map((msg, index) => (
                                     <div
                                         key={index}
-                                        className={`message ${msg.sender}`}
+                                        className={`message ${
+                                            msg.senderId === senderId
+                                                ? 'sent'
+                                                : 'received'
+                                        }`}
                                     >
-                                        {msg.text}
+                                        {msg.message}
                                     </div>
                                 ))}
                             </>
                         )}
-                        <div>
-                            <input
-                                type="text"
-                                value={newMessage}
-                                onChange={(e) => setNewMessage(e.target.value)}
-                                placeholder="Type a message..."
-                            />
-                            <button onClick={handleSendMessage}>Send</button>
-                        </div>
+                    </div>
+                    <div className="message-input">
+                        <input
+                            type="text"
+                            value={newMessage}
+                            onChange={(e) => setNewMessage(e.target.value)}
+                            placeholder="Type a message..."
+                        />
+                        <button onClick={handleSendMessage}>Send</button>
                     </div>
                 </>
             ) : (
-                <></>
+                <div>Select a chat to start messaging</div>
             )}
         </div>
     );

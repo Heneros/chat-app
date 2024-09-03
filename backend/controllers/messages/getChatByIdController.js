@@ -7,7 +7,7 @@ const getChatById = asyncHandler(async (req, res) => {
     if (!chatId) {
         return res.status(400).json({ message: 'Chat ID not provided' });
     }
-    console.log('chatId:', chatId);
+    // console.log('chatId:', chatId);
     try {
         const chat = await Chat.findById(chatId);
 

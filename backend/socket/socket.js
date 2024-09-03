@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
     console.log('user connected', socket.id);
 
     const objectSocketHandShake = socket.handshake;
-    console.log(objectSocketHandShake);
+    // console.log(objectSocketHandShake);
 
     const userId = socket.handshake.query.userId;
 
