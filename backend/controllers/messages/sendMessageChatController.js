@@ -1,6 +1,9 @@
 import asyncHandler from 'express-async-handler';
 import axios from 'axios';
 import Chat from '../../models/ChatModel.js';
+import Conversation from '../../models/conversationModel.js';
+import Message from '../../models/messageModel.js';
+import { getReceiverSocketId, io } from '../../socket/socket.js';
 
 const fallbackQuotes = [
     'The only way to do great work is to love what you do.',
@@ -10,7 +13,7 @@ const fallbackQuotes = [
     'Success is not final, failure is not fatal: it is the courage to continue that counts.',
 ];
 
-const sendMessage = asyncHandler(async (req, res) => {
+const sendMessageChat = asyncHandler(async (req, res) => {
     const { chatId } = req.params;
     const { message } = req.body;
     const chat = await Chat.findById(chatId);
@@ -44,14 +47,62 @@ const sendMessage = asyncHandler(async (req, res) => {
     res.status(200).json({ chat });
 });
 
-const sendMessageChat = asyncHandler(async (req, res) => {
+/// New version
+
+const sendMessage = asyncHandler(async (req, res) => {
     try {
         const { message } = req.body;
         const { id: receiverId } = req.params;
+        const senderId = req.user._id;
+
+        let conversation = await Conversation.findOne({
+            participants: { $all: [senderId, receiverId] },
+        });
+
+        if (!conversation) {
+            conversation = await Conversation.create({
+                participants: [senderId, receiverId],
+            });
+        }
+
+        const newMessage = new Message({
+            senderId,
+            receiverId,
+            message,
+        });
+
+        if (newMessage) {
+            conversation.messages.push(newMessage._id);
+        }
+
+        await Promise.all([conversation.save(), newMessage.save()]);
+        const receiverSocketId = getReceiverSocketId(receiverId);
+        if (receiverSocketId) {
+            io.to(receiverSocketId).emit('newMessage', newMessage);
+        }
+        res.status(201).json(newMessage);
     } catch (error) {
         console.log('Error in sendMessage controller: ', error.message);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+const getMessages = async (req, res) => {
+    try {
+        const { id: userToChatId } = req.params;
+        const senderId = req.user._id;
 
-export { sendMessage, sendMessageChat };
+        const conversation = await Conversation.findOne({
+            participants: { $all: [senderId, userToChatId] },
+        }).populate('messages');
+
+        if (!conversation) return res.status(200).json([]);
+
+        const messages = conversation.messages;
+        res.status(200).json(messages);
+    } catch (error) {
+        console.log('Error in getMessages controller: ', error.message);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+export { sendMessage, sendMessageChat, getMessages };
