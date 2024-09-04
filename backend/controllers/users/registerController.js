@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 
 import User from '../../models/UserModel.js';
 import Chat from '../../models/ChatModel.js';
+import Conversation from '../../models/conversationModel.js';
 
 const predefineChats = JSON.parse(
     fs.readFileSync(path.resolve('backend/data/defaultChats.json')),
