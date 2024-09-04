@@ -92,7 +92,7 @@ export const ChatRoom = ({ selectedChat }) => {
                                                 : 'received'
                                         }`}
                                     >
-                                        {msg}
+                                        {msg.text}
                                     </div>
                                 ))}
                             </>

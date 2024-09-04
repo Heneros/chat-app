@@ -1,5 +1,20 @@
 import mongoose from 'mongoose';
 
+const messageSchema = new mongoose.Schema(
+    {
+        text: {
+            type: String,
+            required: true,
+        },
+        sender: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User',
+        },
+    },
+    { timestamps: true },
+);
+
 const chatSchema = new mongoose.Schema(
     {
         firstName: {
@@ -10,11 +25,12 @@ const chatSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        messages: [
-            {
-                type: String,
-            },
-        ],
+        // messages: [
+        //     {
+        //         type: String,
+        //     },
+        // ]
+        messages: [messageSchema],
         chatId: String,
         createdAt: {
             type: Date,

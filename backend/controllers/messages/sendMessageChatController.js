@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import axios from 'axios';
+import mongoose from 'mongoose';
 
 import Chat from '../../models/ChatModel.js';
 import Conversation from '../../models/conversationModel.js';
@@ -20,7 +21,7 @@ const sendMessage = asyncHandler(async (req, res) => {
     const { message } = req.body;
     const chat = await Chat.findById(chatId);
 
-    const newMessage = { text: message, sender: req.user._id };
+    const newMessage = { text: message, sender: new mongoose.Types.ObjectId(req.user._id) };
     chat.messages.push(newMessage);
 
     // chat.messages.push(message);
@@ -42,15 +43,16 @@ const sendMessage = asyncHandler(async (req, res) => {
             // io.to(chatId).emit('receive_message', quote);
         } catch (error) {
             console.error('Error fetching quote:', error.message);
-            const fallbackQuote =
-                fallbackQuotes[
-                    Math.floor(Math.random() * fallbackQuotes.length)
-                ];
-            chat.messages.push(fallbackQuote);
+            const fallbackQuote = fallbackQuotes[
+                Math.floor(Math.random() * fallbackQuotes.length)
+            ];
+            const botMessage = {
+                text: fallbackQuote,
+                sender: new mongoose.Types.ObjectId(req.user._id),
+            };
+            chat.messages.push(botMessage);
             await chat.save();
-            global.io
-                .to(global.onlineUsers.get(chat.chatId))
-                .emit('receive_message', fallbackQuote);
+            io.to(chatId).emit('receiveMessage', botMessage);
         }
     }, 1000);
 
