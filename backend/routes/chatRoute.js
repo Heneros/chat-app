@@ -18,7 +18,7 @@ router.route('/').post(checkAuth, createChat).get(checkAuth, getAll);
 router
     .route('/:chatId')
     .put(checkAuth, updateChat)
-    .get(checkAuth, getMessages)
+    .get(checkAuth, getChatById)
     .delete(checkAuth, deleteChat);
 
 router.route('/:chatId/message').post(checkAuth, sendMessage);
