@@ -11,7 +11,7 @@ import {
 const socket = io('http://localhost:4000');
 
 export const ChatRoom = ({ selectedChat }) => {
-    const { _id: receiverId } = selectedChat || {};
+    const { _id: chatId } = selectedChat || {};
     const currentsenderId = useSelector(selectCurrentUserToken);
     const decodedToken = decodeToken(currentsenderId);
     const senderId = decodedToken?._id;
@@ -20,36 +20,45 @@ export const ChatRoom = ({ selectedChat }) => {
         data: chatHistory,
         isLoading,
         error,
-    } = useGetByIdChatQuery({ receiverId });
+    } = useGetByIdChatQuery({ chatId });
     const [sendMessage] = useSendMessageToChatMutation();
     const [newMessage, setNewMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [chatMessages, setChatMessages] = useState([]);
 
+    console.log(messages);
     useEffect(() => {
-        if (messages) {
-            setChatMessages(messages);
+        if (chatHistory) {
+            setMessages(chatHistory.messages);
         }
-    }, [messages]);
-
-    useEffect(() => {
-        if (senderId) {
-            socket.emit('setup', senderId);
-        }
-        
     }, [chatHistory]);
 
+    useEffect(() => {
+        if (chatId) {
+            socket.emit('joinChat', chatId);
+
+            socket.on('receiveMessage', (message) => {
+                setMessages((prevMessages) => [...prevMessages, message]);
+            });
+        }
+
+        return () => {
+            socket.off('receiveMessage');
+        };
+    }, [chatId]);
+
     const handleSendMessage = async () => {
-        if (newMessage.trim() === '' || !receiverId) return;
+        if (newMessage.trim() === '' || !chatId) return;
 
         try {
-            const sentMessage = await sendMessage({
-                receiverId: receiverId,
+            await sendMessage({
+                chatId: chatId,
                 message: newMessage,
             }).unwrap();
-            console.log(sentMessage);
-            socket.emit('sendMessage', sentMessage);
 
+            socket.emit('sendMessage', { chatId, message: newMessage });
+
+            setNewMessage('');
             setNewMessage('');
         } catch (error) {
             console.error('Failed to send message:', error);
@@ -74,7 +83,7 @@ export const ChatRoom = ({ selectedChat }) => {
                             </div>
                         ) : (
                             <>
-                                {messages.map((msg, index) => (
+                                {messages?.map((msg, index) => (
                                     <div
                                         key={index}
                                         className={`message ${
@@ -83,7 +92,7 @@ export const ChatRoom = ({ selectedChat }) => {
                                                 : 'received'
                                         }`}
                                     >
-                                        {msg.message}
+                                        {msg}
                                     </div>
                                 ))}
                             </>

@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import axios from 'axios';
+
 import Chat from '../../models/ChatModel.js';
 import Conversation from '../../models/conversationModel.js';
 import Message from '../../models/messageModel.js';
@@ -13,13 +14,20 @@ const fallbackQuotes = [
     'Success is not final, failure is not fatal: it is the courage to continue that counts.',
 ];
 
-const sendMessageChat = asyncHandler(async (req, res) => {
+const sendMessage = asyncHandler(async (req, res) => {
     const { chatId } = req.params;
+
     const { message } = req.body;
     const chat = await Chat.findById(chatId);
-    chat.messages.push(message);
+
+    const newMessage = { text: message, sender: req.user._id };
+    chat.messages.push(newMessage);
+
+    // chat.messages.push(message);
     await chat.save();
-    global.io.to(chatId).emit('receive_message', message);
+    // console.log(chat);
+    // io.to(chatId).emit('receive_message', message);
+    io.to(chatId).emit('receiveMessage', newMessage);
 
     setTimeout(async () => {
         try {
@@ -27,9 +35,11 @@ const sendMessageChat = asyncHandler(async (req, res) => {
                 timeout: 5000,
             });
             const quote = response.data.content;
-            chat.messages.push(quote);
+            const botMessage = { text: quote, sender: 'auto-bot' };
+            chat.messages.push(botMessage);
             await chat.save();
-            global.io.to(chatId).emit('receive_message', quote);
+            io.to(chatId).emit('receiveMessage', botMessage);
+            // io.to(chatId).emit('receive_message', quote);
         } catch (error) {
             console.error('Error fetching quote:', error.message);
             const fallbackQuote =
@@ -49,7 +59,7 @@ const sendMessageChat = asyncHandler(async (req, res) => {
 
 /// New version
 
-const sendMessage = asyncHandler(async (req, res) => {
+const sendMessageChat = asyncHandler(async (req, res) => {
     try {
         // const { message } = req.body;
         const { message, receiverId } = req.body;
@@ -89,7 +99,7 @@ const sendMessage = asyncHandler(async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
-const getMessages = async (req, res) => {
+const getMessages = asyncHandler(async (req, res) => {
     try {
         const { id: userToChatId } = req.params;
         const senderId = req.user._id;
@@ -106,6 +116,6 @@ const getMessages = async (req, res) => {
         console.log('Error in getMessages controller: ', error.message);
         res.status(500).json({ error: 'Internal server error' });
     }
-};
+});
 
 export { sendMessage, sendMessageChat, getMessages };
