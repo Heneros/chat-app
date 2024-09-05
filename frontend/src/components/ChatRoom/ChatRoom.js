@@ -21,18 +21,28 @@ export const ChatRoom = ({ selectedChat }) => {
     } = useGetByIdChatQuery({ chatId }, { skip: !chatId });
     const [sendMessage] = useSendMessageToChatMutation();
     const [newMessage, setNewMessage] = useState('');
-    const [room, setRoom] = useState('1');
-    const [messageReceived, setMessageReceived] = useState('');
     const [messages, setMessages] = useState([]);
-    const [chatMessages, setChatMessages] = useState([]);
 
+    // useEffect(() => {
+    //     console.log('client', socket.id);
+    // });
     useEffect(() => {
-        socket.on('receiveMessage', (data) => {
-            setMessageReceived(data);
-        });
-        socket.emit('join_room', '1');
-    }, [socket]);
-    
+        if (chatId) {
+            socket.on('receiveMessage', (data) => {
+                console.log('Received message:', data);
+                setMessages((prevMessages) => [...prevMessages, data]);
+            });
+        } else {
+            console.log('no chatid');
+        }
+
+        socket.emit('join_room', chatId);
+
+        return () => {
+            socket.off('receiveMessage');
+        };
+    }, [chatId]);
+
     const handleSendMessage = async () => {
         if (newMessage.trim() === '' || !chatId) return;
 
@@ -41,7 +51,8 @@ export const ChatRoom = ({ selectedChat }) => {
             //     chatId: chatId,
             //     message: newMessage,
             // }).unwrap();
-
+            const userMessage = { message: newMessage, sender: 'user' };
+            setMessages((prevMessages) => [...prevMessages, userMessage]);
             socket.emit('sendMessage', { chatId, message: newMessage });
 
             setNewMessage('');
@@ -49,6 +60,7 @@ export const ChatRoom = ({ selectedChat }) => {
             console.error('Failed to send message:', error);
         }
     };
+    console.log(messages);
     return (
         <div className="chat-room">
             {selectedChat ? (
@@ -68,19 +80,24 @@ export const ChatRoom = ({ selectedChat }) => {
                             </div>
                         ) : (
                             <>
-                                {messageReceived}
-                                {/* {messages?.map((msg, index) => (
-                                    <div
-                                        key={index}
-                                        className={`message ${
-                                            msg.senderId === senderId
-                                                ? 'sent'
-                                                : 'received'
-                                        }`}
-                                    >
-                                        {msg.text}
-                                    </div>
-                                ))} */}
+                                <div className="messages">
+                                    {messages.length > 0 ? (
+                                        messages.map((msg, index) => (
+                                            <div
+                                                key={index}
+                                                className={`message ${
+                                                    msg.sender === 'user'
+                                                        ? 'sent'
+                                                        : 'received'
+                                                }`}
+                                            >
+                                                {msg.message}
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div>No messages yet...</div>
+                                    )}
+                                </div>
                             </>
                         )}
                     </div>
