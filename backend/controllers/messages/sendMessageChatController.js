@@ -21,12 +21,19 @@ const sendMessage = asyncHandler(async (req, res) => {
     const { message } = req.body;
     const chat = await Chat.findById(chatId);
 
-    const newMessage = { text: message, sender: new mongoose.Types.ObjectId(req.user._id) };
+    if (!chat) {
+        res.status(404);
+        throw new Error('Chat not found');
+    }
+    const newMessage = {
+        text: message,
+        sender: new mongoose.Types.ObjectId(req.user._id),
+    };
     chat.messages.push(newMessage);
 
     // chat.messages.push(message);
     await chat.save();
-    // console.log(chat);
+
     // io.to(chatId).emit('receive_message', message);
     io.to(chatId).emit('receiveMessage', newMessage);
 
@@ -36,16 +43,22 @@ const sendMessage = asyncHandler(async (req, res) => {
                 timeout: 5000,
             });
             const quote = response.data.content;
-            const botMessage = { text: quote, sender: 'auto-bot' };
+            const botMessage = {
+                text: quote,
+                sender: new mongoose.Types.ObjectId(req.user._id),
+            };
             chat.messages.push(botMessage);
             await chat.save();
             io.to(chatId).emit('receiveMessage', botMessage);
+
+            console.log('receiveMessage', botMessage);
             // io.to(chatId).emit('receive_message', quote);
         } catch (error) {
             console.error('Error fetching quote:', error.message);
-            const fallbackQuote = fallbackQuotes[
-                Math.floor(Math.random() * fallbackQuotes.length)
-            ];
+            const fallbackQuote =
+                fallbackQuotes[
+                    Math.floor(Math.random() * fallbackQuotes.length)
+                ];
             const botMessage = {
                 text: fallbackQuote,
                 sender: new mongoose.Types.ObjectId(req.user._id),

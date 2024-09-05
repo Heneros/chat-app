@@ -1,6 +1,7 @@
 import { Server } from 'socket.io';
 import http from 'http';
 import express from 'express';
+import axios from 'axios';
 
 const app = express();
 
@@ -28,6 +29,19 @@ io.on('connection', (socket) => {
     if (userId !== 'undefiend') userSocketMap[userId] = socket.id;
 
     io.emit('getOnlineUsers', Object.keys(userSocketMap));
+
+    socket.on('join_room', (data) => {
+        socket.join(data);
+    });
+
+    socket.on('sendMessage', (data) => {
+        socket.to(data.room).emit('receiveMessage', data);
+        console.log('room', data);
+    });
+
+    socket.on('receiveMessage', (data) => {
+        console.log('receiveMessage', data);
+    });
 
     socket.on('disconnect', () => {
         console.log('user disconnected', socket.id);
