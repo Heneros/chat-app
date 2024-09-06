@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import { useSelector } from 'react-redux';
 import { selectCurrentUserToken } from '../../redux/slices/auth';
@@ -18,7 +18,7 @@ export const ChatRoom = ({ selectedChat }) => {
         isLoading,
         error,
         refetch,
-    } = useGetByIdChatQuery({ chatId }, { skip: !chatId });
+    } = useGetByIdChatQuery({ chatId });
     const [sendMessage] = useSendMessageToChatMutation();
     const [newMessage, setNewMessage] = useState('');
     const [messages, setMessages] = useState([]);
@@ -26,17 +26,27 @@ export const ChatRoom = ({ selectedChat }) => {
     // useEffect(() => {
     //     console.log('client', socket.id);
     // });
+    const handleReceiveMessage = useCallback((data) => {
+        console.log('Received message:', data);
+        setMessages((prevMessages) => [...prevMessages, data]);
+    }, []);
+
+    
     useEffect(() => {
         if (chatId) {
+            socket.emit('leave_room', socket.previousRoom);
+
+            socket.emit('join_room', chatId);
+
+            socket.previousRoom = chatId;
+
             socket.on('receiveMessage', (data) => {
-                console.log('Received message:', data);
+                // console.log('Received message:', data);
                 setMessages((prevMessages) => [...prevMessages, data]);
             });
         } else {
             console.log('no chatid');
         }
-
-        socket.emit('join_room', chatId);
 
         return () => {
             socket.off('receiveMessage');
@@ -75,7 +85,7 @@ export const ChatRoom = ({ selectedChat }) => {
                             <>Loading...</>
                         ) : error ? (
                             <div>
-                                Error happened:{' '}
+                                Error happened:
                                 {error.message || JSON.stringify(error)}
                             </div>
                         ) : (

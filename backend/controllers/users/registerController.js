@@ -5,7 +5,6 @@ import jwt from 'jsonwebtoken';
 
 import User from '../../models/UserModel.js';
 import Chat from '../../models/ChatModel.js';
-import Conversation from '../../models/conversationModel.js';
 
 const predefineChats = JSON.parse(
     fs.readFileSync(path.resolve('backend/data/defaultChats.json')),
@@ -66,9 +65,14 @@ const registerUser = asyncHandler(async (req, res) => {
     if (registeredUser) {
         await Promise.all(
             predefineChats.map(async (chatData) => {
+                const updatedMessages = chatData.messages.map((message) => ({
+                    ...message,
+                    sender: registeredUser._id,
+                }));
                 await Chat.create({
                     ...chatData,
                     user: registeredUser._id,
+                    messages: updatedMessages,
                 });
             }),
         );
@@ -83,10 +87,6 @@ const registerUser = asyncHandler(async (req, res) => {
         username: registeredUser.username,
         email: registeredUser.email,
         accessToken,
-
-        // success: true,
-        // registeredUser,
-        // message: `A new user ${registeredUser.username} has been registered!`,
     });
 });
 

@@ -5,11 +5,34 @@
         "lastName": "Simpson",
         "chatId": "1",
         "messages": [
-           {
-            "text": "I love bear",
-              "sender": "66d83e1a1f5ad4b9f29aeec8"
-        }
+            {
+                "text": "I love bear",
+                "sender": "1d"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "firstName": "Leonardo",
+        "lastName": "Dicaprio",
+        "chatId": "2",
+        "messages": [
+            {
+                "text": "Ask about cinema",
+                "sender": "2d"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "firstName": "Albert",
+        "lastName": "Einstein",
+        "chatId": "3",
+        "messages": [
+            {
+                "text": "Ask about sciencew",
+                "sender": "3d"
+            }
         ]
     }
-   
 ]
