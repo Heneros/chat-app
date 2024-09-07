@@ -14,24 +14,27 @@ export const ChatRoom = ({ selectedChat }) => {
     const { _id: chatId } = selectedChat || {};
 
     const {
-        data: chatHistory,
+        data: chatData,
         isLoading,
         error,
         refetch,
     } = useGetByIdChatQuery({ chatId });
     const [sendMessage] = useSendMessageToChatMutation();
     const [newMessage, setNewMessage] = useState('');
-    const [messages, setMessages] = useState([]);
+    const [messageSocket, setMessages] = useState([]);
+    const [allMessages, setAllMessages] = useState([]);
 
-    // useEffect(() => {
-    //     console.log('client', socket.id);
-    // });
     const handleReceiveMessage = useCallback((data) => {
-        console.log('Received message:', data);
-        setMessages((prevMessages) => [...prevMessages, data]);
+        setAllMessages((prevMessages) => {
+            const messageArray = Array.isArray(prevMessages)
+                ? prevMessages
+                : [];
+
+            return [...messageArray, data];
+        });
     }, []);
 
-    
+
     useEffect(() => {
         if (chatId) {
             socket.emit('leave_room', socket.previousRoom);
@@ -39,38 +42,47 @@ export const ChatRoom = ({ selectedChat }) => {
             socket.emit('join_room', chatId);
 
             socket.previousRoom = chatId;
+            socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
+            if (
+                chatData &&
+                chatData.messages &&
+                Array.isArray(chatData.messages)
+            ) {
+                setAllMessages([...chatData.messages]);
+            }
 
-            socket.on('receiveMessage', (data) => {
-                // console.log('Received message:', data);
-                setMessages((prevMessages) => [...prevMessages, data]);
-            });
+            return () => {
+                if (chatId) {
+                    socket.off(
+                        `receiveMessage:${chatId}`,
+                        handleReceiveMessage,
+                    );
+                }
+            };
         } else {
             console.log('no chatid');
         }
-
-        return () => {
-            socket.off('receiveMessage');
-        };
-    }, [chatId]);
+    }, [chatId, chatData, handleReceiveMessage]);
 
     const handleSendMessage = async () => {
         if (newMessage.trim() === '' || !chatId) return;
 
         try {
-            // await sendMessage({
-            //     chatId: chatId,
-            //     message: newMessage,
-            // }).unwrap();
-            const userMessage = { message: newMessage, sender: 'user' };
-            setMessages((prevMessages) => [...prevMessages, userMessage]);
-            socket.emit('sendMessage', { chatId, message: newMessage });
+            await sendMessage({
+                chatId: chatId,
+                message: newMessage,
+            }).unwrap();
+
+            socket.emit('sendMessage', { chatId, text: newMessage });
 
             setNewMessage('');
         } catch (error) {
             console.error('Failed to send message:', error);
         }
     };
-    console.log(messages);
+    console.log('socket', messageSocket);
+    console.log('chatData', chatData);
+    console.log('allMessages', allMessages);
     return (
         <div className="chat-room">
             {selectedChat ? (
@@ -80,7 +92,7 @@ export const ChatRoom = ({ selectedChat }) => {
                             {selectedChat.firstName} {selectedChat.lastName}
                         </h1>
                     </div>
-                    <div className="messages">
+                    <div className="messageSocket">
                         {isLoading ? (
                             <>Loading...</>
                         ) : error ? (
@@ -90,9 +102,9 @@ export const ChatRoom = ({ selectedChat }) => {
                             </div>
                         ) : (
                             <>
-                                <div className="messages">
-                                    {messages.length > 0 ? (
-                                        messages.map((msg, index) => (
+                                <div className="messageSocket">
+                                    {allMessages.length > 0 ? (
+                                        allMessages.map((msg, index) => (
                                             <div
                                                 key={index}
                                                 className={`message ${
@@ -101,11 +113,11 @@ export const ChatRoom = ({ selectedChat }) => {
                                                         : 'received'
                                                 }`}
                                             >
-                                                {msg.message}
+                                                {msg.text}
                                             </div>
                                         ))
                                     ) : (
-                                        <div>No messages yet...</div>
+                                        <div>No messageSocket yet...</div>
                                     )}
                                 </div>
                             </>

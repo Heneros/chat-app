@@ -44,15 +44,19 @@ io.on('connection', async (socket) => {
     });
 
     socket.on('sendMessage', async (data) => {
-        const { chatId } = data;
+        const { chatId, text } = data;
         // console.log('roomId', roomId);
+        io.to(chatId).emit(`receiveMessage:${chatId}`, {
+            text,
+            sender: 'user',
+        });
         try {
             const response = await axios.get('https://api.quotable.io/random');
             const apiMessage = response.data.content;
 
             console.log(apiMessage);
-            io.to(chatId).emit('receiveMessage', {
-                message: apiMessage,
+            io.to(chatId).emit(`receiveMessage:${chatId}`, {
+                text: apiMessage,
                 sender: 'api',
             });
 
