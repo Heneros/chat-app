@@ -7,11 +7,12 @@ import getAll from '../controllers/messages/getAllChatController.js';
 import getChatById from '../controllers/messages/getChatByIdController.js';
 
 import checkAuth from '../middleware/checkAuth.js';
+import searchChat from '../controllers/messages/searchChatController.js';
 
 const router = express.Router();
 
 router.route('/').post(checkAuth, createChat).get(checkAuth, getAll);
-
+router.route('/search').get(checkAuth, searchChat);
 router
     .route('/:chatId')
     .put(checkAuth, updateChat)

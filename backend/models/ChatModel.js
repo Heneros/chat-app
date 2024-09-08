@@ -25,11 +25,6 @@ const chatSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        // messages: [
-        //     {
-        //         type: String,
-        //     },
-        // ]
         messages: [messageSchema],
         chatId: String,
         createdAt: {

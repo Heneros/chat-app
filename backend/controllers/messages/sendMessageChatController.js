@@ -1,8 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import mongoose from 'mongoose';
-
 import Chat from '../../models/ChatModel.js';
-
 import { io } from '../../socket/socket.js';
 
 const fallbackQuotes = [
@@ -34,20 +32,7 @@ const sendMessage = asyncHandler(async (req, res) => {
 
     setTimeout(async () => {
         try {
-            // const response = await axios.get('https://api.quotable.io/random', {
-            //     timeout: 5000,
-            // });
-            // const quote = response.data.content;
-            // const botMessage = {
-            //     text: quote,
-            //     sender: new mongoose.Types.ObjectId(req.user._id),
-            // };
-            // chat.messages.push(botMessage);
             await chat.save();
-            // io.to(chatId).emit('receiveMessage', botMessage);
-
-            // console.log('receiveMessage', botMessage);
-            // io.to(chatId).emit('receive_message', quote);
         } catch (error) {
             console.error('Error fetching quote:', error.message);
             const fallbackQuote =
