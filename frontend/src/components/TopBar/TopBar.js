@@ -9,16 +9,18 @@ import { useSelector } from 'react-redux';
 import { selectCurrentUserToken } from '../../redux/slices/auth';
 import { useLogoutMutation } from '../../redux/slices/userApiSlice';
 
-export const TopBar = () => {
+export const TopBar = ({ setSearchTerm }) => {
     const token = useSelector(selectCurrentUserToken);
     // console.log(token);
 
+    const handleSearch = (e) => {
+        setSearchTerm(e.target.value);
+    };
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalSecondOpen, setIsModalSecondOpen] = useState(false);
 
     const [logoutUser] = useLogoutMutation();
-
     const menuRef = useRef();
 
     const logoutHandler = async () => {
@@ -100,7 +102,8 @@ export const TopBar = () => {
                     <input
                         type="text"
                         className="search-field"
-                        placeholder="Search"
+                        placeholder="Search chat..."
+                        onChange={handleSearch}
                     />
                 </div>
             </div>

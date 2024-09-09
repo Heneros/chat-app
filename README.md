@@ -15,14 +15,13 @@ Full-stack application with socket.io.
 - Socket.IO
 
 ### Already exists:
-- [x] Three predefined chats
-- [x] Receiving response from API
-- [x] Authorization with JWT
-
+- [x] Three predefined chats.
+- [x] Receiving response from API.
+- [x] Authorization with JWT.
+- [x] Search chat and users.
 
 
 ### Need to add:
-- [ ] Search with history.
 - [ ] Rewrite to Typescript.
 - [ ] Notification from receive message.
 - [ ] Delete chat. with dialog with a confirmation dialog window.
@@ -38,3 +37,4 @@ Full-stack application with socket.io.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
 - [ ] Avatars to users
+- [ ] Rewrite to FSD architecture. Frontend.

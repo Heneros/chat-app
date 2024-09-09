@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import { useSelector } from 'react-redux';
-import { selectCurrentUserToken } from '../../redux/slices/auth';
-import { decodeToken } from 'react-jwt';
 import {
     useGetByIdChatQuery,
     useSendMessageToChatMutation,
+    useUpdateChatMutation,
 } from '../../redux/slices/messagesSlice';
 
 const socket = io('http://localhost:4000');
@@ -17,11 +15,16 @@ export const ChatRoom = ({ selectedChat }) => {
         data: chatData,
         isLoading,
         error,
-        refetch,
     } = useGetByIdChatQuery({ chatId });
     const [sendMessage] = useSendMessageToChatMutation();
+    const [updateChat] = useUpdateChatMutation();
+
+    const [editMode, setEditMode] = useState(false);
+
+    const [updatedFirstName, setUpdatedFirstName] = useState('');
+    const [updatedLastName, setUpdatedLastName] = useState('');
+
     const [newMessage, setNewMessage] = useState('');
-    const [messageSocket, setMessages] = useState([]);
     const [allMessages, setAllMessages] = useState([]);
 
     const handleReceiveMessage = useCallback((data) => {
@@ -34,6 +37,12 @@ export const ChatRoom = ({ selectedChat }) => {
         });
     }, []);
 
+    useEffect(() => {
+        if (selectedChat) {
+            setUpdatedFirstName(selectedChat.firstName || '');
+            setUpdatedLastName(selectedChat.lastName || '');
+        }
+    }, [selectedChat]);
 
     useEffect(() => {
         if (chatId) {
@@ -80,17 +89,62 @@ export const ChatRoom = ({ selectedChat }) => {
             console.error('Failed to send message:', error);
         }
     };
-    console.log('socket', messageSocket);
-    console.log('chatData', chatData);
-    console.log('allMessages', allMessages);
+
+    const handleUpdateChat = async () => {
+        if (!chatId) return;
+        try {
+            await updateChat({
+                chatId,
+                firstName: updatedFirstName,
+                lastName: updatedLastName,
+            }).unwrap();
+            setEditMode(false);
+        } catch (error) {
+            console.error('Failed to update chat:', error);
+        }
+    };
+    // console.log('socket', messageSocket);
+    // console.log('chatData', chatData);
+    // console.log('allMessages', allMessages);
     return (
         <div className="chat-room">
             {selectedChat ? (
                 <>
                     <div className="chat-title">
-                        <h1>
-                            {selectedChat.firstName} {selectedChat.lastName}
-                        </h1>
+                        {editMode ? (
+                            <>
+                                <input
+                                    type="text"
+                                    value={updatedFirstName}
+                                    onChange={(e) =>
+                                        setUpdatedFirstName(e.target.value)
+                                    }
+                                    placeholder="First Name"
+                                />
+                                <input
+                                    type="text"
+                                    value={updatedLastName}
+                                    onChange={(e) =>
+                                        setUpdatedLastName(e.target.value)
+                                    }
+                                    placeholder="Last Name"
+                                />
+                                <button onClick={handleUpdateChat}>Save</button>
+                                <button onClick={() => setEditMode(false)}>
+                                    Cancel
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <h1>
+                                    {selectedChat.firstName}{' '}
+                                    {selectedChat.lastName}
+                                </h1>
+                                <button onClick={() => setEditMode(true)}>
+                                    Edit
+                                </button>
+                            </>
+                        )}
                     </div>
                     <div className="messageSocket">
                         {isLoading ? (

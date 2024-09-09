@@ -10,7 +10,7 @@ const updateChat = asyncHandler(async (req, res) => {
         { new: true },
     );
 
-    res.status(200).json({ message: 'Updated', chat });
+    res.status(200).json({ message: 'Updated', firstName, lastName, chat });
 });
 
 export default updateChat;

@@ -1,23 +1,39 @@
 import React from 'react';
 import { Chat } from '../Chat/Chat';
-import { useGetAllChatQuery } from '../../redux/slices/messagesSlice';
+import {
+    useGetAllChatQuery,
+    useSearchChatQuery,
+} from '../../redux/slices/messagesSlice';
 
-export const AuthenticatedContent = ({ setSelectedChat }) => {
-    const { data, isLoading, error } = useGetAllChatQuery(undefined, {
+export const AuthenticatedContent = ({ setSelectedChat, searchTerm }) => {
+    const {
+        data: searchResults,
+        isLoading: isSearching,
+        error: searchError,
+    } = useSearchChatQuery(searchTerm, { skip: !searchTerm });
+    const {
+        data: allChats,
+        isLoading,
+        error,
+    } = useGetAllChatQuery(undefined, {
+        skip: !!searchTerm,
         pollingInterval: 3000,
     });
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
+    if (isLoading || isSearching) return <div>Loading...</div>;
+    if (error || searchError)
+        return <div>Error: {error?.message || searchError?.message}</div>;
 
+    const chats = searchTerm ? searchResults : allChats?.messages;
     return (
         <>
-            {data ? (
-                data.messages.map((chat, index) => (
+            {chats.length > 0 ? (
+                chats.map((chat, index) => (
                     <Chat
                         key={index}
                         {...chat}
                         onClick={() => setSelectedChat(chat)}
+                        setSelectedChat={setSelectedChat}
                     />
                 ))
             ) : (

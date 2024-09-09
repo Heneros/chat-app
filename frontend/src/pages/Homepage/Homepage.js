@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import './Homepage.css';
@@ -8,16 +8,20 @@ import { AuthenticatedContent } from '../../components/AuthenticatedContent/Auth
 import { ChatRoom } from '../../components/ChatRoom/ChatRoom';
 
 export const Homepage = () => {
-    const token = useSelector(selectCurrentUserToken);
+    const [searchTerm, setSearchTerm] = useState('');
     const [selectedChat, setSelectedChat] = useState(null);
 
+    const token = useSelector(selectCurrentUserToken);
 
     return (
         <div className="parent">
             <div className="left-side">
-                <TopBar />
+                <TopBar setSearchTerm={setSearchTerm} />
                 {token ? (
-                    <AuthenticatedContent setSelectedChat={setSelectedChat} />
+                    <AuthenticatedContent
+                        searchTerm={searchTerm}
+                        setSelectedChat={setSelectedChat}
+                    />
                 ) : (
                     <span>Please log in</span>
                 )}

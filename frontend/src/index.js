@@ -8,8 +8,6 @@ import './index.css';
 
 import { Layout } from './pages/Layout/Layout';
 import { Homepage } from './pages/Homepage/Homepage';
-import { Registration } from './pages/Registration/Registration';
-import { Login } from './pages/Login/Login';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -22,14 +20,6 @@ const router = createBrowserRouter([
                 index: true,
                 path: '/',
                 element: <Homepage />,
-            },
-            {
-                path: '/registration',
-                element: <Registration />,
-            },
-            {
-                path: '/login',
-                element: <Login />,
             },
         ],
     },

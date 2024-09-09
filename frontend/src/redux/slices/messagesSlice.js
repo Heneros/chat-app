@@ -20,12 +20,13 @@ export const chatApiSlice = apiSlice.injectEndpoints({
             providesTags: ['Chat'],
         }),
         updateChat: builder.mutation({
-            query: ({ chatId }) => ({
+            query: ({ chatId, firstName, lastName }) => ({
                 url: `${CHAT_URL}/${chatId}`,
                 method: 'PUT',
-                credentials: true,
+                body: { firstName, lastName },
+                credentials: 'include',
             }),
-            providesTags: ['Chat'],
+            invalidatesTags: ['Chat'],
         }),
         getByIdChat: builder.query({
             query: ({ chatId }) => ({
@@ -35,12 +36,12 @@ export const chatApiSlice = apiSlice.injectEndpoints({
             providesTags: ['Chat'],
         }),
         deleteChat: builder.mutation({
-            query: ({ chatId }) => ({
+            query: (chatId) => ({
                 url: `${CHAT_URL}/${chatId}`,
                 method: 'DELETE',
-                credentials: true,
+                credentials: 'include',
             }),
-            providesTags: ['Chat'],
+            invalidatesTags: ['Chat'],
         }),
         sendMessageToChat: builder.mutation({
             query: ({ chatId, message }) => ({
@@ -48,6 +49,13 @@ export const chatApiSlice = apiSlice.injectEndpoints({
                 method: 'POST',
                 body: { message },
                 ///  credentials: 'include',
+            }),
+            providesTags: ['Chat'],
+        }),
+        searchChat: builder.query({
+            query: (keyword) => ({
+                url: `${CHAT_URL}/search`,
+                params: { keyword },
             }),
             providesTags: ['Chat'],
         }),
@@ -60,4 +68,6 @@ export const {
     useGetAllChatQuery,
     useGetByIdChatQuery,
     useSendMessageToChatMutation,
+    useSearchChatQuery,
+    useUpdateChatMutation,
 } = chatApiSlice;
