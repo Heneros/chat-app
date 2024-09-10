@@ -1,15 +1,21 @@
 
-
-.left-side{
+.parent {
+    display: flex;
     height: 100vh;
+    box-sizing: border-box;
+}
+.left-side{
+    height: 100%;
     background-color: #2e4051;
     /* border-right: 1px solid #e8e7e7; */
-    max-width: 30%;
-    width: 100%;
+    /* max-width: 30%; */
+    width: 70%;
+    flex-basis: 30%;
 
 }
 .right-side{
     max-width: 70%;
     width: 100%;
+    flex-grow: 1;
         /* background-color: #1a2835; */
 }

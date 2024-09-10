@@ -5,7 +5,11 @@ import {
     useSendMessageToChatMutation,
     useUpdateChatMutation,
 } from '../../redux/slices/messagesSlice';
+import { selectCurrentUserToken } from '../../redux/slices/auth';
 
+import './ChatRoom.css';
+import { decodeToken } from 'react-jwt';
+import { useSelector } from 'react-redux';
 const socket = io('http://localhost:4000');
 
 export const ChatRoom = ({ selectedChat }) => {
@@ -16,6 +20,10 @@ export const ChatRoom = ({ selectedChat }) => {
         isLoading,
         error,
     } = useGetByIdChatQuery({ chatId });
+    const token = useSelector(selectCurrentUserToken);
+    const decodedToken = decodeToken(token);
+    const { id: userId } = decodedToken;
+
     const [sendMessage] = useSendMessageToChatMutation();
     const [updateChat] = useUpdateChatMutation();
 
@@ -76,6 +84,12 @@ export const ChatRoom = ({ selectedChat }) => {
     const handleSendMessage = async () => {
         if (newMessage.trim() === '' || !chatId) return;
 
+        // const newMessageObject = {
+        //     sender: userId,
+        //     text: newMessage,
+        // };
+        // setAllMessages((prevMessages) => [...prevMessages, newMessageObject]);
+
         try {
             await sendMessage({
                 chatId: chatId,
@@ -83,7 +97,6 @@ export const ChatRoom = ({ selectedChat }) => {
             }).unwrap();
 
             socket.emit('sendMessage', { chatId, text: newMessage });
-
             setNewMessage('');
         } catch (error) {
             console.error('Failed to send message:', error);
@@ -103,9 +116,10 @@ export const ChatRoom = ({ selectedChat }) => {
             console.error('Failed to update chat:', error);
         }
     };
-    // console.log('socket', messageSocket);
-    // console.log('chatData', chatData);
+
+    // console.log('socket', messageSocket)
     // console.log('allMessages', allMessages);
+    // console.log(userId);
     return (
         <div className="chat-room">
             {selectedChat ? (
@@ -146,7 +160,7 @@ export const ChatRoom = ({ selectedChat }) => {
                             </>
                         )}
                     </div>
-                    <div className="messageSocket">
+                    <div className="messageContainer">
                         {isLoading ? (
                             <>Loading...</>
                         ) : error ? (
@@ -156,13 +170,13 @@ export const ChatRoom = ({ selectedChat }) => {
                             </div>
                         ) : (
                             <>
-                                <div className="messageSocket">
+                                <div className="messageList">
                                     {allMessages.length > 0 ? (
                                         allMessages.map((msg, index) => (
                                             <div
                                                 key={index}
                                                 className={`message ${
-                                                    msg.sender === 'user'
+                                                    msg.sender === userId
                                                         ? 'sent'
                                                         : 'received'
                                                 }`}
@@ -171,7 +185,7 @@ export const ChatRoom = ({ selectedChat }) => {
                                             </div>
                                         ))
                                     ) : (
-                                        <div>No messageSocket yet...</div>
+                                        <div>No messages yet...</div>
                                     )}
                                 </div>
                             </>
