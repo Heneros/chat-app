@@ -10,6 +10,7 @@ import { selectCurrentUserToken } from '../../redux/slices/auth';
 import './ChatRoom.css';
 import { decodeToken } from 'react-jwt';
 import { useSelector } from 'react-redux';
+import { ChatHeader } from '../ChatHeader/ChatHeader';
 const socket = io('http://localhost:4000');
 
 export const ChatRoom = ({ selectedChat }) => {
@@ -25,12 +26,6 @@ export const ChatRoom = ({ selectedChat }) => {
     const { id: userId } = decodedToken;
 
     const [sendMessage] = useSendMessageToChatMutation();
-    const [updateChat] = useUpdateChatMutation();
-
-    const [editMode, setEditMode] = useState(false);
-
-    const [updatedFirstName, setUpdatedFirstName] = useState('');
-    const [updatedLastName, setUpdatedLastName] = useState('');
 
     const [newMessage, setNewMessage] = useState('');
     const [allMessages, setAllMessages] = useState([]);
@@ -46,16 +41,8 @@ export const ChatRoom = ({ selectedChat }) => {
     }, []);
 
     useEffect(() => {
-        if (selectedChat) {
-            setUpdatedFirstName(selectedChat.firstName || '');
-            setUpdatedLastName(selectedChat.lastName || '');
-        }
-    }, [selectedChat]);
-
-    useEffect(() => {
         if (chatId) {
             socket.emit('leave_room', socket.previousRoom);
-
             socket.emit('join_room', chatId);
 
             socket.previousRoom = chatId;
@@ -103,20 +90,6 @@ export const ChatRoom = ({ selectedChat }) => {
         }
     };
 
-    const handleUpdateChat = async () => {
-        if (!chatId) return;
-        try {
-            await updateChat({
-                chatId,
-                firstName: updatedFirstName,
-                lastName: updatedLastName,
-            }).unwrap();
-            setEditMode(false);
-        } catch (error) {
-            console.error('Failed to update chat:', error);
-        }
-    };
-
     // console.log('socket', messageSocket)
     // console.log('allMessages', allMessages);
     // console.log(userId);
@@ -124,42 +97,7 @@ export const ChatRoom = ({ selectedChat }) => {
         <div className="chat-room">
             {selectedChat ? (
                 <>
-                    <div className="chat-title">
-                        {editMode ? (
-                            <>
-                                <input
-                                    type="text"
-                                    value={updatedFirstName}
-                                    onChange={(e) =>
-                                        setUpdatedFirstName(e.target.value)
-                                    }
-                                    placeholder="First Name"
-                                />
-                                <input
-                                    type="text"
-                                    value={updatedLastName}
-                                    onChange={(e) =>
-                                        setUpdatedLastName(e.target.value)
-                                    }
-                                    placeholder="Last Name"
-                                />
-                                <button onClick={handleUpdateChat}>Save</button>
-                                <button onClick={() => setEditMode(false)}>
-                                    Cancel
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <h1>
-                                    {selectedChat.firstName}{' '}
-                                    {selectedChat.lastName}
-                                </h1>
-                                <button onClick={() => setEditMode(true)}>
-                                    Edit
-                                </button>
-                            </>
-                        )}
-                    </div>
+                    <ChatHeader selectedChat={selectedChat} chatId={chatId} />
                     <div className="messageContainer">
                         {isLoading ? (
                             <>Loading...</>

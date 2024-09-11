@@ -1,14 +1,21 @@
 import asyncHandler from 'express-async-handler';
+import { io } from '../../socket/socket.js';
 import Chat from '../../models/ChatModel.js';
 
 const updateChat = asyncHandler(async (req, res) => {
-    const { id } = req.params;
+    const { chatId } = req.params;
     const { firstName, lastName } = req.body;
+
     const chat = await Chat.findByIdAndUpdate(
-        id,
+        chatId,
         { firstName, lastName },
         { new: true },
     );
+    if (!chat) {
+        return res.status(404).json({ message: 'Chat not found' });
+    }
+
+    io.to(chatId).emit('chatUpdated', chat);
 
     res.status(200).json({ message: 'Updated', firstName, lastName, chat });
 });

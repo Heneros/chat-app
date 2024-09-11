@@ -11,6 +11,7 @@ export const AuthenticatedContent = ({ setSelectedChat, searchTerm }) => {
         isLoading: isSearching,
         error: searchError,
     } = useSearchChatQuery(searchTerm, { skip: !searchTerm });
+
     const {
         data: allChats,
         isLoading,
@@ -25,17 +26,25 @@ export const AuthenticatedContent = ({ setSelectedChat, searchTerm }) => {
         return <div>Error: {error?.message || searchError?.message}</div>;
 
     const chats = searchTerm ? searchResults : allChats?.messages;
+    // const mesgs = allChats?.messages;
+
     return (
         <>
             {chats.length > 0 ? (
-                chats.map((chat, index) => (
-                    <Chat
-                        key={index}
-                        {...chat}
-                        onClick={() => setSelectedChat(chat)}
-                        setSelectedChat={setSelectedChat}
-                    />
-                ))
+                chats.map((chat, index) => {
+                    const firstThreeMessages = chat.messages
+                        .slice(0, 3)
+                        .map((message) => message.text);
+                    return (
+                        <Chat
+                            key={index}
+                            {...chat}
+                            onClick={() => setSelectedChat(chat)}
+                            setSelectedChat={setSelectedChat}
+                            firstThreeMessages={firstThreeMessages}
+                        />
+                    );
+                })
             ) : (
                 <div>No messages found</div>
             )}

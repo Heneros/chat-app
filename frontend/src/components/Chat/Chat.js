@@ -5,7 +5,11 @@ import { useDeleteChatMutation } from '../../redux/slices/messagesSlice';
 export const Chat = ({
     firstName,
     lastName,
+    messages,
     onClick,
+    chat,
+    text,
+    firstThreeMessages,
     _id,
     setSelectedChat,
 }) => {
@@ -21,6 +25,10 @@ export const Chat = ({
         }
     };
 
+    // const firstThreeMessages = chat?.messages.map((chat) => {
+    //     return chat.messages.slice(0, 1).map((message) => message.text);
+    // });
+    console.log(firstThreeMessages);
     return (
         <div className="chat-member" onClick={onClick}>
             <div className="chat-member__wrapper" data-online="true">
@@ -29,13 +37,15 @@ export const Chat = ({
                         src="https://randomuser.me/api/portraits/thumb/women/56.jpg"
                         alt={`${firstName} ${lastName}`}
                     />
-                    <div className="user-status user-status--large"></div>
+                    <div className="user-status"></div>
                 </div>
                 <div className="chat-member__details">
                     <span className="chat-member__name">
                         {firstName} {lastName}
                     </span>
-                    <span className="chat-member__status">Online</span>
+                    <span className="chat-member__last-message">
+                        {firstThreeMessages.join(', ')}
+                    </span>
                 </div>
                 {isLoading ? (
                     <span>Deleting...</span>
@@ -43,12 +53,13 @@ export const Chat = ({
                     <span>Error: {error.message}</span>
                 ) : (
                     <button
+                        className="delete-button"
                         onClick={(e) => {
                             e.stopPropagation();
                             deleteChatFunction(_id);
                         }}
                     >
-                        Delete
+                        &times;
                     </button>
                 )}
             </div>

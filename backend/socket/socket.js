@@ -42,7 +42,21 @@ io.on('connection', async (socket) => {
     socket.on('leave_room', (chatId) => {
         socket.leave(chatId);
     });
+    socket.on('updateChat', async ({ chatId, firstName, lastName }) => {
+        try {
+            const chat = await Chat.findByIdAndUpdate(
+                chatId,
+                { firstName, lastName },
+                { new: true },
+            );
 
+            if (chat) {
+                io.to(chatId).emit('chatUpdated', chat);
+            }
+        } catch (error) {
+            console.error('Failed to update chat:', error);
+        }
+    });
     socket.on('sendMessage', async (data) => {
         const { chatId, text } = data;
         // console.log('roomId', roomId);
