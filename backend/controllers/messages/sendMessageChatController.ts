@@ -1,7 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import mongoose from 'mongoose';
-import Chat from '../../models/ChatModel.js';
-import { io } from '../../socket/socket.js';
+import Chat from '../../models/ChatModel';
+import { io } from '../../socket/socket';
 
 const fallbackQuotes = [
     'The only way to do great work is to love what you do.',
@@ -11,7 +11,7 @@ const fallbackQuotes = [
     'Success is not final, failure is not fatal: it is the courage to continue that counts.',
 ];
 
-const sendMessage = asyncHandler(async (req, res) => {
+const sendMessage = asyncHandler(async (req: Request, res: Response) => {
     const { chatId } = req.params;
 
     const { message } = req.body;

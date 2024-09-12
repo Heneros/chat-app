@@ -1,10 +1,21 @@
 import bcrypt from 'bcryptjs';
-import mongoose from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
+
 import validator from 'validator';
 
-const { Schema } = mongoose;
+// const { Schema } = mongoose;
 
-const userSchema = new Schema(
+interface IUser extends Document {
+    password: string;
+    passwordConfirm?: string;
+    email: string;
+    firstName: string;
+    username: string;
+    lastName: string;
+    refreshToken: string[];
+    googleId: string;
+}
+const userSchema = new Schema<IUser>(
     {
         email: {
             type: String,
@@ -28,12 +39,12 @@ const userSchema = new Schema(
         },
         password: {
             type: String,
-            // required: true,
+            required: true,
         },
         passwordConfirm: {
             type: String,
             validate: {
-                validator(value) {
+                validator(value: string) {
                     return value === this.password;
                 },
                 message: 'Password do not match',
@@ -45,7 +56,7 @@ const userSchema = new Schema(
     { timestamps: true },
 );
 
-userSchema.methods.matchPassword = async function (enteredPassword) {
+userSchema.methods.matchPassword = async function (enteredPassword: string) {
     return bcrypt.compare(enteredPassword, this.password);
 };
 
@@ -54,7 +65,9 @@ userSchema.pre('save', async function (next) {
         next();
     }
     const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
+    if (this.password) {
+        this.password = await bcrypt.hash(this.password, salt);
+    }
 
     this.passwordConfirm = undefined;
     next();

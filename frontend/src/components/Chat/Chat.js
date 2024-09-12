@@ -25,10 +25,7 @@ export const Chat = ({
         }
     };
 
-    // const firstThreeMessages = chat?.messages.map((chat) => {
-    //     return chat.messages.slice(0, 1).map((message) => message.text);
-    // });
-    console.log(firstThreeMessages);
+    // console.log(firstThreeMessages);
     return (
         <div className="chat-member" onClick={onClick}>
             <div className="chat-member__wrapper" data-online="true">

@@ -4,18 +4,15 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import passport from 'passport';
-import axios from 'axios';
-import { createServer } from 'http';
-import { Server as SocketIO } from 'socket.io';
 import cookieParser from 'cookie-parser';
+import { Request, Response, NextFunction } from 'express';
 
-import connectDB from './config/connectDB.js';
-import authRoutes from './routes/usersRoute.js';
-import chatRoutes from './routes/chatRoute.js';
-import Chat from './models/ChatModel.js';
-import { app, server } from './socket/socket.js';
+import connectDB from './config/connectDB';
+import authRoutes from './routes/usersRoute';
+import chatRoutes from './routes/chatRoute';
+import Chat from './models/ChatModel';
+import { app, server } from './socket/socket';
 
-// const app = express();
 
 app.use(
     cors({
@@ -29,8 +26,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
-app.use((err, req, res, next) => {
-    console.error(err.stack);
+app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
+    console.error(error.stack);
     res.status(500).send('Something broke!');
 });
 
@@ -39,9 +36,14 @@ app.use('/api/v1/chat', chatRoutes);
 
 const port = process.env.PORT || 4001;
 
+const MONGO_URI = process.env.MONGO_URI
+
+
 const startServer = async () => {
     try {
-        connectDB(process.env.MONGO_URI);
+        if(MONGO_URI){
+            connectDB(MONGO_URI);
+        }
         server.listen(port, () => {
             console.log(`Server is running on port ${port}`);
         });

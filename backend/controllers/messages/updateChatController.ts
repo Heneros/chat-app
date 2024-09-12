@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
-import { io } from '../../socket/socket.js';
-import Chat from '../../models/ChatModel.js';
+import { io } from '../../socket/socket';
+import Chat from '../../models/ChatModel';
 
 const updateChat = asyncHandler(async (req, res) => {
     const { chatId } = req.params;

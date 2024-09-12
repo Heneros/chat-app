@@ -26,7 +26,7 @@ export const AuthenticatedContent = ({ setSelectedChat, searchTerm }) => {
         return <div>Error: {error?.message || searchError?.message}</div>;
 
     const chats = searchTerm ? searchResults : allChats?.messages;
-    // const mesgs = allChats?.messages;
+
 
     return (
         <>

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 
-import User from '../../models/UserModel.js';
+import User from '../../models/UserModel';
 
 const authUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
@@ -11,14 +11,7 @@ const authUser = asyncHandler(async (req, res) => {
             message: 'Please provide an email and password',
         });
     }
-    // if (
-    //     !process.env.JWT_ACCESS_SECRET_KEY &&
-    //     !process.env.JWT_REFRESH_SECRET_KEY
-    // ) {
-    //     return res.status(500).json({
-    //         message: 'JWT secret keys are not set',
-    //     });
-    // }
+
 
     const user = await User.findOne({ email });
     // console.log(user);

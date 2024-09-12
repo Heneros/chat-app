@@ -3,7 +3,7 @@ import http from 'http';
 import express from 'express';
 import axios from 'axios';
 
-import Chat from '../models/ChatModel.js';
+import Chat from '../models/ChatModel';
 
 const app = express();
 
@@ -14,11 +14,11 @@ const io = new Server(server, {
         methods: ['GET', 'POST'],
     },
 });
-const userSocketMap = {};
 
-export const getReceiverSocketId = (receiverId) => {
-    return userSocketMap[receiverId];
-};
+// const userSocketMap = {};
+// export const getReceiverSocketId = (receiverId) => {
+//     return userSocketMap[receiverId];
+// };
 
 io.on('connection', async (socket) => {
     console.log('user connected', socket.id);
@@ -28,9 +28,9 @@ io.on('connection', async (socket) => {
 
     const userId = socket.handshake.query.userId;
 
-    if (userId !== 'undefiend') userSocketMap[userId] = socket.id;
+    // if (userId !== 'undefiend') userSocketMap[userId] = socket.id;
 
-    io.emit('getOnlineUsers', Object.keys(userSocketMap));
+    // io.emit('getOnlineUsers', Object.keys(userSocketMap));
 
     // let roomId;
 
@@ -82,20 +82,23 @@ io.on('connection', async (socket) => {
                 text: apiMessage,
                 sender: chatId,
             };
-            chat.messages.push(newMessage);
+            if(chat){
+             chat.messages.push(newMessage);
             await chat.save();
+            }
+       
         } catch (error) {
             console.error('API request failed:', error);
         }
     });
 
-    socket.on('disconnect', () => {
-        console.log('user disconnected', socket.id);
+    // socket.on('disconnect', () => {
+    //     console.log('user disconnected', socket.id);
 
-        delete userSocketMap[userId];
+    //     delete userSocketMap[userId];
 
-        io.emit('getOnlineUsers', Object.keys(userSocketMap));
-    });
+    //     io.emit('getOnlineUsers', Object.keys(userSocketMap));
+    // });
 });
 
 export { app, io, server };
