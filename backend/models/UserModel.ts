@@ -5,7 +5,7 @@ import validator from 'validator';
 
 // const { Schema } = mongoose;
 
-interface IUser extends Document {
+export interface IUser extends Document {
     password: string;
     passwordConfirm?: string;
     email: string;
@@ -14,6 +14,7 @@ interface IUser extends Document {
     lastName: string;
     refreshToken: string[];
     googleId: string;
+    matchPassword(enteredPassword: string): Promise<boolean>;
 }
 const userSchema = new Schema<IUser>(
     {

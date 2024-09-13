@@ -1,9 +1,16 @@
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
+import { Request, Response } from 'express';
 
-import User from '../../models/UserModel';
+import User, { IUser } from '../../models/UserModel';
 
-const authUser = asyncHandler(async (req, res) => {
+interface CustomRequest extends Request {
+    cookies: { chat_app?: string };
+}
+
+
+const authUser = asyncHandler(async (req: CustomRequest, res: Response) => {
+
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -13,15 +20,24 @@ const authUser = asyncHandler(async (req, res) => {
     }
 
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }) as IUser;
     // console.log(user);
-    let newRefreshToken;
+    let newRefreshToken: string[] | string ;
     if (user && (await user.matchPassword(password))) {
+       
+        const accessSecret = process.env.JWT_ACCESS_SECRET_KEY;
+        const refreshSecret = process.env.JWT_REFRESH_SECRET_KEY;
+        
+        if (!accessSecret || !refreshSecret) {
+            return res.status(500).json({ message: 'JWT secret keys are not defined' });
+        }
+
+
         const accessToken = jwt.sign(
             {
                 id: user._id,
             },
-            process.env.JWT_ACCESS_SECRET_KEY,
+            accessSecret,
             { expiresIn: '30d' },
         );
 
@@ -29,7 +45,7 @@ const authUser = asyncHandler(async (req, res) => {
             {
                 id: user._id,
             },
-            process.env.JWT_REFRESH_SECRET_KEY,
+            refreshSecret,
             { expiresIn: '30d' },
         );
 
@@ -48,14 +64,14 @@ const authUser = asyncHandler(async (req, res) => {
             if (!existingRefreshToken) {
                 newRefreshToken = [];
             }
-
+            const NODE_ENV= process.env.NODE_ENV;
             const options = {
                 httpOnly: true,
                 maxAge: 24 * 60 * 60 * 1000,
-                secure: true,
+                secure: process.env.NODE_ENV === 'production',
                 // sameSite: 'Lax',
                 sameSite:
-                    process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+                    NODE_ENV === 'production' ? 'None' : 'Lax',
             };
             res.clearCookie('chat_app', options);
         }
@@ -68,7 +84,7 @@ const authUser = asyncHandler(async (req, res) => {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
             // secure: process.env.NODE_ENV === 'production',
-            secure: true,
+            secure: process.env.NODE_ENV === 'production',
             sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
         };
 
