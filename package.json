@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "server": "nodemon --watch './backend/**/*.ts' --exec  ts-node ./backend/app.ts ",
+    "server": "nodemon  ",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -46,6 +46,7 @@
     "mongoose": "^8.5.3",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "validator": "^13.12.0"
   }
 }

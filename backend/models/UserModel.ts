@@ -6,6 +6,7 @@ import validator from 'validator';
 // const { Schema } = mongoose;
 
 export interface IUser extends Document {
+    _id: string;
     password: string;
     passwordConfirm?: string;
     email: string;

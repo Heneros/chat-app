@@ -1,18 +1,32 @@
 import asyncHandler from 'express-async-handler';
-import Chat from '../../models/ChatModel.js';
+import { Request, Response, NextFunction } from 'express';
 
-const { randomBytes } = await import('crypto');
+import Chat from '../../models/ChatModel';
+import { IUser } from '../../models/UserModel';
 
-const createChat = asyncHandler(async (req, res) => {
-    const { firstName, lastName } = req.body;
+interface CustomRequest extends Request {
+    user?: IUser;
+}
 
-    if (!firstName && lastName) {
-        res.status(400).json({ message: 'Empty field(s)' });
-    }
-    const chatId = randomBytes(32).toString('hex');
-    const chat = new Chat({ firstName, lastName, user: req.user._id, chatId });
-    await chat.save();
-    res.status(202).json({ success: true, message: 'Chat created', chat });
-});
+const createChat = asyncHandler(
+    async (req: CustomRequest, res: Response, next: NextFunction) => {
+        const { firstName, lastName } = req.body;
+        const { randomBytes } = await import('crypto');
+
+        if (!firstName && lastName) {
+            res.status(400).json({ message: 'Empty field(s)' });
+        }
+        const chatId = randomBytes(32).toString('hex');
+
+        if (!req.user) {
+            return res.status(401).json({ message: 'User is undefiend' });
+        }
+        const userId = req.user._id;
+
+        const chat = new Chat({ firstName, lastName, user: userId, chatId });
+        await chat.save();
+        res.status(202).json({ success: true, message: 'Chat created', chat });
+    },
+);
 
 export default createChat;

@@ -3,12 +3,22 @@ import fs from 'fs';
 import path from 'path';
 import jwt from 'jsonwebtoken';
 
-import User from '../../models/UserModel.js';
-import Chat from '../../models/ChatModel.js';
+import User from '../../models/UserModel';
+import Chat from '../../models/ChatModel';
 
 const predefineChats = JSON.parse(
-    fs.readFileSync(path.resolve('backend/data/defaultChats.json')),
+    fs.readFileSync(path.resolve('backend/data/defaultChats.json')).toString(),
 );
+
+interface Message {
+    content: string;
+    sender: string;
+}
+
+interface ChatData {
+    messages: Message[];
+    [key: string]: any;
+}
 
 const registerUser = asyncHandler(async (req, res) => {
     const { email, username, firstName, lastName, password, passwordConfirm } =
@@ -62,9 +72,10 @@ const registerUser = asyncHandler(async (req, res) => {
     });
 
     const registeredUser = await newUser.save();
+
     if (registeredUser) {
         await Promise.all(
-            predefineChats.map(async (chatData) => {
+            predefineChats.map(async (chatData: ChatData) => {
                 const updatedMessages = chatData.messages.map((message) => ({
                     ...message,
                     sender: registeredUser._id,
@@ -77,11 +88,16 @@ const registerUser = asyncHandler(async (req, res) => {
             }),
         );
     }
-    const accessToken = jwt.sign(
-        { id: registeredUser._id },
-        process.env.JWT_ACCESS_SECRET_KEY,
-        { expiresIn: '7d' },
-    );
+
+    const accessSecret = process.env.JWT_ACCESS_SECRET_KEY;
+
+    if (!accessSecret) {
+        throw new Error('JWT_ACCESS_SECRET_KEY is not defined');
+    }
+    const accessToken = jwt.sign({ id: registeredUser._id }, accessSecret, {
+        expiresIn: '7d',
+    });
+
     res.status(201).json({
         _id: registeredUser._id,
         username: registeredUser.username,
