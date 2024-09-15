@@ -1,17 +1,34 @@
 import asyncHandler from 'express-async-handler';
-import Chat from '../../models/ChatModel.js';
+import { Request, Response } from 'express';
+import Chat from '../../models/ChatModel';
+import { IUser } from '../../models/UserModel';
 
-const getAll = asyncHandler(async (req, res) => {
-    const userId = req.user._id;
+interface CustomRequest extends Request {
+    user?: IUser;
+}
 
-    if (!userId) {
-        return res.status(401).json({ message: 'Not authorized' });
+const getAll = async (req: CustomRequest, res: Response) => {
+    try {
+        if (!req.user) {
+            return res.status(401).json({ message: 'User is undefiend' });
+        }
+
+        const userId = req.user._id;
+
+        if (!userId) {
+            return res.status(401).json({ message: 'Not authorized' });
+        }
+        const messages = await Chat.find({
+            user: userId,
+        });
+
+        res.status(200).json({ messages });
+    } catch (error) {
+        res.status(500).json({
+            message: 'Server Error get all chat .',
+            error: (error as Error).message,
+        });
     }
-    const messages = await Chat.find({
-        user: userId,
-    });
-
-    res.status(200).json({ messages });
-});
+};
 
 export default getAll;

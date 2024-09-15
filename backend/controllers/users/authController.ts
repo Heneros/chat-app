@@ -1,16 +1,10 @@
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
-import { Request, Response, CookieOptions  } from 'express';
+import { Request, Response, CookieOptions } from 'express';
 
 import User, { IUser } from '../../models/UserModel';
 
-interface CustomRequest extends Request {
-    cookies: { chat_app?: string };
-}
-
-
 const authUser = asyncHandler(async (req: Request, res: Response) => {
-
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -19,21 +13,20 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
         });
     }
 
-
-    const user = await User.findOne({ email }) as IUser;
+    const user = (await User.findOne({ email })) as IUser;
     // console.log(user);
-    let newRefreshToken: string[] | string ;
+
     if (user && (await user.matchPassword(password))) {
-       
         const accessSecret = process.env.JWT_ACCESS_SECRET_KEY;
         const refreshSecret = process.env.JWT_REFRESH_SECRET_KEY;
-        
-        if (!accessSecret || !refreshSecret) {
-            res.status(500).json({ message: 'JWT secret keys are not defined' });
-            return;
-               //  return res.status(500).json({ message: 'JWT secret keys are not defined' });
-        }
 
+        if (!accessSecret || !refreshSecret) {
+            res.status(500).json({
+                message: 'JWT secret keys are not defined',
+            });
+            return;
+            //  return res.status(500).json({ message: 'JWT secret keys are not defined' });
+        }
 
         const accessToken = jwt.sign(
             {
@@ -43,7 +36,7 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
             { expiresIn: '30d' },
         );
 
-      const newRefreshToken = jwt.sign(
+        const newRefreshToken = jwt.sign(
             {
                 id: user._id,
             },
@@ -67,13 +60,13 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
                 newRefreshTokenArray = [];
             }
 
-
-            const NODE_ENV= process.env.NODE_ENV;
-              const options: CookieOptions = {
+            const NODE_ENV = process.env.NODE_ENV;
+            const options: CookieOptions = {
                 httpOnly: true,
                 maxAge: 24 * 60 * 60 * 1000,
                 secure: process.env.NODE_ENV === 'production',
-                sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+                sameSite:
+                    process.env.NODE_ENV === 'production' ? 'none' : 'lax',
             };
             res.clearCookie('chat_app', options);
         }
@@ -82,7 +75,7 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
 
         await user.save();
 
-            const options: CookieOptions = {
+        const options: CookieOptions = {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000,
             // secure: process.env.NODE_ENV === 'production',

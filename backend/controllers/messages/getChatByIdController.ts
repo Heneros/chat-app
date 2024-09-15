@@ -1,7 +1,8 @@
 import asyncHandler from 'express-async-handler';
 import Chat from '../../models/ChatModel.js';
+import { Request, Response } from 'express';
 
-const getChatById = asyncHandler(async (req, res) => {
+const getChatById = async (req: Request, res: Response) => {
     const { chatId } = req.params;
 
     if (!chatId) {
@@ -17,8 +18,12 @@ const getChatById = asyncHandler(async (req, res) => {
 
         res.status(200).json({ messages: chat.messages });
     } catch (error) {
-        res.status(500).json({ message: 'Server Error', error: error.message });
+        const err = error as Error;
+        res.status(500).json({
+            message: 'Server Error',
+            error: err.message,
+        });
     }
-});
+};
 
 export default getChatById;

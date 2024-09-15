@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Router } from 'express';
 import createChat from '../controllers/messages/createChatController';
 import deleteChat from '../controllers/messages/deleteChatController';
 import updateChat from '../controllers/messages/updateChatController';
@@ -9,7 +9,7 @@ import getChatById from '../controllers/messages/getChatByIdController';
 import checkAuth from '../middleware/checkAuth';
 import searchChat from '../controllers/messages/searchChatController';
 
-const router = express.Router();
+const router = Router();
 
 router.route('/').post(checkAuth, createChat).get(checkAuth, getAll);
 router.route('/search').get(checkAuth, searchChat);
