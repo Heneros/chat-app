@@ -1,19 +1,17 @@
 import asyncHandler from 'express-async-handler';
 import { Request, Response } from 'express';
 import Chat from '../../models/ChatModel';
-import { IUser } from '../../models/UserModel';
+import { RequestWithUser } from '../../types/RequestWithUser';
 
-interface CustomRequest extends Request {
-    user?: IUser;
-}
-
-const getAll = async (req: CustomRequest, res: Response) => {
+const getAll = async (req: Request, res: Response) => {
     try {
-        if (!req.user) {
+        const userReq = req as RequestWithUser;
+
+        if (!userReq.user) {
             return res.status(401).json({ message: 'User is undefiend' });
         }
 
-        const userId = req.user._id;
+        const userId = userReq.user._id;
 
         if (!userId) {
             return res.status(401).json({ message: 'Not authorized' });

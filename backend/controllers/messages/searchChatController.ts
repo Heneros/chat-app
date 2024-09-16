@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import { Request, Response } from 'express';
-import Chat from '../../models/ChatModel.js';
+import Chat from '../../models/ChatModel';
 
 const searchChat = async (req: Request, res: Response) => {
     const { keyword } = req.query;

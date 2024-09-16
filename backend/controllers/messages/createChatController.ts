@@ -1,12 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-
+import { RequestWithUser } from '../../types/RequestWithUser';
 import Chat from '../../models/ChatModel';
-import { IUser } from '../../models/UserModel';
-import { CustomRequest } from '../../middleware/checkAuth';
 
-interface RequestWithUser extends Request {
-    user?: IUser;
-}
+import { CustomRequest } from '../../middleware/checkAuth';
 
 const createChat = async (req: Request, res: Response, next: NextFunction) => {
     const { firstName, lastName } = req.body;
@@ -18,7 +14,6 @@ const createChat = async (req: Request, res: Response, next: NextFunction) => {
 
     const chatId = randomBytes(32).toString('hex');
 
-  
     const userReq = req as RequestWithUser;
 
     if (!userReq.user) {

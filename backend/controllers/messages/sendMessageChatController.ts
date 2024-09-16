@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import Chat from '../../models/ChatModel';
 import { io } from '../../socket/socket';
 import { Request, Response } from 'express';
-import { IUser } from 'backend/models/UserModel';
+import { RequestWithUser } from '../../types/RequestWithUser';
 
 const fallbackQuotes = [
     'The only way to do great work is to love what you do.',
@@ -12,11 +12,8 @@ const fallbackQuotes = [
     'The future belongs to those who believe in the beauty of their dreams.',
     'Success is not final, failure is not fatal: it is the courage to continue that counts.',
 ];
-interface CustomRequest extends Request {
-    user?: IUser;
-}
 
-const sendMessage = async (req: CustomRequest, res: Response) => {
+const sendMessage = async (req: Request, res: Response) => {
     const { chatId } = req.params;
 
     const { message } = req.body;
@@ -28,11 +25,12 @@ const sendMessage = async (req: CustomRequest, res: Response) => {
             res.status(404);
             throw new Error('Chat not found');
         }
+        const userReq = req as RequestWithUser;
 
-        if (!req.user) {
+        if (!userReq.user) {
             return res.status(401).json({ message: 'User is undefiend' });
         }
-        const userId = req.user._id;
+        const userId = userReq.user._id;
 
         const newMessage = {
             text: message,
@@ -40,7 +38,6 @@ const sendMessage = async (req: CustomRequest, res: Response) => {
         };
         chat.messages.push(newMessage);
 
-        // chat.messages.push(message);
         await chat.save();
 
         setTimeout(async () => {
@@ -72,7 +69,5 @@ const sendMessage = async (req: CustomRequest, res: Response) => {
         });
     }
 };
-
-/// New version
 
 export { sendMessage };

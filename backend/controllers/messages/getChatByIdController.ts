@@ -1,5 +1,5 @@
 import asyncHandler from 'express-async-handler';
-import Chat from '../../models/ChatModel.js';
+import Chat from '../../models/ChatModel';
 import { Request, Response } from 'express';
 
 const getChatById = async (req: Request, res: Response) => {

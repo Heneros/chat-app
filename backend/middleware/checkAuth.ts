@@ -1,8 +1,7 @@
 import jwt from 'jsonwebtoken';
-import asyncHandler from 'express-async-handler';
 import { Request, Response, NextFunction, RequestHandler } from 'express';
-
-import User, { IUser } from '../models/UserModel';
+import { IUser } from '../types/IUser';
+import User from '../models/UserModel';
 
 export interface CustomRequest extends Request {
     user?: IUser;

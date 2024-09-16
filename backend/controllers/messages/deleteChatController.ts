@@ -1,7 +1,7 @@
 import asyncHandler from 'express-async-handler';
-import { Request, Response, CookieOptions } from 'express';
+import { Request, Response } from 'express';
 
-import Chat from '../../models/ChatModel.js';
+import Chat from '../../models/ChatModel';
 
 const deleteChat = async (req: Request, res: Response) => {
     const { chatId } = req.params;

@@ -33,6 +33,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.7",
     "@types/jsonwebtoken": "^9.0.6",
+    "@types/morgan": "^1.9.9",
     "@types/passport": "^1.0.16",
     "@types/validator": "^13.12.1",
     "axios": "^1.7.4",
@@ -42,11 +43,14 @@
     "express": "^4.21.0",
     "express-async-handler": "^1.2.0",
     "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.4.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.3",
+    "morgan": "^1.10.0",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "socket.io": "^4.7.5",
-    "validator": "^13.12.0"
+    "validator": "^13.12.0",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }

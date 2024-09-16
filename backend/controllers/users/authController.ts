@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 import { Request, Response, CookieOptions } from 'express';
-
-import User, { IUser } from '../../models/UserModel';
+import { IUser } from '../../types/IUser';
+import User from '../../models/UserModel';
 
 const authUser = asyncHandler(async (req: Request, res: Response) => {
     const { email, password } = req.body;
@@ -60,10 +60,9 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
                 newRefreshTokenArray = [];
             }
 
-            const NODE_ENV = process.env.NODE_ENV;
             const options: CookieOptions = {
                 httpOnly: true,
-                maxAge: 24 * 60 * 60 * 1000,
+                //      maxAge: 24 * 60 * 60 * 1000,
                 secure: process.env.NODE_ENV === 'production',
                 sameSite:
                     process.env.NODE_ENV === 'production' ? 'none' : 'lax',
@@ -77,7 +76,7 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
 
         const options: CookieOptions = {
             httpOnly: true,
-            maxAge: 24 * 60 * 60 * 1000,
+            maxAge: 34 * 60 * 60 * 1000,
             // secure: process.env.NODE_ENV === 'production',
             secure: process.env.NODE_ENV === 'production',
             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',

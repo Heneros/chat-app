@@ -2,21 +2,10 @@ import bcrypt from 'bcryptjs';
 import mongoose, { Schema, Document } from 'mongoose';
 
 import validator from 'validator';
+import { IUser } from './../types/IUser';
 
 // const { Schema } = mongoose;
 
-export interface IUser extends Document {
-    _id: string;
-    password: string;
-    passwordConfirm?: string;
-    email: string;
-    firstName: string;
-    username: string;
-    lastName: string;
-    refreshToken: string[];
-    googleId: string;
-    matchPassword(enteredPassword: string): Promise<boolean>;
-}
 const userSchema = new Schema<IUser>(
     {
         email: {
