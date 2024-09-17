@@ -22,7 +22,7 @@ const sendMessage = async (req: Request, res: Response) => {
         const chat = await Chat.findById(chatId);
 
         if (!chat) {
-            res.status(404);
+            res.status(404).send({ message: 'Chat not found' });
             throw new Error('Chat not found');
         }
         const userReq = req as RequestWithUser;

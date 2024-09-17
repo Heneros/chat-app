@@ -3,11 +3,13 @@ import asyncHandler from 'express-async-handler';
 import { Request, Response, CookieOptions } from 'express';
 import { IUser } from '../../types/IUser';
 import User from '../../models/UserModel';
+import { systemLogs } from '../../utils/Logger';
 
 const authUser = asyncHandler(async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
+        systemLogs.error('Please provide an email and password');
         res.status(400).json({
             message: 'Please provide an email and password',
         });
@@ -21,6 +23,7 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
         const refreshSecret = process.env.JWT_REFRESH_SECRET_KEY;
 
         if (!accessSecret || !refreshSecret) {
+            systemLogs.error('JWT secret keys are not defined');
             res.status(500).json({
                 message: 'JWT secret keys are not defined',
             });

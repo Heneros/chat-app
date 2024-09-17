@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
+
+import { systemLogs } from '../../utils/Logger';
 import { RequestWithUser } from '../../types/RequestWithUser';
 import Chat from '../../models/ChatModel';
-
-import { CustomRequest } from '../../middleware/checkAuth';
 
 const createChat = async (req: Request, res: Response, next: NextFunction) => {
     const { firstName, lastName } = req.body;
@@ -38,6 +38,7 @@ const createChat = async (req: Request, res: Response, next: NextFunction) => {
             chat,
         });
     } catch (error) {
+        systemLogs.error('Server Error create chat.');
         res.status(500).json({
             message: 'Server Error create chat.',
             error: (error as Error).message,

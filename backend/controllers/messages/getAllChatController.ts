@@ -2,6 +2,7 @@ import asyncHandler from 'express-async-handler';
 import { Request, Response } from 'express';
 import Chat from '../../models/ChatModel';
 import { RequestWithUser } from '../../types/RequestWithUser';
+import { systemLogs } from '../../utils/Logger';
 
 const getAll = async (req: Request, res: Response) => {
     try {
@@ -22,8 +23,9 @@ const getAll = async (req: Request, res: Response) => {
 
         res.status(200).json({ messages });
     } catch (error) {
+        systemLogs.error('Server Error get all chat.');
         res.status(500).json({
-            message: 'Server Error get all chat .',
+            message: 'Server Error get all chat.',
             error: (error as Error).message,
         });
     }

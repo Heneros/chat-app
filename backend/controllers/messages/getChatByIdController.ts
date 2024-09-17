@@ -1,6 +1,8 @@
 import asyncHandler from 'express-async-handler';
-import Chat from '../../models/ChatModel';
 import { Request, Response } from 'express';
+
+import Chat from '../../models/ChatModel';
+import { systemLogs } from '../../utils/Logger';
 
 const getChatById = async (req: Request, res: Response) => {
     const { chatId } = req.params;
@@ -19,8 +21,9 @@ const getChatById = async (req: Request, res: Response) => {
         res.status(200).json({ messages: chat.messages });
     } catch (error) {
         const err = error as Error;
+        systemLogs.error('Error getChatById controller:', error);
         res.status(500).json({
-            message: 'Server Error',
+            message: 'Server Error getChatById',
             error: err.message,
         });
     }

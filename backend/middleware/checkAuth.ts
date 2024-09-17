@@ -1,11 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction, RequestHandler } from 'express';
-import { IUser } from '../types/IUser';
-import User from '../models/UserModel';
 
-export interface CustomRequest extends Request {
-    user?: IUser;
-}
+import User from '../models/UserModel';
+import { RequestWithUser } from '../types/RequestWithUser';
 
 const checkAuth: RequestHandler = async (
     req: Request,
@@ -36,8 +33,8 @@ const checkAuth: RequestHandler = async (
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
-        // (req as CustomRequest).user = user as IUser;
-        (req as CustomRequest).user = user;
+
+        (req as RequestWithUser).user = user;
 
         // req.user = user as IUser;
         next();

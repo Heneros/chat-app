@@ -27,7 +27,6 @@ export const AuthenticatedContent = ({ setSelectedChat, searchTerm }) => {
 
     const chats = searchTerm ? searchResults : allChats?.messages;
 
-
     return (
         <>
             {chats.length > 0 ? (

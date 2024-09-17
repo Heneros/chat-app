@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "server": "nodemon  ",
-    "client": "npm start --prefix frontend",
+    "client": "npm run start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],

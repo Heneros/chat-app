@@ -2,6 +2,8 @@ import asyncHandler from 'express-async-handler';
 import { Request, Response } from 'express';
 import Chat from '../../models/ChatModel';
 
+import { systemLogs } from '../../utils/Logger';
+
 const searchChat = async (req: Request, res: Response) => {
     const { keyword } = req.query;
 
@@ -44,6 +46,7 @@ const searchChat = async (req: Request, res: Response) => {
 
         res.status(200).json(filteredResults);
     } catch (error) {
+        systemLogs.error('Error search controller:', error);
         ///  const err = error as Error;
         res.status(500).json({
             // message: 'Server Error searching chat',
