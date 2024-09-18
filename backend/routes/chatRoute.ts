@@ -1,4 +1,4 @@
-import express, { Router } from 'express';
+import { Router } from 'express';
 import createChat from '../controllers/messages/createChatController';
 import deleteChat from '../controllers/messages/deleteChatController';
 import updateChat from '../controllers/messages/updateChatController';

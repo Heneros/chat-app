@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { BASE_URL } from './../../utils/constants';
+import { BASE_URL } from '../../utils/constants';
 
 const baseQuery = fetchBaseQuery({
     baseUrl: BASE_URL,
@@ -12,7 +12,7 @@ const baseQuery = fetchBaseQuery({
 });
 
 export const apiSlice = createApi({
-    baseQuery: baseQuery,
+    baseQuery,
     tagTypes: ['Chat', 'User'],
     endpoints: (builder) => ({}),
 });

@@ -15,25 +15,8 @@ const io = new Server(server, {
     },
 });
 
-// const userSocketMap = {};
-// export const getReceiverSocketId = (receiverId) => {
-//     return userSocketMap[receiverId];
-// };
-
 io.on('connection', async (socket) => {
-    console.log('user connected', socket.id);
-
-    const objectSocketHandShake = socket.handshake;
-    // console.log(objectSocketHandShake);
-
-    const userId = socket.handshake.query.userId;
-
-    // if (userId !== 'undefiend') userSocketMap[userId] = socket.id;
-
-    // io.emit('getOnlineUsers', Object.keys(userSocketMap));
-
-    // let roomId;
-
+    // console.log('user connected', socket.id);
     socket.on('join_room', (roomId) => {
         console.log(`User joined room: ${roomId}`);
         socket.join(roomId);
@@ -68,7 +51,7 @@ io.on('connection', async (socket) => {
             const response = await axios.get('https://api.quotable.io/random');
             const apiMessage = response.data.content;
 
-            console.log(apiMessage);
+            // console.log(apiMessage);
             io.to(chatId).emit(`receiveMessage:${chatId}`, {
                 text: apiMessage,
                 sender: 'api',
@@ -82,23 +65,14 @@ io.on('connection', async (socket) => {
                 text: apiMessage,
                 sender: chatId,
             };
-            if(chat){
-             chat.messages.push(newMessage);
-            await chat.save();
+            if (chat) {
+                chat.messages.push(newMessage);
+                await chat.save();
             }
-       
         } catch (error) {
             console.error('API request failed:', error);
         }
     });
-
-    // socket.on('disconnect', () => {
-    //     console.log('user disconnected', socket.id);
-
-    //     delete userSocketMap[userId];
-
-    //     io.emit('getOnlineUsers', Object.keys(userSocketMap));
-    // });
 });
 
 export { app, io, server };

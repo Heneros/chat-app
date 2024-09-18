@@ -1,23 +1,30 @@
 module.exports = {
+    root: true,
     env: {
         browser: true,
         es2021: true,
         node: true,
+        jest: true,
     },
     extends: [
         'plugin:react/recommended',
         'airbnb',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
+        'prettier',
     ],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
+        project: 'tsconfig.json',
+        tsconfigRootDir: __dirname,
+        sourceType: 'module',
         ecmaFeatures: {
             jsx: true,
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    parser: '@typescript-eslint/parser',
+
     plugins: ['react', '@typescript-eslint'],
     rules: {
         'no-unused-vars': 'off',
@@ -50,5 +57,6 @@ module.exports = {
         'no-param-reassign': 'off',
         'operator-linebreak': 'off',
         'object-curly-newline': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
     },
 };

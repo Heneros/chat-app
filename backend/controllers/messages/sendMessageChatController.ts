@@ -1,8 +1,8 @@
 import asyncHandler from 'express-async-handler';
 import mongoose from 'mongoose';
+import { Request, Response } from 'express';
 import Chat from '../../models/ChatModel';
 import { io } from '../../socket/socket';
-import { Request, Response } from 'express';
 import { RequestWithUser } from '../../types/RequestWithUser';
 
 const fallbackQuotes = [

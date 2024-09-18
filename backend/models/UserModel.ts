@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 import validator from 'validator';
-import { IUser } from './../types/IUser';
+import { IUser } from '../types/IUser';
 
 // const { Schema } = mongoose;
 

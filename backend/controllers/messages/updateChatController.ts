@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { io } from '../../socket/socket';
 import Chat from '../../models/ChatModel';
 import { systemLogs } from '../../utils/Logger';
+
 const updateChat = async (req: Request, res: Response) => {
     const { chatId } = req.params;
     const { firstName, lastName } = req.body;

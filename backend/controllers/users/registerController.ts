@@ -2,11 +2,11 @@ import asyncHandler from 'express-async-handler';
 import fs from 'fs';
 import path from 'path';
 import jwt from 'jsonwebtoken';
+import { Request, Response } from 'express';
 import { systemLogs } from '../../utils/Logger';
 import User from '../../models/UserModel';
 import Chat from '../../models/ChatModel';
 import { ChatData } from '../../types/ChatData';
-import { Request, Response } from 'express';
 
 const predefineChats = JSON.parse(
     fs.readFileSync(path.resolve('backend/data/defaultChats.json')).toString(),
