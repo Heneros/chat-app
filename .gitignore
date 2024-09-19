@@ -3,3 +3,4 @@ features.txt
 .env
 package-lock.json
 dist
+coverage
