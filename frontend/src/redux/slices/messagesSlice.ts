@@ -1,6 +1,6 @@
 import { apiSlice } from './apiSlice';
 
-import { CHAT_URL } from '../../utils/constants';
+import { CHAT_URL } from '../../shared/utils/constants';
 
 export const chatApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({

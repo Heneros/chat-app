@@ -1,6 +1,6 @@
 import { apiSlice } from './apiSlice';
 
-import { AUTH_URL } from '../../utils/constants';
+import { AUTH_URL } from '../../shared/utils/constants';
 import { logout } from './auth';
 
 export const userApiSlice = apiSlice.injectEndpoints({

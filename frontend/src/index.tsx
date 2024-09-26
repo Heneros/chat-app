@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 import './index.css';
-
-import { Layout } from './pages/Layout/Layout';
-import { Homepage } from './pages/Homepage/Homepage';
-import { Provider } from 'react-redux';
 import store from './redux/store';
+import { Layout } from './app/Layout/Layout';
+
+import { Homepage } from './pages/Homepage/Homepage';
 
 const router = createBrowserRouter([
     {
@@ -25,13 +24,17 @@ const router = createBrowserRouter([
     },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
-        <HelmetProvider>
-            <Provider store={store}>
-                <RouterProvider router={router} />
-            </Provider>
-        </HelmetProvider>
-    </React.StrictMode>,
-);
+const container = document.querySelector('#root') as HTMLElement;
+const root = createRoot(container);
+
+if (root) {
+    root.render(
+        <React.StrictMode>
+            <HelmetProvider>
+                <Provider store={store}>
+                    <RouterProvider router={router} />
+                </Provider>
+            </HelmetProvider>
+        </React.StrictMode>,
+    );
+}

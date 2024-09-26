@@ -1,31 +1,30 @@
 import React from 'react';
 import './Chat.css';
+import { getErrorMessage } from 'shared/utils/getErrorMessage';
+import { ChatType } from 'shared/types';
+
 import { useDeleteChatMutation } from '../../redux/slices/messagesSlice';
 
-export const Chat = ({
+export const Chat: React.FC<ChatType> = ({
     firstName,
     lastName,
-    messages,
     onClick,
-    chat,
-    text,
     firstThreeMessages,
     _id,
     setSelectedChat,
 }) => {
     const [deleteChat, { isLoading, error }] = useDeleteChatMutation();
-    const deleteChatFunction = async (chatId) => {
+    const deleteChatFunction = async (chatId: string) => {
         try {
             if (window.confirm('Delete this chat?')) {
                 await deleteChat(chatId).unwrap();
-                setSelectedChat(null);
+                //    setSelectedChat?.(null);
+                setSelectedChat?.(null);
             }
         } catch (error) {
             console.error(error);
         }
     };
-
-    // console.log(firstThreeMessages);
     return (
         <div className="chat-member" onClick={onClick}>
             <div className="chat-member__wrapper" data-online="true">
@@ -47,7 +46,7 @@ export const Chat = ({
                 {isLoading ? (
                     <span>Deleting...</span>
                 ) : error ? (
-                    <span>Error: {error.message}</span>
+                    <span>Error: {getErrorMessage(message)}</span>
                 ) : (
                     <button
                         className="delete-button"

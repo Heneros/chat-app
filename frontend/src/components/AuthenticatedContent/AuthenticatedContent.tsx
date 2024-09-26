@@ -1,11 +1,20 @@
 import React from 'react';
-import { Chat } from '../Chat/Chat';
+import { getErrorMessage } from 'shared/utils/getErrorMessage';
+
 import {
     useGetAllChatQuery,
     useSearchChatQuery,
 } from '../../redux/slices/messagesSlice';
 
-export const AuthenticatedContent = ({ setSelectedChat, searchTerm }) => {
+interface AuthenticatedContentProps {
+    setSelectedChat: (chat: any) => void;
+    searchTerm: string;
+}
+
+export const AuthenticatedContent: React.FC<AuthenticatedContentProps> = ({
+    setSelectedChat,
+    searchTerm,
+}) => {
     const {
         data: searchResults,
         isLoading: isSearching,
@@ -23,30 +32,30 @@ export const AuthenticatedContent = ({ setSelectedChat, searchTerm }) => {
 
     if (isLoading || isSearching) return <div>Loading...</div>;
     if (error || searchError)
-        return <div>Error: {error?.message || searchError?.message}</div>;
+        return (
+            <div>
+                Error: {getErrorMessage(error) || getErrorMessage(searchError)}
+            </div>
+        );
 
     const chats = searchTerm ? searchResults : allChats?.messages;
 
-    return (
-        <>
-            {chats.length > 0 ? (
-                chats.map((chat, index) => {
-                    const firstThreeMessages = chat.messages
-                        .slice(0, 3)
-                        .map((message) => message.text);
-                    return (
-                        <Chat
-                            key={index}
-                            {...chat}
-                            onClick={() => setSelectedChat(chat)}
-                            setSelectedChat={setSelectedChat}
-                            firstThreeMessages={firstThreeMessages}
-                        />
-                    );
-                })
-            ) : (
-                <div>No messages found</div>
-            )}
-        </>
+    return chats.length > 0 ? (
+        chats.map((chat, index) => {
+            const firstThreeMessages = chat.messages
+                .slice(0, 3)
+                .map((message) => message.text);
+            return (
+                <Chat
+                    key={index}
+                    {...chat}
+                    onClick={() => setSelectedChat(chat)}
+                    setSelectedChat={setSelectedChat}
+                    firstThreeMessages={firstThreeMessages}
+                />
+            );
+        })
+    ) : (
+        <div>No messages found</div>
     );
 };

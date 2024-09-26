@@ -22,7 +22,6 @@ module.exports = {
             jsx: true,
         },
         ecmaVersion: 'latest',
-        sourceType: 'module',
     },
 
     plugins: ['react', '@typescript-eslint'],
@@ -31,7 +30,7 @@ module.exports = {
         'react/jsx-filename-extension': [
             2,
             {
-                extensions: ['.js', '.jsx'],
+                extensions: ['.js', '.tsx', '.ts', '.jsx'],
             },
         ],
         'react/function-component-definition': 'off',
@@ -58,5 +57,9 @@ module.exports = {
         'operator-linebreak': 'off',
         'object-curly-newline': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+        'prettier/prettier': 'off',
+        'react/self-closing-comp': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
     },
 };

@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -13,6 +13,15 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            app: path.resolve(__dirname, 'src/app'),
+            entities: path.resolve(__dirname, 'src/entities'),
+            features: path.resolve(__dirname, 'src/features'),
+            pages: path.resolve(__dirname, 'src/pages'),
+            shared: path.resolve(__dirname, 'src/shared'),
+            widgets: path.resolve(__dirname, 'src/widgets'),
+        },
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,66 +1,7 @@
 {
-  stringValue: '"undefined"',
-  messageFormat: undefined,
-  kind: 'ObjectId',
-  value: 'undefined',
-  path: '_id',
-  reason: BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
-      at new ObjectId (D:\Projects\chat-app\node_modules\bson\src\objectid.ts:118:15)
-      at castObjectId (D:\Projects\chat-app\node_modules\mongoose\lib\cast\objectid.js:25:12)
-      at SchemaObjectId.cast (D:\Projects\chat-app\node_modules\mongoose\lib\schema\objectId.js:248:12)
-      at SchemaObjectId.SchemaType.applySetters (D:\Projects\chat-app\node_modules\mongoose\lib\schemaType.js:1236:12)
-      at SchemaObjectId.SchemaType.castForQuery (D:\Projects\chat-app\node_modules\mongoose\lib\schemaType.js:1653:17)
-      at cast (D:\Projects\chat-app\node_modules\mongoose\lib\cast.js:375:32)
-      at model.Query.Query.cast (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:4857:12)
-      at model.Query.Query._castConditions (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:2265:10)
-      at model.Query._findOne (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:2585:8)
-      at model.Query.exec (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:4401:80),
-  valueType: 'string',
-  level: 'error',
-  message: 'Error getChatById controller: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Chat"',
-  stack: 'CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Chat"\n' +
-    '    at SchemaObjectId.cast (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\schema\\objectId.js:250:11)\n' +
-    '    at SchemaObjectId.SchemaType.applySetters (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\schemaType.js:1236:12)\n' +
-    '    at SchemaObjectId.SchemaType.castForQuery (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\schemaType.js:1653:17)\n' +
-    '    at cast (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\cast.js:375:32)\n' +
-    '    at model.Query.Query.cast (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:4857:12)\n' +
-    '    at model.Query.Query._castConditions (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:2265:10)\n' +
-    '    at model.Query._findOne (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:2585:8)\n' +
-    '    at model.Query.exec (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:4401:80)\n' +
-    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
-  timestamp: '2024-09-18 08:31:50.285 AM'
-}
-{
-  stringValue: '"undefined"',
-  messageFormat: undefined,
-  kind: 'ObjectId',
-  value: 'undefined',
-  path: '_id',
-  reason: BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
-      at new ObjectId (D:\Projects\chat-app\node_modules\bson\src\objectid.ts:118:15)
-      at castObjectId (D:\Projects\chat-app\node_modules\mongoose\lib\cast\objectid.js:25:12)
-      at SchemaObjectId.cast (D:\Projects\chat-app\node_modules\mongoose\lib\schema\objectId.js:248:12)
-      at SchemaObjectId.SchemaType.applySetters (D:\Projects\chat-app\node_modules\mongoose\lib\schemaType.js:1236:12)
-      at SchemaObjectId.SchemaType.castForQuery (D:\Projects\chat-app\node_modules\mongoose\lib\schemaType.js:1653:17)
-      at cast (D:\Projects\chat-app\node_modules\mongoose\lib\cast.js:375:32)
-      at model.Query.Query.cast (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:4857:12)
-      at model.Query.Query._castConditions (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:2265:10)
-      at model.Query._findOne (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:2585:8)
-      at model.Query.exec (D:\Projects\chat-app\node_modules\mongoose\lib\query.js:4401:80),
-  valueType: 'string',
-  level: 'error',
-  message: 'Error getChatById controller: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Chat"',
-  stack: 'CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Chat"\n' +
-    '    at SchemaObjectId.cast (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\schema\\objectId.js:250:11)\n' +
-    '    at SchemaObjectId.SchemaType.applySetters (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\schemaType.js:1236:12)\n' +
-    '    at SchemaObjectId.SchemaType.castForQuery (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\schemaType.js:1653:17)\n' +
-    '    at cast (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\cast.js:375:32)\n' +
-    '    at model.Query.Query.cast (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:4857:12)\n' +
-    '    at model.Query.Query._castConditions (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:2265:10)\n' +
-    '    at model.Query._findOne (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:2585:8)\n' +
-    '    at model.Query.exec (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:4401:80)\n' +
-    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
-  timestamp: '2024-09-18 08:55:11.474 AM'
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 08:49:02.891 AM'
 }
 {
   stringValue: '"undefined"',
@@ -415,6 +356,11 @@
   timestamp: '2024-09-26 09:18:09.631 AM'
 }
 {
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 09:24:16.219 AM'
+}
+{
   stringValue: '"undefined"',
   messageFormat: undefined,
   kind: 'ObjectId',
@@ -605,4 +551,74 @@
     '    at model.Query.exec (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\query.js:4401:80)\n' +
     '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
   timestamp: '2024-09-26 09:26:41.761 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 10:35:35.082 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:34:55.742 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:37:20.642 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:40:57.355 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:42:00.352 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:42:34.726 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:46:29.439 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:48:10.774 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 11:48:41.262 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 12:06:09.130 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 12:11:23.130 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 12:13:23.372 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 12:13:39.648 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-26 12:16:10.957 PM'
 }
