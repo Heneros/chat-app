@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ChatHeader.css';
-import { useUpdateChatMutation } from '../../redux/slices/messagesSlice';
+import { useUpdateChatMutation } from '../../features/messages/messagesSlice';
 import { io } from 'socket.io-client';
 
 const socket = io('http://localhost:3000');

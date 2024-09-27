@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { apiSlice } from './slices/apiSlice';
-import { authReducer } from './slices/auth';
+import { apiSlice } from './apiSlice';
+import { authReducer } from '@/features/auth/auth';
 
 const store = configureStore({
     reducer: {
@@ -9,7 +9,6 @@ const store = configureStore({
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(apiSlice.middleware),
-    credentials: 'include',
 });
 
 export default store;

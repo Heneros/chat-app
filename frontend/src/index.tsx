@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 import './index.css';
-import store from './redux/store';
-import { Layout } from './app/Layout/Layout';
+import store from './features/api/store';
+import { Layout } from './pages/Layout/Layout';
 
 import { Homepage } from './pages/Homepage/Homepage';
 

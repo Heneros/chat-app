@@ -1,16 +1,17 @@
 {
     "extends": "../tsconfig.json",
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": "./",
         "jsx": "react",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "strict": true,
         "module": "esnext",
+        "target": "ES2020",
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "noEmit": true,
+        "noEmit": false,
         "paths": {
             "@/*": [
                 "src/*"
@@ -36,9 +37,15 @@
         }
     },
     "include": [
-        "src"
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ],
     "exclude": [
         "node_modules"
-    ]
+    ],
+    "references": [
+        {
+            "path": "../"
+        }
+    ],
 }

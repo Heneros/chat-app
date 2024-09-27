@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import './Homepage.css';
 import { TopBar } from '../../components/TopBar/TopBar';
-import { selectCurrentUserToken } from '../../redux/slices/auth';
+import { selectCurrentUserToken } from '../../features/auth/auth';
 import { AuthenticatedContent } from '../../components/AuthenticatedContent/AuthenticatedContent';
 import { ChatRoom } from '../../components/ChatRoom/ChatRoom';
 

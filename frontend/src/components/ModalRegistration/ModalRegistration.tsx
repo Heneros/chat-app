@@ -3,8 +3,8 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 
 import './ModalRegistration.css';
-import { useRegistrationMutation } from '../../redux/slices/userApiSlice';
-import { logIn } from '../../redux/slices/auth';
+import { useRegistrationMutation } from '@/features/user/userApiSlice';
+import { logIn } from '@/features/auth/auth';
 
 export const ModalRegistration = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();

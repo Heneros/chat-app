@@ -6,8 +6,8 @@ import './TopBar.css';
 import { ModalLogin } from '../ModalLogin/ModalLogin';
 import { ModalRegistration } from '../ModalRegistration/ModalRegistration';
 import { useSelector } from 'react-redux';
-import { selectCurrentUserToken } from '../../redux/slices/auth';
-import { useLogoutMutation } from '../../redux/slices/userApiSlice';
+import { selectCurrentUserToken } from '../../features/auth/auth';
+import { useLogoutMutation } from '@/features/user/userApiSlice';
 
 export const TopBar = ({ setSearchTerm }) => {
     const token = useSelector(selectCurrentUserToken);

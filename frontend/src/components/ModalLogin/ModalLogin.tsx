@@ -3,9 +3,8 @@ import './ModalLogin.css';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-
-import { useLoginMutation } from '../../redux/slices/userApiSlice';
-import { logIn } from '../../redux/slices/auth';
+import { useLoginMutation } from '@/features/user/userApiSlice';
+import { logIn } from '@/features/auth/auth';
 
 export const ModalLogin = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();

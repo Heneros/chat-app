@@ -1,7 +1,6 @@
-import { apiSlice } from './apiSlice';
-
-import { AUTH_URL } from '../../shared/utils/constants';
-import { logout } from './auth';
+import { AUTH_URL } from '@/shared/utils/constants';
+import { logout } from '../auth/auth';
+import { apiSlice } from '../api/apiSlice';
 
 export const userApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
@@ -10,7 +9,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 url: `${AUTH_URL}/logout`,
                 method: 'GET',
             }),
-            async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+            async onQueryStarted(arg, { dispatch }) {
                 try {
                     dispatch(logout());
                     dispatch(apiSlice.util.resetApiState());
@@ -37,7 +36,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 method: 'POST',
                 credentials: 'include',
             }),
-            providesTags: ['User'],
+            invalidatesTags: [{ type: 'User' }],
         }),
     }),
 });

@@ -4,7 +4,7 @@ import { getErrorMessage } from 'shared/utils/getErrorMessage';
 import {
     useGetAllChatQuery,
     useSearchChatQuery,
-} from '../../redux/slices/messagesSlice';
+} from '../../features/messages/messagesSlice';
 
 interface AuthenticatedContentProps {
     setSelectedChat: (chat: any) => void;

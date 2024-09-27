@@ -3,7 +3,7 @@ import './Chat.css';
 import { getErrorMessage } from 'shared/utils/getErrorMessage';
 import { ChatType } from 'shared/types';
 
-import { useDeleteChatMutation } from '../../redux/slices/messagesSlice';
+import { useDeleteChatMutation } from '../../features/messages/messagesSlice';
 
 export const Chat: React.FC<ChatType> = ({
     firstName,

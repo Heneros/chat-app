@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false
+    },
+    "include": [
+        "frontend/src/**/*.ts",
+        "frontend/src/**/*.tsx",
+        "test/**/*.ts",
+    ]
+}

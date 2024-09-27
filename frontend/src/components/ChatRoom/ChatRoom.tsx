@@ -3,9 +3,8 @@ import { io } from 'socket.io-client';
 import {
     useGetByIdChatQuery,
     useSendMessageToChatMutation,
-    useUpdateChatMutation,
-} from '../../redux/slices/messagesSlice';
-import { selectCurrentUserToken } from '../../redux/slices/auth';
+} from '../../features/messages/messagesSlice';
+import { selectCurrentUserToken } from '../../features/auth/auth';
 
 import './ChatRoom.css';
 import { decodeToken } from 'react-jwt';

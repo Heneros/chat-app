@@ -58,7 +58,7 @@
     "outDir": "./dist/", /* Specify an output folder for all emitted files. */
     "baseUrl": "./",
     // "removeComments": true,                           /* Disable emitting comments. */
-    // "noEmit": true,                                   /* Disable emitting files from a compilation. */
+    //  "noEmit": true, /* Disable emitting files from a compilation. */
     // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
     // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
     // "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */
@@ -110,7 +110,7 @@
   },
   "references": [
     {
-      "path": "./frontend"
+      "path": "./frontend/tsconfig.json"
     }
   ],
   "include": [
