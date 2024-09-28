@@ -1,0 +1,10 @@
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-28 09:06:36.292 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-28 09:50:39.704 AM'
+}

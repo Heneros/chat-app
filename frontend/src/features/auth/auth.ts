@@ -13,7 +13,7 @@ if (user) {
 }
 
 interface AuthSlice {
-    user: User;
+    user: User | null;
 }
 
 const initialState = {
@@ -21,6 +21,7 @@ const initialState = {
     data: null,
     status: 'loading',
 };
+
 const userSlice = createSlice({
     name: 'auth',
     initialState,

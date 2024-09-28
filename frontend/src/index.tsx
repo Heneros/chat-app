@@ -8,7 +8,7 @@ import './index.css';
 import store from './features/api/store';
 import { Layout } from './pages/Layout/Layout';
 
-import { Homepage } from './pages/Homepage/Homepage';
+import { Homepage } from './entities/Homepage/Homepage';
 
 const router = createBrowserRouter([
     {

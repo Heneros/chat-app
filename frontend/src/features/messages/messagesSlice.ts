@@ -1,15 +1,17 @@
 import { CHAT_URL } from '@/shared/utils/constants';
 import { apiSlice } from '../api/apiSlice';
 
+
+
 export const chatApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         createChat: builder.mutation({
-            query: (data) => ({
+            query: () => ({
                 url: `${CHAT_URL}`,
                 method: 'POST',
-                credentials: true,
+                credentials: 'include',
             }),
-            providesTags: ['Chat'],
+            invalidatesTags: ['Chat'],
         }),
         getAllChat: builder.query({
             query: () => ({
@@ -49,7 +51,7 @@ export const chatApiSlice = apiSlice.injectEndpoints({
                 body: { message },
                 ///  credentials: 'include',
             }),
-            providesTags: ['Chat'],
+            invalidatesTags: ['Chat'],
         }),
         searchChat: builder.query({
             query: (keyword) => ({
