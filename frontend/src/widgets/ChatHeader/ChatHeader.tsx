@@ -1,10 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import './ChatHeader.css';
-import { useUpdateChatMutation } from '../../features/messages/messagesSlice';
 import { io } from 'socket.io-client';
+import './ChatHeader.css';
+
+import { ChatType } from '@/shared/types';
+import { useUpdateChatMutation } from '@/features/messages/messagesSlice';
 
 const socket = io('http://localhost:3000');
-export const ChatHeader = ({ selectedChat, chatId }) => {
+
+// interface ChatHeader extends Omit<ChatType, 'messages'> {
+//     selectedChat: ChatType | null;
+//     chatId: string;
+// }
+interface ChatHeaderProps {
+    selectedChat: ChatType | null;
+    chatId: string;
+}
+
+export const ChatHeader: React.FC<ChatHeaderProps> = ({
+    selectedChat,
+    chatId,
+}) => {
     const [editMode, setEditMode] = useState(false);
     const [chatName, setChatName] = useState({ firstName: '', lastName: '' });
     const [updateChat] = useUpdateChatMutation();
@@ -19,7 +34,7 @@ export const ChatHeader = ({ selectedChat, chatId }) => {
     }, [selectedChat]);
 
     useEffect(() => {
-        const handleChatUpdated = (updatedChat) => {
+        const handleChatUpdated = (updatedChat: ChatType) => {
             if (updatedChat._id === chatId) {
                 setChatName({
                     firstName: updatedChat.firstName,
@@ -79,15 +94,21 @@ export const ChatHeader = ({ selectedChat, chatId }) => {
                         }
                         placeholder="Last Name"
                     />
-                    <button onClick={handleUpdateChat}>Save</button>
-                    <button onClick={() => setEditMode(false)}>Cancel</button>
+                    <button type="submit" onClick={handleUpdateChat}>
+                        Save
+                    </button>
+                    <button type="submit" onClick={() => setEditMode(false)}>
+                        Cancel
+                    </button>
                 </>
             ) : (
                 <>
                     <h1>
                         {chatName.firstName} {chatName.lastName}
                     </h1>
-                    <button onClick={() => setEditMode(true)}>Edit</button>
+                    <button type="submit" onClick={() => setEditMode(true)}>
+                        Edit
+                    </button>
                 </>
             )}
         </div>

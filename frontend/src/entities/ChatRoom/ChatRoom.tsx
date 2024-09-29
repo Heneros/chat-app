@@ -49,41 +49,31 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
             const [sendMessage] = useSendMessageToChatMutation();
 
             const [newMessage, setNewMessage] = useState('');
-            const [allMessages, setAllMessages] = useState<ChatType[]>([]);
+            const [allMessages, setAllMessages] = useState<Message[]>([]);
 
             const handleReceiveMessage = useCallback((data: Message) => {
-                setAllMessages((prevMessages) => {
-                    if (prevMessages) {
-                        return {
-                            ...prevMessages,
-                            messages: [...prevMessages.messages, data],
-                        };
-                    }
-                    return prevMessages;
-                });
+                setAllMessages((prevMessages) => [...prevMessages, data]);
+                // setAllMessages((prevMessages) => {
+                //     if (prevMessages) {
+                //         return {
+                //             ...prevMessages,
+                //             messages: [...prevMessages.messages, data],
+                //         };
+                //     }
+                //     return prevMessages;
+                // });
             }, []);
-          
+
             useEffect(() => {
                 if (chatId) {
                     socket.emit('leave_room', socket.previousRoom);
                     socket.emit('join_room', chatId);
-
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
+    
                     if (chatData && Array.isArray(chatData.messages)) {
                         setAllMessages(chatData.messages);
                     }
-                    // if (
-                    //     chatData &&
-                    //     chatData.messages &&
-                    //     Array.isArray(chatData.messages)
-                    // ) {
-                    //     // setAllMessages([...chatData.messages]);
-                    //     setAllMessages({
-                    //         ...chatData,
-                    //         messages: [...chatData.messages],
-                    //     });
-                    // }
 
                     return () => {
                         if (chatId) {
@@ -128,21 +118,21 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                                     <div className="messageList">
                                         {allMessages &&
                                         Array.isArray(allMessages) ? (
-                                            allMessages?.map((msg) => (
-                                                <div
-                                                    key={msg._id}
-                                                    className={`message ${
-                                                        msg.sender === userId
-                                                            ? 'sent'
-                                                            : 'received'
-                                                    }`}
-                                                >
-                                                    {msg.text}
-                                                </div>
-                                            ))
-                                        ) : (
-                                            <div>No messages yet...</div>
-                                        )}
+                                                allMessages?.map((msg) => (
+                                                    <div
+                                                        key={msg._id}
+                                                        className={`message ${
+                                                            msg.sender === userId
+                                                                ? 'sent'
+                                                                : 'received'
+                                                        }`}
+                                                    >
+                                                        {msg.text}
+                                                    </div>
+                                                ))
+                                            ) : (
+                                                <div>No messages yet...</div>
+                                            )}
                                     </div>
                                 )}
                             </div>

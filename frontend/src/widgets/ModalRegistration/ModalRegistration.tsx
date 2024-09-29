@@ -5,8 +5,10 @@ import { useDispatch } from 'react-redux';
 import './ModalRegistration.css';
 import { useRegistrationMutation } from '@/features/user/userApiSlice';
 import { logIn } from '@/features/auth/auth';
+import { getErrorMessage } from '@/shared/utils/getErrorMessage';
+import { ChatModal } from '@/shared/types';
 
-export const ModalRegistration = ({ isOpen, onClose }) => {
+export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
 
     const [registerUser, { isLoading, isSuccess, error: errorReg }] =
@@ -21,65 +23,55 @@ export const ModalRegistration = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
-        <>
-            <Formik
-                initialValues={{
-                    username: '',
-                    email: '',
-                    firstName: '',
-                    lastName: '',
-                    password: '',
-                    passwordConfirm: '',
-                    submit: null,
-                }}
-                onSubmit={async (values, { setStatus, setSubmitting }) => {
-                    try {
-                        const getUserCredentials =
-                            await registerUser(values).unwrap();
-                        //   alert(`User registred ${getUserCredentials.username}`);
-                        dispatch(
-                            logIn({
-                                ...getUserCredentials,
-                            }),
-                        );
-                        setSubmitting(false);
-                        setStatus({ success: true });
-                        // console.log('Success!');
-                    } catch (error) {
-                        console.log(error);
+        <Formik
+            initialValues={{
+                username: '',
+                email: '',
+                firstName: '',
+                lastName: '',
+                password: '',
+                passwordConfirm: '',
+                submit: null,
+            }}
+            onSubmit={async (values, { setStatus, setSubmitting }) => {
+                try {
+                    const getUserCredentials =
+                        await registerUser(values).unwrap();
+                    //   alert(`User registred ${getUserCredentials.username}`);
+                    dispatch(
+                        logIn({
+                            ...getUserCredentials,
+                        }),
+                    );
+                    setSubmitting(false);
+                    setStatus({ success: true });
+                    // console.log('Success!');
+                } catch (error) {
+                    console.log(error);
 
-                        // console.log('Error!');
-                        setStatus({ success: false });
-                        setSubmitting(false);
-                    }
-                }}
-            >
-                {({
-                    errors,
-                    values,
-                    handleSubmit,
-                    handleChange,
-                    isSubmitting,
-                }) => (
-                    <div className="modal-overlay" onClick={onClose}>
-                        <div
-                            className="modal"
-                            onClick={(e) => e.stopPropagation()}
+                    // console.log('Error!');
+                    setStatus({ success: false });
+                    setSubmitting(false);
+                }
+            }}
+        >
+            {({ errors, values, handleSubmit, handleChange, isSubmitting }) => (
+                <div className="modal-overlay" onClick={onClose}>
+                    <div className="modal" onClick={(e) => e.stopPropagation()}>
+                        <h2>Registration</h2>
+                        <form
+                            noValidate
+                            autoComplete="off"
+                            onSubmit={handleSubmit}
                         >
-                            <h2>Registration</h2>
-                            <form
-                                noValidate
-                                autoComplete="off"
-                                onSubmit={handleSubmit}
-                            >
-                                {errorReg && (
-                                    <div className="error-message">
-                                        {errorReg?.data?.message ||
-                                            'Error during registration'}
-                                    </div>
-                                )}
-                                <div className="form-group">
-                                    <label htmlFor="username">Username</label>
+                            {errorReg && (
+                                <div className="error-message">
+                                    {getErrorMessage(errorReg)}
+                                </div>
+                            )}
+                            <div className="form-group">
+                                <label htmlFor="username">
+                                    Username
                                     <input
                                         type="text"
                                         id="username"
@@ -87,9 +79,11 @@ export const ModalRegistration = ({ isOpen, onClose }) => {
                                         value={values.username}
                                         onChange={handleChange}
                                     />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="email">Email</label>
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="email">
+                                    Email
                                     <input
                                         type="email"
                                         id="email"
@@ -97,11 +91,11 @@ export const ModalRegistration = ({ isOpen, onClose }) => {
                                         value={values.email}
                                         onChange={handleChange}
                                     />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="firstName">
-                                        First Name
-                                    </label>
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="firstName">
+                                    First Name
                                     <input
                                         type="text"
                                         id="firstName"
@@ -109,9 +103,11 @@ export const ModalRegistration = ({ isOpen, onClose }) => {
                                         value={values.firstName}
                                         onChange={handleChange}
                                     />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="lastName">Last Name</label>
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="lastName">
+                                    Last Name
                                     <input
                                         type="text"
                                         id="lastName"
@@ -119,9 +115,11 @@ export const ModalRegistration = ({ isOpen, onClose }) => {
                                         value={values.lastName}
                                         onChange={handleChange}
                                     />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="password">Password</label>
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="password">
+                                    Password
                                     <input
                                         type="password"
                                         id="password"
@@ -129,11 +127,11 @@ export const ModalRegistration = ({ isOpen, onClose }) => {
                                         value={values.password}
                                         onChange={handleChange}
                                     />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="passwordConfirm">
-                                        Confirm Password
-                                    </label>
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="passwordConfirm">
+                                    Confirm Password
                                     <input
                                         type="password"
                                         id="passwordConfirm"
@@ -141,22 +139,26 @@ export const ModalRegistration = ({ isOpen, onClose }) => {
                                         value={values.passwordConfirm}
                                         onChange={handleChange}
                                     />
-                                </div>
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="btn-submit"
-                                >
-                                    Submit
-                                </button>
-                            </form>
-                            <button className="btn-close" onClick={onClose}>
-                                Close
+                                </label>
+                            </div>
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="btn-submit"
+                            >
+                                Submit
                             </button>
-                        </div>
+                        </form>
+                        <button
+                            type="submit"
+                            className="btn-close"
+                            onClick={onClose}
+                        >
+                            Close
+                        </button>
                     </div>
-                )}
-            </Formik>
-        </>
+                </div>
+            )}
+        </Formik>
     );
 };

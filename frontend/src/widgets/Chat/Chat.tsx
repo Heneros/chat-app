@@ -41,7 +41,9 @@ export const Chat: React.FC<ChatType> = ({
                         {firstName} {lastName}
                     </span>
                     <span className="chat-member__last-message">
-                        {firstThreeMessages.join(', ')}
+                        {firstThreeMessages
+                            ? firstThreeMessages.join(', ')
+                            : ''}
                     </span>
                 </div>
                 {isLoading ? (
