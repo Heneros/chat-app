@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { io } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 import { decodeToken } from 'react-jwt';
-import { useSelector } from 'react-redux';
 import { ChatType } from '@/shared/types';
 
 import './ChatRoom.css';
@@ -12,8 +11,14 @@ import {
 import { selectCurrentUserToken } from '@/features/auth/auth';
 import { ChatHeader } from '@/widgets/ChatHeader/ChatHeader';
 import { useAppSelector } from '@/shared/lib/store';
+import { getErrorMessage } from '@/shared/utils/getErrorMessage';
+import { Message } from '@/shared/types/ChatType';
 
-const socket = io('http://localhost:4000');
+interface SocketWithRoom extends Socket {
+    previousRoom?: string;
+}
+
+const socket: SocketWithRoom = io('http://localhost:4000');
 
 interface ChatRoomProps {
     selectedChat: ChatType;
@@ -33,7 +38,6 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
     } = useGetByIdChatQuery({ chatId });
     const tokenArray = useAppSelector(selectCurrentUserToken);
 
-    // const token = useAppSelector(selectCurrentUserToken);
     const token: string | undefined =
         tokenArray && tokenArray.length > 0 ? tokenArray[0] : undefined;
 
@@ -45,18 +49,20 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
             const [sendMessage] = useSendMessageToChatMutation();
 
             const [newMessage, setNewMessage] = useState('');
-            const [allMessages, setAllMessages] = useState([]);
+            const [allMessages, setAllMessages] = useState<ChatType[]>([]);
 
-            const handleReceiveMessage = useCallback((data: ChatType) => {
+            const handleReceiveMessage = useCallback((data: Message) => {
                 setAllMessages((prevMessages) => {
-                    const messageArray = Array.isArray(prevMessages)
-                        ? prevMessages
-                        : [];
-
-                    return [...messageArray, data];
+                    if (prevMessages) {
+                        return {
+                            ...prevMessages,
+                            messages: [...prevMessages.messages, data],
+                        };
+                    }
+                    return prevMessages;
                 });
             }, []);
-
+          
             useEffect(() => {
                 if (chatId) {
                     socket.emit('leave_room', socket.previousRoom);
@@ -64,13 +70,20 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
 
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
-                    if (
-                        chatData &&
-                        chatData.messages &&
-                        Array.isArray(chatData.messages)
-                    ) {
-                        setAllMessages([...chatData.messages]);
+                    if (chatData && Array.isArray(chatData.messages)) {
+                        setAllMessages(chatData.messages);
                     }
+                    // if (
+                    //     chatData &&
+                    //     chatData.messages &&
+                    //     Array.isArray(chatData.messages)
+                    // ) {
+                    //     // setAllMessages([...chatData.messages]);
+                    //     setAllMessages({
+                    //         ...chatData,
+                    //         messages: [...chatData.messages],
+                    //     });
+                    // }
 
                     return () => {
                         if (chatId) {
@@ -80,8 +93,6 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                             );
                         }
                     };
-                } else {
-                    console.log('no chatid');
                 }
             }, [chatId, chatData, handleReceiveMessage]);
 
@@ -90,7 +101,7 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
 
                 try {
                     await sendMessage({
-                        chatId: chatId,
+                        chatId,
                         message: newMessage,
                     }).unwrap();
 
@@ -112,16 +123,14 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                                 {isLoading ? (
                                     <>Loading...</>
                                 ) : error ? (
-                                    <div>
-                                        Error happened:
-                                        {error.message || JSON.stringify(error)}
-                                    </div>
+                                    <div>{getErrorMessage(error)}</div>
                                 ) : (
                                     <div className="messageList">
-                                        {allMessages.length > 0 ? (
-                                            allMessages.map((msg, index) => (
+                                        {allMessages &&
+                                        Array.isArray(allMessages) ? (
+                                            allMessages?.map((msg) => (
                                                 <div
-                                                    key={index}
+                                                    key={msg._id}
                                                     className={`message ${
                                                         msg.sender === userId
                                                             ? 'sent'
@@ -146,7 +155,10 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                                     }
                                     placeholder="Type a message..."
                                 />
-                                <button onClick={handleSendMessage}>
+                                <button
+                                    type="submit"
+                                    onClick={handleSendMessage}
+                                >
                                     Send
                                 </button>
                             </div>

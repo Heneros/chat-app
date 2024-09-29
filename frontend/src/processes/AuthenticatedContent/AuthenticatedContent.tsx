@@ -1,10 +1,11 @@
 import React from 'react';
 import { getErrorMessage } from 'shared/utils/getErrorMessage';
-
 import {
     useGetAllChatQuery,
     useSearchChatQuery,
-} from '../../features/messages/messagesSlice';
+} from '@/features/messages/messagesSlice';
+import { ChatType } from '@/shared/types';
+import { Chat } from '@/widgets/Chat/Chat';
 
 interface AuthenticatedContentProps {
     setSelectedChat: (chat: any) => void;
@@ -41,13 +42,13 @@ export const AuthenticatedContent: React.FC<AuthenticatedContentProps> = ({
     const chats = searchTerm ? searchResults : allChats?.messages;
 
     return chats.length > 0 ? (
-        chats.map((chat, index) => {
+        chats.map((chat: ChatType) => {
             const firstThreeMessages = chat.messages
                 .slice(0, 3)
                 .map((message) => message.text);
             return (
                 <Chat
-                    key={index}
+                    key={chat._id}
                     {...chat}
                     onClick={() => setSelectedChat(chat)}
                     setSelectedChat={setSelectedChat}

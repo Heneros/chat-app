@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import './Homepage.css';
-import { TopBar } from '../../components/TopBar/TopBar';
-import { selectCurrentUserToken } from '../../features/auth/auth';
-import { AuthenticatedContent } from '../../processes/AuthenticatedContent/AuthenticatedContent';
+import { selectCurrentUserToken } from '@/features/auth/auth';
+import { TopBar } from '@/widgets/TopBar/TopBar';
+import { AuthenticatedContent } from '@/processes/AuthenticatedContent/AuthenticatedContent';
 import { ChatRoom } from '../ChatRoom/ChatRoom';
+import { ChatType } from '@/shared/types';
 
 export const Homepage = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedChat, setSelectedChat] = useState(null);
+    const [selectedChat, setSelectedChat] = useState<ChatType | null>(null);
 
     const token = useSelector(selectCurrentUserToken);
 
@@ -27,7 +28,7 @@ export const Homepage = () => {
                 )}
             </div>
             <div className="right-side">
-                {token ? (
+                {token && selectedChat ? (
                     <ChatRoom selectedChat={selectedChat} />
                 ) : (
                     <span>Please log in</span>

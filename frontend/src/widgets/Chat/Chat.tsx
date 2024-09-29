@@ -25,6 +25,7 @@ export const Chat: React.FC<ChatType> = ({
             console.error(error);
         }
     };
+
     return (
         <div className="chat-member" onClick={onClick}>
             <div className="chat-member__wrapper" data-online="true">
@@ -46,9 +47,10 @@ export const Chat: React.FC<ChatType> = ({
                 {isLoading ? (
                     <span>Deleting...</span>
                 ) : error ? (
-                    <span>Error: {getErrorMessage(message)}</span>
+                    <span>Error: {getErrorMessage(error) as string}</span>
                 ) : (
                     <button
+                        type="submit"
                         className="delete-button"
                         onClick={(e) => {
                             e.stopPropagation();

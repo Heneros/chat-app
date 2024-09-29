@@ -63,5 +63,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
+        'react/jsx-props-no-spreading': 'warn',
+        'react/react-in-jsx-scope': 'off',
     },
 };
