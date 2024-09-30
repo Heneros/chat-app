@@ -26,6 +26,7 @@ export const Chat: React.FC<ChatType> = ({
         }
     };
 
+    // console.log(firstName);
     return (
         <div className="chat-member" onClick={onClick}>
             <div className="chat-member__wrapper" data-online="true">

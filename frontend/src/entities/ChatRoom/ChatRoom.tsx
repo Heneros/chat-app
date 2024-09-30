@@ -29,7 +29,7 @@ interface DecodedToken {
 }
 
 export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
-    const { _id: chatId } = selectedChat || {};
+    const { _id: chatId } = selectedChat;
 
     const {
         data: chatData,
@@ -38,14 +38,14 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
     } = useGetByIdChatQuery({ chatId });
     const tokenArray = useAppSelector(selectCurrentUserToken);
 
-    const token: string | undefined =
-        tokenArray && tokenArray.length > 0 ? tokenArray[0] : undefined;
+    const token: string | undefined = tokenArray;
 
     if (token) {
         const decodedToken = decodeToken<DecodedToken>(token);
+        // console.log('decodedToken', decodedToken);
         if (decodedToken && 'id' in decodedToken) {
             const { id: userId } = decodedToken;
-
+            // console.log('userId', userId);
             const [sendMessage] = useSendMessageToChatMutation();
 
             const [newMessage, setNewMessage] = useState('');
@@ -53,15 +53,6 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
 
             const handleReceiveMessage = useCallback((data: Message) => {
                 setAllMessages((prevMessages) => [...prevMessages, data]);
-                // setAllMessages((prevMessages) => {
-                //     if (prevMessages) {
-                //         return {
-                //             ...prevMessages,
-                //             messages: [...prevMessages.messages, data],
-                //         };
-                //     }
-                //     return prevMessages;
-                // });
             }, []);
 
             useEffect(() => {
@@ -70,7 +61,7 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                     socket.emit('join_room', chatId);
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
-    
+
                     if (chatData && Array.isArray(chatData.messages)) {
                         setAllMessages(chatData.messages);
                     }
@@ -118,21 +109,21 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                                     <div className="messageList">
                                         {allMessages &&
                                         Array.isArray(allMessages) ? (
-                                                allMessages?.map((msg) => (
-                                                    <div
-                                                        key={msg._id}
-                                                        className={`message ${
-                                                            msg.sender === userId
-                                                                ? 'sent'
-                                                                : 'received'
-                                                        }`}
-                                                    >
-                                                        {msg.text}
-                                                    </div>
-                                                ))
-                                            ) : (
-                                                <div>No messages yet...</div>
-                                            )}
+                                            allMessages?.map((msg) => (
+                                                <div
+                                                    key={msg._id}
+                                                    className={`message ${
+                                                        msg.sender === userId
+                                                            ? 'sent'
+                                                            : 'received'
+                                                    }`}
+                                                >
+                                                    {msg.text}
+                                                </div>
+                                            ))
+                                        ) : (
+                                            <div>No messages yet...</div>
+                                        )}
                                     </div>
                                 )}
                             </div>

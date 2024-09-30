@@ -21,7 +21,7 @@ const getAll = async (req: Request, res: Response) => {
             user: userId,
         });
 
-        res.status(200).json({ messages });
+        return res.status(200).json({ messages });
     } catch (error) {
         systemLogs.error('Server Error get all chat.');
         res.status(500).json({

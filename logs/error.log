@@ -606,3 +606,1725 @@
     '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
   timestamp: '2024-09-26 09:26:41.761 AM'
 }
+{
+  error: Error: Cannot set headers after they are sent to the client
+      at ServerResponse.setHeader (node:_http_outgoing:659:11)
+      at ServerResponse.header (D:\Projects\chat-app\node_modules\express\lib\response.js:794:10)
+      at ServerResponse.send (D:\Projects\chat-app\node_modules\express\lib\response.js:174:12)
+      at ServerResponse.json (D:\Projects\chat-app\node_modules\express\lib\response.js:278:15)
+      at D:\Projects\chat-app\backend\controllers\messages\sendMessageChatController.ts:64:25
+      at Generator.next (<anonymous>)
+      at fulfilled (D:\Projects\chat-app\backend\controllers\messages\sendMessageChatController.ts:5:58)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'unhandledRejection: Cannot set headers after they are sent to the client\n' +
+    'Error: Cannot set headers after they are sent to the client\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:659:11)\n' +
+    '    at ServerResponse.header (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:794:10)\n' +
+    '    at ServerResponse.send (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:174:12)\n' +
+    '    at ServerResponse.json (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:278:15)\n' +
+    '    at D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:64:25\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:5:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  stack: 'Error: Cannot set headers after they are sent to the client\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:659:11)\n' +
+    '    at ServerResponse.header (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:794:10)\n' +
+    '    at ServerResponse.send (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:174:12)\n' +
+    '    at ServerResponse.json (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:278:15)\n' +
+    '    at D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:64:25\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:5:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  rejection: true,
+  date: 'Mon Sep 30 2024 16:55:14 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 51564,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 388149248,
+      heapTotal: 330874880,
+      heapUsed: 314279856,
+      external: 30740527,
+      arrayBuffers: 26636884
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 438066.531 },
+  trace: [
+    {
+      column: 11,
+      file: 'node:_http_outgoing',
+      function: 'ServerResponse.setHeader',
+      line: 659,
+      method: 'setHeader',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js',
+      function: 'ServerResponse.header',
+      line: 794,
+      method: 'header',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js',
+      function: 'ServerResponse.send',
+      line: 174,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 15,
+      file: 'D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js',
+      function: 'ServerResponse.json',
+      line: 278,
+      method: 'json',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts',
+      function: null,
+      line: 64,
+      method: null,
+      native: false
+    },
+    {
+      column: null,
+      file: null,
+      function: 'Generator.next',
+      line: null,
+      method: 'next',
+      native: false
+    },
+    {
+      column: 58,
+      file: 'D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts',
+      function: 'fulfilled',
+      line: 5,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 95,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-09-30 04:55:14.623 PM'
+}
+{
+  error: Error: Cannot set headers after they are sent to the client
+      at ServerResponse.setHeader (node:_http_outgoing:659:11)
+      at ServerResponse.header (D:\Projects\chat-app\node_modules\express\lib\response.js:794:10)
+      at ServerResponse.send (D:\Projects\chat-app\node_modules\express\lib\response.js:174:12)
+      at ServerResponse.json (D:\Projects\chat-app\node_modules\express\lib\response.js:278:15)
+      at D:\Projects\chat-app\backend\controllers\messages\sendMessageChatController.ts:64:25
+      at Generator.next (<anonymous>)
+      at fulfilled (D:\Projects\chat-app\backend\controllers\messages\sendMessageChatController.ts:5:58)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'unhandledRejection: Cannot set headers after they are sent to the client\n' +
+    'Error: Cannot set headers after they are sent to the client\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:659:11)\n' +
+    '    at ServerResponse.header (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:794:10)\n' +
+    '    at ServerResponse.send (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:174:12)\n' +
+    '    at ServerResponse.json (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:278:15)\n' +
+    '    at D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:64:25\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:5:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  stack: 'Error: Cannot set headers after they are sent to the client\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:659:11)\n' +
+    '    at ServerResponse.header (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:794:10)\n' +
+    '    at ServerResponse.send (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:174:12)\n' +
+    '    at ServerResponse.json (D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js:278:15)\n' +
+    '    at D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:64:25\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at fulfilled (D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts:5:58)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  rejection: true,
+  date: 'Mon Sep 30 2024 17:28:10 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 36536,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 383221760,
+      heapTotal: 326942720,
+      heapUsed: 314820416,
+      external: 31942189,
+      arrayBuffers: 27838546
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 440042.093 },
+  trace: [
+    {
+      column: 11,
+      file: 'node:_http_outgoing',
+      function: 'ServerResponse.setHeader',
+      line: 659,
+      method: 'setHeader',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js',
+      function: 'ServerResponse.header',
+      line: 794,
+      method: 'header',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js',
+      function: 'ServerResponse.send',
+      line: 174,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 15,
+      file: 'D:\\Projects\\chat-app\\node_modules\\express\\lib\\response.js',
+      function: 'ServerResponse.json',
+      line: 278,
+      method: 'json',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts',
+      function: null,
+      line: 64,
+      method: null,
+      native: false
+    },
+    {
+      column: null,
+      file: null,
+      function: 'Generator.next',
+      line: null,
+      method: 'next',
+      native: false
+    },
+    {
+      column: 58,
+      file: 'D:\\Projects\\chat-app\\backend\\controllers\\messages\\sendMessageChatController.ts',
+      function: 'fulfilled',
+      line: 5,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 95,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-09-30 05:28:10.186 PM'
+}
+{
+  error: AxiosError: certificate has expired
+      at Function.AxiosError.from (D:\Projects\chat-app\node_modules\axios\lib\core\AxiosError.js:89:14)
+      at RedirectableRequest.handleRequestError (D:\Projects\chat-app\node_modules\axios\lib\adapters\http.js:620:25)
+      at RedirectableRequest.emit (node:events:518:28)
+      at RedirectableRequest.emit (node:domain:488:12)
+      at ClientRequest.eventHandlers.<computed> (D:\Projects\chat-app\node_modules\follow-redirects\index.js:38:24)
+      at ClientRequest.emit (node:events:518:28)
+      at ClientRequest.emit (node:domain:488:12)
+      at TLSSocket.socketErrorListener (node:_http_client:500:9)
+      at TLSSocket.emit (node:events:518:28)
+      at TLSSocket.emit (node:domain:488:12)
+      at Axios.request (D:\Projects\chat-app\node_modules\axios\lib\core\Axios.js:45:41)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'CERT_HAS_EXPIRED',
+    config: {
+      transitional: {
+        silentJSONParsing: true,
+        forcedJSONParsing: true,
+        clarifyTimeoutError: false
+      },
+      adapter: [ 'xhr', 'http', 'fetch' ],
+      transformRequest: [ [Function: transformRequest] ],
+      transformResponse: [ [Function: transformResponse] ],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      env: {
+        FormData: [Function: FormData] {
+          LINE_BREAK: '\r\n',
+          DEFAULT_CONTENT_TYPE: 'application/octet-stream'
+        },
+        Blob: [class Blob]
+      },
+      validateStatus: [Function: validateStatus],
+      headers: Object [AxiosHeaders] {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': undefined,
+        'User-Agent': 'axios/1.7.4',
+        'Accept-Encoding': 'gzip, compress, deflate, br'
+      },
+      method: 'get',
+      url: 'https://api.quotable.io/random',
+      data: undefined
+    },
+    request: <ref *3> Writable {
+      _events: {
+        close: undefined,
+        error: [Function: handleRequestError],
+        prefinish: undefined,
+        finish: undefined,
+        drain: undefined,
+        response: [Function: handleResponse],
+        socket: [Function: handleRequestSocket]
+      },
+      _writableState: WritableState {
+        highWaterMark: 16384,
+        length: 0,
+        corked: 0,
+        onwrite: [Function: bound onwrite],
+        writelen: 0,
+        bufferedIndex: 0,
+        pendingcb: 0,
+        [Symbol(kState)]: 17580812,
+        [Symbol(kBufferedValue)]: null
+      },
+      _maxListeners: undefined,
+      _options: {
+        maxRedirects: 21,
+        maxBodyLength: Infinity,
+        protocol: 'https:',
+        path: '/random',
+        method: 'GET',
+        headers: [Object: null prototype] {
+          Accept: 'application/json, text/plain, */*',
+          'User-Agent': 'axios/1.7.4',
+          'Accept-Encoding': 'gzip, compress, deflate, br'
+        },
+        agents: { http: undefined, https: undefined },
+        auth: undefined,
+        family: undefined,
+        beforeRedirect: [Function: dispatchBeforeRedirect],
+        beforeRedirects: { proxy: [Function: beforeRedirect] },
+        hostname: 'api.quotable.io',
+        port: '',
+        agent: undefined,
+        nativeProtocols: <ref *4> {
+          'http:': {
+            _connectionListener: [Function: connectionListener],
+            METHODS: [
+              'ACL',         'BIND',       'CHECKOUT',
+              'CONNECT',     'COPY',       'DELETE',
+              'GET',         'HEAD',       'LINK',
+              'LOCK',        'M-SEARCH',   'MERGE',
+              'MKACTIVITY',  'MKCALENDAR', 'MKCOL',
+              'MOVE',        'NOTIFY',     'OPTIONS',
+              'PATCH',       'POST',       'PROPFIND',
+              'PROPPATCH',   'PURGE',      'PUT',
+              'REBIND',      'REPORT',     'SEARCH',
+              'SOURCE',      'SUBSCRIBE',  'TRACE',
+              'UNBIND',      'UNLINK',     'UNLOCK',
+              'UNSUBSCRIBE'
+            ],
+            STATUS_CODES: {
+              '100': 'Continue',
+              '101': 'Switching Protocols',
+              '102': 'Processing',
+              '103': 'Early Hints',
+              '200': 'OK',
+              '201': 'Created',
+              '202': 'Accepted',
+              '203': 'Non-Authoritative Information',
+              '204': 'No Content',
+              '205': 'Reset Content',
+              '206': 'Partial Content',
+              '207': 'Multi-Status',
+              '208': 'Already Reported',
+              '226': 'IM Used',
+              '300': 'Multiple Choices',
+              '301': 'Moved Permanently',
+              '302': 'Found',
+              '303': 'See Other',
+              '304': 'Not Modified',
+              '305': 'Use Proxy',
+              '307': 'Temporary Redirect',
+              '308': 'Permanent Redirect',
+              '400': 'Bad Request',
+              '401': 'Unauthorized',
+              '402': 'Payment Required',
+              '403': 'Forbidden',
+              '404': 'Not Found',
+              '405': 'Method Not Allowed',
+              '406': 'Not Acceptable',
+              '407': 'Proxy Authentication Required',
+              '408': 'Request Timeout',
+              '409': 'Conflict',
+              '410': 'Gone',
+              '411': 'Length Required',
+              '412': 'Precondition Failed',
+              '413': 'Payload Too Large',
+              '414': 'URI Too Long',
+              '415': 'Unsupported Media Type',
+              '416': 'Range Not Satisfiable',
+              '417': 'Expectation Failed',
+              '418': "I'm a Teapot",
+              '421': 'Misdirected Request',
+              '422': 'Unprocessable Entity',
+              '423': 'Locked',
+              '424': 'Failed Dependency',
+              '425': 'Too Early',
+              '426': 'Upgrade Required',
+              '428': 'Precondition Required',
+              '429': 'Too Many Requests',
+              '431': 'Request Header Fields Too Large',
+              '451': 'Unavailable For Legal Reasons',
+              '500': 'Internal Server Error',
+              '501': 'Not Implemented',
+              '502': 'Bad Gateway',
+              '503': 'Service Unavailable',
+              '504': 'Gateway Timeout',
+              '505': 'HTTP Version Not Supported',
+              '506': 'Variant Also Negotiates',
+              '507': 'Insufficient Storage',
+              '508': 'Loop Detected',
+              '509': 'Bandwidth Limit Exceeded',
+              '510': 'Not Extended',
+              '511': 'Network Authentication Required'
+            },
+            Agent: [Function: Agent] { defaultMaxSockets: Infinity },
+            ClientRequest: [Function: ClientRequest],
+            IncomingMessage: [Function: IncomingMessage],
+            OutgoingMessage: [Function: OutgoingMessage],
+            Server: [Function: Server],
+            ServerResponse: [Function: ServerResponse],
+            createServer: [Function: createServer],
+            validateHeaderName: [Function: wrappedFn] {
+              withoutStackTrace: [Function (anonymous)]
+            },
+            validateHeaderValue: [Function: wrappedFn] {
+              withoutStackTrace: [Function (anonymous)]
+            },
+            get: [Function: get],
+            request: [Function: request],
+            setMaxIdleHTTPParsers: [Function: setMaxIdleHTTPParsers],
+            maxHeaderSize: [Getter],
+            globalAgent: [Getter/Setter]
+          },
+          'https:': {
+            Agent: [Function: Agent],
+            globalAgent: <ref *2> Agent {
+              _events: [Object: null prototype] {
+                free: [Function (anonymous)],
+                newListener: [Function: maybeEnableKeylog]
+              },
+              _eventsCount: 2,
+              _maxListeners: undefined,
+              defaultPort: 443,
+              protocol: 'https:',
+              options: [Object: null prototype] {
+                keepAlive: true,
+                scheduling: 'lifo',
+                timeout: 5000,
+                noDelay: true,
+                path: null
+              },
+              requests: [Object: null prototype] {},
+              sockets: [Object: null prototype] {
+                'api.quotable.io:443:::::::::::::::::::::': [
+                  <ref *1> TLSSocket {
+                    _tlsOptions: {
+                      allowHalfOpen: undefined,
+                      pipe: false,
+                      secureContext: SecureContext { context: SecureContext {} },
+                      isServer: false,
+                      requestCert: true,
+                      rejectUnauthorized: true,
+                      session: undefined,
+                      ALPNProtocols: undefined,
+                      requestOCSP: undefined,
+                      enableTrace: undefined,
+                      pskCallback: undefined,
+                      highWaterMark: undefined,
+                      onread: undefined,
+                      signal: undefined
+                    },
+                    _secureEstablished: true,
+                    _securePending: false,
+                    _newSessionPending: false,
+                    _controlReleased: true,
+                    secureConnecting: true,
+                    _SNICallback: null,
+                    servername: 'api.quotable.io',
+                    alpnProtocol: false,
+                    authorized: false,
+                    authorizationError: 'CERT_HAS_EXPIRED',
+                    encrypted: true,
+                    _events: [Object: null prototype] {
+                      close: [
+                        [Function: onSocketCloseDestroySSL],
+                        [Function: bound onceWrapper] {
+                          listener: [Function (anonymous)]
+                        },
+                        [Function: onClose],
+                        [Function: socketCloseListener]
+                      ],
+                      end: [
+                        [Function: onConnectEnd],
+                        [Function: onReadableStreamEnd]
+                      ],
+                      error: [Function: socketErrorListener],
+                      newListener: [Function: keylogNewListener],
+                      connect: undefined,
+                      secure: [Function: onConnectSecure],
+                      session: [Function (anonymous)],
+                      free: [Function: onFree],
+                      timeout: [
+                        [Function: onTimeout],
+                        [Function: bound onceWrapper] {
+                          listener: [Function: emitRequestTimeout]
+                        }
+                      ],
+                      agentRemove: [Function: onRemove],
+                      data: undefined,
+                      drain: [Function: ondrain]
+                    },
+                    _eventsCount: 10,
+                    connecting: false,
+                    _hadError: true,
+                    _parent: null,
+                    _host: 'api.quotable.io',
+                    _closeAfterHandlingError: false,
+                    _readableState: ReadableState {
+                      highWaterMark: 16384,
+                      buffer: [],
+                      bufferIndex: 0,
+                      length: 0,
+                      pipes: [],
+                      awaitDrainWriters: null,
+                      [Symbol(kState)]: 59779574,
+                      [Symbol(kErroredValue)]: Error: certificate has expired
+                          at TLSSocket.onConnectSecure (node:_tls_wrap:1674:34)
+                          at TLSSocket.emit (node:events:518:28)
+                          at TLSSocket.emit (node:domain:488:12)
+                          at TLSSocket._finishInit (node:_tls_wrap:1085:8)
+                          at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:871:12) {
+                        code: 'CERT_HAS_EXPIRED'
+                      }
+                    },
+                    _writableState: WritableState {
+                      highWaterMark: 16384,
+                      length: 185,
+                      corked: 0,
+                      onwrite: [Function: bound onwrite],
+                      writelen: 185,
+                      bufferedIndex: 0,
+                      pendingcb: 1,
+                      [Symbol(kState)]: 118260214,
+                      [Symbol(kBufferedValue)]: null,
+                      [Symbol(kWriteCbValue)]: [Function: bound onFinish],
+                      [Symbol(kErroredValue)]: Error: certificate has expired
+                          at TLSSocket.onConnectSecure (node:_tls_wrap:1674:34)
+                          at TLSSocket.emit (node:events:518:28)
+                          at TLSSocket.emit (node:domain:488:12)
+                          at TLSSocket._finishInit (node:_tls_wrap:1085:8)
+                          at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:871:12) {
+                        code: 'CERT_HAS_EXPIRED'
+                      }
+                    },
+                    allowHalfOpen: false,
+                    _maxListeners: undefined,
+                    _sockname: null,
+                    _pendingData: null,
+                    _pendingEncoding: '',
+                    server: undefined,
+                    _server: null,
+                    ssl: null,
+                    _requestCert: true,
+                    _rejectUnauthorized: true,
+                    timeout: 5000,
+                    parser: null,
+                    _httpMessage: ClientRequest {
+                      _events: [Object: null prototype] {
+                        response: [Function: bound onceWrapper] {
+                          listener: [Function (anonymous)]
+                        },
+                        abort: [Function (anonymous)],
+                        aborted: [Function (anonymous)],
+                        connect: [Function (anonymous)],
+                        error: [Function (anonymous)],
+                        socket: [Function (anonymous)],
+                        timeout: [Function (anonymous)]
+                      },
+                      _eventsCount: 7,
+                      _maxListeners: undefined,
+                      outputData: [],
+                      outputSize: 0,
+                      writable: true,
+                      destroyed: false,
+                      _last: true,
+                      chunkedEncoding: false,
+                      shouldKeepAlive: true,
+                      maxRequestsOnConnectionReached: false,
+                      _defaultKeepAlive: true,
+                      useChunkedEncodingByDefault: false,
+                      sendDate: false,
+                      _removedConnection: false,
+                      _removedContLen: false,
+                      _removedTE: false,
+                      strictContentLength: false,
+                      _contentLength: 0,
+                      _hasBody: true,
+                      _trailer: '',
+                      finished: true,
+                      _headerSent: true,
+                      _closed: false,
+                      socket: [Circular *1],
+                      _header: 'GET /random HTTP/1.1\r\n' +
+                        'Accept: application/json, text/plain, */*\r\n' +
+                        'User-Agent: axios/1.7.4\r\n' +
+                        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+                        'Host: api.quotable.io\r\n' +
+                        'Connection: keep-alive\r\n' +
+                        '\r\n',
+                      _keepAliveTimeout: 0,
+                      _onPendingData: [Function: nop],
+                      agent: [Circular *2],
+                      socketPath: undefined,
+                      method: 'GET',
+                      maxHeaderSize: undefined,
+                      insecureHTTPParser: undefined,
+                      joinDuplicateHeaders: undefined,
+                      path: '/random',
+                      _ended: false,
+                      res: null,
+                      aborted: false,
+                      timeoutCb: [Function: emitRequestTimeout],
+                      upgradeOrConnect: false,
+                      parser: null,
+                      maxHeadersCount: null,
+                      reusedSocket: false,
+                      host: 'api.quotable.io',
+                      protocol: 'https:',
+                      _redirectable: [Circular *3],
+                      [Symbol(shapeMode)]: false,
+                      [Symbol(kCapture)]: false,
+                      [Symbol(kBytesWritten)]: 0,
+                      [Symbol(kNeedDrain)]: false,
+                      [Symbol(corked)]: 0,
+                      [Symbol(kOutHeaders)]: [Object: null prototype] {
+                        accept: [
+                          'Accept',
+                          'application/json, text/plain, */*'
+                        ],
+                        'user-agent': [ 'User-Agent', 'axios/1.7.4' ],
+                        'accept-encoding': [
+                          'Accept-Encoding',
+                          'gzip, compress, deflate, br'
+                        ],
+                        host: [ 'Host', 'api.quotable.io' ]
+                      },
+                      [Symbol(errored)]: null,
+                      [Symbol(kHighWaterMark)]: 16384,
+                      [Symbol(kRejectNonStandardBodyWrites)]: false,
+                      [Symbol(kUniqueHeaders)]: null
+                    },
+                    autoSelectFamilyAttemptedAddresses: [ '3.220.57.224:443' ],
+                    [Symbol(alpncallback)]: null,
+                    [Symbol(res)]: TLSWrap {
+                      _parent: TCP {
+                        reading: [Getter/Setter],
+                        onconnection: null,
+                        [Symbol(owner_symbol)]: [Circular *1],
+                        [Symbol(handle_onclose)]: [Function: done]
+                      },
+                      _parentWrap: null,
+                      _secureContext: SecureContext { context: SecureContext {} },
+                      reading: true,
+                      onkeylog: [Function: onkeylog],
+                      onhandshakestart: {},
+                      onhandshakedone: [Function (anonymous)],
+                      onocspresponse: [Function: onocspresponse],
+                      onnewsession: [Function: onnewsessionclient],
+                      onerror: [Function: onerror],
+                      [Symbol(owner_symbol)]: [Circular *1]
+                    },
+                    [Symbol(verified)]: false,
+                    [Symbol(pendingSession)]: null,
+                    [Symbol(async_id_symbol)]: 854,
+                    [Symbol(kHandle)]: null,
+                    [Symbol(lastWriteQueueSize)]: 185,
+                    [Symbol(timeout)]: Timeout {
+                      _idleTimeout: -1,
+                      _idlePrev: null,
+                      _idleNext: null,
+                      _idleStart: 17630,
+                      _onTimeout: null,
+                      _timerArgs: undefined,
+                      _repeat: null,
+                      _destroyed: true,
+                      [Symbol(refed)]: false,
+                      [Symbol(kHasPrimitive)]: false,
+                      [Symbol(asyncId)]: 856,
+                      [Symbol(triggerId)]: 847
+                    },
+                    [Symbol(kBuffer)]: null,
+                    [Symbol(kBufferCb)]: null,
+                    [Symbol(kBufferGen)]: null,
+                    [Symbol(shapeMode)]: true,
+                    [Symbol(kCapture)]: false,
+                    [Symbol(kSetNoDelay)]: false,
+                    [Symbol(kSetKeepAlive)]: true,
+                    [Symbol(kSetKeepAliveInitialDelay)]: 60,
+                    [Symbol(kBytesRead)]: 0,
+                    [Symbol(kBytesWritten)]: 185,
+                    [Symbol(connect-options)]: {
+                      rejectUnauthorized: true,
+                      ciphers: 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA',
+                      checkServerIdentity: [Function: checkServerIdentity],
+                      minDHSize: 1024,
+                      maxRedirects: 21,
+                      maxBodyLength: Infinity,
+                      protocol: 'https:',
+                      path: null,
+                      method: 'GET',
+                      headers: [Object: null prototype] {
+                        Accept: 'application/json, text/plain, */*',
+                        'User-Agent': 'axios/1.7.4',
+                        'Accept-Encoding': 'gzip, compress, deflate, br'
+                      },
+                      agents: { http: undefined, https: undefined },
+                      auth: undefined,
+                      family: undefined,
+                      beforeRedirect: [Function: dispatchBeforeRedirect],
+                      beforeRedirects: { proxy: [Function: beforeRedirect] },
+                      hostname: 'api.quotable.io',
+                      port: 443,
+                      agent: undefined,
+                      nativeProtocols: [Circular *4],
+                      pathname: '/random',
+                      _defaultAgent: [Circular *2],
+                      host: 'api.quotable.io',
+                      keepAlive: true,
+                      scheduling: 'lifo',
+                      timeout: 5000,
+                      noDelay: true,
+                      servername: 'api.quotable.io',
+                      _agentKey: 'api.quotable.io:443:::::::::::::::::::::',
+                      encoding: null,
+                      keepAliveInitialDelay: 1000
+                    }
+                  }
+                ]
+              },
+              freeSockets: [Object: null prototype] {},
+              keepAliveMsecs: 1000,
+              keepAlive: true,
+              maxSockets: Infinity,
+              maxFreeSockets: 256,
+              scheduling: 'lifo',
+              maxTotalSockets: Infinity,
+              totalSocketCount: 1,
+              maxCachedSessions: 100,
+              _sessionCache: { map: {}, list: [] },
+              [Symbol(shapeMode)]: false,
+              [Symbol(kCapture)]: false
+            },
+            Server: [Function: Server],
+            createServer: [Function: createServer],
+            get: [Function: get],
+            request: [Function: request]
+          }
+        },
+        pathname: '/random'
+      },
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 0,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: <ref *5> ClientRequest {
+        _events: [Object: null prototype] {
+          response: [Function: bound onceWrapper] {
+            listener: [Function (anonymous)]
+          },
+          abort: [Function (anonymous)],
+          aborted: [Function (anonymous)],
+          connect: [Function (anonymous)],
+          error: [Function (anonymous)],
+          socket: [Function (anonymous)],
+          timeout: [Function (anonymous)]
+        },
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        outputData: [],
+        outputSize: 0,
+        writable: true,
+        destroyed: false,
+        _last: true,
+        chunkedEncoding: false,
+        shouldKeepAlive: true,
+        maxRequestsOnConnectionReached: false,
+        _defaultKeepAlive: true,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        strictContentLength: false,
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        _closed: false,
+        socket: <ref *1> TLSSocket {
+          _tlsOptions: {
+            allowHalfOpen: undefined,
+            pipe: false,
+            secureContext: SecureContext { context: SecureContext {} },
+            isServer: false,
+            requestCert: true,
+            rejectUnauthorized: true,
+            session: undefined,
+            ALPNProtocols: undefined,
+            requestOCSP: undefined,
+            enableTrace: undefined,
+            pskCallback: undefined,
+            highWaterMark: undefined,
+            onread: undefined,
+            signal: undefined
+          },
+          _secureEstablished: true,
+          _securePending: false,
+          _newSessionPending: false,
+          _controlReleased: true,
+          secureConnecting: true,
+          _SNICallback: null,
+          servername: 'api.quotable.io',
+          alpnProtocol: false,
+          authorized: false,
+          authorizationError: 'CERT_HAS_EXPIRED',
+          encrypted: true,
+          _events: [Object: null prototype] {
+            close: [
+              [Function: onSocketCloseDestroySSL],
+              [Function: bound onceWrapper] {
+                listener: [Function (anonymous)]
+              },
+              [Function: onClose],
+              [Function: socketCloseListener]
+            ],
+            end: [
+              [Function: onConnectEnd],
+              [Function: onReadableStreamEnd]
+            ],
+            error: [Function: socketErrorListener],
+            newListener: [Function: keylogNewListener],
+            connect: undefined,
+            secure: [Function: onConnectSecure],
+            session: [Function (anonymous)],
+            free: [Function: onFree],
+            timeout: [
+              [Function: onTimeout],
+              [Function: bound onceWrapper] {
+                listener: [Function: emitRequestTimeout]
+              }
+            ],
+            agentRemove: [Function: onRemove],
+            data: undefined,
+            drain: [Function: ondrain]
+          },
+          _eventsCount: 10,
+          connecting: false,
+          _hadError: true,
+          _parent: null,
+          _host: 'api.quotable.io',
+          _closeAfterHandlingError: false,
+          _readableState: ReadableState {
+            highWaterMark: 16384,
+            buffer: [],
+            bufferIndex: 0,
+            length: 0,
+            pipes: [],
+            awaitDrainWriters: null,
+            [Symbol(kState)]: 59779574,
+            [Symbol(kErroredValue)]: Error: certificate has expired
+                at TLSSocket.onConnectSecure (node:_tls_wrap:1674:34)
+                at TLSSocket.emit (node:events:518:28)
+                at TLSSocket.emit (node:domain:488:12)
+                at TLSSocket._finishInit (node:_tls_wrap:1085:8)
+                at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:871:12) {
+              code: 'CERT_HAS_EXPIRED'
+            }
+          },
+          _writableState: WritableState {
+            highWaterMark: 16384,
+            length: 185,
+            corked: 0,
+            onwrite: [Function: bound onwrite],
+            writelen: 185,
+            bufferedIndex: 0,
+            pendingcb: 1,
+            [Symbol(kState)]: 118260214,
+            [Symbol(kBufferedValue)]: null,
+            [Symbol(kWriteCbValue)]: [Function: bound onFinish],
+            [Symbol(kErroredValue)]: Error: certificate has expired
+                at TLSSocket.onConnectSecure (node:_tls_wrap:1674:34)
+                at TLSSocket.emit (node:events:518:28)
+                at TLSSocket.emit (node:domain:488:12)
+                at TLSSocket._finishInit (node:_tls_wrap:1085:8)
+                at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:871:12) {
+              code: 'CERT_HAS_EXPIRED'
+            }
+          },
+          allowHalfOpen: false,
+          _maxListeners: undefined,
+          _sockname: null,
+          _pendingData: null,
+          _pendingEncoding: '',
+          server: undefined,
+          _server: null,
+          ssl: null,
+          _requestCert: true,
+          _rejectUnauthorized: true,
+          timeout: 5000,
+          parser: null,
+          _httpMessage: [Circular *5],
+          autoSelectFamilyAttemptedAddresses: [ '3.220.57.224:443' ],
+          [Symbol(alpncallback)]: null,
+          [Symbol(res)]: TLSWrap {
+            _parent: TCP {
+              reading: [Getter/Setter],
+              onconnection: null,
+              [Symbol(owner_symbol)]: [Circular *1],
+              [Symbol(handle_onclose)]: [Function: done]
+            },
+            _parentWrap: null,
+            _secureContext: SecureContext { context: SecureContext {} },
+            reading: true,
+            onkeylog: [Function: onkeylog],
+            onhandshakestart: {},
+            onhandshakedone: [Function (anonymous)],
+            onocspresponse: [Function: onocspresponse],
+            onnewsession: [Function: onnewsessionclient],
+            onerror: [Function: onerror],
+            [Symbol(owner_symbol)]: [Circular *1]
+          },
+          [Symbol(verified)]: false,
+          [Symbol(pendingSession)]: null,
+          [Symbol(async_id_symbol)]: 854,
+          [Symbol(kHandle)]: null,
+          [Symbol(lastWriteQueueSize)]: 185,
+          [Symbol(timeout)]: Timeout {
+            _idleTimeout: -1,
+            _idlePrev: null,
+            _idleNext: null,
+            _idleStart: 17630,
+            _onTimeout: null,
+            _timerArgs: undefined,
+            _repeat: null,
+            _destroyed: true,
+            [Symbol(refed)]: false,
+            [Symbol(kHasPrimitive)]: false,
+            [Symbol(asyncId)]: 856,
+            [Symbol(triggerId)]: 847
+          },
+          [Symbol(kBuffer)]: null,
+          [Symbol(kBufferCb)]: null,
+          [Symbol(kBufferGen)]: null,
+          [Symbol(shapeMode)]: true,
+          [Symbol(kCapture)]: false,
+          [Symbol(kSetNoDelay)]: false,
+          [Symbol(kSetKeepAlive)]: true,
+          [Symbol(kSetKeepAliveInitialDelay)]: 60,
+          [Symbol(kBytesRead)]: 0,
+          [Symbol(kBytesWritten)]: 185,
+          [Symbol(connect-options)]: {
+            rejectUnauthorized: true,
+            ciphers: 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA',
+            checkServerIdentity: [Function: checkServerIdentity],
+            minDHSize: 1024,
+            maxRedirects: 21,
+            maxBodyLength: Infinity,
+            protocol: 'https:',
+            path: null,
+            method: 'GET',
+            headers: [Object: null prototype] {
+              Accept: 'application/json, text/plain, */*',
+              'User-Agent': 'axios/1.7.4',
+              'Accept-Encoding': 'gzip, compress, deflate, br'
+            },
+            agents: { http: undefined, https: undefined },
+            auth: undefined,
+            family: undefined,
+            beforeRedirect: [Function: dispatchBeforeRedirect],
+            beforeRedirects: { proxy: [Function: beforeRedirect] },
+            hostname: 'api.quotable.io',
+            port: 443,
+            agent: undefined,
+            nativeProtocols: <ref *4> {
+              'http:': {
+                _connectionListener: [Function: connectionListener],
+                METHODS: [
+                  'ACL',         'BIND',       'CHECKOUT',
+                  'CONNECT',     'COPY',       'DELETE',
+                  'GET',         'HEAD',       'LINK',
+                  'LOCK',        'M-SEARCH',   'MERGE',
+                  'MKACTIVITY',  'MKCALENDAR', 'MKCOL',
+                  'MOVE',        'NOTIFY',     'OPTIONS',
+                  'PATCH',       'POST',       'PROPFIND',
+                  'PROPPATCH',   'PURGE',      'PUT',
+                  'REBIND',      'REPORT',     'SEARCH',
+                  'SOURCE',      'SUBSCRIBE',  'TRACE',
+                  'UNBIND',      'UNLINK',     'UNLOCK',
+                  'UNSUBSCRIBE'
+                ],
+                STATUS_CODES: {
+                  '100': 'Continue',
+                  '101': 'Switching Protocols',
+                  '102': 'Processing',
+                  '103': 'Early Hints',
+                  '200': 'OK',
+                  '201': 'Created',
+                  '202': 'Accepted',
+                  '203': 'Non-Authoritative Information',
+                  '204': 'No Content',
+                  '205': 'Reset Content',
+                  '206': 'Partial Content',
+                  '207': 'Multi-Status',
+                  '208': 'Already Reported',
+                  '226': 'IM Used',
+                  '300': 'Multiple Choices',
+                  '301': 'Moved Permanently',
+                  '302': 'Found',
+                  '303': 'See Other',
+                  '304': 'Not Modified',
+                  '305': 'Use Proxy',
+                  '307': 'Temporary Redirect',
+                  '308': 'Permanent Redirect',
+                  '400': 'Bad Request',
+                  '401': 'Unauthorized',
+                  '402': 'Payment Required',
+                  '403': 'Forbidden',
+                  '404': 'Not Found',
+                  '405': 'Method Not Allowed',
+                  '406': 'Not Acceptable',
+                  '407': 'Proxy Authentication Required',
+                  '408': 'Request Timeout',
+                  '409': 'Conflict',
+                  '410': 'Gone',
+                  '411': 'Length Required',
+                  '412': 'Precondition Failed',
+                  '413': 'Payload Too Large',
+                  '414': 'URI Too Long',
+                  '415': 'Unsupported Media Type',
+                  '416': 'Range Not Satisfiable',
+                  '417': 'Expectation Failed',
+                  '418': "I'm a Teapot",
+                  '421': 'Misdirected Request',
+                  '422': 'Unprocessable Entity',
+                  '423': 'Locked',
+                  '424': 'Failed Dependency',
+                  '425': 'Too Early',
+                  '426': 'Upgrade Required',
+                  '428': 'Precondition Required',
+                  '429': 'Too Many Requests',
+                  '431': 'Request Header Fields Too Large',
+                  '451': 'Unavailable For Legal Reasons',
+                  '500': 'Internal Server Error',
+                  '501': 'Not Implemented',
+                  '502': 'Bad Gateway',
+                  '503': 'Service Unavailable',
+                  '504': 'Gateway Timeout',
+                  '505': 'HTTP Version Not Supported',
+                  '506': 'Variant Also Negotiates',
+                  '507': 'Insufficient Storage',
+                  '508': 'Loop Detected',
+                  '509': 'Bandwidth Limit Exceeded',
+                  '510': 'Not Extended',
+                  '511': 'Network Authentication Required'
+                },
+                Agent: [Function: Agent] { defaultMaxSockets: Infinity },
+                ClientRequest: [Function: ClientRequest],
+                IncomingMessage: [Function: IncomingMessage],
+                OutgoingMessage: [Function: OutgoingMessage],
+                Server: [Function: Server],
+                ServerResponse: [Function: ServerResponse],
+                createServer: [Function: createServer],
+                validateHeaderName: [Function: wrappedFn] {
+                  withoutStackTrace: [Function (anonymous)]
+                },
+                validateHeaderValue: [Function: wrappedFn] {
+                  withoutStackTrace: [Function (anonymous)]
+                },
+                get: [Function: get],
+                request: [Function: request],
+                setMaxIdleHTTPParsers: [Function: setMaxIdleHTTPParsers],
+                maxHeaderSize: [Getter],
+                globalAgent: [Getter/Setter]
+              },
+              'https:': {
+                Agent: [Function: Agent],
+                globalAgent: <ref *2> Agent {
+                  _events: [Object: null prototype] {
+                    free: [Function (anonymous)],
+                    newListener: [Function: maybeEnableKeylog]
+                  },
+                  _eventsCount: 2,
+                  _maxListeners: undefined,
+                  defaultPort: 443,
+                  protocol: 'https:',
+                  options: [Object: null prototype] {
+                    keepAlive: true,
+                    scheduling: 'lifo',
+                    timeout: 5000,
+                    noDelay: true,
+                    path: null
+                  },
+                  requests: [Object: null prototype] {},
+                  sockets: [Object: null prototype] {
+                    'api.quotable.io:443:::::::::::::::::::::': [ [Circular *1] ]
+                  },
+                  freeSockets: [Object: null prototype] {},
+                  keepAliveMsecs: 1000,
+                  keepAlive: true,
+                  maxSockets: Infinity,
+                  maxFreeSockets: 256,
+                  scheduling: 'lifo',
+                  maxTotalSockets: Infinity,
+                  totalSocketCount: 1,
+                  maxCachedSessions: 100,
+                  _sessionCache: { map: {}, list: [] },
+                  [Symbol(shapeMode)]: false,
+                  [Symbol(kCapture)]: false
+                },
+                Server: [Function: Server],
+                createServer: [Function: createServer],
+                get: [Function: get],
+                request: [Function: request]
+              }
+            },
+            pathname: '/random',
+            _defaultAgent: <ref *2> Agent {
+              _events: [Object: null prototype] {
+                free: [Function (anonymous)],
+                newListener: [Function: maybeEnableKeylog]
+              },
+              _eventsCount: 2,
+              _maxListeners: undefined,
+              defaultPort: 443,
+              protocol: 'https:',
+              options: [Object: null prototype] {
+                keepAlive: true,
+                scheduling: 'lifo',
+                timeout: 5000,
+                noDelay: true,
+                path: null
+              },
+              requests: [Object: null prototype] {},
+              sockets: [Object: null prototype] {
+                'api.quotable.io:443:::::::::::::::::::::': [ [Circular *1] ]
+              },
+              freeSockets: [Object: null prototype] {},
+              keepAliveMsecs: 1000,
+              keepAlive: true,
+              maxSockets: Infinity,
+              maxFreeSockets: 256,
+              scheduling: 'lifo',
+              maxTotalSockets: Infinity,
+              totalSocketCount: 1,
+              maxCachedSessions: 100,
+              _sessionCache: { map: {}, list: [] },
+              [Symbol(shapeMode)]: false,
+              [Symbol(kCapture)]: false
+            },
+            host: 'api.quotable.io',
+            keepAlive: true,
+            scheduling: 'lifo',
+            timeout: 5000,
+            noDelay: true,
+            servername: 'api.quotable.io',
+            _agentKey: 'api.quotable.io:443:::::::::::::::::::::',
+            encoding: null,
+            keepAliveInitialDelay: 1000
+          }
+        },
+        _header: 'GET /random HTTP/1.1\r\n' +
+          'Accept: application/json, text/plain, */*\r\n' +
+          'User-Agent: axios/1.7.4\r\n' +
+          'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+          'Host: api.quotable.io\r\n' +
+          'Connection: keep-alive\r\n' +
+          '\r\n',
+        _keepAliveTimeout: 0,
+        _onPendingData: [Function: nop],
+        agent: <ref *2> Agent {
+          _events: [Object: null prototype] {
+            free: [Function (anonymous)],
+            newListener: [Function: maybeEnableKeylog]
+          },
+          _eventsCount: 2,
+          _maxListeners: undefined,
+          defaultPort: 443,
+          protocol: 'https:',
+          options: [Object: null prototype] {
+            keepAlive: true,
+            scheduling: 'lifo',
+            timeout: 5000,
+            noDelay: true,
+            path: null
+          },
+          requests: [Object: null prototype] {},
+          sockets: [Object: null prototype] {
+            'api.quotable.io:443:::::::::::::::::::::': [
+              <ref *1> TLSSocket {
+                _tlsOptions: {
+                  allowHalfOpen: undefined,
+                  pipe: false,
+                  secureContext: SecureContext { context: SecureContext {} },
+                  isServer: false,
+                  requestCert: true,
+                  rejectUnauthorized: true,
+                  session: undefined,
+                  ALPNProtocols: undefined,
+                  requestOCSP: undefined,
+                  enableTrace: undefined,
+                  pskCallback: undefined,
+                  highWaterMark: undefined,
+                  onread: undefined,
+                  signal: undefined
+                },
+                _secureEstablished: true,
+                _securePending: false,
+                _newSessionPending: false,
+                _controlReleased: true,
+                secureConnecting: true,
+                _SNICallback: null,
+                servername: 'api.quotable.io',
+                alpnProtocol: false,
+                authorized: false,
+                authorizationError: 'CERT_HAS_EXPIRED',
+                encrypted: true,
+                _events: [Object: null prototype] {
+                  close: [
+                    [Function: onSocketCloseDestroySSL],
+                    [Function: bound onceWrapper] {
+                      listener: [Function (anonymous)]
+                    },
+                    [Function: onClose],
+                    [Function: socketCloseListener]
+                  ],
+                  end: [
+                    [Function: onConnectEnd],
+                    [Function: onReadableStreamEnd]
+                  ],
+                  error: [Function: socketErrorListener],
+                  newListener: [Function: keylogNewListener],
+                  connect: undefined,
+                  secure: [Function: onConnectSecure],
+                  session: [Function (anonymous)],
+                  free: [Function: onFree],
+                  timeout: [
+                    [Function: onTimeout],
+                    [Function: bound onceWrapper] {
+                      listener: [Function: emitRequestTimeout]
+                    }
+                  ],
+                  agentRemove: [Function: onRemove],
+                  data: undefined,
+                  drain: [Function: ondrain]
+                },
+                _eventsCount: 10,
+                connecting: false,
+                _hadError: true,
+                _parent: null,
+                _host: 'api.quotable.io',
+                _closeAfterHandlingError: false,
+                _readableState: ReadableState {
+                  highWaterMark: 16384,
+                  buffer: [],
+                  bufferIndex: 0,
+                  length: 0,
+                  pipes: [],
+                  awaitDrainWriters: null,
+                  [Symbol(kState)]: 59779574,
+                  [Symbol(kErroredValue)]: Error: certificate has expired
+                      at TLSSocket.onConnectSecure (node:_tls_wrap:1674:34)
+                      at TLSSocket.emit (node:events:518:28)
+                      at TLSSocket.emit (node:domain:488:12)
+                      at TLSSocket._finishInit (node:_tls_wrap:1085:8)
+                      at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:871:12) {
+                    code: 'CERT_HAS_EXPIRED'
+                  }
+                },
+                _writableState: WritableState {
+                  highWaterMark: 16384,
+                  length: 185,
+                  corked: 0,
+                  onwrite: [Function: bound onwrite],
+                  writelen: 185,
+                  bufferedIndex: 0,
+                  pendingcb: 1,
+                  [Symbol(kState)]: 118260214,
+                  [Symbol(kBufferedValue)]: null,
+                  [Symbol(kWriteCbValue)]: [Function: bound onFinish],
+                  [Symbol(kErroredValue)]: Error: certificate has expired
+                      at TLSSocket.onConnectSecure (node:_tls_wrap:1674:34)
+                      at TLSSocket.emit (node:events:518:28)
+                      at TLSSocket.emit (node:domain:488:12)
+                      at TLSSocket._finishInit (node:_tls_wrap:1085:8)
+                      at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:871:12) {
+                    code: 'CERT_HAS_EXPIRED'
+                  }
+                },
+                allowHalfOpen: false,
+                _maxListeners: undefined,
+                _sockname: null,
+                _pendingData: null,
+                _pendingEncoding: '',
+                server: undefined,
+                _server: null,
+                ssl: null,
+                _requestCert: true,
+                _rejectUnauthorized: true,
+                timeout: 5000,
+                parser: null,
+                _httpMessage: [Circular *5],
+                autoSelectFamilyAttemptedAddresses: [ '3.220.57.224:443' ],
+                [Symbol(alpncallback)]: null,
+                [Symbol(res)]: TLSWrap {
+                  _parent: TCP {
+                    reading: [Getter/Setter],
+                    onconnection: null,
+                    [Symbol(owner_symbol)]: [Circular *1],
+                    [Symbol(handle_onclose)]: [Function: done]
+                  },
+                  _parentWrap: null,
+                  _secureContext: SecureContext { context: SecureContext {} },
+                  reading: true,
+                  onkeylog: [Function: onkeylog],
+                  onhandshakestart: {},
+                  onhandshakedone: [Function (anonymous)],
+                  onocspresponse: [Function: onocspresponse],
+                  onnewsession: [Function: onnewsessionclient],
+                  onerror: [Function: onerror],
+                  [Symbol(owner_symbol)]: [Circular *1]
+                },
+                [Symbol(verified)]: false,
+                [Symbol(pendingSession)]: null,
+                [Symbol(async_id_symbol)]: 854,
+                [Symbol(kHandle)]: null,
+                [Symbol(lastWriteQueueSize)]: 185,
+                [Symbol(timeout)]: Timeout {
+                  _idleTimeout: -1,
+                  _idlePrev: null,
+                  _idleNext: null,
+                  _idleStart: 17630,
+                  _onTimeout: null,
+                  _timerArgs: undefined,
+                  _repeat: null,
+                  _destroyed: true,
+                  [Symbol(refed)]: false,
+                  [Symbol(kHasPrimitive)]: false,
+                  [Symbol(asyncId)]: 856,
+                  [Symbol(triggerId)]: 847
+                },
+                [Symbol(kBuffer)]: null,
+                [Symbol(kBufferCb)]: null,
+                [Symbol(kBufferGen)]: null,
+                [Symbol(shapeMode)]: true,
+                [Symbol(kCapture)]: false,
+                [Symbol(kSetNoDelay)]: false,
+                [Symbol(kSetKeepAlive)]: true,
+                [Symbol(kSetKeepAliveInitialDelay)]: 60,
+                [Symbol(kBytesRead)]: 0,
+                [Symbol(kBytesWritten)]: 185,
+                [Symbol(connect-options)]: {
+                  rejectUnauthorized: true,
+                  ciphers: 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA',
+                  checkServerIdentity: [Function: checkServerIdentity],
+                  minDHSize: 1024,
+                  maxRedirects: 21,
+                  maxBodyLength: Infinity,
+                  protocol: 'https:',
+                  path: null,
+                  method: 'GET',
+                  headers: [Object: null prototype] {
+                    Accept: 'application/json, text/plain, */*',
+                    'User-Agent': 'axios/1.7.4',
+                    'Accept-Encoding': 'gzip, compress, deflate, br'
+                  },
+                  agents: { http: undefined, https: undefined },
+                  auth: undefined,
+                  family: undefined,
+                  beforeRedirect: [Function: dispatchBeforeRedirect],
+                  beforeRedirects: { proxy: [Function: beforeRedirect] },
+                  hostname: 'api.quotable.io',
+                  port: 443,
+                  agent: undefined,
+                  nativeProtocols: <ref *4> {
+                    'http:': {
+                      _connectionListener: [Function: connectionListener],
+                      METHODS: [
+                        'ACL',         'BIND',       'CHECKOUT',
+                        'CONNECT',     'COPY',       'DELETE',
+                        'GET',         'HEAD',       'LINK',
+                        'LOCK',        'M-SEARCH',   'MERGE',
+                        'MKACTIVITY',  'MKCALENDAR', 'MKCOL',
+                        'MOVE',        'NOTIFY',     'OPTIONS',
+                        'PATCH',       'POST',       'PROPFIND',
+                        'PROPPATCH',   'PURGE',      'PUT',
+                        'REBIND',      'REPORT',     'SEARCH',
+                        'SOURCE',      'SUBSCRIBE',  'TRACE',
+                        'UNBIND',      'UNLINK',     'UNLOCK',
+                        'UNSUBSCRIBE'
+                      ],
+                      STATUS_CODES: {
+                        '100': 'Continue',
+                        '101': 'Switching Protocols',
+                        '102': 'Processing',
+                        '103': 'Early Hints',
+                        '200': 'OK',
+                        '201': 'Created',
+                        '202': 'Accepted',
+                        '203': 'Non-Authoritative Information',
+                        '204': 'No Content',
+                        '205': 'Reset Content',
+                        '206': 'Partial Content',
+                        '207': 'Multi-Status',
+                        '208': 'Already Reported',
+                        '226': 'IM Used',
+                        '300': 'Multiple Choices',
+                        '301': 'Moved Permanently',
+                        '302': 'Found',
+                        '303': 'See Other',
+                        '304': 'Not Modified',
+                        '305': 'Use Proxy',
+                        '307': 'Temporary Redirect',
+                        '308': 'Permanent Redirect',
+                        '400': 'Bad Request',
+                        '401': 'Unauthorized',
+                        '402': 'Payment Required',
+                        '403': 'Forbidden',
+                        '404': 'Not Found',
+                        '405': 'Method Not Allowed',
+                        '406': 'Not Acceptable',
+                        '407': 'Proxy Authentication Required',
+                        '408': 'Request Timeout',
+                        '409': 'Conflict',
+                        '410': 'Gone',
+                        '411': 'Length Required',
+                        '412': 'Precondition Failed',
+                        '413': 'Payload Too Large',
+                        '414': 'URI Too Long',
+                        '415': 'Unsupported Media Type',
+                        '416': 'Range Not Satisfiable',
+                        '417': 'Expectation Failed',
+                        '418': "I'm a Teapot",
+                        '421': 'Misdirected Request',
+                        '422': 'Unprocessable Entity',
+                        '423': 'Locked',
+                        '424': 'Failed Dependency',
+                        '425': 'Too Early',
+                        '426': 'Upgrade Required',
+                        '428': 'Precondition Required',
+                        '429': 'Too Many Requests',
+                        '431': 'Request Header Fields Too Large',
+                        '451': 'Unavailable For Legal Reasons',
+                        '500': 'Internal Server Error',
+                        '501': 'Not Implemented',
+                        '502': 'Bad Gateway',
+                        '503': 'Service Unavailable',
+                        '504': 'Gateway Timeout',
+                        '505': 'HTTP Version Not Supported',
+                        '506': 'Variant Also Negotiates',
+                        '507': 'Insufficient Storage',
+                        '508': 'Loop Detected',
+                        '509': 'Bandwidth Limit Exceeded',
+                        '510': 'Not Extended',
+                        '511': 'Network Authentication Required'
+                      },
+                      Agent: [Function: Agent] { defaultMaxSockets: Infinity },
+                      ClientRequest: [Function: ClientRequest],
+                      IncomingMessage: [Function: IncomingMessage],
+                      OutgoingMessage: [Function: OutgoingMessage],
+                      Server: [Function: Server],
+                      ServerResponse: [Function: ServerResponse],
+                      createServer: [Function: createServer],
+                      validateHeaderName: [Function: wrappedFn] {
+                        withoutStackTrace: [Function (anonymous)]
+                      },
+                      validateHeaderValue: [Function: wrappedFn] {
+                        withoutStackTrace: [Function (anonymous)]
+                      },
+                      get: [Function: get],
+                      request: [Function: request],
+                      setMaxIdleHTTPParsers: [Function: setMaxIdleHTTPParsers],
+                      maxHeaderSize: [Getter],
+                      globalAgent: [Getter/Setter]
+                    },
+                    'https:': {
+                      Agent: [Function: Agent],
+                      globalAgent: [Circular *2],
+                      Server: [Function: Server],
+                      createServer: [Function: createServer],
+                      get: [Function: get],
+                      request: [Function: request]
+                    }
+                  },
+                  pathname: '/random',
+                  _defaultAgent: [Circular *2],
+                  host: 'api.quotable.io',
+                  keepAlive: true,
+                  scheduling: 'lifo',
+                  timeout: 5000,
+                  noDelay: true,
+                  servername: 'api.quotable.io',
+                  _agentKey: 'api.quotable.io:443:::::::::::::::::::::',
+                  encoding: null,
+                  keepAliveInitialDelay: 1000
+                }
+              }
+            ]
+          },
+          freeSockets: [Object: null prototype] {},
+          keepAliveMsecs: 1000,
+          keepAlive: true,
+          maxSockets: Infinity,
+          maxFreeSockets: 256,
+          scheduling: 'lifo',
+          maxTotalSockets: Infinity,
+          totalSocketCount: 1,
+          maxCachedSessions: 100,
+          _sessionCache: { map: {}, list: [] },
+          [Symbol(shapeMode)]: false,
+          [Symbol(kCapture)]: false
+        },
+        socketPath: undefined,
+        method: 'GET',
+        maxHeaderSize: undefined,
+        insecureHTTPParser: undefined,
+        joinDuplicateHeaders: undefined,
+        path: '/random',
+        _ended: false,
+        res: null,
+        aborted: false,
+        timeoutCb: [Function: emitRequestTimeout],
+        upgradeOrConnect: false,
+        parser: null,
+        maxHeadersCount: null,
+        reusedSocket: false,
+        host: 'api.quotable.io',
+        protocol: 'https:',
+        _redirectable: [Circular *3],
+        [Symbol(shapeMode)]: false,
+        [Symbol(kCapture)]: false,
+        [Symbol(kBytesWritten)]: 0,
+        [Symbol(kNeedDrain)]: false,
+        [Symbol(corked)]: 0,
+        [Symbol(kOutHeaders)]: [Object: null prototype] {
+          accept: [ 'Accept', 'application/json, text/plain, */*' ],
+          'user-agent': [ 'User-Agent', 'axios/1.7.4' ],
+          'accept-encoding': [ 'Accept-Encoding', 'gzip, compress, deflate, br' ],
+          host: [ 'Host', 'api.quotable.io' ]
+        },
+        [Symbol(errored)]: null,
+        [Symbol(kHighWaterMark)]: 16384,
+        [Symbol(kRejectNonStandardBodyWrites)]: false,
+        [Symbol(kUniqueHeaders)]: null
+      },
+      _currentUrl: 'https://api.quotable.io/random',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    cause: Error: certificate has expired
+        at TLSSocket.onConnectSecure (node:_tls_wrap:1674:34)
+        at TLSSocket.emit (node:events:518:28)
+        at TLSSocket.emit (node:domain:488:12)
+        at TLSSocket._finishInit (node:_tls_wrap:1085:8)
+        at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:871:12) {
+      code: 'CERT_HAS_EXPIRED'
+    }
+  },
+  level: 'error',
+  message: 'unhandledRejection: certificate has expired\n' +
+    'Error: certificate has expired\n' +
+    '    at Function.AxiosError.from (D:\\Projects\\chat-app\\node_modules\\axios\\lib\\core\\AxiosError.js:89:14)\n' +
+    '    at RedirectableRequest.handleRequestError (D:\\Projects\\chat-app\\node_modules\\axios\\lib\\adapters\\http.js:620:25)\n' +
+    '    at RedirectableRequest.emit (node:events:518:28)\n' +
+    '    at RedirectableRequest.emit (node:domain:488:12)\n' +
+    '    at ClientRequest.eventHandlers.<computed> (D:\\Projects\\chat-app\\node_modules\\follow-redirects\\index.js:38:24)\n' +
+    '    at ClientRequest.emit (node:events:518:28)\n' +
+    '    at ClientRequest.emit (node:domain:488:12)\n' +
+    '    at TLSSocket.socketErrorListener (node:_http_client:500:9)\n' +
+    '    at TLSSocket.emit (node:events:518:28)\n' +
+    '    at TLSSocket.emit (node:domain:488:12)\n' +
+    '    at Axios.request (D:\\Projects\\chat-app\\node_modules\\axios\\lib\\core\\Axios.js:45:41)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  stack: 'Error: certificate has expired\n' +
+    '    at Function.AxiosError.from (D:\\Projects\\chat-app\\node_modules\\axios\\lib\\core\\AxiosError.js:89:14)\n' +
+    '    at RedirectableRequest.handleRequestError (D:\\Projects\\chat-app\\node_modules\\axios\\lib\\adapters\\http.js:620:25)\n' +
+    '    at RedirectableRequest.emit (node:events:518:28)\n' +
+    '    at RedirectableRequest.emit (node:domain:488:12)\n' +
+    '    at ClientRequest.eventHandlers.<computed> (D:\\Projects\\chat-app\\node_modules\\follow-redirects\\index.js:38:24)\n' +
+    '    at ClientRequest.emit (node:events:518:28)\n' +
+    '    at ClientRequest.emit (node:domain:488:12)\n' +
+    '    at TLSSocket.socketErrorListener (node:_http_client:500:9)\n' +
+    '    at TLSSocket.emit (node:events:518:28)\n' +
+    '    at TLSSocket.emit (node:domain:488:12)\n' +
+    '    at Axios.request (D:\\Projects\\chat-app\\node_modules\\axios\\lib\\core\\Axios.js:45:41)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  rejection: true,
+  date: 'Mon Sep 30 2024 17:38:15 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 19908,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 406421504,
+      heapTotal: 353464320,
+      heapUsed: 326854528,
+      external: 28796116,
+      arrayBuffers: 24688098
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 440647.093 },
+  trace: [
+    {
+      column: 14,
+      file: 'D:\\Projects\\chat-app\\node_modules\\axios\\lib\\core\\AxiosError.js',
+      function: 'Function.AxiosError.from',
+      line: 89,
+      method: 'from',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'D:\\Projects\\chat-app\\node_modules\\axios\\lib\\adapters\\http.js',
+      function: 'RedirectableRequest.handleRequestError',
+      line: 620,
+      method: 'handleRequestError',
+      native: false
+    },
+    {
+      column: 28,
+      file: 'node:events',
+      function: 'RedirectableRequest.emit',
+      line: 518,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:domain',
+      function: 'RedirectableRequest.emit',
+      line: 488,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'D:\\Projects\\chat-app\\node_modules\\follow-redirects\\index.js',
+      function: 'ClientRequest.eventHandlers.<computed>',
+      line: 38,
+      method: '<computed>',
+      native: false
+    },
+    {
+      column: 28,
+      file: 'node:events',
+      function: 'ClientRequest.emit',
+      line: 518,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:domain',
+      function: 'ClientRequest.emit',
+      line: 488,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 9,
+      file: 'node:_http_client',
+      function: 'TLSSocket.socketErrorListener',
+      line: 500,
+      method: 'socketErrorListener',
+      native: false
+    },
+    {
+      column: 28,
+      file: 'node:events',
+      function: 'TLSSocket.emit',
+      line: 518,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:domain',
+      function: 'TLSSocket.emit',
+      line: 488,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\axios\\lib\\core\\Axios.js',
+      function: 'Axios.request',
+      line: 45,
+      method: 'request',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 95,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-09-30 05:38:15.189 PM'
+}

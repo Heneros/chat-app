@@ -1,19 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
-import { FaBars } from 'react-icons/fa';
+import { FaSearch, FaBars } from 'react-icons/fa';
 
 import './TopBar.css';
 import { ModalLogin } from '../ModalLogin/ModalLogin';
 import { ModalRegistration } from '../ModalRegistration/ModalRegistration';
-import { useSelector } from 'react-redux';
-import { selectCurrentUserToken } from '../../features/auth/auth';
-import { useLogoutMutation } from '@/features/user/userApiSlice';
+// import { useSelector } from 'react-redux';
 
-export const TopBar = ({ setSearchTerm }) => {
-    const token = useSelector(selectCurrentUserToken);
+import { useLogoutMutation } from '@/features/user/userApiSlice';
+import { selectCurrentUserToken } from '@/features/auth/auth';
+// import { ChatModal } from '@/shared/types';
+import { useAppSelector } from '@/shared/lib/store';
+import { ChatModal } from '@/shared/types';
+
+interface ChatModalProps {
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
+    const token = useAppSelector(selectCurrentUserToken);
     // console.log(token);
 
-    const handleSearch = (e) => {
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
     };
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,11 +28,12 @@ export const TopBar = ({ setSearchTerm }) => {
     const [isModalSecondOpen, setIsModalSecondOpen] = useState(false);
 
     const [logoutUser] = useLogoutMutation();
-    const menuRef = useRef();
+    // const menuRef = useRef();
+    const menuRef = useRef<HTMLDivElement | null>(null);
 
     const logoutHandler = async () => {
         try {
-            await logoutUser().unwrap();
+            await logoutUser(undefined).unwrap();
         } catch (error) {
             console.log(error);
         }
@@ -57,8 +65,11 @@ export const TopBar = ({ setSearchTerm }) => {
     };
 
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (menuRef.current && !menuRef.current.contains(event.target)) {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(event.target as Node)
+            ) {
                 closeMenu();
             }
         };
@@ -81,19 +92,23 @@ export const TopBar = ({ setSearchTerm }) => {
                 </div>
                 <div
                     ref={menuRef}
-                    onClose={closeMenu}
+                    // onClose={closeMenu}
                     className={`menu-adaptive ${isMenuOpen ? 'active' : ''} `}
                 >
                     <ul>
                         {!token ? (
                             <>
-                                <li onClick={openModal}>Login</li>
-                                <li onClick={openModalSecond}>Registration</li>
+                                <button type="button" onClick={openModal}>
+                                    Login
+                                </button>
+                                <button type="button" onClick={openModalSecond}>
+                                    Registration
+                                </button>
                             </>
                         ) : (
-                            <>
-                                <li onClick={logoutHandler}>Logout</li>
-                            </>
+                            <button type="button" onClick={logoutHandler}>
+                                Logout
+                            </button>
                         )}
                     </ul>
                 </div>

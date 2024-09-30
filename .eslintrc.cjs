@@ -65,5 +65,7 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'warn',
         'react/jsx-props-no-spreading': 'warn',
         'react/react-in-jsx-scope': 'off',
+        'react/no-unknown-property': 'off',
+        'no-unneeded-ternary': 'warn',
     },
 };

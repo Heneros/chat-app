@@ -1,0 +1,155 @@
+{
+  error: backend/controllers/messages/sendMessageChatController.ts(46,17): error TS7005: Variable 'console' implicitly has an 'any' type.
+  backend/controllers/messages/sendMessageChatController.ts(46,25): error TS7005: Variable 'log' implicitly has an 'any' type.
+  backend/controllers/messages/sendMessageChatController.ts(46,24): error TS1005: ',' expected.
+  backend/controllers/messages/sendMessageChatController.ts(46,28): error TS1005: ',' expected.
+  backend/controllers/messages/sendMessageChatController.ts(46,29): error TS1109: Expression expected.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/messages/sendMessageChatController.ts(46,17): error TS7005: Variable 'console' implicitly has an 'any' type.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,25): error TS7005: Variable 'log' implicitly has an 'any' type.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,24): error TS1005: ',' expected.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,28): error TS1005: ',' expected.\r\n" +
+    'backend/controllers/messages/sendMessageChatController.ts(46,29): error TS1109: Expression expected.\r\n' +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/messages/sendMessageChatController.ts(46,17): error TS7005: Variable 'console' implicitly has an 'any' type.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,25): error TS7005: Variable 'log' implicitly has an 'any' type.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,24): error TS1005: ',' expected.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,28): error TS1005: ',' expected.\r\n" +
+    'backend/controllers/messages/sendMessageChatController.ts(46,29): error TS1109: Expression expected.\r\n' +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/messages/sendMessageChatController.ts(46,17): error TS7005: Variable 'console' implicitly has an 'any' type.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,25): error TS7005: Variable 'log' implicitly has an 'any' type.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,24): error TS1005: ',' expected.\r\n" +
+    "backend/controllers/messages/sendMessageChatController.ts(46,28): error TS1005: ',' expected.\r\n" +
+    'backend/controllers/messages/sendMessageChatController.ts(46,29): error TS1109: Expression expected.\r\n' +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Mon Sep 30 2024 17:35:50 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 43564,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 392937472,
+      heapTotal: 342544384,
+      heapUsed: 317868680,
+      external: 28268592,
+      arrayBuffers: 24318064
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 440502.25 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-09-30 05:35:50.351 PM'
+}

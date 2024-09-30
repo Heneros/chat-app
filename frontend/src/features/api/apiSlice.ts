@@ -10,7 +10,7 @@ import { RootState } from '@/shared/lib/reducer';
 import { BASE_URL } from '@/shared/utils/constants';
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: BASE_URL,
+    baseUrl: 'http://localhost:4000/api/v1',
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const state = getState() as RootState;
@@ -30,7 +30,7 @@ const baseQueryWithRefreshToken: BaseQueryFn<
     string | FetchArgs,
     unknown,
     FetchBaseQueryError
-> = async (args, apiSlice, extraOptions) => {
+> = async (args, api, extraOptions) => {
     let response = await baseQuery(args, api, extraOptions);
     return response;
 };

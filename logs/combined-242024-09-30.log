@@ -1,4 +1,14 @@
 {
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 01:55:45.914 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 03:18:18.677 PM'
+}
+{
   error: Error: Cannot set headers after they are sent to the client
       at ServerResponse.setHeader (node:_http_outgoing:659:11)
       at ServerResponse.header (D:\Projects\chat-app\node_modules\express\lib\response.js:794:10)
@@ -121,6 +131,11 @@
   timestamp: '2024-09-30 04:55:14.623 PM'
 }
 {
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 04:56:35.107 PM'
+}
+{
   error: Error: Cannot set headers after they are sent to the client
       at ServerResponse.setHeader (node:_http_outgoing:659:11)
       at ServerResponse.header (D:\Projects\chat-app\node_modules\express\lib\response.js:794:10)
@@ -241,6 +256,36 @@
     }
   ],
   timestamp: '2024-09-30 05:28:10.186 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:28:28.586 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:28:43.143 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:35:33.570 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:35:46.546 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:36:01.755 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:38:00.988 PM'
 }
 {
   error: AxiosError: certificate has expired
@@ -1719,4 +1764,19 @@
     }
   ],
   timestamp: '2024-09-30 05:38:15.189 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:38:35.920 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:38:51.922 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-09-30 05:39:03.204 PM'
 }

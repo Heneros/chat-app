@@ -1,9 +1,10 @@
-import asyncHandler from 'express-async-handler';
+// import asyncHandler from 'express-async-handler';
 import mongoose from 'mongoose';
 import { Request, Response } from 'express';
 import Chat from '../../models/ChatModel';
 import { io } from '../../socket/socket';
 import { RequestWithUser } from '../../types/RequestWithUser';
+import axios from 'axios';
 
 const fallbackQuotes = [
     'The only way to do great work is to love what you do.',
@@ -42,6 +43,8 @@ const sendMessage = async (req: Request, res: Response) => {
 
         setTimeout(async () => {
             try {
+                // const respondApi = await axios.get('https://api.quotable.io/random',);
+                // console.log(respondApi);
                 await chat.save();
             } catch (error) {
                 ///  console.error('Error fetching quote:', error.message);

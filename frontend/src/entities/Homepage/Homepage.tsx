@@ -7,12 +7,13 @@ import { TopBar } from '@/widgets/TopBar/TopBar';
 import { AuthenticatedContent } from '@/processes/AuthenticatedContent/AuthenticatedContent';
 import { ChatRoom } from '../ChatRoom/ChatRoom';
 import { ChatType } from '@/shared/types';
+import { useAppSelector } from '@/shared/lib/store';
 
 export const Homepage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedChat, setSelectedChat] = useState<ChatType | null>(null);
 
-    const token = useSelector(selectCurrentUserToken);
+    const token = useAppSelector(selectCurrentUserToken);
 
     return (
         <div className="parent">

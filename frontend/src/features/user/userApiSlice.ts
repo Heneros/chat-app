@@ -7,7 +7,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         logout: builder.mutation({
             query: () => ({
                 url: `${AUTH_URL}/logout`,
-                method: 'GET',
+                // method: 'GET',
             }),
             async onQueryStarted(arg, { dispatch }) {
                 try {
@@ -17,10 +17,11 @@ export const userApiSlice = apiSlice.injectEndpoints({
                     console.log(err);
                 }
             },
+            invalidatesTags: [{ type: 'User' }],
         }),
         login: builder.mutation({
             query: (credentials) => ({
-                url: `${AUTH_URL}/login`,
+                url: `/users/login`,
                 method: 'POST',
                 body: credentials,
                 // credentials: 'include',

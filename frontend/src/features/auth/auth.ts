@@ -1,10 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { decodeToken } from 'react-jwt';
+
 import { User } from '@/shared/types';
+
 // import { decodeToken } from 'react-jwt';
-let userLocaleStor = localStorage.getItem('user') || '';
+const userLocaleStor = localStorage.getItem('user') || '';
+// let googleToken = localStorage.getItem('googleToken');
+const googleToken = localStorage.getItem('googleToken');
 
 let user: User | null = null;
-if (user) {
+
+if (userLocaleStor) {
     try {
         user = JSON.parse(userLocaleStor);
     } catch (error) {
@@ -12,14 +18,25 @@ if (user) {
     }
 }
 
+const decodedToken: User | null = googleToken ? decodeToken(googleToken) : null;
+
 interface AuthSlice {
     user: User | null;
+    googleToken: string | null;
 }
 
-const initialState = {
-    user,
-    data: null,
-    status: 'loading',
+// const initialState = {
+//     user,
+//     data: null,
+//     status: 'loading',
+// };
+const initialState: AuthSlice = {
+    user:
+        user ||
+        (decodedToken && typeof decodedToken === 'object'
+            ? decodedToken
+            : null),
+    googleToken: googleToken ? googleToken : null,
 };
 
 const userSlice = createSlice({
@@ -32,12 +49,17 @@ const userSlice = createSlice({
         },
         logout: (state) => {
             state.user = null;
-            localStorage.clear();
+            /// localStorage.clear();
+            localStorage.removeItem('user');
         },
     },
 });
 
 export const { logIn, logout } = userSlice.actions;
-export const selectCurrentUserToken = (state: { auth: AuthSlice }) =>
-    state.auth.user?.accessToken;
 export const authReducer = userSlice.reducer;
+export const selectCurrentUserToken = (state: {
+    auth: AuthSlice;
+}): string | undefined => {
+    const token = state.auth.user?.accessToken;
+    return Array.isArray(token) ? token[0] : token;
+};
