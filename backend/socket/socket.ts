@@ -2,26 +2,29 @@ import { Server } from 'socket.io';
 import http from 'http';
 import express from 'express';
 import axios from 'axios';
+import https from 'https';
 
 import Chat from '../models/ChatModel';
+import { systemLogs } from '../utils/Logger';
 
 const app = express();
 
 const server = http.createServer(app);
+
 const io = new Server(server, {
     cors: {
-        origin: ['http://localhost:3000'],
+        origin: 'http://localhost:3000',
         methods: ['GET', 'POST'],
     },
 });
 
 io.on('connection', async (socket) => {
-    // console.log('user connected', socket.id);
+    systemLogs.info('user connected', socket.id);
     socket.on('join_room', (roomId) => {
         console.log(`User joined room: ${roomId}`);
         socket.join(roomId);
     });
-
+    // console.log(123);
     socket.on('leave_room', (chatId) => {
         socket.leave(chatId);
     });
@@ -42,13 +45,22 @@ io.on('connection', async (socket) => {
     });
     socket.on('sendMessage', async (data) => {
         const { chatId, text } = data;
-        // console.log('roomId', roomId);
+
         io.to(chatId).emit(`receiveMessage:${chatId}`, {
             text,
             sender: 'user',
         });
+        // console.log('sendMessage');
         try {
-            const response = await axios.get('https://api.quotable.io/random');
+            // const agent = new https.Agent({
+            //     rejectUnauthorized: false,
+            // });
+            const agent = new https.Agent({
+                rejectUnauthorized: false,
+            });
+            const response = await axios.get('https://api.quotable.io/random', {
+                httpsAgent: agent,
+            });
             const apiMessage = response.data.content;
 
             // console.log(apiMessage);
@@ -75,4 +87,4 @@ io.on('connection', async (socket) => {
     });
 });
 
-export { app, io, server };
+export { io, app, server };

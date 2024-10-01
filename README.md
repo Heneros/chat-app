@@ -21,9 +21,11 @@ Full-stack application with socket.io.
 - [x] Search chat and users.
 - [x] Delete chat. with dialog with a confirmation dialog window.
 - [x] Update chat(firstName, lastName) with a confirmation dialog window.
+- [x] Rewrite to FSD architecture. Frontend.
+- [x] Rewrite to Typescript.
+
 
 ### Need to add:
-- [ ] Rewrite to Typescript.
 - [ ] Notification from receive message.
 - [ ] Create new chat(firstName, lastName) with dialog window.
 - [ ] Authorization via Google and Facebook.
@@ -36,4 +38,3 @@ Full-stack application with socket.io.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
 - [ ] Avatars to users
-- [ ] Rewrite to FSD architecture. Frontend.

@@ -1,30 +1,23 @@
 import 'dotenv/config';
 import express, { Response } from 'express';
+
 import cors from 'cors';
 // import passport from 'passport';
 import cookieParser from 'cookie-parser';
 import mongoSanitize from 'express-mongo-sanitize';
 import http from 'http';
-import { Server as SocketIOServer } from 'socket.io';
+import { Server } from 'socket.io';
 
 import morgan from 'morgan';
 import connectDB from './config/connectDB';
 import authRoutes from './routes/usersRoute';
 import chatRoutes from './routes/chatRoute';
-// import { app, server } from './socket/socket';
 import { systemLogs } from './utils/Logger';
 import { errorHandler, notFound } from './middleware/errorMiddleware';
 import { apiLimiter } from './middleware/apiLimiter';
+import { app, server } from './socket/socket';
 
-const app = express();
-
-const server = http.createServer(app);
-const io = new SocketIOServer(server, {
-    cors: {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST'],
-    },
-});
+// const app = express();
 
 app.use(
     cors({
@@ -35,7 +28,7 @@ app.use(
 );
 
 if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('combined'));
+    app.use(morgan('tiny'));
 }
 
 app.use(express.json());
@@ -87,4 +80,4 @@ if (require.main === module) {
     });
 }
 
-export { app, io, server, startServer };
+export { app, server, startServer };

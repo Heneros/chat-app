@@ -2328,3 +2328,231 @@
   ],
   timestamp: '2024-09-30 05:38:15.189 PM'
 }
+{
+  error: MongoServerSelectionError: connect ETIMEDOUT 16.16.116.132:27017
+      at Topology.selectServer (D:\Projects\chat-app\node_modules\mongodb\src\sdam\topology.ts:610:30)
+      at async executeOperation (D:\Projects\chat-app\node_modules\mongodb\src\operations\execute_operation.ts:155:18)
+      at async Collection.updateOne (D:\Projects\chat-app\node_modules\mongodb\src\collection.ts:354:12) {
+    reason: TopologyDescription {
+      type: 'ReplicaSetNoPrimary',
+      servers: Map(3) {
+        'cluster0-shard-00-02.deh3n.mongodb.net:27017' => ServerDescription {
+          address: 'cluster0-shard-00-02.deh3n.mongodb.net:27017',
+          type: 'RSSecondary',
+          hosts: [
+            'cluster0-shard-00-00.deh3n.mongodb.net:27017',
+            'cluster0-shard-00-01.deh3n.mongodb.net:27017',
+            'cluster0-shard-00-02.deh3n.mongodb.net:27017'
+          ],
+          passives: [],
+          arbiters: [],
+          tags: {
+            region: 'EU_NORTH_1',
+            diskState: 'READY',
+            workloadType: 'OPERATIONAL',
+            availabilityZone: 'eun1-az3',
+            nodeType: 'ELECTABLE',
+            provider: 'AWS'
+          },
+          minWireVersion: 0,
+          maxWireVersion: 21,
+          roundTripTime: 51.9,
+          minRoundTripTime: 49,
+          lastUpdateTime: 1748149,
+          lastWriteDate: 2024-10-01T09:45:08.000Z,
+          error: null,
+          topologyVersion: {
+            processId: new ObjectId('66c89acdceb499a08e7307a4'),
+            counter: 3
+          },
+          setName: 'atlas-2gnx5s-shard-0',
+          setVersion: 26,
+          electionId: null,
+          logicalSessionTimeoutMinutes: 30,
+          primary: 'cluster0-shard-00-01.deh3n.mongodb.net:27017',
+          me: 'cluster0-shard-00-02.deh3n.mongodb.net:27017',
+          '$clusterTime': {
+            clusterTime: new Timestamp({ t: 1727775908, i: 4 }),
+            signature: {
+              hash: Binary.createFromBase64('VUefLmBxm3n74g5IERJAmU4/hVg=', 0),
+              keyId: new Long('7377394775206395908')
+            }
+          }
+        },
+        'cluster0-shard-00-01.deh3n.mongodb.net:27017' => ServerDescription {
+          address: 'cluster0-shard-00-01.deh3n.mongodb.net:27017',
+          type: 'Unknown',
+          hosts: [],
+          passives: [],
+          arbiters: [],
+          tags: {},
+          minWireVersion: 0,
+          maxWireVersion: 0,
+          roundTripTime: -1,
+          minRoundTripTime: 0,
+          lastUpdateTime: 1735125,
+          lastWriteDate: 0,
+          error: MongoNetworkError: connect ETIMEDOUT 16.16.116.132:27017
+              at connectionFailureError (D:\Projects\chat-app\node_modules\mongodb\src\cmap\connect.ts:470:14)
+              at TLSSocket.<anonymous> (D:\Projects\chat-app\node_modules\mongodb\src\cmap\connect.ts:372:38)
+              at Object.onceWrapper (node:events:633:26)
+              at TLSSocket.emit (node:events:518:28)
+              at TLSSocket.emit (node:domain:488:12)
+              at emitErrorNT (node:internal/streams/destroy:169:8)
+              at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+              at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+            [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+            [cause]: Error: connect ETIMEDOUT 16.16.116.132:27017
+                at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1605:16) {
+              errno: -4039,
+              code: 'ETIMEDOUT',
+              syscall: 'connect',
+              address: '16.16.116.132',
+              port: 27017
+            }
+          },
+          topologyVersion: null,
+          setName: null,
+          setVersion: null,
+          electionId: null,
+          logicalSessionTimeoutMinutes: null,
+          primary: null,
+          me: null,
+          '$clusterTime': null
+        },
+        'cluster0-shard-00-00.deh3n.mongodb.net:27017' => ServerDescription {
+          address: 'cluster0-shard-00-00.deh3n.mongodb.net:27017',
+          type: 'RSSecondary',
+          hosts: [
+            'cluster0-shard-00-00.deh3n.mongodb.net:27017',
+            'cluster0-shard-00-01.deh3n.mongodb.net:27017',
+            'cluster0-shard-00-02.deh3n.mongodb.net:27017'
+          ],
+          passives: [],
+          arbiters: [],
+          tags: {
+            availabilityZone: 'eun1-az1',
+            provider: 'AWS',
+            workloadType: 'OPERATIONAL',
+            diskState: 'READY',
+            region: 'EU_NORTH_1',
+            nodeType: 'ELECTABLE'
+          },
+          minWireVersion: 0,
+          maxWireVersion: 21,
+          roundTripTime: 50.3,
+          minRoundTripTime: 48,
+          lastUpdateTime: 1748110,
+          lastWriteDate: 2024-10-01T09:45:08.000Z,
+          error: null,
+          topologyVersion: {
+            processId: new ObjectId('66c8970938fc67a7fe2264c2'),
+            counter: 4
+          },
+          setName: 'atlas-2gnx5s-shard-0',
+          setVersion: 26,
+          electionId: null,
+          logicalSessionTimeoutMinutes: 30,
+          primary: 'cluster0-shard-00-01.deh3n.mongodb.net:27017',
+          me: 'cluster0-shard-00-00.deh3n.mongodb.net:27017',
+          '$clusterTime': {
+            clusterTime: new Timestamp({ t: 1727775908, i: 4 }),
+            signature: {
+              hash: Binary.createFromBase64('VUefLmBxm3n74g5IERJAmU4/hVg=', 0),
+              keyId: new Long('7377394775206395908')
+            }
+          }
+        }
+      },
+      stale: false,
+      compatible: true,
+      heartbeatFrequencyMS: 10000,
+      localThresholdMS: 15,
+      setName: 'atlas-2gnx5s-shard-0',
+      maxElectionId: new ObjectId('7fffffff0000000000000026'),
+      maxSetVersion: 26,
+      commonWireVersion: 0,
+      logicalSessionTimeoutMinutes: 30
+    },
+    code: undefined,
+    [Symbol(errorLabels)]: Set(0) {},
+    [cause]: MongoNetworkError: connect ETIMEDOUT 16.16.116.132:27017
+        at connectionFailureError (D:\Projects\chat-app\node_modules\mongodb\src\cmap\connect.ts:470:14)
+        at TLSSocket.<anonymous> (D:\Projects\chat-app\node_modules\mongodb\src\cmap\connect.ts:372:38)
+        at Object.onceWrapper (node:events:633:26)
+        at TLSSocket.emit (node:events:518:28)
+        at TLSSocket.emit (node:domain:488:12)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+      [cause]: Error: connect ETIMEDOUT 16.16.116.132:27017
+          at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1605:16) {
+        errno: -4039,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '16.16.116.132',
+        port: 27017
+      }
+    }
+  },
+  level: 'error',
+  message: 'unhandledRejection: connect ETIMEDOUT 16.16.116.132:27017\n' +
+    'MongoServerSelectionError: connect ETIMEDOUT 16.16.116.132:27017\n' +
+    '    at Topology.selectServer (D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\sdam\\topology.ts:610:30)\n' +
+    '    at async executeOperation (D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:155:18)\n' +
+    '    at async Collection.updateOne (D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\collection.ts:354:12)',
+  stack: 'MongoServerSelectionError: connect ETIMEDOUT 16.16.116.132:27017\n' +
+    '    at Topology.selectServer (D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\sdam\\topology.ts:610:30)\n' +
+    '    at async executeOperation (D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:155:18)\n' +
+    '    at async Collection.updateOne (D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\collection.ts:354:12)',
+  rejection: true,
+  date: 'Tue Oct 01 2024 12:45:14 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 11804,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 382849024,
+      heapTotal: 329216000,
+      heapUsed: 303213896,
+      external: 27400211,
+      arrayBuffers: 23296568
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1752.828 },
+  trace: [
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\sdam\\topology.ts',
+      function: 'Topology.selectServer',
+      line: 610,
+      method: 'selectServer',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\operations\\execute_operation.ts',
+      function: 'async executeOperation',
+      line: 155,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\mongodb\\src\\collection.ts',
+      function: 'async Collection.updateOne',
+      line: 354,
+      method: 'updateOne',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-01 12:45:14.104 PM'
+}
