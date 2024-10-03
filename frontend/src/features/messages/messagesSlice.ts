@@ -1,8 +1,6 @@
 import { CHAT_URL } from '@/shared/utils/constants';
 import { apiSlice } from '../api/apiSlice';
 
-
-
 export const chatApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         createChat: builder.mutation({
@@ -49,7 +47,7 @@ export const chatApiSlice = apiSlice.injectEndpoints({
                 url: `${CHAT_URL}/${chatId}/message`,
                 method: 'POST',
                 body: { message },
-                ///  credentials: 'include',
+                credentials: 'include',
             }),
             invalidatesTags: ['Chat'],
         }),

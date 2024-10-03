@@ -23,6 +23,7 @@ Full-stack application with socket.io.
 - [x] Update chat(firstName, lastName) with a confirmation dialog window.
 - [x] Rewrite to FSD architecture. Frontend.
 - [x] Rewrite to Typescript.
+- [x] Api limiter add.
 
 
 ### Need to add:
@@ -31,10 +32,10 @@ Full-stack application with socket.io.
 - [ ] Authorization via Google and Facebook.
 - [ ] Show toast with new message.
 - [ ] Create second type chat without auto-response API. Which you can add user contacts and communicate to each other.
-- [ ] Automatically send messages to random chat.This feature can be turned off in the user account.
+- [ ] Automatically send messages to random chat. This feature can be turned off in the user account.
 - [ ] Frontend. Add dark theme and white theme switcher.
 - [ ] Sending files. With cloudflare.
-- [ ] Api limiter add.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
 - [ ] Avatars to users
+- [ ] Available contacts. option should have. User can show/hide from public list contacts.
