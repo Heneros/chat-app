@@ -17,8 +17,6 @@ import { errorHandler, notFound } from './middleware/errorMiddleware';
 import { apiLimiter } from './middleware/apiLimiter';
 import { app, server } from './socket/socket';
 
-// const app = express();
-
 app.use(
     cors({
         origin: 'http://localhost:3000',

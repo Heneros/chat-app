@@ -19,12 +19,11 @@ const io = new Server(server, {
 });
 
 io.on('connection', async (socket) => {
-    systemLogs.info('user connected', socket.id);
     socket.on('join_room', (roomId) => {
         console.log(`User joined room: ${roomId}`);
         socket.join(roomId);
     });
-    // console.log(123);
+    console.log('user connected', socket.id);
     socket.on('leave_room', (chatId) => {
         socket.leave(chatId);
     });
@@ -50,7 +49,7 @@ io.on('connection', async (socket) => {
             text,
             sender: 'user',
         });
-        // console.log('sendMessage');
+        console.log('sendMessage', chatId, text);
         try {
             // const agent = new https.Agent({
             //     rejectUnauthorized: false,
@@ -63,7 +62,7 @@ io.on('connection', async (socket) => {
             });
             const apiMessage = response.data.content;
 
-            // console.log(apiMessage);
+            console.log(apiMessage);
             io.to(chatId).emit(`receiveMessage:${chatId}`, {
                 text: apiMessage,
                 sender: 'api',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSendMessageToChatMutation } from '@/features/messages/messagesSlice';
+import socket from '../Socket/socket';
 
 interface MessageInputProps {
     newMessage: string;
@@ -12,12 +13,13 @@ export const MessageInput: React.FC<MessageInputProps> = ({
     setNewMessage,
     chatId,
 }) => {
-    const sendMessage = useSendMessageToChatMutation();
+    const [sendMessage] = useSendMessageToChatMutation();
 
     const handleSendMessage = async () => {
         if (newMessage.trim() === '' || !chatId) return;
         try {
-            await sendMessage({ chatId, message: newMessage });
+            await sendMessage({ chatId, message: newMessage }).unwrap();
+            socket.emit('sendMessage', { chatId, text: newMessage });
             setNewMessage('');
         } catch (error) {
             console.error('Failed to send message:', error);

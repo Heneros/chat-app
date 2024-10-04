@@ -1,24 +1,27 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { io, Socket } from 'socket.io-client';
 import { decodeToken } from 'react-jwt';
+import { io, Socket } from 'socket.io-client';
 import { ChatType } from '@/shared/types';
 
 import './ChatRoom.css';
-import {
-    useGetByIdChatQuery,
-    useSendMessageToChatMutation,
-} from '@/features/messages/messagesSlice';
+import { useGetByIdChatQuery } from '@/features/messages/messagesSlice';
 import { selectCurrentUserToken } from '@/features/auth/auth';
 import { ChatHeader } from '@/widgets/ChatHeader/ChatHeader';
 import { useAppSelector } from '@/shared/lib/store';
 import { getErrorMessage } from '@/shared/utils/getErrorMessage';
 import { Message } from '@/shared/types/ChatType';
 import MessageList from '@/widgets/MessageList/MessageList';
-import socket from '@/widgets/Socket/socket';
+// import socket from '@/widgets/Socket/socket';
 import { MessageInput } from '@/widgets/MessageInput/MessageInput';
+import socket from '@/widgets/Socket/socket';
+// import { BASE_URL } from '@/shared/utils/constants';
 
 interface ChatRoomProps {
     selectedChat: ChatType;
+}
+
+interface DecodedToken {
+    id: string;
 }
 
 export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
@@ -49,24 +52,35 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                     socket.emit('leave_room', socket.previousRoom);
                     socket.emit('join_room', chatId);
                     socket.previousRoom = chatId;
+
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
 
-                    if (chatData && Array.isArray(chatData.messages)) {
-                        setAllMessages(chatData.messages);
-                    }
+                    // console.log(
+                    //     `receiveMessage:${chatId}`,
+                    //     handleReceiveMessage,
+                    // );
+
+                    socket.on('connect_error', (error) => {
+                        console.error('Socket connection error:', error);
+                    });
 
                     return () => {
-                        if (chatId) {
-                            socket.off(
-                                `receiveMessage:${chatId}`,
-                                handleReceiveMessage,
-                            );
-                        }
+                        socket.off(
+                            `receiveMessage:${chatId}`,
+                            handleReceiveMessage,
+                        );
+                        socket.off('connect_error');
                     };
                 }
-            }, [chatId, chatData, handleReceiveMessage]);
+            }, [chatId, handleReceiveMessage]);
 
-            const endOfMessagesRef = useRef(null);
+            useEffect(() => {
+                if (chatData && Array.isArray(chatData.messages)) {
+                    setAllMessages(chatData.messages);
+                }
+            }, [chatData, isLoading]);
+
+            const endOfMessagesRef = useRef<HTMLDivElement | null>(null);
             const scrollToBottom = () => {
                 if (endOfMessagesRef.current) {
                     endOfMessagesRef.current.scrollIntoView({
