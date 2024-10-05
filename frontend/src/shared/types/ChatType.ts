@@ -1,5 +1,6 @@
 export interface Message {
     _id: string;
+    chatId?: string;
     text: string;
     sender: string;
 }
@@ -10,7 +11,9 @@ export interface ChatType {
     readonly messages: Message[];
     readonly _id: string;
 
-    readonly firstThreeMessages?: string[];
+    // readonly lastMessage?: string[];
+    readonly lastMessage?: any;
+    
     setSelectedChat?: (chatId: string | null) => void;
     onClick?: () => void;
 }

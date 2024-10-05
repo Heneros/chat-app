@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { decodeToken } from 'react-jwt';
-import { io, Socket } from 'socket.io-client';
 import { ChatType } from '@/shared/types';
 
 import './ChatRoom.css';
@@ -52,16 +51,10 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                     socket.emit('leave_room', socket.previousRoom);
                     socket.emit('join_room', chatId);
                     socket.previousRoom = chatId;
-
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
 
-                    // console.log(
-                    //     `receiveMessage:${chatId}`,
-                    //     handleReceiveMessage,
-                    // );
-
-                    socket.on('connect_error', (error) => {
-                        console.error('Socket connection error:', error);
+                    socket.on('connect_error', (err) => {
+                        console.error('Socket connection error:', err.message);
                     });
 
                     return () => {

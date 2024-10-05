@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { getErrorMessage } from 'shared/utils/getErrorMessage';
 import {
     useGetAllChatQuery,
@@ -6,16 +6,21 @@ import {
 } from '@/features/messages/messagesSlice';
 import { ChatType } from '@/shared/types';
 import { Chat } from '@/widgets/Chat/Chat';
+import socket from '@/widgets/Socket/socket'; // Assuming you have a socket instance
+import { Message } from '@/shared/types/ChatType';
 
 interface AuthenticatedContentProps {
     setSelectedChat: (chat: any) => void;
     searchTerm: string;
 }
-
 export const AuthenticatedContent: React.FC<AuthenticatedContentProps> = ({
     setSelectedChat,
     searchTerm,
 }) => {
+    const [recentMessages, setRecentMessages] = useState<{
+        [chatId: string]: string;
+    }>({});
+
     const {
         data: searchResults,
         isLoading: isSearching,
@@ -43,16 +48,15 @@ export const AuthenticatedContent: React.FC<AuthenticatedContentProps> = ({
 
     return chats.length > 0 ? (
         chats.map((chat: ChatType) => {
-            const firstThreeMessages = chat.messages
-                .slice(0, 3)
-                .map((message) => message.text);
+            const lastMessage =
+                recentMessages[chat._id] || chat.messages.slice(-1)[0]?.text;
             return (
                 <Chat
                     key={chat._id}
                     {...chat}
                     onClick={() => setSelectedChat(chat)}
                     setSelectedChat={setSelectedChat}
-                    firstThreeMessages={firstThreeMessages}
+                    lastMessage={lastMessage}
                 />
             );
         })

@@ -4,13 +4,11 @@ import { FaSearch, FaBars } from 'react-icons/fa';
 import './TopBar.css';
 import { ModalLogin } from '../ModalLogin/ModalLogin';
 import { ModalRegistration } from '../ModalRegistration/ModalRegistration';
-// import { useSelector } from 'react-redux';
-
 import { useLogoutMutation } from '@/features/user/userApiSlice';
 import { selectCurrentUserToken } from '@/features/auth/auth';
 // import { ChatModal } from '@/shared/types';
 import { useAppSelector } from '@/shared/lib/store';
-import { ChatModal } from '@/shared/types';
+import ModalCreateChat from '../ModalCreateChat/ModalCreateChat';
 
 interface ChatModalProps {
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
@@ -26,6 +24,7 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalSecondOpen, setIsModalSecondOpen] = useState(false);
+    const [isModalThirdOpen, setIsModalThirdOpen] = useState(false);
 
     const [logoutUser] = useLogoutMutation();
     // const menuRef = useRef();
@@ -38,6 +37,13 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
             console.log(error);
         }
     };
+    // const modalHandler = async () => {
+    //     try {
+
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -53,12 +59,20 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
         setIsMenuOpen(false);
     };
 
+    const openModalThird = () => {
+        setIsModalThirdOpen(true);
+        setIsMenuOpen(false);
+    };
+
     const closeModal = () => {
         setIsModalOpen(false);
     };
 
     const closeModalSecond = () => {
         setIsModalSecondOpen(false);
+    };
+    const closeModalThird = () => {
+        setIsModalThirdOpen(false);
     };
     const closeMenu = () => {
         setIsMenuOpen(false);
@@ -106,9 +120,15 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
                                 </button>
                             </>
                         ) : (
-                            <button type="button" onClick={logoutHandler}>
-                                Logout
-                            </button>
+                            <>
+                                <button
+                               type="button">
+                                    Create Chat
+                                </button>
+                                <button type="button" onClick={logoutHandler}>
+                                    Logout
+                                </button>
+                            </>
                         )}
                     </ul>
                 </div>
@@ -123,9 +143,14 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
                 </div>
             </div>
             <ModalLogin isOpen={isModalOpen} onClose={closeModal} />
+
             <ModalRegistration
                 isOpen={isModalSecondOpen}
                 onClose={closeModalSecond}
+            />
+            <ModalCreateChat
+                isOpen={isModalThirdOpen}
+                onClose={closeModalThird}
             />
         </>
     );

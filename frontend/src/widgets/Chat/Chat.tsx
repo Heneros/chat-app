@@ -9,7 +9,7 @@ export const Chat: React.FC<ChatType> = ({
     firstName,
     lastName,
     onClick,
-    firstThreeMessages,
+    lastMessage,
     _id,
     setSelectedChat,
 }) => {
@@ -42,9 +42,7 @@ export const Chat: React.FC<ChatType> = ({
                         {firstName} {lastName}
                     </span>
                     <span className="chat-member__last-message">
-                        {firstThreeMessages
-                            ? firstThreeMessages.join(', ')
-                            : ''}
+                        {lastMessage}
                     </span>
                 </div>
                 {isLoading ? (
