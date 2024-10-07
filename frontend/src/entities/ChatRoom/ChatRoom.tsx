@@ -5,7 +5,7 @@ import { ChatType } from '@/shared/types';
 import './ChatRoom.css';
 import { useGetByIdChatQuery } from '@/features/messages/messagesSlice';
 import { selectCurrentUserToken } from '@/features/auth/auth';
-import { ChatHeader } from '@/widgets/ChatHeader/ChatHeader';
+import { ChatHeader } from '@/widgets/Chats/ChatHeader/ChatHeader';
 import { useAppSelector } from '@/shared/lib/store';
 import { getErrorMessage } from '@/shared/utils/getErrorMessage';
 import { Message } from '@/shared/types/ChatType';

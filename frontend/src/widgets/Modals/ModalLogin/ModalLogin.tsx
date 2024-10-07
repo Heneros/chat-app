@@ -10,8 +10,6 @@ import { ChatModal } from '@/shared/types';
 
 export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
-    // const [loginUser, { isLoading, isSuccess, error: errorLog }] =
-    //     useLoginMutation();
     const [loginUser, { isLoading, isSuccess, error: errorLog }] =
         useLoginMutation();
 
@@ -40,7 +38,7 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                     );
                     setSubmitting(false);
                     setStatus({ success: true });
-                    console.log('Success!');
+                    //     console.log('Success!');
                 } catch (error) {
                     console.log(error);
                     // console.log('Error!');

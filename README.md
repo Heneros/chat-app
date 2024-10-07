@@ -23,12 +23,12 @@ Full-stack application with socket.io.
 - [x] Update chat(firstName, lastName) with a confirmation dialog window.
 - [x] Rewrite to FSD architecture. Frontend.
 - [x] Rewrite to Typescript.
-- [x] Api limiter add.
+- [x] API limiter add. limit to send message.
+- [x] Create new chat(firstName, lastName) with dialog window.
 
 
 ### Need to add:
 - [ ] Notification from receive message.
-- [ ] Create new chat(firstName, lastName) with dialog window.
 - [ ] Authorization via Google and Facebook.
 - [ ] Show toast with new message.
 - [ ] Create second type chat without auto-response API. Which you can add user contacts and communicate to each other.

@@ -1,5 +1,4 @@
-
-.modal-overlay{
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,13 +40,13 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-        box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .btn-submit {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: green;
     color: #fff;
     border: none;
     border-radius: 5px;

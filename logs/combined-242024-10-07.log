@@ -1,0 +1,82 @@
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-07 09:46:06.799 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-07 02:14:36.591 PM'
+}
+{
+  message: 'Please provide an email and password',
+  level: 'error',
+  timestamp: '2024-10-07 03:56:01.053 PM'
+}
+{
+  message: 'Please provide an email and password',
+  level: 'error',
+  timestamp: '2024-10-07 03:56:27.719 PM'
+}
+{
+  message: 'Please provide an email and password',
+  level: 'error',
+  timestamp: '2024-10-07 03:56:28.079 PM'
+}
+{
+  message: 'Please provide an email and password',
+  level: 'error',
+  timestamp: '2024-10-07 03:56:33.305 PM'
+}
+{
+  message: 'Please provide an email and password',
+  level: 'error',
+  timestamp: '2024-10-07 03:56:34.012 PM'
+}
+{
+  message: 'Please provide an email and password',
+  level: 'error',
+  timestamp: '2024-10-07 03:56:34.155 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-07 03:59:27.133 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-07 04:50:15.890 PM'
+}
+{
+  errors: {
+    passwordConfirm: ValidatorError: Password do not match
+        at validate (D:\Projects\chat-app\node_modules\mongoose\lib\schemaType.js:1385:13)
+        at SchemaString.SchemaType.doValidate (D:\Projects\chat-app\node_modules\mongoose\lib\schemaType.js:1369:7)
+        at D:\Projects\chat-app\node_modules\mongoose\lib\document.js:3065:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function: validator],
+        message: 'Password do not match',
+        type: 'user defined',
+        path: 'passwordConfirm',
+        fullPath: undefined,
+        value: 'admin123@gmail.com'
+      },
+      kind: 'user defined',
+      path: 'passwordConfirm',
+      value: 'admin123@gmail.com',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: 'Error register user : User validation failed: passwordConfirm: Password do not match',
+  stack: 'ValidationError: User validation failed: passwordConfirm: Password do not match\n' +
+    '    at model.Document.invalidate (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\document.js:3312:32)\n' +
+    '    at D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\document.js:3073:17\n' +
+    '    at D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2024-10-07 06:29:36.392 PM'
+}

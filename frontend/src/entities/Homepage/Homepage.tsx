@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import './Homepage.css';
 import { selectCurrentUserToken } from '@/features/auth/auth';
@@ -29,10 +28,14 @@ export const Homepage = () => {
                 )}
             </div>
             <div className="right-side">
-                {token && selectedChat ? (
-                    <ChatRoom selectedChat={selectedChat} />
+                {token ? (
+                    selectedChat ? (
+                        <ChatRoom selectedChat={selectedChat} />
+                    ) : (
+                        <span>Select Message</span>
+                    )
                 ) : (
-                    <span>Please log in</span>
+                    <span>Please login</span>
                 )}
             </div>
         </div>

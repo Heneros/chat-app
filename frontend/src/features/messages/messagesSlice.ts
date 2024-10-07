@@ -4,10 +4,11 @@ import { apiSlice } from '../api/apiSlice';
 export const chatApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         createChat: builder.mutation({
-            query: () => ({
+            query: ({ firstName, lastName }) => ({
                 url: `${CHAT_URL}`,
                 method: 'POST',
-                credentials: 'include',
+                // credentials: 'include',
+                body: { firstName, lastName },
             }),
             invalidatesTags: ['Chat'],
         }),

@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaSearch, FaBars } from 'react-icons/fa';
 
 import './TopBar.css';
-import { ModalLogin } from '../ModalLogin/ModalLogin';
-import { ModalRegistration } from '../ModalRegistration/ModalRegistration';
+
 import { useLogoutMutation } from '@/features/user/userApiSlice';
 import { selectCurrentUserToken } from '@/features/auth/auth';
 // import { ChatModal } from '@/shared/types';
 import { useAppSelector } from '@/shared/lib/store';
-import ModalCreateChat from '../ModalCreateChat/ModalCreateChat';
+import ModalCreateChat from '../Modals/ModalCreateChat/ModalCreateChat';
+import { ModalRegistration } from '../Modals/ModalRegistration/ModalRegistration';
+import { ModalLogin } from '../Modals/ModalLogin/ModalLogin';
 
 interface ChatModalProps {
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
@@ -16,7 +17,6 @@ interface ChatModalProps {
 
 export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const token = useAppSelector(selectCurrentUserToken);
-    // console.log(token);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -37,13 +37,6 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
             console.log(error);
         }
     };
-    // const modalHandler = async () => {
-    //     try {
-
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -71,6 +64,7 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const closeModalSecond = () => {
         setIsModalSecondOpen(false);
     };
+    
     const closeModalThird = () => {
         setIsModalThirdOpen(false);
     };
@@ -121,8 +115,7 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
                             </>
                         ) : (
                             <>
-                                <button
-                               type="button">
+                                <button type="button" onClick={openModalThird}>
                                     Create Chat
                                 </button>
                                 <button type="button" onClick={logoutHandler}>
