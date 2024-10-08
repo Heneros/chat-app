@@ -7,7 +7,7 @@
         "messages": [
             {
                 "text": "I love bear",
-                "sender": "1d"
+                "sender": "system"
             }
         ]
     },
@@ -19,7 +19,7 @@
         "messages": [
             {
                 "text": "Ask about cinema",
-                "sender": "2d"
+                "sender": "system"
             }
         ]
     },
@@ -31,7 +31,7 @@
         "messages": [
             {
                 "text": "Ask about science",
-                "sender": "3d"
+                "sender": "system"
             }
         ]
     }

@@ -2,6 +2,8 @@ import asyncHandler from 'express-async-handler';
 import fs from 'fs';
 import path from 'path';
 import jwt from 'jsonwebtoken';
+import mongoose from 'mongoose';
+
 import { Request, Response } from 'express';
 import { systemLogs } from '../../utils/Logger';
 import User from '../../models/UserModel';
@@ -80,7 +82,12 @@ const registerUser = async (req: Request, res: Response) => {
                     const updatedMessages = chatData.messages.map(
                         (message) => ({
                             ...message,
-                            sender: registeredUser._id,
+                            sender: 'system',
+                            // sender: mongoose.Types.ObjectId.isValid(
+                            //     message.sender,
+                            // )
+                            //     ? new mongoose.Types.ObjectId(message.sender)
+                            //     : registeredUser._id,
                         }),
                     );
                     await Chat.create({

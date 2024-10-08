@@ -1,0 +1,421 @@
+{
+  error: backend/socket/socket.ts(49,12): error TS2554: Expected 2 arguments, but got 1.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(49,12): error TS2554: Expected 2 arguments, but got 1.\r\n' +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(49,12): error TS2554: Expected 2 arguments, but got 1.\r\n' +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(49,12): error TS2554: Expected 2 arguments, but got 1.\r\n' +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Tue Oct 08 2024 11:59:55 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 22752,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 392839168,
+      heapTotal: 344117248,
+      heapUsed: 312993720,
+      external: 27240351,
+      arrayBuffers: 24249130
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 82864.125 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-08 11:59:55.376 AM'
+}
+{
+  error: backend/controllers/users/registerController.ts(83,45): error TS2339: Property '_id' does not exist on type 'Message'.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/users/registerController.ts(83,45): error TS2339: Property '_id' does not exist on type 'Message'.\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/users/registerController.ts(83,45): error TS2339: Property '_id' does not exist on type 'Message'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/users/registerController.ts(83,45): error TS2339: Property '_id' does not exist on type 'Message'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Tue Oct 08 2024 12:13:52 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 4560,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 388460544,
+      heapTotal: 333369344,
+      heapUsed: 305060800,
+      external: 27232263,
+      arrayBuffers: 24241042
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 83700.89 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-08 12:13:52.147 PM'
+}
+{
+  error: backend/controllers/users/registerController.ts(83,37): error TS2304: Cannot find name 'mongoose'.
+  backend/controllers/users/registerController.ts(86,39): error TS2304: Cannot find name 'mongoose'.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/users/registerController.ts(83,37): error TS2304: Cannot find name 'mongoose'.\r\n" +
+    "backend/controllers/users/registerController.ts(86,39): error TS2304: Cannot find name 'mongoose'.\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/users/registerController.ts(83,37): error TS2304: Cannot find name 'mongoose'.\r\n" +
+    "backend/controllers/users/registerController.ts(86,39): error TS2304: Cannot find name 'mongoose'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/controllers/users/registerController.ts(83,37): error TS2304: Cannot find name 'mongoose'.\r\n" +
+    "backend/controllers/users/registerController.ts(86,39): error TS2304: Cannot find name 'mongoose'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Tue Oct 08 2024 12:17:34 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 17236,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 386359296,
+      heapTotal: 332582912,
+      heapUsed: 305986944,
+      external: 27232223,
+      arrayBuffers: 24241002
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 83923.656 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-08 12:17:34.899 PM'
+}

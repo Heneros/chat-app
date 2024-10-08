@@ -8,10 +8,11 @@ import { ChatModal } from '@/shared/types';
 import './ModalCreateChatStyle.css';
 import { useCreateChatMutation } from '@/features/messages/messagesSlice';
 import { getErrorMessage } from '@/shared/utils/getErrorMessage';
+import { logIn } from '@/features/auth/auth';
 
 const ModalCreateChat: React.FC<ChatModal> = ({ isOpen, onClose }) => {
-    const dispatch = useDispatch();
-    const [createChat, { isLoading, isSuccess, errorCreateChat }] =
+    //  const dispatch = useDispatch();
+    const [createChat, { isLoading, isSuccess, error }] =
         useCreateChatMutation();
 
     useEffect(() => {
@@ -37,9 +38,9 @@ const ModalCreateChat: React.FC<ChatModal> = ({ isOpen, onClose }) => {
             })}
             onSubmit={async (values, { setStatus, setSubmitting }) => {
                 try {
+                    await createChat(values).unwrap();
                     setSubmitting(false);
                     setStatus({ success: true });
-                    await dispatch(createChat(values).unwrap());
                 } catch (error) {
                     setStatus({ success: false });
                     setSubmitting(false);
@@ -56,9 +57,9 @@ const ModalCreateChat: React.FC<ChatModal> = ({ isOpen, onClose }) => {
             }) => (
                 <div className="modal-overlay" onClick={onClose}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
-                        {errorCreateChat && (
+                        {error && (
                             <div className="error-message">
-                                {getErrorMessage(errorCreateChat)}
+                                {getErrorMessage(error)}
                             </div>
                         )}
 

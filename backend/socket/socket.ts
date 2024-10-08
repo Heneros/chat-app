@@ -42,8 +42,12 @@ io.on('connection', async (socket) => {
             console.error('Failed to update chat:', error);
         }
     });
-    socket.on('connect_error', (data) => {
-        console.log('connect_error', data);
+    socket.on('connect_error', (error) => {
+        console.log('connect_error', error);
+    });
+
+    socket.on('create_chat', (data) => {
+        
     });
 
     socket.on('sendMessage', async (data) => {
@@ -55,9 +59,6 @@ io.on('connection', async (socket) => {
         });
         // console.log('sendMessage', chatId, text);
         try {
-            // const agent = new https.Agent({
-            //     rejectUnauthorized: false,
-            // });
             const agent = new https.Agent({
                 rejectUnauthorized: false,
             });

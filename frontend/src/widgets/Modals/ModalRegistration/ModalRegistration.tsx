@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react';
 import { Formik } from 'formik';
-import { useDispatch } from 'react-redux';
+import * as Yup from 'yup';
 
 import './ModalRegistration.css';
+
 import { useRegistrationMutation } from '@/features/user/userApiSlice';
 import { logIn } from '@/features/auth/auth';
 import { getErrorMessage } from '@/shared/utils/getErrorMessage';
 import { ChatModal } from '@/shared/types';
+import { useAppDispatch } from '@/shared/lib/store';
 
 export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    const [registerUser, { isLoading, isSuccess, error: errorReg }] =
+    const [registerUser, { isLoading, isSuccess, error }] =
         useRegistrationMutation();
 
     useEffect(() => {
@@ -33,6 +35,16 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                 passwordConfirm: '',
                 submit: null,
             }}
+            validationSchema={Yup.object().shape({
+                username: Yup.string().max(35).required('Username is required'),
+                firstName: Yup.string().required('First Name is required'),
+                lastName: Yup.string().required('Last Name is required'),
+                email: Yup.string().email().required('Email is required'),
+                password: Yup.string().required('Password is required'),
+                passwordConfirm: Yup.string()
+                    .required('Password is required')
+                    .oneOf([Yup.ref('password')], 'Passwords must match'),
+            })}
             onSubmit={async (values, { setStatus, setSubmitting }) => {
                 try {
                     const getUserCredentials =
@@ -48,14 +60,20 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                     // console.log('Success!');
                 } catch (error) {
                     console.log(error);
-
-                    // console.log('Error!');
+                    console.log('errorReg!', error);
                     setStatus({ success: false });
                     setSubmitting(false);
                 }
             }}
         >
-            {({ errors, values, handleSubmit, handleChange, isSubmitting }) => (
+            {({
+                errors,
+                values,
+                handleSubmit,
+                handleChange,
+                touched,
+                isSubmitting,
+            }) => (
                 <div className="modal-overlay" onClick={onClose}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
                         <h2>Registration</h2>
@@ -64,12 +82,17 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                             autoComplete="off"
                             onSubmit={handleSubmit}
                         >
-                            {errorReg && (
+                            {error && (
                                 <div className="error-message">
-                                    {getErrorMessage(errorReg)}
+                                    {getErrorMessage(error)}
                                 </div>
                             )}
                             <div className="form-group">
+                                {touched.username && errors.username && (
+                                    <div className="error-message">
+                                        {errors.username}
+                                    </div>
+                                )}
                                 <label htmlFor="username">
                                     Username
                                     <input
@@ -82,6 +105,11 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 </label>
                             </div>
                             <div className="form-group">
+                                {touched.email && errors.email && (
+                                    <div className="error-message">
+                                        {errors.email}
+                                    </div>
+                                )}
                                 <label htmlFor="email">
                                     Email
                                     <input
@@ -94,6 +122,11 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 </label>
                             </div>
                             <div className="form-group">
+                                {touched.firstName && errors.firstName && (
+                                    <div className="error-message">
+                                        {errors.firstName}
+                                    </div>
+                                )}
                                 <label htmlFor="firstName">
                                     First Name
                                     <input
@@ -106,6 +139,11 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 </label>
                             </div>
                             <div className="form-group">
+                                {touched.lastName && errors.lastName && (
+                                    <div className="error-message">
+                                        {errors.lastName}
+                                    </div>
+                                )}
                                 <label htmlFor="lastName">
                                     Last Name
                                     <input
@@ -118,6 +156,11 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 </label>
                             </div>
                             <div className="form-group">
+                                {touched.password && errors.password && (
+                                    <div className="error-message">
+                                        {errors.password}
+                                    </div>
+                                )}
                                 <label htmlFor="password">
                                     Password
                                     <input
@@ -130,6 +173,12 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 </label>
                             </div>
                             <div className="form-group">
+                                {touched.passwordConfirm &&
+                                    errors.passwordConfirm && (
+                                        <div className="error-message">
+                                            {errors.passwordConfirm}
+                                        </div>
+                                    )}
                                 <label htmlFor="passwordConfirm">
                                     Confirm Password
                                     <input
@@ -143,7 +192,14 @@ export const ModalRegistration: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                             </div>
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
+                                disabled={
+                                    !values.username ||
+                                    !values.email ||
+                                    !values.firstName ||
+                                    !values.lastName ||
+                                    !values.password ||
+                                    !values.passwordConfirm
+                                }
                                 className="btn-submit"
                             >
                                 Submit

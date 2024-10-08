@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import './ModalLogin.css';
-import { useDispatch } from 'react-redux';
-// import * as Yup from 'yup';
+
+import * as Yup from 'yup';
+
 import { Formik } from 'formik';
 import { useLoginMutation } from '@/features/user/userApiSlice';
 import { logIn } from '@/features/auth/auth';
 import { getErrorMessage } from '@/shared/utils/getErrorMessage';
 import { ChatModal } from '@/shared/types';
+import { useAppDispatch } from '@/shared/lib/store';
 
 export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
-    const dispatch = useDispatch();
-    const [loginUser, { isLoading, isSuccess, error: errorLog }] =
-        useLoginMutation();
+    const dispatch = useAppDispatch();
+    const [loginUser, { isLoading, isSuccess, error }] = useLoginMutation();
 
     useEffect(() => {
         if (isSuccess) {
@@ -28,6 +29,10 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                 password: '',
                 submit: null,
             }}
+            validationSchema={Yup.object().shape({
+                email: Yup.string().email().required('Email is required'),
+                password: Yup.string().required('Password is required'),
+            })}
             onSubmit={async (values, { setStatus, setSubmitting }) => {
                 try {
                     const getUserCredentials = await loginUser(values).unwrap();
@@ -41,13 +46,21 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                     //     console.log('Success!');
                 } catch (error) {
                     console.log(error);
-                    // console.log('Error!');
+                    console.log('errorLog!', error);
+
                     setStatus({ success: false });
                     setSubmitting(false);
                 }
             }}
         >
-            {({ errors, values, handleSubmit, handleChange, isSubmitting }) => (
+            {({
+                errors,
+                values,
+                handleSubmit,
+                handleChange,
+                touched,
+                isSubmitting,
+            }) => (
                 <div className="modal-overlay" onClick={onClose}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
                         <h2>Login</h2>
@@ -56,14 +69,17 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                             autoComplete="off"
                             onSubmit={handleSubmit}
                         >
-                            {errorLog && (
+                            {error && (
                                 <div className="error-message">
-                                    {/* {errorLog?.data?.message ||
-                                        'Error during auth'} */}
-                                    {getErrorMessage(errorLog)}
+                                    {getErrorMessage(error)}
                                 </div>
                             )}
                             <div className="form-group">
+                                {touched.email && errors.email && (
+                                    <div className="error-message">
+                                        {errors.email}
+                                    </div>
+                                )}
                                 <label htmlFor="email">
                                     Email
                                     <input
@@ -76,6 +92,11 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 </label>
                             </div>
                             <div className="form-group">
+                                {touched.password && errors.password && (
+                                    <div className="error-message">
+                                        {errors.password}
+                                    </div>
+                                )}
                                 <label htmlFor="password">
                                     Password
                                     <input
@@ -89,7 +110,7 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                             </div>
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
+                                disabled={!values.email || !values.password}
                                 className="btn-submit"
                             >
                                 Login

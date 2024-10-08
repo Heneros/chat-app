@@ -4,8 +4,9 @@ import './ChatHeader.css';
 
 import { ChatType } from '@/shared/types';
 import { useUpdateChatMutation } from '@/features/messages/messagesSlice';
+import { BASE_URL } from '@/shared/utils/constants';
 
-const socket = io('http://localhost:3000');
+// const socket = io(BASE_URL);
 
 // interface ChatHeader extends Omit<ChatType, 'messages'> {
 //     selectedChat: ChatType | null;
@@ -43,11 +44,11 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
             }
         };
 
-        socket.on('chatUpdated', handleChatUpdated);
+        // socket.on('chatUpdated', handleChatUpdated);
 
-        return () => {
-            socket.off('chatUpdated', handleChatUpdated);
-        };
+        // return () => {
+        //     socket.off('chatUpdated', handleChatUpdated);
+        // };
     }, [chatId]);
 
     const handleUpdateChat = async () => {
@@ -59,11 +60,11 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
             lastName: chatName.lastName,
         }).unwrap();
 
-        socket.emit('updateChat', {
-            chatId,
-            firstName: chatName.firstName,
-            lastName: chatName.lastName,
-        });
+        // socket.emit('updateChat', {
+        //     chatId,
+        //     firstName: chatName.firstName,
+        //     lastName: chatName.lastName,
+        // });
 
         setEditMode(false);
     };
