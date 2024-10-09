@@ -13,20 +13,90 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:3000',
+        origin: process.env.CLIENT_URL,
         methods: ['GET', 'POST'],
     },
 });
 
+let activeRooms: string[] = [];
+const userPreferences = new Map<string, boolean>();
+
+const sendRandomMessage = async (roomId: string) => {
+    try {
+        const agent = new https.Agent({
+            rejectUnauthorized: false,
+        });
+
+        const response = await axios.get('https://api.quotable.io/random', {
+            httpsAgent: agent,
+        });
+        const apiMessage = response.data.content;
+
+        io.to(roomId).emit(`receiveMessage:${roomId}`, {
+            text: apiMessage,
+            sender: 'system',
+        });
+
+        const chat = await Chat.findById(roomId);
+        if (chat) {
+            const newMessage = {
+                text: apiMessage,
+                sender: 'system',
+            };
+            chat.messages.push(newMessage);
+            await chat.save();
+        }
+
+        console.log(`Sent message to room: ${roomId}`);
+    } catch (error) {
+        console.error('Failed to send random message:', error);
+    }
+};
+
 io.on('connection', async (socket) => {
+    console.log('User connected:', socket.id);
+
+    userPreferences.set(socket.id, true);
+
+    socket.on('toggleAutomateMessages', (enabled: boolean) => {
+        userPreferences.set(socket.id, enabled);
+        console.log(
+            `User ${socket.id} ${enabled ? 'enabled' : 'disabled'} automated messages`,
+        );
+    });
+
+    const availableChats = await Chat.find({});
+
+    availableChats.forEach((chat) => {
+        socket.join(chat._id.toString());
+        if (!activeRooms.includes(chat._id.toString())) {
+            activeRooms.push(chat._id.toString());
+        }
+    });
+
+    if (availableChats.length > 0 && userPreferences.get(socket.id)) {
+        const randomChat =
+            availableChats[Math.floor(Math.random() * availableChats.length)];
+        await sendRandomMessage(randomChat._id.toString());
+    }
+
     socket.on('join_room', (roomId) => {
         console.log(`User joined room: ${roomId}`);
         socket.join(roomId);
+
+        if (!activeRooms.includes(roomId)) {
+            activeRooms.push(roomId);
+        }
+        console.log('activeRooms', activeRooms);
     });
-    console.log('user connected', socket.id);
-    socket.on('leave_room', (chatId) => {
-        socket.leave(chatId);
+
+    socket.on('leave_room', (roomId) => {
+        socket.leave(roomId);
+        console.log(`User left room: ${roomId}`);
+        activeRooms = activeRooms.filter((room) => room !== roomId);
+        console.log('Updated activeRooms', activeRooms);
     });
+
     socket.on('updateChat', async ({ chatId, firstName, lastName }) => {
         try {
             const chat = await Chat.findByIdAndUpdate(
@@ -42,12 +112,9 @@ io.on('connection', async (socket) => {
             console.error('Failed to update chat:', error);
         }
     });
+
     socket.on('connect_error', (error) => {
         console.log('connect_error', error);
-    });
-
-    socket.on('create_chat', (data) => {
-        
     });
 
     socket.on('sendMessage', async (data) => {
@@ -57,7 +124,7 @@ io.on('connection', async (socket) => {
             text,
             sender: 'user',
         });
-        // console.log('sendMessage', chatId, text);
+
         try {
             const agent = new https.Agent({
                 rejectUnauthorized: false,
@@ -67,7 +134,6 @@ io.on('connection', async (socket) => {
             });
             const apiMessage = response.data.content;
 
-            console.log(apiMessage);
             io.to(chatId).emit(`receiveMessage:${chatId}`, {
                 text: apiMessage,
                 sender: 'api',
@@ -75,13 +141,12 @@ io.on('connection', async (socket) => {
 
             const chat = await Chat.findById(chatId);
             if (!chat) {
-                console.log('chat do not exists');
-            }
-            const newMessage = {
-                text: apiMessage,
-                sender: chatId,
-            };
-            if (chat) {
+                console.log('chat does not exist');
+            } else {
+                const newMessage = {
+                    text: apiMessage,
+                    sender: 'api',
+                };
                 chat.messages.push(newMessage);
                 await chat.save();
             }
@@ -90,5 +155,19 @@ io.on('connection', async (socket) => {
         }
     });
 });
+
+setInterval(async () => {
+    if (activeRooms.length > 0) {
+        const randomRoomId =
+            activeRooms[Math.floor(Math.random() * activeRooms.length)];
+        const roomSockets = await io.in(randomRoomId).fetchSockets();
+        const shouldSendMessage = roomSockets.some((s) =>
+            userPreferences.get(s.id),
+        );
+        if (shouldSendMessage) {
+            await sendRandomMessage(randomRoomId);
+        }
+    }
+}, 4500);
 
 export { io, app, server };

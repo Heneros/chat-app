@@ -10,6 +10,7 @@ import { useAppSelector } from '@/shared/lib/store';
 import ModalCreateChat from '../Modals/ModalCreateChat/ModalCreateChat';
 import { ModalRegistration } from '../Modals/ModalRegistration/ModalRegistration';
 import { ModalLogin } from '../Modals/ModalLogin/ModalLogin';
+import ModalPersonalAccount from '../Modals/ModalPersonalAccount/ModalPersonalAccount';
 
 interface ChatModalProps {
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
@@ -25,6 +26,7 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalSecondOpen, setIsModalSecondOpen] = useState(false);
     const [isModalThirdOpen, setIsModalThirdOpen] = useState(false);
+    const [isModalFourOpen, setIsModalFourOpen] = useState(false);
 
     const [logoutUser] = useLogoutMutation();
     // const menuRef = useRef();
@@ -57,6 +59,11 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
         setIsMenuOpen(false);
     };
 
+    const openModalFour = () => {
+        setIsModalFourOpen(true);
+        setIsMenuOpen(false);
+    };
+
     const closeModal = () => {
         setIsModalOpen(false);
     };
@@ -64,10 +71,14 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const closeModalSecond = () => {
         setIsModalSecondOpen(false);
     };
-    
+
     const closeModalThird = () => {
         setIsModalThirdOpen(false);
     };
+    const closeModalFour = () => {
+        setIsModalFourOpen(false);
+    };
+
     const closeMenu = () => {
         setIsMenuOpen(false);
     };
@@ -118,6 +129,9 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
                                 <button type="button" onClick={openModalThird}>
                                     Create Chat
                                 </button>
+                                <button type="button" onClick={openModalFour}>
+                                    My Account
+                                </button>
                                 <button type="button" onClick={logoutHandler}>
                                     Logout
                                 </button>
@@ -144,6 +158,10 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
             <ModalCreateChat
                 isOpen={isModalThirdOpen}
                 onClose={closeModalThird}
+            />
+            <ModalPersonalAccount
+                isOpen={isModalFourOpen}
+                onClose={closeModalFour}
             />
         </>
     );

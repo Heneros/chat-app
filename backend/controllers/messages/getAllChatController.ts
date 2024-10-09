@@ -1,4 +1,3 @@
-import asyncHandler from 'express-async-handler';
 import { Request, Response } from 'express';
 import Chat from '../../models/ChatModel';
 import { RequestWithUser } from '../../types/RequestWithUser';

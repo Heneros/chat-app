@@ -19,7 +19,7 @@ import { app, server } from './socket/socket';
 
 app.use(
     cors({
-        origin: 'http://localhost:3000',
+        origin: process.env.CLIENT_URL,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
         credentials: true,
     }),
@@ -65,6 +65,10 @@ const startServer = async () => {
         // });
         systemLogs.info(
             `Server on ${port} running. NodeENV: ${process.env.NODE_ENV}  `,
+        );
+
+        console.log(
+            `Server on ${port} running. Node env: ${process.env.NODE_ENV}  `,
         );
     } catch (error) {
         console.log(error);
