@@ -20,6 +20,7 @@ const io = new Server(server, {
 
 let activeRooms: string[] = [];
 const userPreferences = new Map<string, boolean>();
+// const userPreferences = new Map<string, { enabled: boolean, rooms: string[] }>();
 
 const sendRandomMessage = async (roomId: string) => {
     try {
@@ -34,14 +35,14 @@ const sendRandomMessage = async (roomId: string) => {
 
         io.to(roomId).emit(`receiveMessage:${roomId}`, {
             text: apiMessage,
-            sender: 'system',
+            sender: 'api',
         });
 
         const chat = await Chat.findById(roomId);
         if (chat) {
             const newMessage = {
                 text: apiMessage,
-                sender: 'system',
+                sender: 'api',
             };
             chat.messages.push(newMessage);
             await chat.save();
@@ -58,7 +59,7 @@ io.on('connection', async (socket) => {
 
     userPreferences.set(socket.id, true);
 
-    socket.on('toggleAutomateMessages', (enabled: boolean) => {
+    socket.on('toggleAutomatedMessages', (enabled: boolean) => {
         userPreferences.set(socket.id, enabled);
         console.log(
             `User ${socket.id} ${enabled ? 'enabled' : 'disabled'} automated messages`,
@@ -113,10 +114,6 @@ io.on('connection', async (socket) => {
         }
     });
 
-    socket.on('connect_error', (error) => {
-        console.log('connect_error', error);
-    });
-
     socket.on('sendMessage', async (data) => {
         const { chatId, text } = data;
 
@@ -133,10 +130,15 @@ io.on('connection', async (socket) => {
                 httpsAgent: agent,
             });
             const apiMessage = response.data.content;
+            const roomSockets = await io.in(chatId).fetchSockets();
 
-            io.to(chatId).emit(`receiveMessage:${chatId}`, {
-                text: apiMessage,
-                sender: 'api',
+            roomSockets.forEach((s) => {
+                if (userPreferences.get(s.id)) {
+                    s.emit(`receiveMessage:${chatId}`, {
+                        text: apiMessage,
+                        sender: 'api',
+                    });
+                }
             });
 
             const chat = await Chat.findById(chatId);
@@ -164,10 +166,11 @@ setInterval(async () => {
         const shouldSendMessage = roomSockets.some((s) =>
             userPreferences.get(s.id),
         );
+
         if (shouldSendMessage) {
             await sendRandomMessage(randomRoomId);
         }
     }
-}, 4500);
+}, 1300);
 
 export { io, app, server };

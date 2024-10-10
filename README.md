@@ -13,6 +13,9 @@ Full-stack application with socket.io.
 - React
 - MongoDB
 - Socket.IO
+- Formik 
+
+
 
 ### Already exists:
 - [x] Three predefined chats.
@@ -38,4 +41,5 @@ Full-stack application with socket.io.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
 - [ ] Avatars to users
+- [ ] Edit my msg in chat
 - [ ] Available contacts. option should have. User can show/hide from public list contacts.

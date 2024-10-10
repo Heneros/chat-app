@@ -53,10 +53,10 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
 
-                    socket.on('hello', (data) => {
-                        // console.log('123', data);
-                    });
-                    socket.emit('hello', 'from client');
+                    // socket.on('hello', (data) => {
+                    //     // console.log('123', data);
+                    // });
+                    // socket.emit('hello', 'from client');
                     return () => {
                         socket.off(
                             `receiveMessage:${chatId}`,
