@@ -6,6 +6,7 @@ import https from 'https';
 
 import Chat from '../models/ChatModel';
 import { systemLogs } from '../utils/Logger';
+import User from '../models/UserModel';
 
 const app = express();
 
@@ -20,7 +21,6 @@ const io = new Server(server, {
 
 let activeRooms: string[] = [];
 const userPreferences = new Map<string, boolean>();
-// const userPreferences = new Map<string, { enabled: boolean, rooms: string[] }>();
 
 const sendRandomMessage = async (roomId: string) => {
     try {
@@ -33,37 +33,67 @@ const sendRandomMessage = async (roomId: string) => {
         });
         const apiMessage = response.data.content;
 
-        io.to(roomId).emit(`receiveMessage:${roomId}`, {
-            text: apiMessage,
-            sender: 'api',
-        });
+        const roomSockets = await io.in(roomId).fetchSockets();
+        let messagesSent = false;
 
-        const chat = await Chat.findById(roomId);
-        if (chat) {
-            const newMessage = {
-                text: apiMessage,
-                sender: 'api',
-            };
-            chat.messages.push(newMessage);
-            await chat.save();
+        for (const socket of roomSockets) {
+            const userId = socket.data.userId;
+            if (userPreferences.get(userId)) {
+                socket.emit(`receiveMessage:${roomId}`, {
+                    text: apiMessage,
+                    sender: 'api',
+                });
+                messagesSent = true;
+            }
         }
 
-        console.log(`Sent message to room: ${roomId}`);
+        if (messagesSent) {
+            const chat = await Chat.findById(roomId);
+            if (chat) {
+                const newMessage = {
+                    text: apiMessage,
+                    sender: 'api',
+                };
+                chat.messages.push(newMessage);
+                await chat.save();
+            }
+            console.log(`Отправлено сообщение в комнату: ${roomId}`);
+        } else {
+            console.log(
+                `Сообщение не отправлено в комнату: ${roomId} (нет активных пользователей)`,
+            );
+        }
     } catch (error) {
-        console.error('Failed to send random message:', error);
+        console.error('Не удалось отправить случайное сообщение:', error);
     }
 };
 
 io.on('connection', async (socket) => {
     console.log('User connected:', socket.id);
 
-    userPreferences.set(socket.id, true);
+    socket.on('authenticate', async (userId) => {
+        socket.data.userId = userId;
+        const user = await User.findById(userId);
+        if (user) {
+            userPreferences.set(userId, user.automatedMessagesEnabled || false);
+        } else {
+            userPreferences.set(userId, true);
+        }
+        console.log(`Пользователь ${userId} аутентифицирован`);
+    });
 
-    socket.on('toggleAutomatedMessages', (enabled: boolean) => {
-        userPreferences.set(socket.id, enabled);
-        console.log(
-            `User ${socket.id} ${enabled ? 'enabled' : 'disabled'} automated messages`,
-        );
+    socket.on('toggleAutomatedMessages', async (enabled: boolean) => {
+        const userId = socket.data.userId;
+        if (userId) {
+            userPreferences.set(userId, enabled);
+            await User.findByIdAndUpdate(userId, {
+                automatedMessagesEnabled: enabled,
+            });
+
+            console.log(
+                `Пользователь ${userId} ${enabled ? 'включил' : 'выключил'} автоматические сообщения`,
+            );
+        }
     });
 
     const availableChats = await Chat.find({});
@@ -75,12 +105,6 @@ io.on('connection', async (socket) => {
         }
     });
 
-    if (availableChats.length > 0 && userPreferences.get(socket.id)) {
-        const randomChat =
-            availableChats[Math.floor(Math.random() * availableChats.length)];
-        await sendRandomMessage(randomChat._id.toString());
-    }
-
     socket.on('join_room', (roomId) => {
         console.log(`User joined room: ${roomId}`);
         socket.join(roomId);
@@ -88,14 +112,13 @@ io.on('connection', async (socket) => {
         if (!activeRooms.includes(roomId)) {
             activeRooms.push(roomId);
         }
-        console.log('activeRooms', activeRooms);
+        ///   console.log('activeRooms', activeRooms);
     });
 
     socket.on('leave_room', (roomId) => {
         socket.leave(roomId);
         console.log(`User left room: ${roomId}`);
         activeRooms = activeRooms.filter((room) => room !== roomId);
-        console.log('Updated activeRooms', activeRooms);
     });
 
     socket.on('updateChat', async ({ chatId, firstName, lastName }) => {
@@ -132,13 +155,17 @@ io.on('connection', async (socket) => {
             const apiMessage = response.data.content;
             const roomSockets = await io.in(chatId).fetchSockets();
 
-            roomSockets.forEach((s) => {
-                if (userPreferences.get(s.id)) {
-                    s.emit(`receiveMessage:${chatId}`, {
-                        text: apiMessage,
-                        sender: 'api',
-                    });
-                }
+            // roomSockets.forEach((s) => {
+            //     if (userPreferences.get(s.id)) {
+            //         s.emit(`receiveMessage:${chatId}`, {
+            //             text: apiMessage,
+            //             sender: 'api',
+            //         });
+            //     }
+            // });
+            socket.emit(`receiveMessage:${chatId}`, {
+                text: apiMessage,
+                sender: 'api',
             });
 
             const chat = await Chat.findById(chatId);
@@ -162,14 +189,7 @@ setInterval(async () => {
     if (activeRooms.length > 0) {
         const randomRoomId =
             activeRooms[Math.floor(Math.random() * activeRooms.length)];
-        const roomSockets = await io.in(randomRoomId).fetchSockets();
-        const shouldSendMessage = roomSockets.some((s) =>
-            userPreferences.get(s.id),
-        );
-
-        if (shouldSendMessage) {
-            await sendRandomMessage(randomRoomId);
-        }
+        await sendRandomMessage(randomRoomId);
     }
 }, 1300);
 

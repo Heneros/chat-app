@@ -10,26 +10,23 @@ const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
 
     useEffect(() => {
         socket.on('connect', () => {
-            console.log('Connected to server');
-        });
-
-        socket.on(`receiveMessage:randomRoomId`, (message) => {
-            if (automatedMessages || message.sender !== 'api') {
-                console.log('Received message:', message.text);
-            }
+            console.log('Подключено к серверу');
         });
 
         return () => {
-            socket.off('receiveMessage:randomRoomId');
+            socket.off('connect');
         };
-    }, [automatedMessages]);
+    }, []);
 
     const toggleAutomatedMessages = () => {
         const newState = !automatedMessages;
         setAutomatedMessages(newState);
         socket.emit('toggleAutomatedMessages', newState);
-        /// console.log('toggleAutomatedMessages');
+        console.log(
+            `Автоматические сообщения ${newState ? 'включены' : 'выключены'}`,
+        );
     };
+
     if (!isOpen) return null;
     return (
         <div className="modal-overlay" onClick={onClose}>

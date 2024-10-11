@@ -32,6 +32,10 @@ const userSchema = new Schema<IUser>(
             type: String,
             required: true,
         },
+        automatedMessagesEnabled: {
+            type: Boolean,
+            default: true,
+        },
         passwordConfirm: {
             type: String,
             validate: {

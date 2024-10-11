@@ -9,6 +9,7 @@ export interface IUser extends Document {
     username: string;
     lastName: string;
     refreshToken: string[];
+    automatedMessagesEnabled: boolean;
     googleId: string;
     matchPassword(enteredPassword: string): Promise<boolean>;
 }
