@@ -5,7 +5,7 @@ import { IUser } from '../../types/IUser';
 import User from '../../models/UserModel';
 import { systemLogs } from '../../utils/Logger';
 
-const authUser = asyncHandler(async (req: Request, res: Response) => {
+const authUser = async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -96,6 +96,6 @@ const authUser = asyncHandler(async (req: Request, res: Response) => {
     } else {
         res.status(401).json({ message: ' Invalid data ' });
     }
-});
+};
 
 export default authUser;
