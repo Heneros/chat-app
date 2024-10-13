@@ -5,8 +5,6 @@ import cors from 'cors';
 // import passport from 'passport';
 import cookieParser from 'cookie-parser';
 import mongoSanitize from 'express-mongo-sanitize';
-import http from 'http';
-import { Server } from 'socket.io';
 
 import morgan from 'morgan';
 import connectDB from './config/connectDB';
@@ -16,6 +14,7 @@ import { systemLogs } from './utils/Logger';
 import { errorHandler, notFound } from './middleware/errorMiddleware';
 import { apiLimiter } from './middleware/apiLimiter';
 import { app, server } from './socket/socket';
+import sendAutomatedMessages from './socket/sendAutomateMsgController';
 
 app.use(
     cors({
@@ -48,6 +47,8 @@ app.get('/', (req, res: Response) => {
 });
 app.use(notFound);
 app.use(errorHandler);
+
+// sendAutomatedMessages();
 
 const port = process.env.PORT || 4001;
 const MONGO_URI = process.env.MONGO_URI;

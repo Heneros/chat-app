@@ -538,3 +538,233 @@
   level: 'info',
   timestamp: '2024-10-12 01:38:11.185 PM'
 }
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:24:29.454 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:26:23.837 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:26:39.134 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:27:10.755 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:27:26.090 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:29:04.922 PM'
+}
+{
+  error: MongooseError: Operation `chats.find()` buffering timed out after 10000ms
+      at Timeout.<anonymous> (D:\Projects\chat-app\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:185:23)
+      at listOnTimeout (node:internal/timers:573:17)
+      at processTimers (node:internal/timers:514:7),
+  level: 'error',
+  message: 'unhandledRejection: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    'MongooseError: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  stack: 'MongooseError: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  rejection: true,
+  date: 'Sat Oct 12 2024 15:29:16 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 10844,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 402599936,
+      heapTotal: 353030144,
+      heapUsed: 322364440,
+      external: 28398352,
+      arrayBuffers: 24289984
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 252905.593 },
+  trace: [
+    {
+      column: 23,
+      file: 'D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js',
+      function: null,
+      line: 185,
+      method: null,
+      native: false
+    },
+    {
+      column: 17,
+      file: 'node:internal/timers',
+      function: 'listOnTimeout',
+      line: 573,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:internal/timers',
+      function: 'processTimers',
+      line: 514,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-10-12 03:29:16.291 PM'
+}
+{
+  error: MongooseError: Operation `chats.find()` buffering timed out after 10000ms
+      at Timeout.<anonymous> (D:\Projects\chat-app\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:185:23)
+      at listOnTimeout (node:internal/timers:573:17)
+      at processTimers (node:internal/timers:514:7),
+  level: 'error',
+  message: 'unhandledRejection: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    'MongooseError: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  stack: 'MongooseError: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  rejection: true,
+  date: 'Sat Oct 12 2024 15:29:16 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 10844,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 402690048,
+      heapTotal: 353292288,
+      heapUsed: 322726112,
+      external: 28406608,
+      arrayBuffers: 24298200
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 252905.593 },
+  trace: [
+    {
+      column: 23,
+      file: 'D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js',
+      function: null,
+      line: 185,
+      method: null,
+      native: false
+    },
+    {
+      column: 17,
+      file: 'node:internal/timers',
+      function: 'listOnTimeout',
+      line: 573,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:internal/timers',
+      function: 'processTimers',
+      line: 514,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-10-12 03:29:16.293 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:33:40.066 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:38:24.005 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:49:13.685 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:52:21.242 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 03:52:27.111 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 04:07:59.995 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:18:43.720 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:19:34.929 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:21:07.768 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:21:29.091 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:42:18.828 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:42:42.909 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:47:50.243 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-12 05:47:56.425 PM'
+}

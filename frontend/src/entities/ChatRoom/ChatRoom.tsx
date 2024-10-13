@@ -52,8 +52,9 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                     socket.emit('join_room', chatId);
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
+                    socket.on('automatedMessage', handleReceiveMessage);
 
-     
+                    
                     return () => {
                         socket.off(
                             `receiveMessage:${chatId}`,

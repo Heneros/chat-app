@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import { Request, Response } from 'express';
-import { io } from '../../socket/socket';
+// import { io } from '../../socket/socket';
 import Chat from '../../models/ChatModel';
 import { systemLogs } from '../../utils/Logger';
 
@@ -18,7 +18,7 @@ const updateChat = async (req: Request, res: Response) => {
             return res.status(404).json({ message: 'Chat not found' });
         }
 
-        io.to(chatId).emit('chatUpdated', chat);
+        // io.to(chatId).emit('chatUpdated', chat);
 
         res.status(200).json({
             message: 'Updated',

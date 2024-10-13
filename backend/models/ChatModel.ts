@@ -36,6 +36,10 @@ const chatSchema = new mongoose.Schema(
             required: true,
             ref: 'User',
         },
+        automatedMessagesEnabled: {
+            type: Boolean,
+            default: true,
+        },
     },
     { timestamps: true },
 );

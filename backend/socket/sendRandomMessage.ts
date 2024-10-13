@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Server, Socket } from 'socket.io';
 import https from 'https';
 import Chat from '../models/ChatModel';
 import { io } from './socket';

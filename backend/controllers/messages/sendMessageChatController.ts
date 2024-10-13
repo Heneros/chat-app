@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import axios from 'axios';
 import { Request, Response } from 'express';
 import Chat from '../../models/ChatModel';
-import { io } from '../../socket/socket';
+// import { io } from '../../socket/socket';
 import { RequestWithUser } from '../../types/RequestWithUser';
 
 const fallbackQuotes = [
@@ -55,7 +55,7 @@ const sendMessage = async (req: Request, res: Response) => {
                 };
                 chat.messages.push(botMessage);
                 await chat.save();
-                io.to(chatId).emit('receiveMessage', botMessage);
+                //    io.to(chatId).emit('receiveMessage', botMessage);
             }
         }, 1000);
 
