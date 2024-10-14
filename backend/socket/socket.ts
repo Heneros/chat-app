@@ -21,50 +21,97 @@ const io = new Server(server, {
 });
 
 let activeRooms: string[] = [];
-const userPreferences = new Map<string, boolean>();
+const activeUsers = new Set<string>();
 
 io.on('connection', async (socket) => {
     console.log('User connected:', socket.id);
 
-    // userPreferences.set(socket.id, true);
-    const user = await User.findById(socket.handshake.query.userId);
-    socket.on('toggleAutomateMessages', (enabled: boolean) => {
-        userPreferences.set(socket.id, enabled);
+    //  userPreferences.set(socket.id, true);
 
-        console.log(
-            `User ${socket.id} ${enabled ? 'enabled' : 'disabled'} automated messages`,
-        );
+    socket.on('authenticate', async (userId: string) => {
+        try {
+            const user = await User.findById(userId);
+            if (user) {
+                socket.data.userId = userId;
+                socket.data.automatedMessagesEnabled =
+                    user.automatedMessagesEnabled;
+                if (user.automatedMessagesEnabled) {
+                    activeUsers.add(userId);
+                }
+                console.log(
+                    `User ${userId} authenticated, automatedMessagesEnabled: ${user.automatedMessagesEnabled}`,
+                );
+            }
+        } catch (error) {
+            console.log('Authentication error:', error);
+        }
     });
 
-    const availableChats = await Chat.find({});
+    socket.on('toggleAutomateMessages', async (enabled: boolean) => {
+        if (socket.data.userId) {
+            try {
+                await User.findByIdAndUpdate(socket.data.userId, {
+                    automatedMessagesEnabled: enabled,
+                });
+                socket.data.automatedMessagesEnabled = enabled;
+                console.log(
+                    `User ${socket.data.userId} ${enabled ? 'enabled' : 'disabled'} automated messages`,
+                );
 
-    availableChats.forEach((chat) => {
+                if (enabled) {
+                    activeUsers.add(socket.data.userId);
+                } else {
+                    activeUsers.delete(socket.data.userId);
+                }
+            } catch (error) {
+                console.error('Failed to update user preferences:', error);
+            }
+        }
+    });
+
+    const availableChats = await Chat.find({})
+        .populate({
+            path: 'user',
+            match: { automatedMessagesEnabled: true },
+        })
+        .exec();
+
+    const filteredChats = availableChats.filter((chat) => chat.user);
+    // console.log(`availableChats: ${filteredChats}`);
+
+    filteredChats.forEach((chat) => {
         socket.join(chat._id.toString());
         if (!activeRooms.includes(chat._id.toString())) {
             activeRooms.push(chat._id.toString());
         }
     });
 
-    if (availableChats.length > 0 && userPreferences.get(socket.id)) {
-        const randomChat =
-            availableChats[Math.floor(Math.random() * availableChats.length)];
-        await sendRandomMessage(randomChat._id.toString());
-    }
-
-    socket.on('join_room', (roomId) => {
-        console.log(`User joined room: ${roomId}`);
-        socket.join(roomId);
-
-        if (!activeRooms.includes(roomId)) {
-            activeRooms.push(roomId);
-        }
-        console.log('activeRooms', activeRooms);
-    });
 
     socket.on('leave_room', (roomId) => {
         socket.leave(roomId);
         console.log(`User left room: ${roomId}`);
         activeRooms = activeRooms.filter((room) => room !== roomId);
+        console.log('Updated activeRooms', activeRooms);
+    });
+
+    socket.on('updateChat', async ({ chatId, firstName, lastName }) => {
+        try {
+            const chat = await Chat.findByIdAndUpdate(
+                chatId,
+                { firstName, lastName },
+                { new: true },
+            );
+
+            if (chat) {
+                io.to(chatId).emit('chatUpdated', chat);
+            }
+        } catch (error) {
+            console.error('Failed to update chat:', error);
+        }
+    });
+
+    socket.on('connect_error', (error) => {
+        console.log('connect_error', error);
     });
 
     socket.on('sendMessage', async (data) => {
@@ -106,18 +153,18 @@ io.on('connection', async (socket) => {
     });
 });
 
-setInterval(async () => {
+async function sendAutomatedMessages() {
     if (activeRooms.length > 0) {
-        const randomRoomId =
-            activeRooms[Math.floor(Math.random() * activeRooms.length)];
-        const roomSockets = await io.in(randomRoomId).fetchSockets();
-        const shouldSendMessage = roomSockets.some((s) =>
-            userPreferences.get(s.id),
-        );
-        if (shouldSendMessage) {
-            await sendRandomMessage(randomRoomId);
-        }
+        activeUsers.forEach(async (userId) => {
+            const randomRoomId =
+                activeRooms[Math.floor(Math.random() * activeRooms.length)];
+            if (randomRoomId) {
+                await sendRandomMessage(randomRoomId);
+            }
+        });
     }
-}, 1500);
+}
+
+setInterval(sendAutomatedMessages, 2500);
 
 export { io, app, server };

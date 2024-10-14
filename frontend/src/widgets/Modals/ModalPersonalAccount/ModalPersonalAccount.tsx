@@ -39,15 +39,12 @@ const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
 
     useEffect(() => {
         if (userId) {
-            socket.emit('authenticate', userId);
+            // socket.emit('authenticate', userId);
 
+            console.log(userId);
             socket.on('authenticationSuccess', (data) => {
                 console.log('Authentication successful');
                 setAutomatedMessages(data.automatedMessagesEnabled);
-            });
-
-            socket.on('authenticationFailed', () => {
-                console.log('Authentication failed');
             });
 
             socket.on('automatedMessagesUpdated', (enabled) => {

@@ -41,6 +41,7 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
             const { id: userId } = decodedToken;
 
             const [newMessage, setNewMessage] = useState('');
+            socket.emit('authenticate', userId);
 
             const handleReceiveMessage = useCallback((data: Message) => {
                 setAllMessages((prevMessages) => [...prevMessages, data]);
@@ -50,11 +51,10 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                 if (chatId) {
                     socket.emit('leave_room', socket.previousRoom);
                     socket.emit('join_room', chatId);
+
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
-                    socket.on('automatedMessage', handleReceiveMessage);
 
-                    
                     return () => {
                         socket.off(
                             `receiveMessage:${chatId}`,
