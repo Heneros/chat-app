@@ -14,7 +14,6 @@ import { systemLogs } from './utils/Logger';
 import { errorHandler, notFound } from './middleware/errorMiddleware';
 import { apiLimiter } from './middleware/apiLimiter';
 import { app, server } from './socket/socket';
-import sendAutomatedMessages from './socket/sendAutomateMsgController';
 
 app.use(
     cors({

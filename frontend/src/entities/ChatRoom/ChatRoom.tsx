@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { decodeToken } from 'react-jwt';
-import { ChatType } from '@/shared/types';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+import { ChatType } from '@/shared/types';
 import './ChatRoom.css';
 import { useGetByIdChatQuery } from '@/features/messages/messagesSlice';
 import { selectCurrentUserToken } from '@/features/auth/auth';
@@ -10,10 +12,8 @@ import { useAppSelector } from '@/shared/lib/store';
 import { getErrorMessage } from '@/shared/utils/getErrorMessage';
 import { Message } from '@/shared/types/ChatType';
 import MessageList from '@/widgets/MessageList/MessageList';
-// import socket from '@/widgets/Socket/socket';
 import { MessageInput } from '@/widgets/MessageInput/MessageInput';
 import socket from '@/widgets/Socket/socket';
-// import { BASE_URL } from '@/shared/utils/constants';
 
 interface ChatRoomProps {
     selectedChat: ChatType;
@@ -45,12 +45,23 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
 
             const handleReceiveMessage = useCallback((data: Message) => {
                 setAllMessages((prevMessages) => [...prevMessages, data]);
+
+                if (data.sender === 'api') {
+                    toast.info(`New message from ${data.sender}`, {
+                        position: 'bottom-right',
+                        autoClose: 3000,
+                    });
+                }
             }, []);
 
             useEffect(() => {
                 if (chatId) {
                     socket.emit('leave_room', socket.previousRoom);
-                    socket.emit('join_room', chatId);
+                    const data = {
+                        userId,
+                        chatId,
+                    };
+                    socket.emit('join_room', data);
 
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
@@ -109,6 +120,7 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                                 setNewMessage={setNewMessage}
                                 chatId={chatId}
                             />
+                            <ToastContainer />
                         </>
                     ) : (
                         <div>Select a chat to start messaging</div>

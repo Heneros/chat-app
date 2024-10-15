@@ -14,9 +14,6 @@ interface DecodedToken {
 const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
     // const [socket, setSocket] = useState(null);
     const tokenArray = useAppSelector(selectCurrentUserToken);
-    // const [automatedMessages, setAutomatedMessages] = useState(false);
-    // const [userId, setUserId] = useState<string | null>(null);
-    // console.log(token);
 
     const [automatedMessages, setAutomatedMessages] = useState(true);
     const [userId, setUserId] = useState<string | null>(null);
@@ -39,17 +36,8 @@ const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
 
     useEffect(() => {
         if (userId) {
-            // socket.emit('authenticate', userId);
-
+            socket.emit('authenticate', userId);
             console.log(userId);
-            socket.on('authenticationSuccess', (data) => {
-                console.log('Authentication successful');
-                setAutomatedMessages(data.automatedMessagesEnabled);
-            });
-
-            socket.on('automatedMessagesUpdated', (enabled) => {
-                setAutomatedMessages(enabled);
-            });
         }
 
         return () => {
@@ -61,9 +49,18 @@ const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
 
     const toggleAutomatedMessages = () => {
         const newState = !automatedMessages;
-        // setAutomatedMessages(newState);
-        socket.emit('toggleAutomatedMessages', newState);
-        console.log(`Automatic msgs ${newState ? 'turn on' : 'turn off'}`);
+        setAutomatedMessages(newState);
+        if (userId) {
+            socket.emit('toggleAutomateMessages', {
+                userId,
+                enabled: newState,
+            });
+            console.log(
+                `Automatic msgs ${newState ? 'turned on' : 'turned off'}`,
+            );
+        } else {
+            console.log('User ID not available');
+        }
     };
 
     if (!isOpen) return null;

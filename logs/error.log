@@ -1,0 +1,65 @@
+{
+  error: MongooseError: Operation `chats.find()` buffering timed out after 10000ms
+      at Timeout.<anonymous> (D:\Projects\chat-app\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:185:23)
+      at listOnTimeout (node:internal/timers:573:17)
+      at processTimers (node:internal/timers:514:7),
+  level: 'error',
+  message: 'unhandledRejection: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    'MongooseError: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  stack: 'MongooseError: Operation `chats.find()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  rejection: true,
+  date: 'Tue Oct 15 2024 09:20:16 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 11548,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 403402752,
+      heapTotal: 353820672,
+      heapUsed: 324937408,
+      external: 28456185,
+      arrayBuffers: 24347817
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 231009.375 },
+  trace: [
+    {
+      column: 23,
+      file: 'D:\\Projects\\chat-app\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js',
+      function: null,
+      line: 185,
+      method: null,
+      native: false
+    },
+    {
+      column: 17,
+      file: 'node:internal/timers',
+      function: 'listOnTimeout',
+      line: 573,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:internal/timers',
+      function: 'processTimers',
+      line: 514,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-10-15 09:20:16.428 AM'
+}

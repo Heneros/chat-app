@@ -35,7 +35,8 @@ io.on('connection', async (socket) => {
                 socket.data.userId = userId;
                 socket.data.automatedMessagesEnabled =
                     user.automatedMessagesEnabled;
-                if (user.automatedMessagesEnabled) {
+
+                if (user.automatedMessagesEnabled === true) {
                     activeUsers.add(userId);
                 }
                 console.log(
@@ -47,45 +48,48 @@ io.on('connection', async (socket) => {
         }
     });
 
-    socket.on('toggleAutomateMessages', async (enabled: boolean) => {
-        if (socket.data.userId) {
+    socket.on('toggleAutomateMessages', async ({ userId, enabled }) => {
+        if (userId) {
             try {
-                await User.findByIdAndUpdate(socket.data.userId, {
+                await User.findByIdAndUpdate(userId, {
                     automatedMessagesEnabled: enabled,
                 });
+
                 socket.data.automatedMessagesEnabled = enabled;
                 console.log(
-                    `User ${socket.data.userId} ${enabled ? 'enabled' : 'disabled'} automated messages`,
+                    `User ${userId} ${enabled ? 'enabled' : 'disabled'} automated messages`,
                 );
 
                 if (enabled) {
-                    activeUsers.add(socket.data.userId);
+                    activeUsers.add(userId);
                 } else {
-                    activeUsers.delete(socket.data.userId);
+                    activeUsers.delete(userId);
                 }
+
+                socket.emit('automatedMessagesUpdated', enabled);
             } catch (error) {
                 console.error('Failed to update user preferences:', error);
             }
+        } else {
+            console.log('User ID not provided');
         }
     });
 
-    const availableChats = await Chat.find({})
-        .populate({
-            path: 'user',
-            match: { automatedMessagesEnabled: true },
-        })
-        .exec();
+    socket.on('join_room', async (data) => {
+        const { userId: _id, chatId } = data;
 
-    const filteredChats = availableChats.filter((chat) => chat.user);
-    // console.log(`availableChats: ${filteredChats}`);
+        console.log(`User joined room: ${chatId} user id ${_id}`);
 
-    filteredChats.forEach((chat) => {
-        socket.join(chat._id.toString());
-        if (!activeRooms.includes(chat._id.toString())) {
-            activeRooms.push(chat._id.toString());
+        const usernameId = await User.findById(_id);
+        if (
+            !activeRooms.includes(chatId) &&
+            usernameId?.automatedMessagesEnabled === true
+        ) {
+            activeRooms.push(chatId);
+            socket.join(chatId);
         }
+        console.log('activeRooms', activeRooms);
     });
-
 
     socket.on('leave_room', (roomId) => {
         socket.leave(roomId);
@@ -165,6 +169,6 @@ async function sendAutomatedMessages() {
     }
 }
 
-setInterval(sendAutomatedMessages, 2500);
+setInterval(sendAutomatedMessages, 11500);
 
 export { io, app, server };

@@ -13,7 +13,9 @@ Full-stack application with socket.io.
 - React
 - MongoDB
 - Socket.IO
-- Formik 
+- Formik and Yup
+- Axios
+-
 
 
 
@@ -41,5 +43,5 @@ Full-stack application with socket.io.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
 - [ ] Avatars to users
-- [ ] Edit my msg in chat
+- [ ] Edit my message in chat
 - [ ] Available contacts. option should have. User can show/hide from public list contacts.
