@@ -26,6 +26,12 @@ export const MessageInput: React.FC<MessageInputProps> = ({
         }
     };
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            handleSendMessage();
+        }
+    };
+
     return (
         <div className="message-input">
             <input
@@ -33,6 +39,7 @@ export const MessageInput: React.FC<MessageInputProps> = ({
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 placeholder="Type a message..."
+                onKeyDown={handleKeyDown}
             />
             <button type="submit" onClick={handleSendMessage}>
                 Send

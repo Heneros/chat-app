@@ -1,21 +1,12 @@
 {
-  error: backend/socket/socket.ts(39,21): error TS2304: Cannot find name 'activeUsers'.
-  backend/socket/socket.ts(62,21): error TS2304: Cannot find name 'activeUsers'.
-  backend/socket/socket.ts(64,21): error TS2304: Cannot find name 'activeUsers'.
-  backend/socket/socket.ts(166,26): error TS2304: Cannot find name 'activeUsers'.
+  error: backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(39,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(62,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(64,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(166,26): error TS2304: Cannot find name 'activeUsers'.\r\n" +
+    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(39,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(62,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(64,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(166,26): error TS2304: Cannot find name 'activeUsers'.\r\n" +
+    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -28,10 +19,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(39,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(62,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(64,21): error TS2304: Cannot find name 'activeUsers'.\r\n" +
-    "backend/socket/socket.ts(166,26): error TS2304: Cannot find name 'activeUsers'.\r\n" +
+    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -44,9 +32,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Mon Oct 14 2024 16:56:29 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:21:04 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 7352,
+    pid: 11300,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -57,14 +45,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 402825216,
-      heapTotal: 351723520,
-      heapUsed: 320596304,
-      external: 27256743,
-      arrayBuffers: 24265522
+      rss: 392232960,
+      heapTotal: 347262976,
+      heapUsed: 316097928,
+      external: 25944685,
+      arrayBuffers: 22953464
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 171979.343 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 321059.578 },
   trace: [
     {
       column: 12,
@@ -147,17 +135,17 @@
       native: false
     }
   ],
-  timestamp: '2024-10-14 04:56:29.592 PM'
+  timestamp: '2024-10-16 10:21:04.287 AM'
 }
 {
-  error: backend/socket/socket.ts(166,21): error TS2339: Property 'length' does not exist on type 'Set<string>'.
+  error: backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(166,21): error TS2339: Property 'length' does not exist on type 'Set<string>'.\r\n" +
+    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(166,21): error TS2339: Property 'length' does not exist on type 'Set<string>'.\r\n" +
+    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -170,7 +158,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(166,21): error TS2339: Property 'length' does not exist on type 'Set<string>'.\r\n" +
+    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -183,9 +171,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Mon Oct 14 2024 17:03:15 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:24:28 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 23564,
+    pid: 14012,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -196,14 +184,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 402763776,
-      heapTotal: 351457280,
-      heapUsed: 316443752,
-      external: 25958876,
-      arrayBuffers: 22967655
+      rss: 401440768,
+      heapTotal: 350408704,
+      heapUsed: 314863712,
+      external: 25950788,
+      arrayBuffers: 22959567
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 172385.406 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 321264.203 },
   trace: [
     {
       column: 12,
@@ -286,17 +274,17 @@
       native: false
     }
   ],
-  timestamp: '2024-10-14 05:03:15.658 PM'
+  timestamp: '2024-10-16 10:24:28.921 AM'
 }
 {
-  error: backend/socket/socket.ts(167,25): error TS1005: ')' expected.
+  error: backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(167,25): error TS1005: ')' expected.\r\n" +
+    "backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(167,25): error TS1005: ')' expected.\r\n" +
+    "backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -309,7 +297,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(167,25): error TS1005: ')' expected.\r\n" +
+    "backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -322,9 +310,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Mon Oct 14 2024 17:03:42 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:28:58 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 15568,
+    pid: 7928,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -335,14 +323,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 406351872,
-      heapTotal: 350670848,
-      heapUsed: 315617912,
-      external: 25958900,
-      arrayBuffers: 22967679
+      rss: 403718144,
+      heapTotal: 351719424,
+      heapUsed: 321843456,
+      external: 26975559,
+      arrayBuffers: 23025031
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 172412.14 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 321533.453 },
   trace: [
     {
       column: 12,
@@ -425,17 +413,17 @@
       native: false
     }
   ],
-  timestamp: '2024-10-14 05:03:42.391 PM'
+  timestamp: '2024-10-16 10:28:58.164 AM'
 }
 {
-  error: backend/socket/socket.ts(167,9): error TS1434: Unexpected keyword or identifier.
+  error: backend/socket/socket.ts(44,5): error TS1109: Expression expected.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(167,9): error TS1434: Unexpected keyword or identifier.\r\n' +
+    'backend/socket/socket.ts(44,5): error TS1109: Expression expected.\r\n' +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(167,9): error TS1434: Unexpected keyword or identifier.\r\n' +
+    'backend/socket/socket.ts(44,5): error TS1109: Expression expected.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -448,7 +436,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(167,9): error TS1434: Unexpected keyword or identifier.\r\n' +
+    'backend/socket/socket.ts(44,5): error TS1109: Expression expected.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -461,9 +449,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Mon Oct 14 2024 17:03:46 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:29:48 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 21016,
+    pid: 10672,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -474,14 +462,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 398311424,
-      heapTotal: 350674944,
-      heapUsed: 316556936,
+      rss: 404402176,
+      heapTotal: 351199232,
+      heapUsed: 316169624,
       external: 27265039,
       arrayBuffers: 24273818
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 172416.5 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 321584.203 },
   trace: [
     {
       column: 12,
@@ -564,23 +552,17 @@
       native: false
     }
   ],
-  timestamp: '2024-10-14 05:03:46.750 PM'
+  timestamp: '2024-10-16 10:29:48.919 AM'
 }
 {
-  error: backend/socket/socket.ts(167,29): error TS2304: Cannot find name 'async'.
-  backend/socket/socket.ts(167,35): error TS2552: Cannot find name 'userId'. Did you mean 'User'?
-  backend/socket/socket.ts(167,44): error TS1005: ';' expected.
+  error: backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(167,29): error TS2304: Cannot find name 'async'.\r\n" +
-    "backend/socket/socket.ts(167,35): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(167,44): error TS1005: ';' expected.\r\n" +
+    "backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(167,29): error TS2304: Cannot find name 'async'.\r\n" +
-    "backend/socket/socket.ts(167,35): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(167,44): error TS1005: ';' expected.\r\n" +
+    "backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -593,9 +575,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(167,29): error TS2304: Cannot find name 'async'.\r\n" +
-    "backend/socket/socket.ts(167,35): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(167,44): error TS1005: ';' expected.\r\n" +
+    "backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -608,9 +588,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Mon Oct 14 2024 17:03:59 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:36:33 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 18832,
+    pid: 18520,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -621,292 +601,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 400293888,
-      heapTotal: 351723520,
-      heapUsed: 316384544,
-      external: 27248719,
-      arrayBuffers: 24257498
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 172429.328 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-14 05:03:59.577 PM'
-}
-{
-  error: backend/socket/socket.ts(175,5): error TS1005: ',' expected.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(175,5): error TS1005: ',' expected.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(175,5): error TS1005: ',' expected.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(175,5): error TS1005: ',' expected.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Mon Oct 14 2024 17:04:11 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 9868,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 404434944,
-      heapTotal: 351199232,
-      heapUsed: 315663904,
-      external: 27248575,
-      arrayBuffers: 24257354
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 172441.734 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-14 05:04:11.993 PM'
-}
-{
-  error: backend/socket/socket.ts(170,33): error TS1109: Expression expected.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(170,33): error TS1109: Expression expected.\r\n' +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(170,33): error TS1109: Expression expected.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(170,33): error TS1109: Expression expected.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Tue Oct 15 2024 09:32:00 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 14712,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 398540800,
+      rss: 400785408,
       heapTotal: 350937088,
-      heapUsed: 315637696,
-      external: 27256751,
-      arrayBuffers: 24265530
+      heapUsed: 316981400,
+      external: 27248679,
+      arrayBuffers: 24257458
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 231713.796 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 321989.203 },
   trace: [
     {
       column: 12,
@@ -989,17 +691,26 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 09:32:00.860 AM'
+  timestamp: '2024-10-16 10:36:33.911 AM'
 }
 {
-  error: backend/socket/socket.ts(170,33): error TS2552: Cannot find name 'user'. Did you mean 'User'?
+  error: backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.
+  backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.
+  backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.
+  backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(170,33): error TS2552: Cannot find name 'user'. Did you mean 'User'?\r\n" +
+    "backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.\r\n" +
+    "backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.\r\n" +
+    'backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.\r\n' +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(170,33): error TS2552: Cannot find name 'user'. Did you mean 'User'?\r\n" +
+    "backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.\r\n" +
+    "backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.\r\n" +
+    'backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1012,7 +723,10 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(170,33): error TS2552: Cannot find name 'user'. Did you mean 'User'?\r\n" +
+    "backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.\r\n" +
+    "backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.\r\n" +
+    'backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1025,9 +739,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 09:32:31 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:49:16 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 17720,
+    pid: 9592,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1038,14 +752,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 400130048,
-      heapTotal: 351461376,
-      heapUsed: 316783112,
-      external: 27248655,
-      arrayBuffers: 24257434
+      rss: 405958656,
+      heapTotal: 352768000,
+      heapUsed: 317726704,
+      external: 26913992,
+      arrayBuffers: 22899353
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 231744.75 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 322752.109 },
   trace: [
     {
       column: 12,
@@ -1128,26 +842,23 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 09:32:31.804 AM'
+  timestamp: '2024-10-16 10:49:16.822 AM'
 }
 {
-  error: backend/socket/socket.ts(93,9): error TS7005: Variable 'socket' implicitly has an 'any' type.
-  backend/socket/socket.ts(93,16): error TS7005: Variable 'join' implicitly has an 'any' type.
-  backend/socket/socket.ts(93,15): error TS1005: ',' expected.
-  backend/socket/socket.ts(93,20): error TS1005: ',' expected.
+  error: backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.
+  backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.
+  backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(93,9): error TS7005: Variable 'socket' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(93,16): error TS7005: Variable 'join' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS1005: ',' expected.\r\n" +
-    "backend/socket/socket.ts(93,20): error TS1005: ',' expected.\r\n" +
+    'backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.\r\n' +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(93,9): error TS7005: Variable 'socket' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(93,16): error TS7005: Variable 'join' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS1005: ',' expected.\r\n" +
-    "backend/socket/socket.ts(93,20): error TS1005: ',' expected.\r\n" +
+    'backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1160,10 +871,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(93,9): error TS7005: Variable 'socket' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(93,16): error TS7005: Variable 'join' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS1005: ',' expected.\r\n" +
-    "backend/socket/socket.ts(93,20): error TS1005: ',' expected.\r\n" +
+    'backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
+    'backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.\r\n' +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1176,9 +886,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 09:45:20 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:49:26 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 1676,
+    pid: 21660,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1189,15 +899,31 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 406913024,
-      heapTotal: 351199232,
-      heapUsed: 315687136,
-      external: 27248687,
-      arrayBuffers: 24257466
+      rss: 401403904,
+      heapTotal: 353554432,
+      heapUsed: 318454144,
+      external: 26972318,
+      arrayBuffers: 22957679
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 232513.406 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 322761.843 },
   trace: [
+    {
+      column: null,
+      file: null,
+      function: null,
+      line: null,
+      method: null,
+      native: false
+    },
+    {
+      column: null,
+      file: null,
+      function: null,
+      line: null,
+      method: null,
+      native: false
+    },
     {
       column: 12,
       file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
@@ -1279,32 +1005,20 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 09:45:20.463 AM'
+  timestamp: '2024-10-16 10:49:26.560 AM'
 }
 {
-  error: backend/socket/socket.ts(90,15): error TS1182: A destructuring declaration must have an initializer.
-  backend/socket/socket.ts(90,17): error TS7031: Binding element 'User' implicitly has an 'any' type.
-  backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.
+  error: backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.
+    Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(90,15): error TS1182: A destructuring declaration must have an initializer.\r\n' +
-    "backend/socket/socket.ts(90,17): error TS7031: Binding element 'User' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
+    "backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.\r\n" +
+    "  Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(90,15): error TS1182: A destructuring declaration must have an initializer.\r\n' +
-    "backend/socket/socket.ts(90,17): error TS7031: Binding element 'User' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
+    "backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.\r\n" +
+    "  Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1317,12 +1031,8 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(90,15): error TS1182: A destructuring declaration must have an initializer.\r\n' +
-    "backend/socket/socket.ts(90,17): error TS7031: Binding element 'User' implicitly has an 'any' type.\r\n" +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
+    "backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.\r\n" +
+    "  Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1335,9 +1045,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 09:47:17 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:53:02 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 4084,
+    pid: 340,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1348,467 +1058,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 401620992,
-      heapTotal: 351199232,
-      heapUsed: 317426832,
-      external: 27248695,
-      arrayBuffers: 24257474
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 232630.046 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-15 09:47:17.101 AM'
-}
-{
-  error: backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Tue Oct 15 2024 09:47:20 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 21388,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 391249920,
-      heapTotal: 345165824,
-      heapUsed: 318542120,
-      external: 25960938,
-      arrayBuffers: 22969717
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 232633.781 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-15 09:47:20.845 AM'
-}
-{
-  error: backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Tue Oct 15 2024 09:47:26 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 23260,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 399286272,
-      heapTotal: 351461376,
-      heapUsed: 319437576,
-      external: 27265135,
-      arrayBuffers: 24273914
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 232639.375 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-15 09:47:26.440 AM'
-}
-{
-  error: backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.
-  backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(91,42): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(93,21): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(95,35): error TS2304: Cannot find name 'roomId'.\r\n" +
-    "backend/socket/socket.ts(96,30): error TS2304: Cannot find name 'roomId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Tue Oct 15 2024 09:47:34 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 8120,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 405602304,
-      heapTotal: 351199232,
-      heapUsed: 317593632,
+      rss: 404406272,
+      heapTotal: 351985664,
+      heapUsed: 315165536,
       external: 27248663,
       arrayBuffers: 24257442
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 232647.468 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 322977.734 },
   trace: [
     {
       column: 12,
@@ -1891,20 +1148,17 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 09:47:34.522 AM'
+  timestamp: '2024-10-16 10:53:02.446 AM'
 }
 {
-  error: backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.
-  backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.
+  error: backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
+    "backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
+    "backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1917,8 +1171,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
+    "backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1931,9 +1184,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 10:05:26 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 10:53:51 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 5812,
+    pid: 6284,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1944,14 +1197,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 398180352,
-      heapTotal: 350937088,
-      heapUsed: 315658504,
-      external: 27240351,
-      arrayBuffers: 24249130
+      rss: 403296256,
+      heapTotal: 350932992,
+      heapUsed: 315636352,
+      external: 25952573,
+      arrayBuffers: 22961352
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 233719.171 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323026.625 },
   trace: [
     {
       column: 12,
@@ -2034,20 +1287,17 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 10:05:26.228 AM'
+  timestamp: '2024-10-16 10:53:51.330 AM'
 }
 {
-  error: backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.
-  backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.
+  error: backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
+    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
+    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2060,8 +1310,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(90,17): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
-    "backend/socket/socket.ts(93,15): error TS2451: Cannot redeclare block-scoped variable 'userId'.\r\n" +
+    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2074,9 +1323,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 10:05:39 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 11:04:13 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 15744,
+    pid: 11188,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -2087,14 +1336,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 402391040,
-      heapTotal: 351199232,
-      heapUsed: 315371136,
-      external: 27248615,
-      arrayBuffers: 24257394
+      rss: 396128256,
+      heapTotal: 348053504,
+      heapUsed: 324139320,
+      external: 27256799,
+      arrayBuffers: 24265578
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 233732.718 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323648.453 },
   trace: [
     {
       column: 12,
@@ -2177,17 +1426,17 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 10:05:39.780 AM'
+  timestamp: '2024-10-16 11:04:13.161 AM'
 }
 {
-  error: backend/socket/socket.ts(96,57): error TS1003: Identifier expected.
+  error: backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(96,57): error TS1003: Identifier expected.\r\n' +
+    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(96,57): error TS1003: Identifier expected.\r\n' +
+    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2200,7 +1449,7 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(96,57): error TS1003: Identifier expected.\r\n' +
+    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2213,9 +1462,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 10:05:55 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 11:04:17 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 13480,
+    pid: 22544,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -2226,14 +1475,678 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 399290368,
+      rss: 397062144,
+      heapTotal: 347791360,
+      heapUsed: 324626952,
+      external: 27256967,
+      arrayBuffers: 24265746
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323653.14 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 11:04:17.853 AM'
+}
+{
+  error: backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.
+    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Wed Oct 16 2024 11:07:39 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 14616,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 398557184,
+      heapTotal: 351985664,
+      heapUsed: 314996112,
+      external: 27256903,
+      arrayBuffers: 24265682
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323854.734 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 11:07:39.452 AM'
+}
+{
+  error: backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    "backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Wed Oct 16 2024 11:07:45 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 10820,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 392466432,
+      heapTotal: 348049408,
+      heapUsed: 322605704,
+      external: 25948418,
+      arrayBuffers: 22957197
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323861.25 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 11:07:45.969 AM'
+}
+{
+  error: backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.
+    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Wed Oct 16 2024 11:07:58 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 5820,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 401420288,
+      heapTotal: 347787264,
+      heapUsed: 324020968,
+      external: 27248687,
+      arrayBuffers: 24257466
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323873.578 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 11:07:58.297 AM'
+}
+{
+  error: backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.
+    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Wed Oct 16 2024 11:08:08 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 10828,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 404336640,
       heapTotal: 351461376,
-      heapUsed: 315678712,
-      external: 27248703,
-      arrayBuffers: 24257482
+      heapUsed: 314913736,
+      external: 27256871,
+      arrayBuffers: 24265650
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 233748.75 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323884.281 },
   trace: [
     {
       column: 12,
@@ -2316,17 +2229,23 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 10:05:55.818 AM'
+  timestamp: '2024-10-16 11:08:08.997 AM'
 }
 {
-  error: backend/socket/socket.ts(98,24): error TS2339: Property 'automatedMessagesEnabled' does not exist on type 'Query<(Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>) | null, Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>, {}, IUser, "findOne", {}>'.
+  error: backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.
+  backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.
+  backend/socket/socket.ts(118,12): error TS1005: ',' expected.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    `backend/socket/socket.ts(98,24): error TS2339: Property 'automatedMessagesEnabled' does not exist on type 'Query<(Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>) | null, Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>, {}, IUser, "findOne", {}>'.\r\n` +
+    "backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.\r\n" +
+    'backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.\r\n' +
+    "backend/socket/socket.ts(118,12): error TS1005: ',' expected.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    `backend/socket/socket.ts(98,24): error TS2339: Property 'automatedMessagesEnabled' does not exist on type 'Query<(Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>) | null, Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>, {}, IUser, "findOne", {}>'.\r\n` +
+    "backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.\r\n" +
+    'backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.\r\n' +
+    "backend/socket/socket.ts(118,12): error TS1005: ',' expected.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2339,7 +2258,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    `backend/socket/socket.ts(98,24): error TS2339: Property 'automatedMessagesEnabled' does not exist on type 'Query<(Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>) | null, Document<unknown, {}, IUser> & IUser & Required<{ _id: string; }>, {}, IUser, "findOne", {}>'.\r\n` +
+    "backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.\r\n" +
+    'backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.\r\n' +
+    "backend/socket/socket.ts(118,12): error TS1005: ',' expected.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2352,9 +2273,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 10:06:13 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 11:08:32 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 15956,
+    pid: 24360,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -2365,14 +2286,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 402452480,
-      heapTotal: 351457280,
-      heapUsed: 316023112,
-      external: 27248727,
-      arrayBuffers: 24257506
+      rss: 398508032,
+      heapTotal: 350932992,
+      heapUsed: 314581512,
+      external: 25958812,
+      arrayBuffers: 22967591
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 233766.89 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323907.687 },
   trace: [
     {
       column: 12,
@@ -2455,17 +2376,44 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 10:06:13.954 AM'
+  timestamp: '2024-10-16 11:08:32.392 AM'
 }
 {
-  error: backend/socket/socket.ts(99,46): error TS1109: Expression expected.
+  error: backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.
+    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(99,46): error TS1109: Expression expected.\r\n' +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(99,46): error TS1109: Expression expected.\r\n' +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2478,7 +2426,16 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(99,46): error TS1109: Expression expected.\r\n' +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2491,9 +2448,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 10:12:21 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 11:08:42 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 19296,
+    pid: 22012,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -2504,14 +2461,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 398450688,
-      heapTotal: 351461376,
-      heapUsed: 317081872,
-      external: 27264967,
-      arrayBuffers: 24273746
+      rss: 400797696,
+      heapTotal: 348315648,
+      heapUsed: 325266656,
+      external: 27256799,
+      arrayBuffers: 24265578
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 234134.406 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323917.765 },
   trace: [
     {
       column: 12,
@@ -2594,17 +2551,44 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 10:12:21.471 AM'
+  timestamp: '2024-10-16 11:08:42.474 AM'
 }
 {
-  error: backend/socket/socket.ts(72,13): error TS2304: Cannot find name 'con'.
+  error: backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.
+    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(72,13): error TS2304: Cannot find name 'con'.\r\n" +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(72,13): error TS2304: Cannot find name 'con'.\r\n" +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2617,7 +2601,16 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(72,13): error TS2304: Cannot find name 'con'.\r\n" +
+    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2630,9 +2623,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 15 2024 10:40:09 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Wed Oct 16 2024 11:09:09 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 944,
+    pid: 3476,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -2643,169 +2636,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 399069184,
-      heapTotal: 350670848,
-      heapUsed: 315618560,
-      external: 25936389,
-      arrayBuffers: 22945168
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 235802.281 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-15 10:40:09.349 AM'
-}
-{
-  error: backend/socket/socket.ts(52,13): error TS2552: Cannot find name 'userId'. Did you mean 'User'?
-  backend/socket/socket.ts(55,46): error TS2552: Cannot find name 'userId'. Did you mean 'User'?
-  backend/socket/socket.ts(62,29): error TS2552: Cannot find name 'userId'. Did you mean 'User'?
-  backend/socket/socket.ts(67,37): error TS2552: Cannot find name 'userId'. Did you mean 'User'?
-  backend/socket/socket.ts(69,40): error TS2552: Cannot find name 'userId'. Did you mean 'User'?
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(52,13): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(55,46): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(62,29): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(67,37): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(69,40): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(52,13): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(55,46): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(62,29): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(67,37): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(69,40): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(52,13): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(55,46): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(62,29): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(67,37): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    "backend/socket/socket.ts(69,40): error TS2552: Cannot find name 'userId'. Did you mean 'User'?\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Tue Oct 15 2024 11:02:22 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 1708,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 398659584,
+      rss: 399044608,
       heapTotal: 351723520,
-      heapUsed: 315760896,
-      external: 27248503,
-      arrayBuffers: 24257282
+      heapUsed: 314882960,
+      external: 27248607,
+      arrayBuffers: 24257386
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 237135.484 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323944.578 },
   trace: [
     {
       column: 12,
@@ -2888,5 +2726,458 @@
       native: false
     }
   ],
-  timestamp: '2024-10-15 11:02:22.548 AM'
+  timestamp: '2024-10-16 11:09:09.293 AM'
+}
+{
+  error: backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.
+    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
+      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
+        Type 'string' is not assignable to type 'number'.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.\r\n' +
+    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
+    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
+    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Wed Oct 16 2024 11:09:14 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 23704,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 395489280,
+      heapTotal: 350408704,
+      heapUsed: 316027944,
+      external: 25944493,
+      arrayBuffers: 22953272
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 323949.859 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 11:09:14.565 AM'
+}
+{
+  error: backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    "backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.\r\n" +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    "backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.\r\n" +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Wed Oct 16 2024 11:25:31 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 7344,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 406061056,
+      heapTotal: 351461376,
+      heapUsed: 315247760,
+      external: 27248671,
+      arrayBuffers: 24257450
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 324926.625 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 11:25:31.342 AM'
+}
+{
+  error: backend/socket/socket.ts(48,9): error TS1003: Identifier expected.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(48,9): error TS1003: Identifier expected.\r\n' +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(48,9): error TS1003: Identifier expected.\r\n' +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    'backend/socket/socket.ts(48,9): error TS1003: Identifier expected.\r\n' +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Wed Oct 16 2024 11:25:45 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 15924,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 397656064,
+      heapTotal: 347791360,
+      heapUsed: 324507016,
+      external: 27248575,
+      arrayBuffers: 24257354
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 324940.375 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 11:25:45.091 AM'
 }

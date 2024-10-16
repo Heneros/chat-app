@@ -4,7 +4,7 @@ import https from 'https';
 import Chat from '../models/ChatModel';
 import { io } from './socket';
 
-export const sendRandomMessage = async (roomId: string) => {
+export const sendRandomMessage = async (chatId: string) => {
     try {
         const agent = new https.Agent({
             rejectUnauthorized: false,
@@ -15,12 +15,12 @@ export const sendRandomMessage = async (roomId: string) => {
         });
         const apiMessage = response.data.content;
 
-        io.to(roomId).emit(`receiveMessage:${roomId}`, {
+        io.to(chatId).emit(`receiveMessage:${chatId}`, {
             text: apiMessage,
             sender: 'api',
         });
 
-        const chat = await Chat.findById(roomId);
+        const chat = await Chat.findById(chatId);
         if (chat) {
             const newMessage = {
                 text: apiMessage,
@@ -30,7 +30,7 @@ export const sendRandomMessage = async (roomId: string) => {
             await chat.save();
         }
 
-        console.log(`Sent message to room: ${roomId}`);
+        console.log(`Sent message to room: ${chatId}`);
     } catch (error) {
         console.error('Failed to send random message:', error);
     }

@@ -63,3 +63,123 @@
   ],
   timestamp: '2024-10-15 09:20:16.428 AM'
 }
+{
+  error: TypeError: Cannot read properties of undefined (reading 'forEach')
+      at D:\Projects\chat-app\backend\socket\sendAutomatedMessages.ts:7:21
+      at Generator.next (<anonymous>)
+      at D:\Projects\chat-app\backend\socket\sendAutomatedMessages.ts:8:71
+      at new Promise (<anonymous>)
+      at __awaiter (D:\Projects\chat-app\backend\socket\sendAutomatedMessages.ts:4:12)
+      at Timeout.sendAutomatedMessages [as _onTimeout] (D:\Projects\chat-app\backend\socket\sendAutomatedMessages.ts:4:70)
+      at listOnTimeout (node:internal/timers:573:17)
+      at processTimers (node:internal/timers:514:7),
+  level: 'error',
+  message: "unhandledRejection: Cannot read properties of undefined (reading 'forEach')\n" +
+    "TypeError: Cannot read properties of undefined (reading 'forEach')\n" +
+    '    at D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:7:21\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:8:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:4:12)\n' +
+    '    at Timeout.sendAutomatedMessages [as _onTimeout] (D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:4:70)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  stack: "TypeError: Cannot read properties of undefined (reading 'forEach')\n" +
+    '    at D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:7:21\n' +
+    '    at Generator.next (<anonymous>)\n' +
+    '    at D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:8:71\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at __awaiter (D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:4:12)\n' +
+    '    at Timeout.sendAutomatedMessages [as _onTimeout] (D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts:4:70)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  rejection: true,
+  date: 'Wed Oct 16 2024 10:42:13 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 11628,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 419098624,
+      heapTotal: 362536960,
+      heapUsed: 324918296,
+      external: 28650152,
+      arrayBuffers: 24541764
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 322328.953 },
+  trace: [
+    {
+      column: 21,
+      file: 'D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts',
+      function: null,
+      line: 7,
+      method: null,
+      native: false
+    },
+    {
+      column: null,
+      file: null,
+      function: 'Generator.next',
+      line: null,
+      method: 'next',
+      native: false
+    },
+    {
+      column: 71,
+      file: 'D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts',
+      function: null,
+      line: 8,
+      method: null,
+      native: false
+    },
+    {
+      column: null,
+      file: null,
+      function: 'new Promise',
+      line: null,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts',
+      function: '__awaiter',
+      line: 4,
+      method: null,
+      native: false
+    },
+    {
+      column: 70,
+      file: 'D:\\Projects\\chat-app\\backend\\socket\\sendAutomatedMessages.ts',
+      function: 'Timeout.sendAutomatedMessages [as _onTimeout]',
+      line: 4,
+      method: 'sendAutomatedMessages [as _onTimeout]',
+      native: false
+    },
+    {
+      column: 17,
+      file: 'node:internal/timers',
+      function: 'listOnTimeout',
+      line: 573,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:internal/timers',
+      function: 'processTimers',
+      line: 514,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-10-16 10:42:13.669 AM'
+}

@@ -1,13 +1,19 @@
+import 'dotenv/config';
+
 import { Server } from 'socket.io';
 import http from 'http';
 import express from 'express';
-import axios from 'axios';
-import https from 'https';
 
 import Chat from '../models/ChatModel';
 import { systemLogs } from '../utils/Logger';
 import { sendRandomMessage } from './sendRandomMessage';
+
 import User from '../models/UserModel';
+import {
+    authenticateUser,
+    toggleAutomatedMessages,
+} from './socketUsercontroller';
+import { sendAutomatedMessages } from './sendAutomatedMessages';
 
 const app = express();
 
@@ -20,80 +26,53 @@ const io = new Server(server, {
     },
 });
 
-let activeRooms: string[] = [];
+export let activeRooms: string[] = [];
 const activeUsers = new Set<string>();
 
 io.on('connection', async (socket) => {
     console.log('User connected:', socket.id);
 
-    //  userPreferences.set(socket.id, true);
-
     socket.on('authenticate', async (userId: string) => {
         try {
-            const user = await User.findById(userId);
-            if (user) {
-                socket.data.userId = userId;
-                socket.data.automatedMessagesEnabled =
-                    user.automatedMessagesEnabled;
-
-                if (user.automatedMessagesEnabled === true) {
-                    activeUsers.add(userId);
-                }
-                console.log(
-                    `User ${userId} authenticated, automatedMessagesEnabled: ${user.automatedMessagesEnabled}`,
-                );
-            }
+            console.log('authenticate:', userId);
+            const automatedMesssagesEnabled = await authenticateUser(
+                userId,
+                socket,
+            );
+            if (automatedMesssagesEnabled) activeUsers.add(userId);
         } catch (error) {
-            console.log('Authentication error:', error);
+            console.error('User Authentication Error', error);
+            systemLogs.error('User Authentication Error', error);
         }
     });
 
     socket.on('toggleAutomateMessages', async ({ userId, enabled }) => {
-        if (userId) {
-            try {
-                await User.findByIdAndUpdate(userId, {
-                    automatedMessagesEnabled: enabled,
-                });
-
-                socket.data.automatedMessagesEnabled = enabled;
-                console.log(
-                    `User ${userId} ${enabled ? 'enabled' : 'disabled'} automated messages`,
-                );
-
-                if (enabled) {
-                    activeUsers.add(userId);
-                } else {
-                    activeUsers.delete(userId);
-                }
-
-                socket.emit('automatedMessagesUpdated', enabled);
-            } catch (error) {
-                console.error('Failed to update user preferences:', error);
-            }
-        } else {
-            console.log('User ID not provided');
-        }
+        await toggleAutomatedMessages({ userId, enabled, socket });
+        if (enabled) activeUsers.add(userId);
+        else activeUsers.delete(userId);
+        socket.emit('automatedMessagesUpdated', enabled);
     });
 
     socket.on('join_room', async (data) => {
+        console.log('Received join_room event:', data);
         const { userId: _id, chatId } = data;
-
-        console.log(`User joined room: ${chatId} user id ${_id}`);
-
-        const usernameId = await User.findById(_id);
-        if (
-            !activeRooms.includes(chatId) &&
-            usernameId?.automatedMessagesEnabled === true
-        ) {
-            activeRooms.push(chatId);
-            socket.join(chatId);
+        if (_id && chatId) {
+            const usernameId = await User.findById(_id);
+            if (
+                !activeRooms.includes(chatId) &&
+                usernameId?.automatedMessagesEnabled === true
+            ) {
+                activeRooms.push(chatId);
+                socket.join(chatId);
+            }
+        } else {
+            console.log('join_room error ');
         }
-        console.log('activeRooms', activeRooms);
     });
 
     socket.on('leave_room', (roomId) => {
         socket.leave(roomId);
-        console.log(`User left room: ${roomId}`);
+        // console.log(`User left room: ${roomId}`);
         activeRooms = activeRooms.filter((room) => room !== roomId);
         console.log('Updated activeRooms', activeRooms);
     });
@@ -126,49 +105,10 @@ io.on('connection', async (socket) => {
             sender: 'user',
         });
 
-        try {
-            const agent = new https.Agent({
-                rejectUnauthorized: false,
-            });
-            const response = await axios.get('https://api.quotable.io/random', {
-                httpsAgent: agent,
-            });
-            const apiMessage = response.data.content;
-
-            io.to(chatId).emit(`receiveMessage:${chatId}`, {
-                text: apiMessage,
-                sender: 'api',
-            });
-
-            const chat = await Chat.findById(chatId);
-            if (!chat) {
-                console.log('chat does not exist');
-            } else {
-                const newMessage = {
-                    text: apiMessage,
-                    sender: 'api',
-                };
-                chat.messages.push(newMessage);
-                await chat.save();
-            }
-        } catch (error) {
-            console.error('API request failed:', error);
-        }
+        sendRandomMessage(chatId);
     });
 });
+const timer = Number(process.env.TIMER);
 
-async function sendAutomatedMessages() {
-    if (activeRooms.length > 0) {
-        activeUsers.forEach(async (userId) => {
-            const randomRoomId =
-                activeRooms[Math.floor(Math.random() * activeRooms.length)];
-            if (randomRoomId) {
-                await sendRandomMessage(randomRoomId);
-            }
-        });
-    }
-}
-
-setInterval(sendAutomatedMessages, 11500);
-
+setInterval(() => sendAutomatedMessages([...activeUsers]), timer);
 export { io, app, server };
