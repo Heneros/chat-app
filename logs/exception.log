@@ -1,12 +1,45 @@
 {
-  error: backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.
+  error: backend/config/passport.ts(15,17): error TS2769: No overload matches this call.
+    The last overload gave the following error.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'.
+  backend/config/passport.ts(16,17): error TS2769: No overload matches this call.
+    The last overload gave the following error.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
+    'backend/config/passport.ts(15,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
+    'backend/config/passport.ts(16,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
+    'backend/config/passport.ts(15,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
+    'backend/config/passport.ts(16,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -19,7 +52,18 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
+    'backend/config/passport.ts(15,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
+    'backend/config/passport.ts(16,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -32,9 +76,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 10:21:04 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 14:01:03 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 11300,
+    pid: 16536,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -45,721 +89,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 392232960,
-      heapTotal: 347262976,
-      heapUsed: 316097928,
-      external: 25944685,
-      arrayBuffers: 22953464
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 321059.578 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 10:21:04.287 AM'
-}
-{
-  error: backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(46,47): error TS2554: Expected 1 arguments, but got 3.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 10:24:28 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 14012,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 401440768,
-      heapTotal: 350408704,
-      heapUsed: 314863712,
-      external: 25950788,
-      arrayBuffers: 22959567
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 321264.203 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 10:24:28.921 AM'
-}
-{
-  error: backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socketUsercontroller.ts(21,50): error TS2552: Cannot find name 'error'. Did you mean 'Error'?\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 10:28:58 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 7928,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 403718144,
-      heapTotal: 351719424,
-      heapUsed: 321843456,
-      external: 26975559,
-      arrayBuffers: 23025031
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 321533.453 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 10:28:58.164 AM'
-}
-{
-  error: backend/socket/socket.ts(44,5): error TS1109: Expression expected.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(44,5): error TS1109: Expression expected.\r\n' +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(44,5): error TS1109: Expression expected.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(44,5): error TS1109: Expression expected.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 10:29:48 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 10672,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 404402176,
-      heapTotal: 351199232,
-      heapUsed: 316169624,
-      external: 27265039,
-      arrayBuffers: 24273818
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 321584.203 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 10:29:48.919 AM'
-}
-{
-  error: backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(69,40): error TS2304: Cannot find name 'usernameId'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 10:36:33 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 18520,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 400785408,
-      heapTotal: 350937088,
-      heapUsed: 316981400,
-      external: 27248679,
-      arrayBuffers: 24257458
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 321989.203 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 10:36:33.911 AM'
-}
-{
-  error: backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.
-  backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.
-  backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.
-  backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.\r\n" +
-    "backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.\r\n" +
-    'backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.\r\n' +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.\r\n" +
-    "backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.\r\n" +
-    'backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/sendAutomatedMessages.ts(17,6): error TS2304: Cannot find name 'createFromFetch'.\r\n" +
-    "backend/socket/sendAutomatedMessages.ts(17,55): error TS2304: Cannot find name 'n'.\r\n" +
-    'backend/socket/sendAutomatedMessages.ts(17,6): error TS1434: Unexpected keyword or identifier.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(17,54): error TS1127: Invalid character.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 10:49:16 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 9592,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 405958656,
+      rss: 404504576,
       heapTotal: 352768000,
-      heapUsed: 317726704,
-      external: 26913992,
-      arrayBuffers: 22899353
+      heapUsed: 325848880,
+      external: 26942729,
+      arrayBuffers: 22992201
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 322752.109 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 420661.656 },
   trace: [
     {
       column: 12,
@@ -842,23 +179,50 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 10:49:16.822 AM'
+  timestamp: '2024-10-17 02:01:03.690 PM'
 }
 {
-  error: backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.
-  backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.
-  backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.
+  error: backend/config/passport.ts(15,17): error TS2769: No overload matches this call.
+    The last overload gave the following error.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'.
+  backend/config/passport.ts(16,17): error TS2769: No overload matches this call.
+    The last overload gave the following error.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.\r\n' +
+    'backend/config/passport.ts(15,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
+    'backend/config/passport.ts(16,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.\r\n' +
+    'backend/config/passport.ts(15,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
+    'backend/config/passport.ts(16,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -871,9 +235,18 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/sendAutomatedMessages.ts(16,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(17,9): error TS1232: An import declaration can only be used at the top level of a namespace or module.\r\n' +
-    'backend/socket/sendAutomatedMessages.ts(19,9): error TS1184: Modifiers cannot appear here.\r\n' +
+    'backend/config/passport.ts(15,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
+    'backend/config/passport.ts(16,17): error TS2769: No overload matches this call.\r\n' +
+    '  The last overload gave the following error.\r\n' +
+    "    Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "      Type 'undefined' is not assignable to type 'string'.\r\n" +
+    "        Type 'string | undefined' is not assignable to type 'string'.\r\n" +
+    "          Type 'undefined' is not assignable to type 'string'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -886,9 +259,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 10:49:26 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 14:01:09 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 21660,
+    pid: 16796,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -899,31 +272,15 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 401403904,
-      heapTotal: 353554432,
-      heapUsed: 318454144,
-      external: 26972318,
-      arrayBuffers: 22957679
+      rss: 406372352,
+      heapTotal: 353292288,
+      heapUsed: 325084888,
+      external: 26980412,
+      arrayBuffers: 23029884
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 322761.843 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 420667.203 },
   trace: [
-    {
-      column: null,
-      file: null,
-      function: null,
-      line: null,
-      method: null,
-      native: false
-    },
-    {
-      column: null,
-      file: null,
-      function: null,
-      line: null,
-      method: null,
-      native: false
-    },
     {
       column: 12,
       file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
@@ -1005,20 +362,29 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 10:49:26.560 AM'
+  timestamp: '2024-10-17 02:01:09.228 PM'
 }
 {
-  error: backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.
-    Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.
+  error: backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.\r\n" +
-    "  Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.\r\n" +
-    "  Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1031,8 +397,11 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(142,41): error TS2345: Argument of type 'Set<string>' is not assignable to parameter of type 'string[]'.\r\n" +
-    "  Type 'Set<string>' is missing the following properties from type 'string[]': length, pop, push, concat, and 24 more.\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1045,9 +414,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 10:53:02 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:05:17 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 340,
+    pid: 23484,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1058,14 +427,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 404406272,
-      heapTotal: 351985664,
-      heapUsed: 315165536,
-      external: 27248663,
-      arrayBuffers: 24257442
+      rss: 408125440,
+      heapTotal: 355389440,
+      heapUsed: 324121176,
+      external: 26942729,
+      arrayBuffers: 22929789
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 322977.734 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424515.89 },
   trace: [
     {
       column: 12,
@@ -1148,17 +517,29 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 10:53:02.446 AM'
+  timestamp: '2024-10-17 03:05:17.922 PM'
 }
 {
-  error: backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.
+  error: backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1171,7 +552,11 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(143,19): error TS2304: Cannot find name 'se'.\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1184,9 +569,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 10:53:51 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:05:36 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 6284,
+    pid: 17064,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1197,14 +582,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 403296256,
-      heapTotal: 350932992,
-      heapUsed: 315636352,
-      external: 25952573,
-      arrayBuffers: 22961352
+      rss: 403353600,
+      heapTotal: 355651584,
+      heapUsed: 323632472,
+      external: 26936265,
+      arrayBuffers: 22923325
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323026.625 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424534.703 },
   trace: [
     {
       column: 12,
@@ -1287,17 +672,32 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 10:53:51.330 AM'
+  timestamp: '2024-10-17 03:05:36.736 PM'
 }
 {
-  error: backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?
+  error: backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.
+  backend/config/passport.ts(85,16): error TS2304: Cannot find name 'googleAuth'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(85,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(85,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1310,7 +710,12 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaItd'. Did you mean 'chatId'?\r\n" +
+    "backend/config/passport.ts(56,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(62,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(62,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(85,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1323,9 +728,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 11:04:13 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:06:03 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 11188,
+    pid: 10236,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1336,14 +741,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 396128256,
-      heapTotal: 348053504,
-      heapUsed: 324139320,
-      external: 27256799,
-      arrayBuffers: 24265578
+      rss: 405667840,
+      heapTotal: 352505856,
+      heapUsed: 316279328,
+      external: 26941037,
+      arrayBuffers: 22928097
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323648.453 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424561.328 },
   trace: [
     {
       column: 12,
@@ -1426,17 +831,32 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 11:04:13.161 AM'
+  timestamp: '2024-10-17 03:06:03.354 PM'
 }
 {
-  error: backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?
+  error: backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.
+  backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1449,7 +869,12 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(110,27): error TS2552: Cannot find name 'chaId'. Did you mean 'chatId'?\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1462,9 +887,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 11:04:17 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:06:07 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 22544,
+    pid: 11064,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1475,14 +900,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 397062144,
-      heapTotal: 347791360,
-      heapUsed: 324626952,
-      external: 27256967,
-      arrayBuffers: 24265746
+      rss: 405123072,
+      heapTotal: 352768000,
+      heapUsed: 316520184,
+      external: 26942617,
+      arrayBuffers: 22929677
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323653.14 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424565.484 },
   trace: [
     {
       column: 12,
@@ -1565,44 +990,32 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 11:04:17.853 AM'
+  timestamp: '2024-10-17 03:06:07.505 PM'
 }
 {
-  error: backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.
-    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
+  error: backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.
+  backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1615,16 +1028,12 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1637,9 +1046,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 11:07:39 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:06:12 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 14616,
+    pid: 23132,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1650,14 +1059,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 398557184,
-      heapTotal: 351985664,
-      heapUsed: 314996112,
-      external: 27256903,
-      arrayBuffers: 24265682
+      rss: 399908864,
+      heapTotal: 352505856,
+      heapUsed: 316218376,
+      external: 26941173,
+      arrayBuffers: 22928233
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323854.734 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424570.968 },
   trace: [
     {
       column: 12,
@@ -1740,17 +1149,35 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 11:07:39.452 AM'
+  timestamp: '2024-10-17 03:06:12.989 PM'
 }
 {
-  error: backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?
+  error: backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.
+  backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.
+  backend/config/passport.ts(12,40): error TS1005: '=>' expected.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
+    "backend/config/passport.ts(12,40): error TS1005: '=>' expected.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
+    "backend/config/passport.ts(12,40): error TS1005: '=>' expected.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1763,7 +1190,13 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(116,60): error TS2552: Cannot find name 'proccess'. Did you mean 'process'?\r\n" +
+    "backend/config/passport.ts(58,13): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(64,20): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,33): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,47): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(64,56): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(87,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
+    "backend/config/passport.ts(12,40): error TS1005: '=>' expected.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1776,9 +1209,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 11:07:45 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:06:22 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 10820,
+    pid: 5752,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1789,14 +1222,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 392466432,
-      heapTotal: 348049408,
-      heapUsed: 322605704,
-      external: 25948418,
-      arrayBuffers: 22957197
+      rss: 402362368,
+      heapTotal: 355127296,
+      heapUsed: 321173864,
+      external: 26963180,
+      arrayBuffers: 22950240
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323861.25 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424580.765 },
   trace: [
     {
       column: 12,
@@ -1879,44 +1312,32 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 11:07:45.969 AM'
+  timestamp: '2024-10-17 03:06:22.790 PM'
 }
 {
-  error: backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.
-    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
+  error: backend/config/passport.ts(57,9): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(63,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(63,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(63,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(63,52): error TS7006: Parameter 'done' implicitly has an 'any' type.
+  backend/config/passport.ts(86,16): error TS2304: Cannot find name 'googleAuth'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(57,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(63,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(86,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(57,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(63,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(86,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1929,16 +1350,12 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(116,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(57,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(63,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(63,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(86,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -1951,9 +1368,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 11:07:58 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:06:30 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 5820,
+    pid: 5516,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -1964,14 +1381,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 401420288,
-      heapTotal: 347787264,
-      heapUsed: 324020968,
-      external: 27248687,
-      arrayBuffers: 24257466
+      rss: 401158144,
+      heapTotal: 351981568,
+      heapUsed: 317440296,
+      external: 26941013,
+      arrayBuffers: 22928073
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323873.578 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424588.453 },
   trace: [
     {
       column: 12,
@@ -2054,44 +1471,32 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 11:07:58.297 AM'
+  timestamp: '2024-10-17 03:06:30.485 PM'
 }
 {
-  error: backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.
-    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
+  error: backend/config/passport.ts(59,9): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(65,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(65,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(65,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(65,52): error TS7006: Parameter 'done' implicitly has an 'any' type.
+  backend/config/passport.ts(88,16): error TS2304: Cannot find name 'googleAuth'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(59,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(65,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(88,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(59,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(65,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(88,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2104,16 +1509,12 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
+    "backend/config/passport.ts(59,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(65,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(65,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(88,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2126,9 +1527,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 11:08:08 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:06:43 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 10828,
+    pid: 24020,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -2139,14 +1540,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 404336640,
-      heapTotal: 351461376,
-      heapUsed: 314913736,
-      external: 27256871,
-      arrayBuffers: 24265650
+      rss: 404488192,
+      heapTotal: 352960512,
+      heapUsed: 322577904,
+      external: 26900295,
+      arrayBuffers: 22949767
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323884.281 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424601.046 },
   trace: [
     {
       column: 12,
@@ -2229,23 +1630,32 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 11:08:08.997 AM'
+  timestamp: '2024-10-17 03:06:43.066 PM'
 }
 {
-  error: backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.
-  backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.
-  backend/socket/socket.ts(118,12): error TS1005: ',' expected.
+  error: backend/config/passport.ts(66,9): error TS2304: Cannot find name 'GitHubStrategy'.
+  backend/config/passport.ts(72,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.
+  backend/config/passport.ts(72,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.
+  backend/config/passport.ts(72,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+  backend/config/passport.ts(72,52): error TS7006: Parameter 'done' implicitly has an 'any' type.
+  backend/config/passport.ts(95,16): error TS2304: Cannot find name 'googleAuth'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.\r\n" +
-    'backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.\r\n' +
-    "backend/socket/socket.ts(118,12): error TS1005: ',' expected.\r\n" +
+    "backend/config/passport.ts(66,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(72,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(95,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.\r\n" +
-    'backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.\r\n' +
-    "backend/socket/socket.ts(118,12): error TS1005: ',' expected.\r\n" +
+    "backend/config/passport.ts(66,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(72,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(95,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2258,9 +1668,12 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(118,1): error TS7005: Variable 'setInterval' implicitly has an 'any' type.\r\n" +
-    'backend/socket/socket.ts(118,13): error TS2695: Left side of comma operator is unused and has no side effects.\r\n' +
-    "backend/socket/socket.ts(118,12): error TS1005: ',' expected.\r\n" +
+    "backend/config/passport.ts(66,9): error TS2304: Cannot find name 'GitHubStrategy'.\r\n" +
+    "backend/config/passport.ts(72,16): error TS7006: Parameter 'accessToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,29): error TS7006: Parameter 'refreshToken' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,43): error TS7006: Parameter 'profile' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(72,52): error TS7006: Parameter 'done' implicitly has an 'any' type.\r\n" +
+    "backend/config/passport.ts(95,16): error TS2304: Cannot find name 'googleAuth'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -2273,9 +1686,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Wed Oct 16 2024 11:08:32 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Thu Oct 17 2024 15:06:59 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 24360,
+    pid: 15568,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -2286,14 +1699,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 398508032,
-      heapTotal: 350932992,
-      heapUsed: 314581512,
-      external: 25958812,
-      arrayBuffers: 22967591
+      rss: 399654912,
+      heapTotal: 352243712,
+      heapUsed: 317726216,
+      external: 26941149,
+      arrayBuffers: 22928209
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323907.687 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 424617.015 },
   trace: [
     {
       column: 12,
@@ -2376,808 +1789,5 @@
       native: false
     }
   ],
-  timestamp: '2024-10-16 11:08:32.392 AM'
-}
-{
-  error: backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.
-    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 11:08:42 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 22012,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 400797696,
-      heapTotal: 348315648,
-      heapUsed: 325266656,
-      external: 27256799,
-      arrayBuffers: 24265578
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323917.765 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 11:08:42.474 AM'
-}
-{
-  error: backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.
-    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(118,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 11:09:09 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 3476,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 399044608,
-      heapTotal: 351723520,
-      heapUsed: 314882960,
-      external: 27248607,
-      arrayBuffers: 24257386
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323944.578 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 11:09:09.293 AM'
-}
-{
-  error: backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.
-    Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-    Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.
-      Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.
-        Type 'string' is not assignable to type 'number'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(117,60): error TS2769: No overload matches this call.\r\n' +
-    "  Overload 1 of 3, '(callback: () => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 2 of 3, '(callback: (args: void) => void, ms?: number | undefined): Timeout', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    "  Overload 3 of 3, '(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number', gave the following error.\r\n" +
-    "    Argument of type 'string | undefined' is not assignable to parameter of type 'number | undefined'.\r\n" +
-    "      Type 'string' is not assignable to type 'number'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 11:09:14 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 23704,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 395489280,
-      heapTotal: 350408704,
-      heapUsed: 316027944,
-      external: 25944493,
-      arrayBuffers: 22953272
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 323949.859 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 11:09:14.565 AM'
-}
-{
-  error: backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.\r\n" +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    "backend/socket/socket.ts(47,13): error TS2304: Cannot find name 'logger'.\r\n" +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 11:25:31 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 7344,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 406061056,
-      heapTotal: 351461376,
-      heapUsed: 315247760,
-      external: 27248671,
-      arrayBuffers: 24257450
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 324926.625 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 11:25:31.342 AM'
-}
-{
-  error: backend/socket/socket.ts(48,9): error TS1003: Identifier expected.
-  ,
-  level: 'error',
-  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(48,9): error TS1003: Identifier expected.\r\n' +
-    '\n' +
-    'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(48,9): error TS1003: Identifier expected.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    'backend/socket/socket.ts(48,9): error TS1003: Identifier expected.\r\n' +
-    '\n' +
-    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
-    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
-    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
-    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
-    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
-  exception: true,
-  date: 'Wed Oct 16 2024 11:25:45 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 15924,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\chat-app',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
-      'D:\\Projects\\chat-app\\backend\\app.ts'
-    ],
-    memoryUsage: {
-      rss: 397656064,
-      heapTotal: 347791360,
-      heapUsed: 324507016,
-      external: 27248575,
-      arrayBuffers: 24257354
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 324940.375 },
-  trace: [
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'createTSError',
-      line: 859,
-      method: null,
-      native: false
-    },
-    {
-      column: 19,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'reportTSError',
-      line: 863,
-      method: null,
-      native: false
-    },
-    {
-      column: 36,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'getOutput',
-      line: 1077,
-      method: null,
-      native: false
-    },
-    {
-      column: 41,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.compile',
-      line: 1433,
-      method: 'compile',
-      native: false
-    },
-    {
-      column: 30,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Module.m._compile',
-      line: 1617,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
-      function: 'Object.require.extensions.<computed> [as .ts]',
-      line: 1621,
-      method: 'ts]',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    }
-  ],
-  timestamp: '2024-10-16 11:25:45.091 AM'
+  timestamp: '2024-10-17 03:06:59.042 PM'
 }

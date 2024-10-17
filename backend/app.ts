@@ -2,11 +2,13 @@ import 'dotenv/config';
 import express, { Response } from 'express';
 
 import cors from 'cors';
-// import passport from 'passport';
+
 import cookieParser from 'cookie-parser';
 import mongoSanitize from 'express-mongo-sanitize';
-
+import session from 'express-session';
 import morgan from 'morgan';
+
+import passport from './config/passport';
 import connectDB from './config/connectDB';
 import authRoutes from './routes/usersRoute';
 import chatRoutes from './routes/chatRoute';
@@ -28,10 +30,20 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use(express.json());
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET!,
+        resave: false,
+        saveUninitialized: true,
+    }),
+);
+
 app.use(cookieParser());
 app.use(mongoSanitize());
 
 app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 //     console.error(error.stack);

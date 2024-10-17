@@ -20,6 +20,10 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
         }
     }, [isSuccess, onClose]);
 
+    const google = () => {
+        window.open('http://localhost:4000/api/v1/users/google', '_self');
+    };
+
     if (!isOpen) return null;
 
     return (
@@ -116,6 +120,9 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 Login
                             </button>
                         </form>
+                        <button onClick={google} type="button">
+                            Google btn
+                        </button>
                         <button
                             type="submit"
                             className="btn-close"

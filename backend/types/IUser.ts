@@ -10,6 +10,9 @@ export interface IUser extends Document {
     lastName: string;
     refreshToken: string[];
     automatedMessagesEnabled: boolean;
-    googleId: string;
+    provider: string;
+    githubId?: string;
+    googleId?: string;
+    avatar?: string;
     matchPassword(enteredPassword: string): Promise<boolean>;
 }

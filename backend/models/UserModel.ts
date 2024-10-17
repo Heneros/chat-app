@@ -4,8 +4,6 @@ import mongoose, { Schema } from 'mongoose';
 import validator from 'validator';
 import { IUser } from '../types/IUser';
 
-// const { Schema } = mongoose;
-
 const userSchema = new Schema<IUser>(
     {
         email: {
@@ -30,7 +28,8 @@ const userSchema = new Schema<IUser>(
         },
         password: {
             type: String,
-            required: true,
+
+            // required: true,
         },
         automatedMessagesEnabled: {
             type: Boolean,
@@ -47,7 +46,15 @@ const userSchema = new Schema<IUser>(
         },
         refreshToken: [String],
         googleId: String,
+        githubId: String,
+        avatar: String,
+        provider: {
+            type: String,
+            required: true,
+            default: 'email',
+        },
     },
+
     { timestamps: true },
 );
 
