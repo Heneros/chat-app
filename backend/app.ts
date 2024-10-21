@@ -72,9 +72,6 @@ const startServer = async () => {
         if (MONGO_URI) {
             connectDB(MONGO_URI);
         }
-        // app.get('/', (req, res: Response) => {
-        //     res.send('Socket.IO server running');
-        // });
         systemLogs.info(
             `Server on ${port} running. NodeENV: ${process.env.NODE_ENV}  `,
         );

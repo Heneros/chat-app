@@ -4,6 +4,7 @@
         "noEmit": false
     },
     "include": [
+        "backend/**/*.ts",
         "frontend/src/**/*.ts",
         "frontend/src/**/*.tsx",
         "test/**/*.ts",

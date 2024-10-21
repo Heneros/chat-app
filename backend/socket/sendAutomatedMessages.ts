@@ -10,9 +10,6 @@ export const sendAutomatedMessages = async (activeUsers: string[]) => {
                 activeRooms[Math.floor(Math.random() * activeRooms.length)];
 
             if (randomRoomId) {
-                // console.log(
-                //     `Sending automated message to room: ${randomRoomId} for user ${userId}`,
-                // );
                 await sendRandomMessage(randomRoomId);
             }
         });
