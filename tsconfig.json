@@ -2,8 +2,7 @@
   "compilerOptions": {
     "composite": true,
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "CommonJS",
     "jsx": "preserve",
     "experimentalDecorators": true,
     "rootDir": "./",
@@ -17,11 +16,9 @@
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-    "noEmit": false
+    "noEmit": true
   },
-  "ts-node": {
-    "esm": true
-  },
+  "ts-node": {},
   "references": [
     {
       "path": "./frontend/tsconfig.json"

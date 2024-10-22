@@ -66,6 +66,8 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
 
+                    
+
                     return () => {
                         socket.off(
                             `receiveMessage:${chatId}`,
@@ -111,6 +113,8 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                                     <MessageList
                                         allMessages={allMessages}
                                         userId={userId}
+                                        chatId={chatId}
+                                        socket={socket}
                                     />
                                 )}
                                 <div ref={endOfMessagesRef} />

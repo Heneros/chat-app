@@ -2,9 +2,9 @@
   "name": "fullstack-chat",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "scripts": {
     "server": "nodemon",
+    "server:dev": "nodemon --exec node --loader ts-node/esm ./backend/app.ts",
     "client": "npm run start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "tsc",

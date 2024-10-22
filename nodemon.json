@@ -6,5 +6,5 @@
     "ignore": [
         "backend/**/*.spec.ts"
     ],
-    "exec": "ts-node --esm ./backend/app.ts"
+    "exec": "ts-node ./backend/app.ts"
 }

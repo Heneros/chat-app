@@ -77,6 +77,33 @@ io.on('connection', async (socket) => {
         console.log('Updated activeRooms', activeRooms);
     });
 
+    socket.on('editMessage', async ({ chatId, messageId, newText }) => {
+        try {
+            const chat = await Chat.findOne({ chatId });
+            console.log('chat ', chat);
+            if (chat) {
+                const message = chat.messages.id(messageId);
+                if (message) {
+                    message.text = newText;
+                    await chat.save();
+
+                    io.to(chatId).emit('messageUpdated', {
+                        messageId,
+                        newText,
+                    });
+                    io.to(chatId).emit('messageUpdated', {
+                        messageId,
+                        newText,
+                    });
+                    console.log('success chat msg update');
+                }
+            }
+            console.log('chat dont exist');
+        } catch (error) {
+            console.log('editMessage', error);
+        }
+    });
+
     socket.on('updateChat', async ({ chatId, firstName, lastName }) => {
         try {
             const chat = await Chat.findByIdAndUpdate(
