@@ -66,7 +66,16 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                     socket.previousRoom = chatId;
                     socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
 
-                    
+                    socket.on('messageUpdated', ({ messageId, newText }) => {
+                        //   setAllMessages((prevMessages) => [...prevMessages, data]);
+                        setAllMessages((prevMessages) =>
+                            prevMessages.map((msg) =>
+                                msg._id === messageId
+                                    ? { ...msg, text: newText }
+                                    : msg,
+                            ),
+                        );
+                    });
 
                     return () => {
                         socket.off(

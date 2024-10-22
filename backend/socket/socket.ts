@@ -79,7 +79,8 @@ io.on('connection', async (socket) => {
 
     socket.on('editMessage', async ({ chatId, messageId, newText }) => {
         try {
-            const chat = await Chat.findOne({ chatId });
+            const chat = await Chat.findOne({ _id: chatId });
+
             console.log('chat ', chat);
             if (chat) {
                 const message = chat.messages.id(messageId);
@@ -91,10 +92,7 @@ io.on('connection', async (socket) => {
                         messageId,
                         newText,
                     });
-                    io.to(chatId).emit('messageUpdated', {
-                        messageId,
-                        newText,
-                    });
+
                     console.log('success chat msg update');
                 }
             }

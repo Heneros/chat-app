@@ -23,9 +23,9 @@ const MessageList: React.FC<MessageListProps> = ({
         setEditingMessageId(msgId);
         setNewText(currentText);
     };
-    console.log('editMessage ', chatId);
+    // console.log('editMessage ', chatId);
     const handleSaveEdit = () => {
-        if (editingMessageId) {
+        if (editingMessageId && chatId) {
             socket.emit('editMessage', {
                 chatId,
                 messageId: editingMessageId,
