@@ -51,6 +51,10 @@ router.get(
         }
 
         const existingUser = await User.findById(userReq.user.id);
+        if (!existingUser) {
+            res.status(401).json({ message: 'Not found user' });
+        }
+
         const payload = {
             id: userReq.user.id,
             firstName: existingUser?.firstName,
@@ -65,17 +69,24 @@ router.get(
             process.env.JWT_ACCESS_SECRET_KEY!,
             { expiresIn: '50m' },
             (err, token) => {
-                const jwt = `${token}`;
-                const embedJWT = `
-    <html>
-    <script>
-    window.localStorage.setItem("googleToken",'${jwt}')
-    window.location.href='/'
-    </script>
+                if (err) {
+                    return res
+                        .status(500)
+                        .json({ message: 'Error generating token' });
+                }
 
-    </html>
-    
-    `;
+                const jwt = `${token}`;
+                // console.log('Token:', jwt);
+                //   res.json({ token });
+                const embedJWT = `
+                <html>
+                <script>
+                window.localStorage.setItem("googleToken", '${jwt}')
+                window.location.href='http://localhost:3000/'
+                </script>
+                </html>
+                `;
+
                 res.send(embedJWT);
             },
         );

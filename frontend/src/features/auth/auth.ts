@@ -45,12 +45,20 @@ const userSlice = createSlice({
     reducers: {
         logIn: (state, action: PayloadAction<User>) => {
             state.user = action.payload;
+
             localStorage.setItem('user', JSON.stringify(action.payload));
+
+            // if (!localStorage.getItem('googleToken')) {
+            //     localStorage.setItem(
+            //         'googleToken',
+            //         JSON.stringify(action.payload),
+            //     );
+            // }
         },
         logout: (state) => {
             state.user = null;
-            /// localStorage.clear();
-            localStorage.removeItem('user');
+            localStorage.clear();
+            // localStorage.removeItem('user');
         },
     },
 });
@@ -62,4 +70,11 @@ export const selectCurrentUserToken = (state: {
 }): string | undefined => {
     const token = state.auth.user?.accessToken;
     return Array.isArray(token) ? token[0] : token;
+};
+
+export const selectCurrentUserGoogleToken = (state: {
+    auth: AuthSlice;
+}): string | undefined => {
+    const googleToken = state.auth.user?.googleToken;
+    return Array.isArray(googleToken) ? googleToken[0] : googleToken;
 };

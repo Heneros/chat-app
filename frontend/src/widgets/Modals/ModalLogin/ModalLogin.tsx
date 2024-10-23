@@ -9,6 +9,7 @@ import { logIn } from '@/features/auth/auth';
 import { getErrorMessage } from '@/shared/utils/getErrorMessage';
 import { ChatModal } from '@/shared/types';
 import { useAppDispatch } from '@/shared/lib/store';
+import GoogleLoginButton from '@/features/auth/ui/GoogleLoginButton';
 
 export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
     const dispatch = useAppDispatch();
@@ -19,10 +20,6 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
             onClose();
         }
     }, [isSuccess, onClose]);
-
-    const google = () => {
-        window.open('http://localhost:4000/api/v1/users/google', '_self');
-    };
 
     if (!isOpen) return null;
 
@@ -120,9 +117,7 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                                 Login
                             </button>
                         </form>
-                        <button onClick={google} type="button">
-                            Google btn
-                        </button>
+                        <GoogleLoginButton />
                         <button
                             type="submit"
                             className="btn-close"

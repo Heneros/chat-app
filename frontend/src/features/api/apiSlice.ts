@@ -16,11 +16,11 @@ const baseQuery = fetchBaseQuery({
         const state = getState() as RootState;
         const token = state.auth.user?.accessToken;
         const googleToken = state.auth?.googleToken;
-
+        // console.log('googleToken', googleToken);
         if (token) {
-            headers.set('Authorization', `Bearer ${token}`);
+            headers.set('authorization', `Bearer ${token}`);
         } else if (googleToken) {
-            headers.set('Authorization', `Bearer ${googleToken}`);
+            headers.set('authorization', `Bearer ${googleToken}`);
         }
         return headers;
     },

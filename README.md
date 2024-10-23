@@ -11,11 +11,13 @@ Full-stack application with socket.io.
 - Node.js
 - Express
 - React
+- Redux
 - MongoDB
 - Socket.IO
 - Formik and Yup
 - Axios
--
+- JWT
+- Passport.js
 
 
 
@@ -30,18 +32,17 @@ Full-stack application with socket.io.
 - [x] Rewrite to Typescript.
 - [x] API limiter add. limit to send message.
 - [x] Create new chat(firstName, lastName) with dialog window.
+- [x] Edit my message in chat
+- [x] Automatically send messages to random chat. This feature can be turned off in the user account.
+- [x] Notification from receive message.
 
 
 ### Need to add:
-- [ ] Notification from receive message.
-- [ ] Authorization via Google and Facebook.
-- [ ] Show toast with new message.
+- [ ] Authorization via Google and Github.
 - [ ] Create second type chat without auto-response API. Which you can add user contacts and communicate to each other.
-- [ ] Automatically send messages to random chat. This feature can be turned off in the user account.
 - [ ] Frontend. Add dark theme and white theme switcher.
 - [ ] Sending files. With cloudflare.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
 - [ ] Avatars to users
-- [ ] Edit my message in chat
 - [ ] Available contacts. option should have. User can show/hide from public list contacts.

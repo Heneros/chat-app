@@ -1,14 +1,15 @@
 import 'dotenv/config';
 import express, { Response } from 'express';
-
+import path from 'path';
 import cors from 'cors';
 
 import cookieParser from 'cookie-parser';
 import mongoSanitize from 'express-mongo-sanitize';
 import session from 'express-session';
 import morgan from 'morgan';
+import passport from 'passport';
 
-import passport from './config/passport';
+import googleAuth from './config/passport';
 import connectDB from './config/connectDB';
 import authRoutes from './routes/usersRoute';
 import chatRoutes from './routes/chatRoute';
@@ -22,6 +23,7 @@ app.use(
         origin: process.env.CLIENT_URL,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
         credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
     }),
 );
 
@@ -34,16 +36,21 @@ app.use(
     session({
         secret: process.env.SESSION_SECRET!,
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
+        cookie: {
+            sameSite: 'none',
+            secure: false,
+        },
     }),
 );
 
-app.use(cookieParser());
-app.use(mongoSanitize());
-
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
-app.use(passport.session());
+googleAuth();
+
+app.use(cookieParser());
+app.use(mongoSanitize());
+// app.use(passport.session());
 
 // app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 //     console.error(error.stack);
@@ -53,9 +60,6 @@ app.use(passport.session());
 app.use('/api/v1/users', apiLimiter, authRoutes);
 app.use('/api/v1/chat', chatRoutes);
 
-app.get('/', (req, res: Response) => {
-    res.send('Socket.IO server running');
-});
 app.use(notFound);
 app.use(errorHandler);
 
@@ -64,9 +68,16 @@ app.use(errorHandler);
 const port = process.env.PORT || 4001;
 const MONGO_URI = process.env.MONGO_URI;
 
-// server.listen(port, () => {
-//     console.log(`Server is running on port ${port}`);
-// });
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'frontend/dist')));
+    app.get('*', (req, res) =>
+        res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')),
+    );
+} else {
+    app.get('/', (req, res: Response) => {
+        res.send('Socket.IO server running');
+    });
+}
 const startServer = async () => {
     try {
         if (MONGO_URI) {

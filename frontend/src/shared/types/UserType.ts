@@ -5,6 +5,9 @@ export interface User {
     firstName: string;
     lastName: string;
     googleID?: string;
+
     refreshToken?: string[];
     accessToken?: string[];
+    googleToken?: string[];
+    githubToken?: string[];
 }
