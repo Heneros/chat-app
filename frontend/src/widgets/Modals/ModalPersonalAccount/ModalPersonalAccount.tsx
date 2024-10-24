@@ -27,10 +27,8 @@ const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
             if (decodedToken) {
                 const { id } = decodedToken;
                 setUserId(id);
-                console.log('', id);
+                //  console.log('', id);
             }
-        } else {
-            console.log('Nety');
         }
     }, [tokenArray]);
 

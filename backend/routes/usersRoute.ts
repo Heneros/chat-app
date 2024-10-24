@@ -28,68 +28,50 @@ router.get(
     },
 );
 
-router.get(
-    '/google',
+router.route('/google').get(
     passport.authenticate('google', {
         session: false,
-        scope: ['profile', 'email'],
+        scope: ['profile', 'email', 'openid'],
         accessType: 'offline',
         prompt: 'consent',
     }),
 );
-
 router.get(
     '/google/redirect',
     passport.authenticate('google', {
-        failureRedirect: '/login',
-        session: false,
+        failureRedirect: 'http://localhost:3000',
     }),
     async (req: Request, res: Response) => {
         const userReq = req as RequestWithUser;
+
         if (!userReq.user) {
-            return res.status(401).json({ message: 'User is undefiend' });
+            return res.redirect(
+                'http://localhost:3000/login?error=auth_failed',
+            );
         }
 
         const existingUser = await User.findById(userReq.user.id);
+
         if (!existingUser) {
-            res.status(401).json({ message: 'Not found user' });
+            return res.redirect(
+                'http://localhost:3000/login?error=user_not_found',
+            );
         }
 
         const payload = {
             id: userReq.user.id,
-            firstName: existingUser?.firstName,
-            lastName: existingUser?.lastName || 'Name',
-            username: existingUser?.username,
-            provider: existingUser?.provider,
-            avatar: existingUser?.avatar,
+            firstName: existingUser.firstName,
+            lastName: existingUser.lastName || 'Name',
+            username: existingUser.username,
+            provider: existingUser.provider,
+            avatar: existingUser.avatar,
         };
 
-        jwt.sign(
-            payload,
-            process.env.JWT_ACCESS_SECRET_KEY!,
-            { expiresIn: '50m' },
-            (err, token) => {
-                if (err) {
-                    return res
-                        .status(500)
-                        .json({ message: 'Error generating token' });
-                }
+        const token = jwt.sign(payload, process.env.JWT_ACCESS_SECRET_KEY!, {
+            expiresIn: '7d',
+        });
 
-                const jwt = `${token}`;
-                // console.log('Token:', jwt);
-                //   res.json({ token });
-                const embedJWT = `
-                <html>
-                <script>
-                window.localStorage.setItem("googleToken", '${jwt}')
-                window.location.href='http://localhost:3000/'
-                </script>
-                </html>
-                `;
-
-                res.send(embedJWT);
-            },
-        );
+        res.redirect(`http://localhost:3000/auth/success?token=${token}`);
     },
 );
 

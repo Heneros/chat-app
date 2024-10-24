@@ -37,19 +37,17 @@ app.use(
         secret: process.env.SESSION_SECRET!,
         resave: false,
         saveUninitialized: false,
-        cookie: {
-            sameSite: 'none',
-            secure: false,
-        },
+        cookie: { secure: process.env.NODE_ENV !== 'development' },
+        // cookie: {
+        //     sameSite: 'none',
+        //     secure: false,
+        // },
     }),
 );
 
-app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 googleAuth();
 
-app.use(cookieParser());
-app.use(mongoSanitize());
 // app.use(passport.session());
 
 // app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
@@ -57,13 +55,15 @@ app.use(mongoSanitize());
 //     res.status(500).send('Something broke!');
 // });
 
-app.use('/api/v1/users', apiLimiter, authRoutes);
+app.use('/api/v1/users', authRoutes);
 app.use('/api/v1/chat', chatRoutes);
+
+app.use(cookieParser());
+app.use(mongoSanitize());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(notFound);
 app.use(errorHandler);
-
-// sendAutomatedMessages();
 
 const port = process.env.PORT || 4001;
 const MONGO_URI = process.env.MONGO_URI;

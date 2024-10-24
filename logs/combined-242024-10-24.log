@@ -1,4 +1,29 @@
 {
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 08:51:36.093 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:16:40.254 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:20:49.009 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:21:17.328 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:35:54.083 AM'
+}
+{
   error: Error: Chat validation failed: user: Cast to ObjectId failed for value "107480076703949078178" (type string) at path "user" because of "BSONError"
       at ValidationError.inspect (D:\Projects\chat-app\node_modules\mongoose\lib\error\validation.js:52:26)
       at formatValue (node:internal/util/inspect:805:19)
@@ -172,6 +197,11 @@
     }
   ],
   timestamp: '2024-10-24 09:36:32.746 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:43:17.724 AM'
 }
 {
   error: Error: Chat validation failed: user: Cast to ObjectId failed for value "107480076703949078178" (type string) at path "user" because of "BSONError"
@@ -349,6 +379,16 @@
   timestamp: '2024-10-24 09:44:10.648 AM'
 }
 {
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:44:26.375 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:46:53.865 AM'
+}
+{
   error: Error: Chat validation failed: user: Cast to ObjectId failed for value "107480076703949078178" (type string) at path "user" because of "BSONError"
       at ValidationError.inspect (D:\Projects\chat-app\node_modules\mongoose\lib\error\validation.js:52:26)
       at formatValue (node:internal/util/inspect:805:19)
@@ -522,4 +562,304 @@
     }
   ],
   timestamp: '2024-10-24 09:48:35.023 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:59:18.588 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 09:59:26.720 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:02:34.107 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:06:58.292 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:12:02.856 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:16:14.495 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:16:24.258 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:16:47.419 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:17:01.190 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:17:05.004 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:21:43.532 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:21:52.619 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:21:57.183 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:22:24.306 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:26:26.069 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 10:27:48.314 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 02:36:44.680 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 02:51:20.995 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 02:51:37.303 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 03:04:07.244 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 03:04:40.868 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 03:20:17.498 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:14:15.415 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:21:19.765 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:30:17.199 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:30:47.407 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:41:35.242 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:44:16.179 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:44:40.440 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:51:41.893 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 05:55:40.535 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 06:05:40.222 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 06:16:25.629 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:15:11.910 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:16:38.117 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:17:31.570 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:18:17.792 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:18:34.048 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:18:44.131 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:18:57.738 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:19:09.064 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:19:17.510 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:21:11.592 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:21:16.599 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:24:48.827 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:25:03.659 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:29:06.375 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:32:37.226 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:32:41.819 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:33:14.762 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:35:12.624 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:35:51.733 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:37:55.719 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:41:39.476 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:41:51.202 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:41:56.454 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:42:05.346 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:42:45.561 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:42:51.567 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-24 07:44:29.088 PM'
 }

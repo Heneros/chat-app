@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 
 import './Homepage.css';
-import { selectCurrentUserToken } from '@/features/auth/auth';
+import {
+    selectCurrentUserGoogleToken,
+    selectCurrentUserToken,
+} from '@/features/auth/auth';
 import { TopBar } from '@/widgets/TopBar/TopBar';
 import { AuthenticatedContent } from '@/processes/AuthenticatedContent/AuthenticatedContent';
 import { ChatRoom } from '../ChatRoom/ChatRoom';
@@ -13,12 +16,13 @@ export const Homepage = () => {
     const [selectedChat, setSelectedChat] = useState<ChatType | null>(null);
 
     const token = useAppSelector(selectCurrentUserToken);
-
+    const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
+    // console.log(tokenGoogle);
     return (
         <div className="parent">
             <div className="left-side">
                 <TopBar setSearchTerm={setSearchTerm} />
-                {token ? (
+                {token || tokenGoogle ? (
                     <AuthenticatedContent
                         searchTerm={searchTerm}
                         setSelectedChat={setSelectedChat}
@@ -28,7 +32,7 @@ export const Homepage = () => {
                 )}
             </div>
             <div className="right-side">
-                {token ? (
+                {token || tokenGoogle ? (
                     selectedChat ? (
                         <ChatRoom selectedChat={selectedChat} />
                     ) : (

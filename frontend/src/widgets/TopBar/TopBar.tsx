@@ -4,7 +4,10 @@ import { FaSearch, FaBars } from 'react-icons/fa';
 import './TopBar.css';
 
 import { useLogoutMutation } from '@/features/user/userApiSlice';
-import { selectCurrentUserToken } from '@/features/auth/auth';
+import {
+    selectCurrentUserToken,
+    selectCurrentUserGoogleToken,
+} from '@/features/auth/auth';
 // import { ChatModal } from '@/shared/types';
 import { useAppSelector } from '@/shared/lib/store';
 import ModalCreateChat from '../Modals/ModalCreateChat/ModalCreateChat';
@@ -18,6 +21,8 @@ interface ChatModalProps {
 
 export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const token = useAppSelector(selectCurrentUserToken);
+    const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
+    // console.log(tokenGoogle);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -115,7 +120,7 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
                     className={`menu-adaptive ${isMenuOpen ? 'active' : ''} `}
                 >
                     <ul>
-                        {!token ? (
+                        {!token || !tokenGoogle ? (
                             <>
                                 <button type="button" onClick={openModal}>
                                     Login
@@ -150,7 +155,6 @@ export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
                 </div>
             </div>
             <ModalLogin isOpen={isModalOpen} onClose={closeModal} />
-
             <ModalRegistration
                 isOpen={isModalSecondOpen}
                 onClose={closeModalSecond}

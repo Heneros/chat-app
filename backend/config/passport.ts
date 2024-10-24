@@ -1,13 +1,21 @@
 import 'dotenv/config';
 import passport from 'passport';
+import fs from 'fs';
+import path from 'path';
+
 import { Strategy as GoogleStrategy, Profile } from 'passport-google-oauth20';
 import { Strategy as GitHubStrategy } from 'passport-github2';
 
 import User from '../models/UserModel';
+import { ChatData } from '../types/ChatData';
+import Chat from '../models/ChatModel';
 
 const domainURL = process.env.DOMAIN;
-
 const googleCallbackURL = process.env.GOOGLE_CALLBACK_URL;
+
+const predefineChats = JSON.parse(
+    fs.readFileSync(path.resolve('backend/data/defaultChats.json')).toString(),
+);
 
 const googleAuth = () => {
     passport.serializeUser((user: any, done) => {
@@ -28,24 +36,28 @@ const googleAuth = () => {
             {
                 clientID: process.env.GOOGLE_CLIENT_ID!,
                 clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-                callbackURL: `${domainURL}/api/v1/${googleCallbackURL}`,
+                callbackURL:
+                    'http://localhost:4000/api/v1/users/google/redirect',
             },
-            (
+            async (
                 accessToken: string,
                 refreshToken: string,
                 profile: Profile,
                 done: (error: any, user?: any) => void,
             ) => {
-                User.findOne({ googleId: profile.id }).then((user) => {
-                    if (!user) {
+                try {
+                    let existingUser = await User.findOne({
+                        googleId: profile.id,
+                    });
+
+                    if (!existingUser) {
                         const fullName = profile.displayName.trim().split(' ');
                         const firstName = fullName.shift();
                         const lastName =
                             fullName.length > 0
                                 ? fullName.join(' ')
                                 : 'Noname ';
-
-                        User.create({
+                        const newUser = await User.create({
                             username: profile._json.given_name,
                             firstName,
                             lastName,
@@ -53,15 +65,31 @@ const googleAuth = () => {
                             email: profile._json.email,
                             googleId: profile.id,
                             provider: 'google',
-                        })
-                            .then((user) => {
-                                done(null, user);
-                            })
-                            .catch((err) => done(err, false));
+                        });
+
+                        await Promise.all(
+                            predefineChats.map(async (chatData: ChatData) => {
+                                const updatedMessages = chatData.messages.map(
+                                    (message) => ({
+                                        ...message,
+                                        sender: 'api',
+                                    }),
+                                );
+
+                                await Chat.create({
+                                    ...chatData,
+                                    user: newUser._id,
+                                    messages: updatedMessages,
+                                });
+                            }),
+                        );
+                        done(null, newUser);
                     } else {
-                        done(null, user);
+                        done(null, existingUser);
                     }
-                });
+                } catch (err) {
+                    done(err, false);
+                }
             },
         ),
     );

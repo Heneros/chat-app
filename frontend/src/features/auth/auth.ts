@@ -3,9 +3,7 @@ import { decodeToken } from 'react-jwt';
 
 import { User } from '@/shared/types';
 
-// import { decodeToken } from 'react-jwt';
-const userLocaleStor = localStorage.getItem('user') || '';
-// let googleToken = localStorage.getItem('googleToken');
+const userLocaleStor = localStorage.getItem('user') || null;
 const googleToken = localStorage.getItem('googleToken');
 
 let user: User | null = null;
@@ -25,11 +23,6 @@ interface AuthSlice {
     googleToken: string | null;
 }
 
-// const initialState = {
-//     user,
-//     data: null,
-//     status: 'loading',
-// };
 const initialState: AuthSlice = {
     user:
         user ||
@@ -47,13 +40,6 @@ const userSlice = createSlice({
             state.user = action.payload;
 
             localStorage.setItem('user', JSON.stringify(action.payload));
-
-            // if (!localStorage.getItem('googleToken')) {
-            //     localStorage.setItem(
-            //         'googleToken',
-            //         JSON.stringify(action.payload),
-            //     );
-            // }
         },
         logout: (state) => {
             state.user = null;
@@ -74,7 +60,6 @@ export const selectCurrentUserToken = (state: {
 
 export const selectCurrentUserGoogleToken = (state: {
     auth: AuthSlice;
-}): string | undefined => {
-    const googleToken = state.auth.user?.googleToken;
-    return Array.isArray(googleToken) ? googleToken[0] : googleToken;
+}): string | null => {
+    return state.auth.googleToken;
 };
