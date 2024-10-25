@@ -22,9 +22,41 @@ router.get(
 
 router.get(
     '/github/callback',
-    passport.authenticate('github', { failureRedirect: '/login' }),
-    (req, res) => {
-        res.redirect('/');
+    passport.authenticate('github', {
+        failureRedirect: 'http://localhost:3000',
+    }),
+    async (req, res) => {
+        const userReq = req as RequestWithUser;
+
+        if (!userReq.user) {
+            return res.redirect(
+                'http://localhost:3000/login?error=auth_failed',
+            );
+        }
+
+        const existingUser = await User.findById(userReq.user.id);
+
+        if (!existingUser) {
+            return res.redirect(
+                'http://localhost:3000/login?error=user_not_found',
+            );
+        }
+
+        const payload = {
+            id: userReq.user.id,
+            firstName: existingUser.firstName,
+            lastName: existingUser.lastName || 'Name',
+            username: existingUser.username,
+            provider: existingUser.provider,
+            avatar: existingUser.avatar,
+        };
+
+        const token = jwt.sign(payload, process.env.JWT_ACCESS_SECRET_KEY!, {
+            expiresIn: '7d',
+        });
+
+        res.redirect(`http://localhost:3000/auth/success?token=${token}`);
+        // res.redirect(`http://localhost:3000/auth/success?token=${token}`);
     },
 );
 
@@ -36,8 +68,7 @@ router.route('/google').get(
         prompt: 'consent',
     }),
 );
-router.get(
-    '/google/redirect',
+router.route('/google/redirect').get(
     passport.authenticate('google', {
         failureRedirect: 'http://localhost:3000',
     }),

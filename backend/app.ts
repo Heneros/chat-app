@@ -50,10 +50,6 @@ googleAuth();
 
 // app.use(passport.session());
 
-// app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
-//     console.error(error.stack);
-//     res.status(500).send('Something broke!');
-// });
 
 app.use('/api/v1/users', authRoutes);
 app.use('/api/v1/chat', chatRoutes);

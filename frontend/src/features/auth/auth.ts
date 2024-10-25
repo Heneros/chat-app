@@ -36,20 +36,31 @@ const userSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        logIn: (state, action: PayloadAction<User>) => {
-            state.user = action.payload;
+        logIn: (
+            state,
+            action: PayloadAction<{ user: User; googleToken: string }>,
+        ) => {
+            const { user, googleToken } = action.payload;
+            state.user = user;
+            state.googleToken = googleToken;
 
-            localStorage.setItem('user', JSON.stringify(action.payload));
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('googleToken', googleToken);
         },
         logout: (state) => {
             state.user = null;
+            state.googleToken = null;
             localStorage.clear();
             // localStorage.removeItem('user');
+        },
+        updateGoogleToken: (state, action: PayloadAction<string>) => {
+            state.googleToken = action.payload;
+            localStorage.setItem('googleToken', action.payload);
         },
     },
 });
 
-export const { logIn, logout } = userSlice.actions;
+export const { logIn, logout, updateGoogleToken } = userSlice.actions;
 export const authReducer = userSlice.reducer;
 export const selectCurrentUserToken = (state: {
     auth: AuthSlice;

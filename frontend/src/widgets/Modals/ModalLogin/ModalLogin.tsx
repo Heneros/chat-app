@@ -10,6 +10,7 @@ import { getErrorMessage } from '@/shared/utils/getErrorMessage';
 import { ChatModal } from '@/shared/types';
 import { useAppDispatch } from '@/shared/lib/store';
 import GoogleLoginButton from '@/features/auth/ui/GoogleLoginButton';
+import GithubLoginButton from '@/features/auth/ui/GithubLoginButton';
 
 export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
     const dispatch = useAppDispatch();
@@ -118,6 +119,7 @@ export const ModalLogin: React.FC<ChatModal> = ({ isOpen, onClose }) => {
                             </button>
                         </form>
                         <GoogleLoginButton />
+                        <GithubLoginButton />
                         <button
                             type="submit"
                             className="btn-close"

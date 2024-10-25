@@ -36,8 +36,7 @@ const googleAuth = () => {
             {
                 clientID: process.env.GOOGLE_CLIENT_ID!,
                 clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-                callbackURL:
-                    'http://localhost:4000/api/v1/users/google/redirect',
+                callbackURL: `${domainURL}/api/v1/${googleCallbackURL}`,
             },
             async (
                 accessToken: string,
@@ -97,9 +96,9 @@ const googleAuth = () => {
     passport.use(
         new GitHubStrategy(
             {
-                clientID: process.env.GITHUB_CLIENT_ID || '',
-                clientSecret: process.env.GITHUB_CLIENT_SECRET || '',
-                callbackURL: process.env.GITHUB_CALLBACK_URL || '',
+                clientID: process.env.GITHUB_CLIENT_ID!,
+                clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+                callbackURL: process.env.GITHUB_CALLBACK_URL!,
             },
             async (
                 accessToken: string,
@@ -114,13 +113,43 @@ const googleAuth = () => {
                     if (existingUser) {
                         return done(null, existingUser);
                     }
+                    console.log(profile);
+
+                    const fullName = profile.displayName.trim().split(' ');
+                    const firstName = fullName.shift();
+                    const lastName =
+                        fullName.length > 0 ? fullName.join(' ') : ' No Name';
+
                     const newUser = new User({
                         githubId: profile.id,
                         username: profile.username,
-                        email: profile.emails?.[0].value,
-                        avatar: profile.photos?.[0].value,
+                        firstName,
+                        lastName,
+
+                        avatar: profile._json.picture,
+                        email: profile._json.email
+                            ? profile._json.email
+                            : `${profile.username}email@${profile.id}temp.com`,
+                        provider: 'github',
                     });
                     await newUser.save();
+
+                    await Promise.all(
+                        predefineChats.map(async (chatData: ChatData) => {
+                            const updatedMessages = chatData.messages.map(
+                                (message) => ({
+                                    ...message,
+                                    sender: 'api',
+                                }),
+                            );
+
+                            await Chat.create({
+                                ...chatData,
+                                user: newUser._id,
+                                messages: updatedMessages,
+                            });
+                        }),
+                    );
                     done(null, newUser);
                 } catch (err) {
                     done(err, null);

@@ -1,15 +1,89 @@
 {
-  error: backend/socket/sendRandomMessage.ts(4,29): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("cacheable-lookup")' call instead.
-    To convert this file to an ECMAScript module, change its file extension to '.mts', or add the field `"type": "module"` to 'D:/Projects/chat-app/package.json'.
+  error: Error [ERR_REQUIRE_ESM]: require() of ES Module D:\Projects\chat-app\node_modules\cacheable-lookup\source\index.js from D:\Projects\chat-app\backend\socket\sendRandomMessage.ts not supported.
+  Instead change the require of index.js in D:\Projects\chat-app\backend\socket\sendRandomMessage.ts to a dynamic import() which is available in all CommonJS modules.
+      at require.extensions.<computed> [as .js] (D:\Projects\chat-app\node_modules\ts-node\dist\index.js:851:20)
+      at Object.<anonymous> (D:\Projects\chat-app\backend\socket\sendRandomMessage.ts:9:44)
+      at m._compile (D:\Projects\chat-app\node_modules\ts-node\dist\index.js:857:29) {
+    code: 'ERR_REQUIRE_ESM'
+  },
+  level: 'error',
+  message: 'uncaughtException: require() of ES Module D:\\Projects\\chat-app\\node_modules\\cacheable-lookup\\source\\index.js from D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts not supported.\n' +
+    'Instead change the require of index.js in D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts to a dynamic import() which is available in all CommonJS modules.\n' +
+    'Error [ERR_REQUIRE_ESM]: require() of ES Module D:\\Projects\\chat-app\\node_modules\\cacheable-lookup\\source\\index.js from D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts not supported.\n' +
+    'Instead change the require of index.js in D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts to a dynamic import() which is available in all CommonJS modules.\n' +
+    '    at require.extensions.<computed> [as .js] (D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\index.js:851:20)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts:9:44)\n' +
+    '    at m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\index.js:857:29)',
+  stack: 'Error [ERR_REQUIRE_ESM]: require() of ES Module D:\\Projects\\chat-app\\node_modules\\cacheable-lookup\\source\\index.js from D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts not supported.\n' +
+    'Instead change the require of index.js in D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts to a dynamic import() which is available in all CommonJS modules.\n' +
+    '    at require.extensions.<computed> [as .js] (D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\index.js:851:20)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts:9:44)\n' +
+    '    at m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\index.js:857:29)',
+  exception: true,
+  date: 'Fri Oct 25 2024 11:51:18 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 67596,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 400048128,
+      heapTotal: 350666752,
+      heapUsed: 315800456,
+      external: 26923151,
+      arrayBuffers: 22972623
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1104089 },
+  trace: [
+    {
+      column: 20,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\index.js',
+      function: 'require.extensions.<computed> [as .js]',
+      line: 851,
+      method: 'js]',
+      native: false
+    },
+    {
+      column: 44,
+      file: 'D:\\Projects\\chat-app\\backend\\socket\\sendRandomMessage.ts',
+      function: null,
+      line: 9,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\index.js',
+      function: 'm._compile',
+      line: 857,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-25 11:51:18.925 AM'
+}
+{
+  error: backend/socket/sendRandomMessage.ts(25,13): error TS2322: Type '{ (hostname: string, family: IPFamily, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, options: LookupOptions & { ...; }, callback: (error: Err...' is not assignable to type 'LookupFunction'.
+    Types of parameters 'family' and 'options' are incompatible.
+      Type 'LookupOptions' is not assignable to type 'IPFamily'.
   ,
   level: 'error',
   message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
-    `backend/socket/sendRandomMessage.ts(4,29): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("cacheable-lookup")' call instead.\r\n` +
-    '  To convert this file to an ECMAScript module, change its file extension to \'.mts\', or add the field `"type": "module"` to \'D:/Projects/chat-app/package.json\'.\r\n' +
+    "backend/socket/sendRandomMessage.ts(25,13): error TS2322: Type '{ (hostname: string, family: IPFamily, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, options: LookupOptions & { ...; }, callback: (error: Err...' is not assignable to type 'LookupFunction'.\r\n" +
+    "  Types of parameters 'family' and 'options' are incompatible.\r\n" +
+    "    Type 'LookupOptions' is not assignable to type 'IPFamily'.\r\n" +
     '\n' +
     'TSError: ⨯ Unable to compile TypeScript:\n' +
-    `backend/socket/sendRandomMessage.ts(4,29): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("cacheable-lookup")' call instead.\r\n` +
-    '  To convert this file to an ECMAScript module, change its file extension to \'.mts\', or add the field `"type": "module"` to \'D:/Projects/chat-app/package.json\'.\r\n' +
+    "backend/socket/sendRandomMessage.ts(25,13): error TS2322: Type '{ (hostname: string, family: IPFamily, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, options: LookupOptions & { ...; }, callback: (error: Err...' is not assignable to type 'LookupFunction'.\r\n" +
+    "  Types of parameters 'family' and 'options' are incompatible.\r\n" +
+    "    Type 'LookupOptions' is not assignable to type 'IPFamily'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -22,8 +96,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
-    `backend/socket/sendRandomMessage.ts(4,29): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("cacheable-lookup")' call instead.\r\n` +
-    '  To convert this file to an ECMAScript module, change its file extension to \'.mts\', or add the field `"type": "module"` to \'D:/Projects/chat-app/package.json\'.\r\n' +
+    "backend/socket/sendRandomMessage.ts(25,13): error TS2322: Type '{ (hostname: string, family: IPFamily, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, callback: (error: ErrnoException | null, address: string, family: IPFamily) => void): void; (hostname: string, options: LookupOptions & { ...; }, callback: (error: Err...' is not assignable to type 'LookupFunction'.\r\n" +
+    "  Types of parameters 'family' and 'options' are incompatible.\r\n" +
+    "    Type 'LookupOptions' is not assignable to type 'IPFamily'.\r\n" +
     '\n' +
     '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
     '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
@@ -36,9 +111,9 @@
     '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
     '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
   exception: true,
-  date: 'Tue Oct 22 2024 10:43:34 GMT+0300 (Восточная Европа, летнее время)',
+  date: 'Fri Oct 25 2024 11:52:31 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 23588,
+    pid: 89108,
     uid: null,
     gid: null,
     cwd: 'D:\\Projects\\chat-app',
@@ -49,14 +124,14 @@
       'D:\\Projects\\chat-app\\backend\\app.ts'
     ],
     memoryUsage: {
-      rss: 396800000,
-      heapTotal: 349495296,
-      heapUsed: 319617728,
-      external: 25992845,
-      arrayBuffers: 22990280
+      rss: 394760192,
+      heapTotal: 349880320,
+      heapUsed: 314080224,
+      external: 25966763,
+      arrayBuffers: 22955725
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 840821.25 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1104161.187 },
   trace: [
     {
       column: 12,
@@ -139,5 +214,144 @@
       native: false
     }
   ],
-  timestamp: '2024-10-22 10:43:34.639 AM'
+  timestamp: '2024-10-25 11:52:31.111 AM'
+}
+{
+  error: backend/socket/socket.ts(9,10): error TS2459: Module '"./sendRandomMessage"' declares 'sendRandomMessage' locally, but it is not exported.
+  ,
+  level: 'error',
+  message: 'uncaughtException: ⨯ Unable to compile TypeScript:\n' +
+    `backend/socket/socket.ts(9,10): error TS2459: Module '"./sendRandomMessage"' declares 'sendRandomMessage' locally, but it is not exported.\r\n` +
+    '\n' +
+    'TSError: ⨯ Unable to compile TypeScript:\n' +
+    `backend/socket/socket.ts(9,10): error TS2459: Module '"./sendRandomMessage"' declares 'sendRandomMessage' locally, but it is not exported.\r\n` +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  stack: 'TSError: ⨯ Unable to compile TypeScript:\n' +
+    `backend/socket/socket.ts(9,10): error TS2459: Module '"./sendRandomMessage"' declares 'sendRandomMessage' locally, but it is not exported.\r\n` +
+    '\n' +
+    '    at createTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:859:12)\n' +
+    '    at reportTSError (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:863:19)\n' +
+    '    at getOutput (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1077:36)\n' +
+    '    at Object.compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1433:41)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1617:30)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)',
+  exception: true,
+  date: 'Fri Oct 25 2024 11:54:06 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 21720,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 396693504,
+      heapTotal: 346472448,
+      heapUsed: 319715832,
+      external: 25966762,
+      arrayBuffers: 22964197
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1104256.265 },
+  trace: [
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'createTSError',
+      line: 859,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'reportTSError',
+      line: 863,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'getOutput',
+      line: 1077,
+      method: null,
+      native: false
+    },
+    {
+      column: 41,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.compile',
+      line: 1433,
+      method: 'compile',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1617,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-25 11:54:06.191 AM'
 }

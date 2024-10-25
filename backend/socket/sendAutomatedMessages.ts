@@ -3,7 +3,7 @@ import { activeRooms } from './socket';
 
 export const sendAutomatedMessages = async (activeUsers: string[]) => {
     if (activeRooms.length > 0) {
-        console.log('sendAutomatedMessages work');
+        ///    console.log('sendAutomatedMessages work');
 
         activeUsers.forEach(async (userId) => {
             const randomRoomId =
