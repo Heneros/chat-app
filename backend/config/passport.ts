@@ -113,7 +113,7 @@ const googleAuth = () => {
                     if (existingUser) {
                         return done(null, existingUser);
                     }
-                    console.log(profile);
+                    // console.log(profile);
 
                     const fullName = profile.displayName.trim().split(' ');
                     const firstName = fullName.shift();
@@ -125,7 +125,6 @@ const googleAuth = () => {
                         username: profile.username,
                         firstName,
                         lastName,
-
                         avatar: profile._json.picture,
                         email: profile._json.email
                             ? profile._json.email

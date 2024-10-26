@@ -35,12 +35,13 @@ export const AuthenticatedContent: React.FC<AuthenticatedContentProps> = ({
     });
 
     if (isLoading || isSearching) return <div>Loading...</div>;
-    if (error || searchError)
+    if (error || searchError) {
         return (
             <div>
                 Error: {getErrorMessage(error) || getErrorMessage(searchError)}
             </div>
         );
+    }
 
     const chats = searchTerm ? searchResults : allChats?.messages;
 

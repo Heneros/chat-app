@@ -3,19 +3,13 @@ import { decodeToken, isExpired } from 'react-jwt';
 
 import { User } from '@/shared/types';
 
-const userLocaleStor = localStorage.getItem('user');
+const userToken = localStorage.getItem('user');
 const googleToken = localStorage.getItem('googleToken');
 const githubToken = localStorage.getItem('githubToken');
 
-let user: User | null = null;
-
-if (userLocaleStor) {
-    try {
-        user = JSON.parse(userLocaleStor);
-    } catch (error) {
-        console.error('Error parsing user data:', error);
-    }
-}
+const decodedToken: User | null = userToken
+    ? decodeToken<User>(userToken)
+    : null;
 
 interface AuthSlice {
     user: User | null;
@@ -24,7 +18,7 @@ interface AuthSlice {
 }
 
 const initialState: AuthSlice = {
-    user,
+    user: decodedToken ?? null,
     googleToken: googleToken ?? null,
     githubToken: githubToken ?? null,
 };
@@ -33,11 +27,10 @@ const userSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        logIn: (state, action: PayloadAction<{ user: User }>) => {
-            const { user } = action.payload;
-            state.user = user;
+        logIn: (state, action: PayloadAction<User>) => {
+            state.user = action.payload;
 
-            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(action.payload));
         },
         logout: (state) => {
             state.user = null;
@@ -62,7 +55,7 @@ export const authReducer = userSlice.reducer;
 
 export const selectCurrentUserToken = (state: {
     auth: AuthSlice;
-}): string | undefined => {
+}): string |  undefined => {
     const token = state.auth.user?.accessToken;
     return Array.isArray(token) ? token[0] : token;
 };

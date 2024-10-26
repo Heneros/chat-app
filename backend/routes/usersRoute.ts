@@ -19,47 +19,62 @@ router.get(
     '/github',
     passport.authenticate('github', {
         scope: ['user:email'],
-        session: false,
     }),
 );
 
-router.get(
-    '/github/callback',
+router.route('/github/callback').get(
     passport.authenticate('github', {
-        failureRedirect: 'http://localhost:3000',
+        failureRedirect: 'http://localhost:3000/login?error=auth_failed',
     }),
     async (req, res) => {
-        const userReq = req as RequestWithUser;
+        try {
+            const userReq = req as RequestWithUser;
 
-        if (!userReq.user) {
-            return res.redirect(
-                'http://localhost:3000/login?error=auth_failed',
+            if (!userReq.user) {
+                return res.redirect(
+                    'http://localhost:3000/login?error=auth_failed',
+                );
+            }
+
+            const existingUser = await User.findById(userReq.user.id);
+
+            if (!existingUser) {
+                return res.redirect(
+                    'http://localhost:3000/login?error=user_not_found',
+                );
+            }
+
+            const payload = {
+                id: userReq.user.id,
+                firstName: existingUser.firstName,
+                lastName: existingUser.lastName || 'Name',
+                username: existingUser.username,
+                provider: existingUser.provider,
+                avatar: existingUser.avatar,
+            };
+
+            const token = jwt.sign(
+                payload,
+                process.env.JWT_ACCESS_SECRET_KEY!,
+                {
+                    expiresIn: '7d',
+                },
             );
-        }
 
-        const existingUser = await User.findById(userReq.user.id);
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'lax',
+                maxAge: 7 * 24 * 60 * 60 * 1000,
+            });
 
-        if (!existingUser) {
-            return res.redirect(
-                'http://localhost:3000/login?error=user_not_found',
+            res.redirect(
+                `http://localhost:3000/auth/success?tokenGithub=${token}`,
             );
+        } catch (error) {
+            console.error('GitHub callback error:', error);
+            res.redirect('http://localhost:3000/login?error=server_error');
         }
-
-        const payload = {
-            id: userReq.user.id,
-            firstName: existingUser.firstName,
-            lastName: existingUser.lastName || 'Name',
-            username: existingUser.username,
-            provider: existingUser.provider,
-            avatar: existingUser.avatar,
-        };
-
-        const token = jwt.sign(payload, process.env.JWT_ACCESS_SECRET_KEY!, {
-            expiresIn: '7d',
-        });
-
-        res.redirect(`http://localhost:3000/auth/success?tokenGithub=${token}`);
-        // res.redirect(`http://localhost:3000/auth/success?token=${token}`);
     },
 );
 

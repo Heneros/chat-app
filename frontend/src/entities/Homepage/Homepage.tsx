@@ -22,14 +22,15 @@ export const Homepage = () => {
     const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
     const tokenGithub = useAppSelector(selectCurrentUserGithubToken);
 
+    // console.log(tokenGithub);
     useEffect(() => {
         if (
-            isTokenValid(token ?? null) ||
+            isTokenValid(token!) ||
             isTokenValid(tokenGoogle) ||
             isTokenValid(tokenGithub)
         ) {
             setIsAuthenticated(true);
-            console.log('setIsAuthenticated(true)');
+            //  console.log('setIsAuthenticated(true)');
         } else {
             setIsAuthenticated(false);
             console.log('setIsAuthenticated(false)');

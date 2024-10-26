@@ -7,6 +7,7 @@ import { ChatType } from '@/shared/types';
 import './ChatRoom.css';
 import { useGetByIdChatQuery } from '@/features/messages/messagesSlice';
 import {
+    selectCurrentUserGithubToken,
     selectCurrentUserGoogleToken,
     selectCurrentUserToken,
 } from '@/features/auth/auth';
@@ -35,7 +36,8 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
     } = useGetByIdChatQuery({ chatId });
     const tokenArray = useAppSelector(selectCurrentUserToken);
     const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
-
+    const tokenGithub = useAppSelector(selectCurrentUserGithubToken);
+    
     const token: string | undefined = tokenArray;
     const tokenSecondGoogle: string | null = tokenGoogle;
 
@@ -44,7 +46,7 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
     const [newMessage, setNewMessage] = useState('');
 
     useEffect(() => {
-        if (token || tokenSecondGoogle) {
+        if (token || tokenSecondGoogle || tokenGithub) {
             const decodedToken = token
                 ? decodeToken<DecodedToken>(token)
                 : null;
@@ -52,10 +54,16 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
                 ? decodeToken<DecodedToken>(tokenSecondGoogle)
                 : null;
 
+            const decodedTokenGithub = tokenGithub
+                ? decodeToken<DecodedToken>(tokenGithub)
+                : null;
+
             if (decodedToken && decodedToken.id) {
                 setUserId(decodedToken.id);
             } else if (decodedTokenGoogle && decodedTokenGoogle.id) {
                 setUserId(decodedTokenGoogle.id);
+            } else if (decodedTokenGithub && decodedTokenGithub.id) {
+                setUserId(decodedTokenGithub.id);
             }
         }
     }, [token, tokenSecondGoogle]);
