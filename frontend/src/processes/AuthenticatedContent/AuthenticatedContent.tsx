@@ -6,8 +6,6 @@ import {
 } from '@/features/messages/messagesSlice';
 import { ChatType } from '@/shared/types';
 import { Chat } from '@/widgets/Chats/Chat/Chat';
-import socket from '@/widgets/Socket/socket'; // Assuming you have a socket instance
-import { Message } from '@/shared/types/ChatType';
 
 interface AuthenticatedContentProps {
     setSelectedChat: (chat: any) => void;

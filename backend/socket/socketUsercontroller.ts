@@ -35,6 +35,7 @@ export const toggleAutomatedMessages = async ({
             automatedMessagesEnabled: enabled,
         });
         socket.data.automatedMessagesEnabled = enabled;
+        console.log('toggleAutomatedMessages works');
     } catch (error) {
         console.error('Failed to update user preferences:', error);
     }

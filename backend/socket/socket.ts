@@ -48,6 +48,7 @@ io.on('connection', async (socket) => {
 
     socket.on('toggleAutomateMessages', async ({ userId, enabled }) => {
         await toggleAutomatedMessages({ userId, enabled, socket });
+        console.log('toggleAutomateMessages');
         if (enabled) activeUsers.add(userId);
         else activeUsers.delete(userId);
         socket.emit('automatedMessagesUpdated', enabled);

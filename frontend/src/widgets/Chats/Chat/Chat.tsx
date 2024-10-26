@@ -2,8 +2,7 @@ import React from 'react';
 import './Chat.css';
 import { getErrorMessage } from 'shared/utils/getErrorMessage';
 import { ChatType } from 'shared/types';
-
-import { useDeleteChatMutation } from '../../../features/messages/messagesSlice';
+import { useDeleteChatMutation } from '@/features/messages/messagesSlice';
 
 export const Chat: React.FC<ChatType> = ({
     firstName,

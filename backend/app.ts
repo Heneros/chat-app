@@ -50,8 +50,7 @@ googleAuth();
 
 // app.use(passport.session());
 
-
-app.use('/api/v1/users', authRoutes);
+app.use('/api/v1/users', apiLimiter, authRoutes);
 app.use('/api/v1/chat', chatRoutes);
 
 app.use(cookieParser());

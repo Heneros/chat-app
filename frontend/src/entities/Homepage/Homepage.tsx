@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Homepage.css';
 import {
+    isTokenValid,
+    selectCurrentUserGithubToken,
     selectCurrentUserGoogleToken,
     selectCurrentUserToken,
 } from '@/features/auth/auth';
@@ -14,15 +16,31 @@ import { useAppSelector } from '@/shared/lib/store';
 export const Homepage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedChat, setSelectedChat] = useState<ChatType | null>(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const token = useAppSelector(selectCurrentUserToken);
     const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
+    const tokenGithub = useAppSelector(selectCurrentUserGithubToken);
+
+    useEffect(() => {
+        if (
+            isTokenValid(token ?? null) ||
+            isTokenValid(tokenGoogle) ||
+            isTokenValid(tokenGithub)
+        ) {
+            setIsAuthenticated(true);
+            console.log('setIsAuthenticated(true)');
+        } else {
+            setIsAuthenticated(false);
+            console.log('setIsAuthenticated(false)');
+        }
+    }, [token, tokenGoogle, tokenGithub]);
     // console.log(tokenGoogle);
     return (
         <div className="parent">
             <div className="left-side">
                 <TopBar setSearchTerm={setSearchTerm} />
-                {token || tokenGoogle ? (
+                {isAuthenticated ? (
                     <AuthenticatedContent
                         searchTerm={searchTerm}
                         setSelectedChat={setSelectedChat}
@@ -32,7 +50,7 @@ export const Homepage = () => {
                 )}
             </div>
             <div className="right-side">
-                {token || tokenGoogle ? (
+                {isAuthenticated ? (
                     selectedChat ? (
                         <ChatRoom selectedChat={selectedChat} />
                     ) : (

@@ -22,7 +22,7 @@ interface ChatModalProps {
 export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const token = useAppSelector(selectCurrentUserToken);
     const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
-    console.log(tokenGoogle);
+    /// console.log(tokenGoogle);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);

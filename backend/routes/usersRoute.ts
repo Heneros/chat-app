@@ -17,7 +17,10 @@ router.route('/logout').get(logout);
 
 router.get(
     '/github',
-    passport.authenticate('github', { scope: ['user:email'] }),
+    passport.authenticate('github', {
+        scope: ['user:email'],
+        session: false,
+    }),
 );
 
 router.get(
@@ -55,7 +58,7 @@ router.get(
             expiresIn: '7d',
         });
 
-        res.redirect(`http://localhost:3000/auth/success?token=${token}`);
+        res.redirect(`http://localhost:3000/auth/success?tokenGithub=${token}`);
         // res.redirect(`http://localhost:3000/auth/success?token=${token}`);
     },
 );
@@ -102,7 +105,7 @@ router.route('/google/redirect').get(
             expiresIn: '7d',
         });
 
-        res.redirect(`http://localhost:3000/auth/success?token=${token}`);
+        res.redirect(`http://localhost:3000/auth/success?tokenGoogle=${token}`);
     },
 );
 

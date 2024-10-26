@@ -35,7 +35,7 @@ const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
     useEffect(() => {
         if (userId) {
             socket.emit('authenticate', userId);
-            console.log(userId);
+            //    console.log(userId);
         }
 
         return () => {

@@ -22,7 +22,7 @@ interface ChatRoomProps {
     selectedChat: ChatType;
 }
 
-interface DecodedToken {
+export interface DecodedToken {
     id: string;
 }
 
@@ -90,16 +90,25 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
         if (chatId) {
             socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
 
-            socket.on('messageUpdated', ({ messageId, newText }) => {
+            const handleMessageUpdated = ({
+                messageId,
+                newText,
+            }: {
+                messageId: string;
+                newText: string;
+            }) => {
                 setAllMessages((prevMessages) =>
                     prevMessages.map((msg) =>
                         msg._id === messageId ? { ...msg, text: newText } : msg,
                     ),
                 );
-            });
+            };
+
+            socket.on('messageUpdated', handleMessageUpdated);
 
             return () => {
                 socket.off(`receiveMessage:${chatId}`, handleReceiveMessage);
+                socket.off('messageUpdated', handleMessageUpdated);
             };
         }
     }, [chatId, handleReceiveMessage]);
