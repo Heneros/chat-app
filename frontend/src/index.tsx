@@ -10,6 +10,7 @@ import { Layout } from './pages/Layout/Layout';
 
 import { Homepage } from './entities/Homepage/Homepage';
 import AuthSuccess from './processes/AuthenticatedContent/AuthSuccess';
+ 
 
 const router = createBrowserRouter([
     {

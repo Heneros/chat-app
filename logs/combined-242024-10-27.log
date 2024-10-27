@@ -1,0 +1,35 @@
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-10-27 08:08:34.866 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-10-27 09:28:36.897 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-10-27 09:29:52.449 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-10-27 09:34:26.503 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-10-27 09:35:39.225 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-10-27 09:38:20.041 AM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-10-27 09:43:26.866 AM'
+}

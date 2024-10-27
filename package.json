@@ -4,10 +4,14 @@
   "description": "",
   "scripts": {
     "server": "nodemon",
+    "server:build": "tsc --project backend/tsconfig.json",
+    "client:build": "npm run build --prefix frontend",
+    "build": "npm run server:build && npm run client:build",
+    "server:start": "node dist/backend/app.js",
+    "start": "npm run build && npm run server:start",
     "server:dev": "nodemon --exec node --loader ts-node/esm ./backend/app.ts",
     "client": "npm run start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "tsc",
     "test": "jest --detectOpenHandles --forceExit",
     "lint:ts": "eslint \"./**/*.ts\"",
     "lint:ts:fix": "eslint \"**/*.ts\" --fix"

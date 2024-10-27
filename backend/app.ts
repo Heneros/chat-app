@@ -57,22 +57,29 @@ app.use(cookieParser());
 app.use(mongoSanitize());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(notFound);
-app.use(errorHandler);
-
 const port = process.env.PORT || 4001;
 const MONGO_URI = process.env.MONGO_URI;
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'frontend/dist')));
-    app.get('*', (req, res) =>
-        res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')),
-    );
+    const frontendPath = path.join(__dirname, '..', '..', 'dist', 'frontend');
+
+    app.use(express.static(frontendPath));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(frontendPath, 'index.html'));
+    });
+    // app.use(express.static(path.join(__dirname, 'dist/frontend')));
+    // app.get('*', (req, res) =>
+    //     res.sendFile(path.resolve(__dirname, 'index.html')),
+    // );
 } else {
     app.get('/', (req, res: Response) => {
         res.send('Socket.IO server running');
     });
 }
+
+app.use(notFound);
+app.use(errorHandler);
+
 const startServer = async () => {
     try {
         if (MONGO_URI) {
