@@ -14,7 +14,8 @@ Full-stack application with socket.io.
 - Redux
 - MongoDB
 - Socket.IO
-- Formik and Yup
+- Formik 
+- Yup
 - Axios
 - JWT
 - Passport.js
@@ -22,8 +23,8 @@ Full-stack application with socket.io.
 
 
 ### Already exists:
-- [x] Three predefined chats.
-- [x] Receiving response from API.
+- [x] Three predefined chats after registration.
+- [x] Receiving auto-response from API.
 - [x] Authorization with JWT.
 - [x] Search chat and users.
 - [x] Delete chat. with dialog with a confirmation dialog window.
@@ -35,10 +36,9 @@ Full-stack application with socket.io.
 - [x] Edit my message in chat
 - [x] Automatically send messages to random chat. This feature can be turned off in the user account.
 - [x] Notification from receive message.
-
+- [x] Authorization via Google and Github.
 
 ### Need to add:
-- [ ] Authorization via Google and Github.
 - [ ] Create second type chat without auto-response API. Which you can add user contacts and communicate to each other.
 - [ ] Frontend. Add dark theme and white theme switcher.
 - [ ] Sending files. With cloudflare.

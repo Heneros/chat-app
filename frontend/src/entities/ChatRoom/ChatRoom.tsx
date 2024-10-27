@@ -7,8 +7,8 @@ import { ChatType } from '@/shared/types';
 import './ChatRoom.css';
 import { useGetByIdChatQuery } from '@/features/messages/messagesSlice';
 import {
-    selectCurrentUserGithubToken,
     selectCurrentUserGoogleToken,
+    selectCurrentUserGithubToken,
     selectCurrentUserToken,
 } from '@/features/auth/auth';
 import { ChatHeader } from '@/widgets/Chats/ChatHeader/ChatHeader';
@@ -23,7 +23,7 @@ interface ChatRoomProps {
     selectedChat: ChatType;
 }
 
-export interface DecodedToken {
+interface DecodedToken {
     id: string;
 }
 
@@ -34,58 +34,58 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
         isLoading,
         error,
     } = useGetByIdChatQuery({ chatId });
-    const tokenArray = useAppSelector(selectCurrentUserToken);
+
+    const token = useAppSelector(selectCurrentUserToken);
     const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
     const tokenGithub = useAppSelector(selectCurrentUserGithubToken);
-    
-    const token: string | undefined = tokenArray;
-    const tokenSecondGoogle: string | null = tokenGoogle;
 
     const [allMessages, setAllMessages] = useState<Message[]>([]);
     const [userId, setUserId] = useState<string | null>(null);
     const [newMessage, setNewMessage] = useState('');
 
+    const endOfMessagesRef = useRef<HTMLDivElement | null>(null);
+
     useEffect(() => {
-        if (token || tokenSecondGoogle || tokenGithub) {
+        if (token || tokenGoogle || tokenGithub) {
             const decodedToken = token
                 ? decodeToken<DecodedToken>(token)
                 : null;
-            const decodedTokenGoogle = tokenSecondGoogle
-                ? decodeToken<DecodedToken>(tokenSecondGoogle)
+            const decodedTokenGoogle = tokenGoogle
+                ? decodeToken<DecodedToken>(tokenGoogle)
                 : null;
-
             const decodedTokenGithub = tokenGithub
                 ? decodeToken<DecodedToken>(tokenGithub)
                 : null;
 
-            if (decodedToken && decodedToken.id) {
-                setUserId(decodedToken.id);
-            } else if (decodedTokenGoogle && decodedTokenGoogle.id) {
-                setUserId(decodedTokenGoogle.id);
-            } else if (decodedTokenGithub && decodedTokenGithub.id) {
-                setUserId(decodedTokenGithub.id);
-            }
+            const userToken =
+                decodedToken?.id ||
+                decodedTokenGoogle?.id ||
+                decodedTokenGithub?.id;
+            if (userToken) setUserId(userToken);
         }
-    }, [token, tokenSecondGoogle]);
+    }, [token, tokenGoogle, tokenGithub]);
 
+ 
+    useEffect(() => {
+        if (chatData && Array.isArray(chatData.messages)) {
+            setAllMessages(chatData.messages);
+        }
+    }, [chatData]);
+
+ 
     useEffect(() => {
         if (userId && chatId) {
             socket.emit('authenticate', userId);
             socket.emit('leave_room', socket.previousRoom);
 
-            const data = {
-                userId,
-                chatId,
-            };
-            socket.emit('join_room', data);
-
+            socket.emit('join_room', { userId, chatId });
             socket.previousRoom = chatId;
         }
     }, [userId, chatId]);
 
+
     const handleReceiveMessage = useCallback((data: Message) => {
         setAllMessages((prevMessages) => [...prevMessages, data]);
-
         if (data.sender === 'api') {
             toast.info(`New message from ${data.sender}`, {
                 position: 'bottom-right',
@@ -94,40 +94,26 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
         }
     }, []);
 
+
     useEffect(() => {
         if (chatId) {
             socket.on(`receiveMessage:${chatId}`, handleReceiveMessage);
 
-            const handleMessageUpdated = ({
-                messageId,
-                newText,
-            }: {
-                messageId: string;
-                newText: string;
-            }) => {
+            socket.on('messageUpdated', ({ messageId, newText }) => {
                 setAllMessages((prevMessages) =>
                     prevMessages.map((msg) =>
                         msg._id === messageId ? { ...msg, text: newText } : msg,
                     ),
                 );
-            };
-
-            socket.on('messageUpdated', handleMessageUpdated);
+            });
 
             return () => {
                 socket.off(`receiveMessage:${chatId}`, handleReceiveMessage);
-                socket.off('messageUpdated', handleMessageUpdated);
+                socket.off('messageUpdated');
             };
         }
     }, [chatId, handleReceiveMessage]);
 
-    useEffect(() => {
-        if (chatData && Array.isArray(chatData.messages)) {
-            setAllMessages(chatData.messages);
-        }
-    }, [chatData, isLoading]);
-
-    const endOfMessagesRef = useRef<HTMLDivElement | null>(null);
 
     const scrollToBottom = () => {
         if (endOfMessagesRef.current) {
@@ -136,6 +122,7 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
             });
         }
     };
+
     useEffect(() => {
         scrollToBottom();
     }, [allMessages]);

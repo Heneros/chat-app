@@ -67,10 +67,7 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
         res.sendFile(path.join(frontendPath, 'index.html'));
     });
-    // app.use(express.static(path.join(__dirname, 'dist/frontend')));
-    // app.get('*', (req, res) =>
-    //     res.sendFile(path.resolve(__dirname, 'index.html')),
-    // );
+
 } else {
     app.get('/', (req, res: Response) => {
         res.send('Socket.IO server running');

@@ -2456,3 +2456,323 @@
   ],
   timestamp: '2024-10-26 08:17:05.757 PM'
 }
+{
+  error: Error: Cannot find module 'backend/utils/Logger'
+  Require stack:
+  - D:\Projects\chat-app\backend\routes\usersRoute.ts
+  - D:\Projects\chat-app\backend\app.ts
+      at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+      at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (D:\Projects\chat-app\node_modules\@cspotcode\source-map-support\source-map-support.js:811:30)
+      at Function.Module._load (node:internal/modules/cjs/loader:984:27)
+      at Module.require (node:internal/modules/cjs/loader:1231:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (D:\Projects\chat-app\backend\routes\usersRoute.ts:10:1)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module.m._compile (D:\Projects\chat-app\node_modules\ts-node\src\index.ts:1618:23)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Object.require.extensions.<computed> [as .ts] (D:\Projects\chat-app\node_modules\ts-node\src\index.ts:1621:12) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module 'backend/utils/Logger'\n" +
+    'Require stack:\n' +
+    '- D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts\n' +
+    '- D:\\Projects\\chat-app\\backend\\app.ts\n' +
+    "Error: Cannot find module 'backend/utils/Logger'\n" +
+    'Require stack:\n' +
+    '- D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts\n' +
+    '- D:\\Projects\\chat-app\\backend\\app.ts\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)\n' +
+    '    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (D:\\Projects\\chat-app\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js:811:30)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:984:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts:10:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1618:23)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)',
+  stack: "Error: Cannot find module 'backend/utils/Logger'\n" +
+    'Require stack:\n' +
+    '- D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts\n' +
+    '- D:\\Projects\\chat-app\\backend\\app.ts\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)\n' +
+    '    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (D:\\Projects\\chat-app\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js:811:30)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:984:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts:10:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1618:23)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)',
+  exception: true,
+  date: 'Sun Oct 27 2024 13:20:32 GMT+0200 (Восточная Европа, стандартное время)',
+  process: {
+    pid: 102208,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 387276800,
+      heapTotal: 335986688,
+      heapUsed: 311723720,
+      external: 27249851,
+      arrayBuffers: 24247286
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1285846.578 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._resolveFilename',
+      line: 1143,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js',
+      function: 'Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename]',
+      line: 811,
+      method: 'installedValue [as _resolveFilename]',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 984,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 1,
+      file: 'D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts',
+      function: null,
+      line: 10,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1369,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 23,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1618,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-27 01:20:32.639 PM'
+}
+{
+  error: Error: Cannot find module 'backend/utils/Logger'
+  Require stack:
+  - D:\Projects\chat-app\backend\routes\usersRoute.ts
+  - D:\Projects\chat-app\backend\app.ts
+      at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+      at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (D:\Projects\chat-app\node_modules\@cspotcode\source-map-support\source-map-support.js:811:30)
+      at Function.Module._load (node:internal/modules/cjs/loader:984:27)
+      at Module.require (node:internal/modules/cjs/loader:1231:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (D:\Projects\chat-app\backend\routes\usersRoute.ts:10:1)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module.m._compile (D:\Projects\chat-app\node_modules\ts-node\src\index.ts:1618:23)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Object.require.extensions.<computed> [as .ts] (D:\Projects\chat-app\node_modules\ts-node\src\index.ts:1621:12) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module 'backend/utils/Logger'\n" +
+    'Require stack:\n' +
+    '- D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts\n' +
+    '- D:\\Projects\\chat-app\\backend\\app.ts\n' +
+    "Error: Cannot find module 'backend/utils/Logger'\n" +
+    'Require stack:\n' +
+    '- D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts\n' +
+    '- D:\\Projects\\chat-app\\backend\\app.ts\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)\n' +
+    '    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (D:\\Projects\\chat-app\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js:811:30)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:984:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts:10:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1618:23)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)',
+  stack: "Error: Cannot find module 'backend/utils/Logger'\n" +
+    'Require stack:\n' +
+    '- D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts\n' +
+    '- D:\\Projects\\chat-app\\backend\\app.ts\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)\n' +
+    '    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (D:\\Projects\\chat-app\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js:811:30)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:984:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts:10:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1618:23)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)',
+  exception: true,
+  date: 'Sun Oct 27 2024 13:20:36 GMT+0200 (Восточная Европа, стандартное время)',
+  process: {
+    pid: 27120,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 389185536,
+      heapTotal: 336248832,
+      heapUsed: 308634984,
+      external: 25982102,
+      arrayBuffers: 22979537
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1285850.468 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._resolveFilename',
+      line: 1143,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 30,
+      file: 'D:\\Projects\\chat-app\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js',
+      function: 'Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename]',
+      line: 811,
+      method: 'installedValue [as _resolveFilename]',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 984,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 1,
+      file: 'D:\\Projects\\chat-app\\backend\\routes\\usersRoute.ts',
+      function: null,
+      line: 10,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1369,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 23,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1618,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    }
+  ],
+  timestamp: '2024-10-27 01:20:36.527 PM'
+}

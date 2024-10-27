@@ -5,7 +5,11 @@ import { ChatModal } from '@/shared/types';
 import { BASE_URL } from '@/shared/utils/constants';
 import socket from '@/widgets/Socket/socket';
 import { useAppSelector } from '@/shared/lib/store';
-import { selectCurrentUserToken } from '@/features/auth/auth';
+import {
+    selectCurrentUserGithubToken,
+    selectCurrentUserGoogleToken,
+    selectCurrentUserToken,
+} from '@/features/auth/auth';
 
 interface DecodedToken {
     id: string;
@@ -14,28 +18,38 @@ interface DecodedToken {
 const ModalPersonalAccount: React.FC<ChatModal> = ({ isOpen, onClose }) => {
     // const [socket, setSocket] = useState(null);
     const tokenArray = useAppSelector(selectCurrentUserToken);
+    const tokenGithubArray = useAppSelector(selectCurrentUserGithubToken);
+    const tokenGoogleArray = useAppSelector(selectCurrentUserGoogleToken);
 
     const [automatedMessages, setAutomatedMessages] = useState(true);
     const [userId, setUserId] = useState<string | null>(null);
 
     useEffect(() => {
-        const token: string | undefined = tokenArray;
+        const token: string | null = tokenArray ?? null;
+        const tokenGithub: string | null = tokenGithubArray ?? null;
+        const tokenGoogle: string | null = tokenGoogleArray ?? null;
 
-        if (token) {
-            const decodedToken = decodeToken<DecodedToken>(token);
+        const decodedToken = token ? decodeToken<DecodedToken>(token) : null;
+        const decodedGithubToken = tokenGithub
+            ? decodeToken<DecodedToken>(tokenGithub)
+            : null;
+        const decodedGoogleToken = tokenGoogle
+            ? decodeToken<DecodedToken>(tokenGoogle)
+            : null;
 
-            if (decodedToken) {
-                const { id } = decodedToken;
-                setUserId(id);
-                //  console.log('', id);
-            }
+        if (decodedToken) {
+            setUserId(decodedToken.id);
+        } else if (decodedGithubToken?.id) {
+            setUserId(decodedGithubToken.id);
+        } else if (decodedGoogleToken?.id) {
+            setUserId(decodedGoogleToken.id);
         }
-    }, [tokenArray]);
+    }, [tokenArray, tokenGithubArray, tokenGoogleArray]);
 
     useEffect(() => {
         if (userId) {
             socket.emit('authenticate', userId);
-            //    console.log(userId);
+            /// console.log(userId);
         }
 
         return () => {

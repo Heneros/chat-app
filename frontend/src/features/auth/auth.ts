@@ -3,32 +3,47 @@ import { decodeToken, isExpired } from 'react-jwt';
 
 import { User } from '@/shared/types';
 
-const userToken = localStorage.getItem('user');
-const googleToken = localStorage.getItem('googleToken');
-const githubToken = localStorage.getItem('githubToken');
-
-const decodedToken: User | null = userToken
-    ? decodeToken<User>(userToken)
-    : null;
-
 interface AuthSlice {
+    isAuthenticated: boolean;
     user: User | null;
     googleToken: string | null;
     githubToken: string | null;
 }
 
+const userToken = localStorage.getItem('user');
+const googleToken = localStorage.getItem('googleToken');
+const githubToken = localStorage.getItem('githubToken');
+
+let parsedUser: User | null = null;
+try {
+    parsedUser = userToken ? JSON.parse(userToken) : null;
+} catch (e) {
+    console.error('Error parsing stored user:', e);
+}
+
+
+const isAuthenticated = !!(
+    (userToken && !isExpired(userToken)) ||
+    (googleToken && !isExpired(googleToken)) ||
+    (githubToken && !isExpired(githubToken))
+);
+
 const initialState: AuthSlice = {
-    user: decodedToken ?? null,
+    isAuthenticated,
+    user: parsedUser,
     googleToken: googleToken ?? null,
     githubToken: githubToken ?? null,
 };
-
 const userSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
+        setAuthenticated(state, action: PayloadAction<boolean>) {
+            state.isAuthenticated = action.payload;
+        },
         logIn: (state, action: PayloadAction<User>) => {
             state.user = action.payload;
+            state.isAuthenticated = true;
 
             localStorage.setItem('user', JSON.stringify(action.payload));
         },
@@ -49,13 +64,21 @@ const userSlice = createSlice({
     },
 });
 
-export const { logIn, logout, updateGoogleToken, updateGithubToken } =
-    userSlice.actions;
+export const {
+    logIn,
+    logout,
+    updateGoogleToken,
+    updateGithubToken,
+    setAuthenticated,
+} = userSlice.actions;
 export const authReducer = userSlice.reducer;
+
+export const selectIsAuthenticated = (state: { auth: AuthSlice }) =>
+    state.auth.isAuthenticated;
 
 export const selectCurrentUserToken = (state: {
     auth: AuthSlice;
-}): string |  undefined => {
+}): string | undefined => {
     const token = state.auth.user?.accessToken;
     return Array.isArray(token) ? token[0] : token;
 };

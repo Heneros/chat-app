@@ -7,8 +7,10 @@ import logout from '../controllers/users/logoutController';
 import updateProfileUser from '../controllers/users/updateProfileController';
 import User from '../models/UserModel';
 import { RequestWithUser } from '../types/RequestWithUser';
+import { systemLogs } from '../utils/Logger';
 
 const router = express.Router();
+const domain = process.env.DOMAIN;
 
 router.route('/login').post(authUser);
 router.route('/registration').post(registerUser);
@@ -53,27 +55,45 @@ router.route('/github/callback').get(
                 avatar: existingUser.avatar,
             };
 
-            const token = jwt.sign(
+            // const token = jwt.sign(
+            //     payload,
+            //     process.env.JWT_ACCESS_SECRET_KEY!,
+            //     {
+            //         expiresIn: '7d',
+            //     },
+            // );
+
+            // res.redirect(
+            //     `http://localhost:3000/auth/success?tokenGithub=${token}`,
+            // );
+            jwt.sign(
                 payload,
                 process.env.JWT_ACCESS_SECRET_KEY!,
                 {
                     expiresIn: '7d',
                 },
-            );
+                (err, token) => {
+                    if (err) {
+                        console.log(err);
 
-            res.cookie('token', token, {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === 'production',
-                sameSite: 'lax',
-                maxAge: 7 * 24 * 60 * 60 * 1000,
-            });
+                        return res.status(500).send('Error generating token');
+                    }
 
-            res.redirect(
-                `http://localhost:3000/auth/success?tokenGithub=${token}`,
+                    const jwt = `${token}`;
+                    const emebedJWT = `
+                <html>
+                <script>
+                      window.localStorage.setItem("googleToken", '${jwt}');
+                      window.location.href= "${domain}";
+                 </script>
+                </html>
+                `;
+                    res.send(emebedJWT);
+                },
             );
         } catch (error) {
             console.error('GitHub callback error:', error);
-            res.redirect('http://localhost:3000/login?error=server_error');
+            //  res.redirect('http://localhost:3000/login?error=server_error');
         }
     },
 );
@@ -86,41 +106,68 @@ router.route('/google').get(
         prompt: 'consent',
     }),
 );
+
 router.route('/google/redirect').get(
     passport.authenticate('google', {
         failureRedirect: 'http://localhost:3000',
     }),
     async (req: Request, res: Response) => {
-        const userReq = req as RequestWithUser;
+        try {
+            const userReq = req as RequestWithUser;
 
-        if (!userReq.user) {
-            return res.redirect(
-                'http://localhost:3000/login?error=auth_failed',
+            if (!userReq.user) {
+                return res.redirect(
+                    'http://localhost:3000/login?error=auth_failed',
+                );
+            }
+
+            const existingUser = await User.findById(userReq.user.id);
+
+            if (!existingUser) {
+                return res.redirect(
+                    'http://localhost:3000/login?error=user_not_found',
+                );
+            }
+
+            const payload = {
+                id: userReq.user.id,
+                firstName: existingUser.firstName,
+                lastName: existingUser.lastName || 'Name',
+                username: existingUser.username,
+                provider: existingUser.provider,
+                avatar: existingUser.avatar,
+            };
+
+            jwt.sign(
+                payload,
+                process.env.JWT_ACCESS_SECRET_KEY!,
+                {
+                    expiresIn: '7d',
+                },
+                (err, token) => {
+                    if (err) {
+                        console.log(err);
+
+                        return res.status(500).send('Error generating token');
+                    }
+
+                    const jwt = `${token}`;
+                    const emebedJWT = `
+                <html>
+                <script>
+                      window.localStorage.setItem("googleToken", '${jwt}');
+                      window.location.href= "${domain}";
+                 </script>
+                </html>
+                `;
+                    res.send(emebedJWT);
+                },
             );
+        } catch (error) {
+            systemLogs.error(`error `, error);
         }
 
-        const existingUser = await User.findById(userReq.user.id);
-
-        if (!existingUser) {
-            return res.redirect(
-                'http://localhost:3000/login?error=user_not_found',
-            );
-        }
-
-        const payload = {
-            id: userReq.user.id,
-            firstName: existingUser.firstName,
-            lastName: existingUser.lastName || 'Name',
-            username: existingUser.username,
-            provider: existingUser.provider,
-            avatar: existingUser.avatar,
-        };
-
-        const token = jwt.sign(payload, process.env.JWT_ACCESS_SECRET_KEY!, {
-            expiresIn: '7d',
-        });
-
-        res.redirect(`http://localhost:3000/auth/success?tokenGoogle=${token}`);
+        // res.redirect(`http://localhost:3000/auth/success?tokenGoogle=${token}`);
     },
 );
 
