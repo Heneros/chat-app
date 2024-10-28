@@ -16,12 +16,15 @@ const baseQuery = fetchBaseQuery({
         const state = getState() as RootState;
         const token = state.auth.user?.accessToken;
         const googleToken = state.auth?.googleToken;
-        
+        const githubToken = state.auth?.githubToken;
+
         // console.log('googleToken', googleToken);
         if (token) {
             headers.set('authorization', `Bearer ${token}`);
         } else if (googleToken) {
             headers.set('authorization', `Bearer ${googleToken}`);
+        } else if (githubToken) {
+            headers.set('authorization', `Bearer ${githubToken}`);
         }
         return headers;
     },
@@ -38,6 +41,6 @@ const baseQueryWithRefreshToken: BaseQueryFn<
 
 export const apiSlice = createApi({
     baseQuery: baseQueryWithRefreshToken,
-    tagTypes: ['Chat', 'User'],
+    tagTypes: ['Chat', 'User', 'Image'],
     endpoints: (builder) => ({}),
 });

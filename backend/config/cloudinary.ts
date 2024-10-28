@@ -18,7 +18,7 @@ cloudinary.config({
 export const cloudinaryUploader = async function uploadToCloudinary(
     fileBuffer: Buffer,
     originalName: string,
-) {
+): Promise<{ url: string } | undefined> {
     try {
         const mainFolderName = 'chatApp';
         const fileName = path.parse(originalName).name;
@@ -41,14 +41,15 @@ export const cloudinaryUploader = async function uploadToCloudinary(
                     if (err) {
                         console.error('Cloudinary upload error:', err);
                         reject(err);
-                    } else if (!result) {
-                        console.error(
-                            'Cloudinary upload error: Result is undefined',
+                    } else if (result && result.secure_url) {
+                        resolve({ url: result.secure_url });
+                    } else {
+                        reject(
+                            new Error(
+                                'Failed to get secure_url from Cloudinary response',
+                            ),
                         );
-                    } else
-                        resolve({
-                            url: result.secure_url,
-                        });
+                    }
                 },
             );
             streamfier.createReadStream(fileBuffer).pipe(uploadStream);

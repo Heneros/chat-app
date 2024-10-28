@@ -1,8 +1,9 @@
 import React from 'react';
+import { BASE_URL } from '@/shared/utils/constants';
 
 const GithubLoginButton = () => {
     const github = () => {
-        window.open('http://localhost:4000/api/v1/users/github', '_self');
+        window.open(`${BASE_URL}/api/v1/users/github`, '_self');
     };
     return (
         <button onClick={github} type="button">

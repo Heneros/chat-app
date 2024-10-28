@@ -1,8 +1,9 @@
 import React from 'react';
+import { BASE_URL } from '@/shared/utils/constants';
 
 const GoogleLoginButton = () => {
     const google = () => {
-        window.open('http://localhost:4000/api/v1/users/google', '_self');
+        window.open(`${BASE_URL}/api/v1/users/google`, '_self');
     };
 
     return (

@@ -44,10 +44,10 @@ export const chatApiSlice = apiSlice.injectEndpoints({
             invalidatesTags: ['Chat'],
         }),
         sendMessageToChat: builder.mutation({
-            query: ({ chatId, message }) => ({
+            query: ({ chatId, message, imageUrl }) => ({
                 url: `${CHAT_URL}/${chatId}/message`,
                 method: 'POST',
-                body: { message },
+                body: { message, imageUrl },
                 credentials: 'include',
             }),
             invalidatesTags: ['Chat'],

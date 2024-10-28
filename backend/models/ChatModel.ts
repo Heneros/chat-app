@@ -4,7 +4,7 @@ const messageSchema = new mongoose.Schema(
     {
         text: {
             type: String,
-            required: true,
+            //      required: true,
         },
         imageUrl: {
             type: String,
@@ -41,6 +41,7 @@ const chatSchema = new mongoose.Schema(
         },
     },
     { timestamps: true },
+    
 );
 const Chat = mongoose.model('Chat', chatSchema);
 

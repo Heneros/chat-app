@@ -2,6 +2,7 @@ export interface Message {
     _id: string;
     chatId?: string;
     text: string;
+    imageUrl?: string;
     sender: string;
 }
 
@@ -13,7 +14,7 @@ export interface ChatType {
 
     // readonly lastMessage?: string[];
     readonly lastMessage?: any;
-    
+
     setSelectedChat?: (chatId: string | null) => void;
     onClick?: () => void;
 }

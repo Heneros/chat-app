@@ -16,7 +16,16 @@ router
                 req.file.buffer,
                 req.file.originalname,
             );
-            res.send(result);
+            if (result) {
+                res.json({ image: result.url });
+
+                //   res.json({ image: result.url });
+                ///     res.send(result.url);
+            } else {
+                res.status(500).send('Failed to upload image.');
+            }
+            // if (result && result.url) res.json({ image: result.url });
+            //  res.send(result.url);
         } catch (err) {
             console.error('Error uploading to Cloudinary:', err);
             res.status(500).send('Error uploading file');

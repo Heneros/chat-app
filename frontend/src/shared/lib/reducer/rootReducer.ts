@@ -4,5 +4,6 @@ export interface RootState {
             accessToken: string;
         };
         googleToken: string;
+        githubToken: string;
     };
 }

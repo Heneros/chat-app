@@ -24,21 +24,28 @@ const searchChat = async (req: Request, res: Response) => {
             ],
         });
 
-        const filteredResults = searchResults.map((chat) => {
-            const filteredMessages = chat.messages.filter((message) =>
-                message.text.match(new RegExp(keyword as string, 'i')),
-            );
+        const filteredResults = searchResults
+            .map((chat) => {
+                const filteredMessages = chat.messages.filter(
+                    (message) =>
+                        message?.text?.match(
+                            new RegExp(keyword as string, 'i'),
+                        ), // Check if message and text exist
+                );
 
-            return {
-                _id: chat._id,
-                firstName: chat.firstName,
-                lastName: chat.lastName,
-                messages: filteredMessages,
-                // matchesName:
-                //     chat.firstName.match(new RegExp(keyword, 'i')) ||
-                //     chat.lastName.match(new RegExp(keyword, 'i')),
-            };
-        });
+                if (filteredMessages.length > 0) {
+                    // Ensure there are matching messages
+                    return {
+                        _id: chat._id,
+                        firstName: chat.firstName,
+                        lastName: chat.lastName,
+                        messages: filteredMessages,
+                    };
+                }
+
+                return null;
+            })
+            .filter(Boolean); 
 
         if (!filteredResults.length) {
             return res.status(404).json({ message: 'No chats found' });
@@ -46,12 +53,9 @@ const searchChat = async (req: Request, res: Response) => {
 
         res.status(200).json(filteredResults);
     } catch (error) {
-        systemLogs.error('Error search controller:', error);
-        ///  const err = error as Error;
+        systemLogs.error('Error in search controller:', error);
         res.status(500).json({
-            // message: 'Server Error searching chat',
-            // error: err.message,
-            message: 'Server Error search',
+            message: 'Server Error during search',
             error: (error as Error).message,
         });
     }

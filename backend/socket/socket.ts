@@ -29,6 +29,7 @@ const io = new Server(server, {
 export let activeRooms: string[] = [];
 const activeUsers = new Set<string>();
 
+console.log(activeRooms);
 io.on('connection', async (socket) => {
     console.log('User connected:', socket.id);
 
@@ -68,6 +69,7 @@ io.on('connection', async (socket) => {
             ) {
                 activeRooms.push(chatId);
                 socket.join(chatId);
+                console.log(' join_room success ');
             }
         } else {
             console.log('join_room error ');
@@ -85,7 +87,7 @@ io.on('connection', async (socket) => {
         try {
             const chat = await Chat.findOne({ _id: chatId });
 
-            console.log('chat ', chat);
+            ///// console.log('chat ', chat);
             if (chat) {
                 const message = chat.messages.id(messageId);
                 if (message) {

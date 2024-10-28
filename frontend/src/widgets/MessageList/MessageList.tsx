@@ -41,6 +41,7 @@ const MessageList: React.FC<MessageListProps> = ({
             {allMessages && Array.isArray(allMessages) ? (
                 allMessages.map((msg, index) => {
                     const isSentByUser = msg.sender === userId;
+                    const msgSrc = `<img src="${msg?.imageUrl}" alt="image" />`;
                     return (
                         <div
                             key={msg._id || index}
@@ -64,7 +65,19 @@ const MessageList: React.FC<MessageListProps> = ({
                                 </>
                             ) : (
                                 <>
-                                    {msg.text}
+                                    {msg.imageUrl ? (
+                                        <img
+                                            src={msg.imageUrl}
+                                            alt="message attachment"
+                                            style={{
+                                                maxWidth: '100%',
+                                                height: 'auto',
+                                            }}
+                                        />
+                                    ) : null}
+                                    {msg.text ? <span>{msg.text}</span> : null}
+
+                                    
                                     {isSentByUser && (
                                         <button
                                             type="button"
