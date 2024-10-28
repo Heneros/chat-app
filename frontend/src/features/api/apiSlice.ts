@@ -10,12 +10,13 @@ import { RootState } from '@/shared/lib/reducer';
 import { BASE_URL } from '@/shared/utils/constants';
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'http://localhost:4000/api/v1',
+    baseUrl: `${BASE_URL}/api/v1`,
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const state = getState() as RootState;
         const token = state.auth.user?.accessToken;
         const googleToken = state.auth?.googleToken;
+        
         // console.log('googleToken', googleToken);
         if (token) {
             headers.set('authorization', `Bearer ${token}`);

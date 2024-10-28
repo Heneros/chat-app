@@ -13,6 +13,8 @@ import googleAuth from './config/passport';
 import connectDB from './config/connectDB';
 import authRoutes from './routes/usersRoute';
 import chatRoutes from './routes/chatRoute';
+import fileRoutes from './routes/fileRoute';
+
 import { systemLogs } from './utils/Logger';
 import { errorHandler, notFound } from './middleware/errorMiddleware';
 import { apiLimiter } from './middleware/apiLimiter';
@@ -52,6 +54,7 @@ googleAuth();
 
 app.use('/api/v1/users', apiLimiter, authRoutes);
 app.use('/api/v1/chat', chatRoutes);
+app.use('/api/v1/upload', fileRoutes);
 
 app.use(cookieParser());
 app.use(mongoSanitize());
@@ -67,7 +70,6 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
         res.sendFile(path.join(frontendPath, 'index.html'));
     });
-
 } else {
     app.get('/', (req, res: Response) => {
         res.send('Socket.IO server running');

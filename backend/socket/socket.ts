@@ -55,8 +55,11 @@ io.on('connection', async (socket) => {
     });
 
     socket.on('join_room', async (data) => {
-        console.log('Received join_room event:', data);
+        /// console.log('Received join_room event:', data);
+
         const { userId: _id, chatId } = data;
+        console.log('Received join_room event:', { _id, chatId });
+
         if (_id && chatId) {
             const usernameId = await User.findById(_id);
             if (

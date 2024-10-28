@@ -6,6 +6,9 @@ const messageSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        imageUrl: {
+            type: String,
+        },
         sender: {
             type: mongoose.Schema.Types.Mixed,
             required: true,

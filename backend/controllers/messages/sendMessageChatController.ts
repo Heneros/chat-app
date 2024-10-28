@@ -16,7 +16,7 @@ const fallbackQuotes = [
 
 const sendMessage = async (req: Request, res: Response) => {
     const { chatId } = req.params;
-    const { message } = req.body;
+    const { message, imageUrl } = req.body;
 
     try {
         const chat = await Chat.findById(chatId);
@@ -34,8 +34,10 @@ const sendMessage = async (req: Request, res: Response) => {
 
         const newMessage = {
             text: message,
+            imageUrl,
             sender: new mongoose.Types.ObjectId(userId),
         };
+        
         chat.messages.push(newMessage);
 
         await chat.save();
@@ -44,7 +46,6 @@ const sendMessage = async (req: Request, res: Response) => {
             try {
                 await chat.save();
             } catch (error) {
-                ///  console.error('Error fetching quote:', error.message);
                 const fallbackQuote =
                     fallbackQuotes[
                         Math.floor(Math.random() * fallbackQuotes.length)

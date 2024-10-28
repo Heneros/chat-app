@@ -22,9 +22,9 @@ Full-stack application with socket.io.
 
 
 
-### Already exists:
+### Functionalities and already exists:
 - [x] Three predefined chats after registration.
-- [x] Receiving auto-response from API.
+- [x] Receiving auto-response from API after user visit room or send message.
 - [x] Authorization with JWT.
 - [x] Search chat and users.
 - [x] Delete chat. with dialog with a confirmation dialog window.
@@ -44,5 +44,5 @@ Full-stack application with socket.io.
 - [ ] Sending files. With cloudflare.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
-- [ ] Avatars to users
-- [ ] Available contacts. option should have. User can show/hide from public list contacts.
+- [ ] Add avatars to users. User can change
+- [ ] Available contacts from public users. And start chat with public user. option should have. User can show/hide from public list contacts.

@@ -65,24 +65,24 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
         }
     }, [token, tokenGoogle, tokenGithub]);
 
- 
     useEffect(() => {
         if (chatData && Array.isArray(chatData.messages)) {
             setAllMessages(chatData.messages);
         }
     }, [chatData]);
 
- 
     useEffect(() => {
         if (userId && chatId) {
             socket.emit('authenticate', userId);
-            socket.emit('leave_room', socket.previousRoom);
+
+            if (socket.previousRoom && socket.previousRoom !== chatId) {
+                socket.emit('leave_room', socket.previousRoom);
+            }
 
             socket.emit('join_room', { userId, chatId });
             socket.previousRoom = chatId;
         }
     }, [userId, chatId]);
-
 
     const handleReceiveMessage = useCallback((data: Message) => {
         setAllMessages((prevMessages) => [...prevMessages, data]);
@@ -93,7 +93,6 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
             });
         }
     }, []);
-
 
     useEffect(() => {
         if (chatId) {
@@ -113,7 +112,6 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
             };
         }
     }, [chatId, handleReceiveMessage]);
-
 
     const scrollToBottom = () => {
         if (endOfMessagesRef.current) {
