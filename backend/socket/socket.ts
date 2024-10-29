@@ -1,5 +1,4 @@
 import 'dotenv/config';
-
 import { Server } from 'socket.io';
 import http from 'http';
 import express from 'express';
@@ -7,7 +6,6 @@ import express from 'express';
 import Chat from '../models/ChatModel';
 import { systemLogs } from '../utils/Logger';
 import { sendRandomMessage } from './sendRandomMessage';
-
 import User from '../models/UserModel';
 import {
     authenticateUser,
@@ -29,9 +27,9 @@ const io = new Server(server, {
 export let activeRooms: string[] = [];
 const activeUsers = new Set<string>();
 
-console.log(activeRooms);
+console.log('activeRooms', activeRooms);
 io.on('connection', async (socket) => {
-    console.log('User connected:', socket.id);
+    // console.log('User connected:', socket.id);
 
     socket.on('authenticate', async (userId: string) => {
         try {
@@ -47,12 +45,63 @@ io.on('connection', async (socket) => {
         }
     });
 
+    socket.on('getAutomatedMessagesStatus', async (userId: string) => {
+        try {
+            const user = await User.findById(userId);
+            if (!user) {
+                socket.emit('automatedMessagesError', 'User not found');
+                return;
+            }
+
+            socket.emit(
+                'automatedMessagesStatus',
+                user.automatedMessagesEnabled,
+            );
+        } catch (error) {
+            console.error('Error getting automated messages status:', error);
+            socket.emit('automatedMessagesError', 'Failed to get status');
+        }
+    });
+
     socket.on('toggleAutomateMessages', async ({ userId, enabled }) => {
+        try {
+            console.log(
+                `Attempting to toggle automated messages for user ${userId} to ${enabled}`,
+            );
+            const user = await User.findById(userId);
+            if (!user) {
+                socket.emit('toggleError', 'User not found');
+                return;
+            }
+            const updatedUser = await User.findByIdAndUpdate(
+                userId,
+                { $set: { automatedMessagesEnabled: enabled } },
+                { new: true },
+            );
+            if (!updatedUser) {
+                socket.emit('toggleError', 'Failed to update user settings');
+                return;
+            }
+
+            if (enabled) {
+                activeUsers.add(userId);
+            } else {
+                activeUsers.delete(userId);
+            }
+            socket.emit('automatedMessagesStatus', enabled);
+            console.log(
+                `Automated messages ${enabled ? 'enabled' : 'disabled'} for user ${userId}`,
+            );
+        } catch (error) {
+            console.error('Error toggling automated messages:', error);
+            systemLogs.error('Error toggling automated messages:', error);
+            socket.emit('toggleError', 'Failed to toggle automated messages');
+        }
         await toggleAutomatedMessages({ userId, enabled, socket });
-        console.log('toggleAutomateMessages');
+        //  console.log('toggleAutomateMessages');
         if (enabled) activeUsers.add(userId);
         else activeUsers.delete(userId);
-        socket.emit('automatedMessagesUpdated', enabled);
+        // socket.emit('automatedMessagesUpdated', enabled);
     });
 
     socket.on('join_room', async (data) => {
@@ -63,6 +112,7 @@ io.on('connection', async (socket) => {
 
         if (_id && chatId) {
             const usernameId = await User.findById(_id);
+
             if (
                 !activeRooms.includes(chatId) &&
                 usernameId?.automatedMessagesEnabled === true
@@ -87,7 +137,7 @@ io.on('connection', async (socket) => {
         try {
             const chat = await Chat.findOne({ _id: chatId });
 
-            ///// console.log('chat ', chat);
+            // console.log('chat ', chat);
             if (chat) {
                 const message = chat.messages.id(messageId);
                 if (message) {

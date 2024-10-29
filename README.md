@@ -37,11 +37,12 @@ Full-stack application with socket.io.
 - [x] Automatically send messages to random chat. This feature can be turned off in the user account.
 - [x] Notification from receive message.
 - [x] Authorization via Google and Github.
+- [x] Sending files. With cloudflare.
+
 
 ### Need to add:
 - [ ] Create second type chat without auto-response API. Which you can add user contacts and communicate to each other.
 - [ ] Frontend. Add dark theme and white theme switcher.
-- [ ] Sending files. With cloudflare.
 - [ ] Implement TDD. Jest.
 - [ ] Test with adaptive.
 - [ ] Add avatars to users. User can change

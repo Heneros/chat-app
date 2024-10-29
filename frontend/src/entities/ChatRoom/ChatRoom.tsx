@@ -75,9 +75,9 @@ export const ChatRoom: React.FC<ChatRoomProps> = ({ selectedChat }) => {
         if (userId && chatId) {
             socket.emit('authenticate', userId);
 
-            if (socket.previousRoom && socket.previousRoom !== chatId) {
-                socket.emit('leave_room', socket.previousRoom);
-            }
+            // if (socket.previousRoom && socket.previousRoom !== chatId) {
+            //     socket.emit('leave_room', socket.previousRoom);
+            // }
 
             socket.emit('join_room', { userId, chatId });
             socket.previousRoom = chatId;
