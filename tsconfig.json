@@ -22,10 +22,16 @@
       "path": "./frontend/tsconfig.json"
     }
   ],
+  "plugins": [
+    {
+      "name": "typescript-plugin-css-modules"
+    }
+  ],
   "include": [
     "frontend/src/**/*.tsx",
     "frontend/src/**/*.ts",
-    "frontend/webpack.config.ts",
+    "frontend/src/declarations.d.ts",
+    "frontend/webpack.config.js",
     "backend/**/*.ts",
   ],
   "exclude": [

@@ -1,0 +1,19 @@
+
+.parent {
+    display: flex;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.leftSide{
+    height: 100%;
+    background-color: #2e4051;
+    max-width: 30%;
+    min-width: 35%;
+}
+.rightSide{
+    max-width: 70%;
+    width: 100%;
+    flex-grow: 1;
+    background-color: #1a2835;
+}
+

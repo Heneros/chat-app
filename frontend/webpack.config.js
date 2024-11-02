@@ -29,7 +29,6 @@ module.exports = {
             filename: 'index.html',
         }),
     ],
-
     module: {
         rules: [
             {
@@ -47,25 +46,19 @@ module.exports = {
                 },
             },
             {
-                test: /\.module\.css$/,
+                test: /\.module.css$/,
                 use: [
-                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: {
-                                localIdentName:
-                                    '[name]__[local]--[hash:base64:5]',
-                            },
-                            importLoaders: 1,
-                            sourceMap: true,
+                            modules: true,
                         },
                     },
-                    'postcss-loader',
                 ],
             },
+           
             {
-                test: /\.(css)$/,
+                test: /\.css$/,
                 exclude: /\.module\.css$/,
                 use: ['style-loader', 'css-loader'],
             },

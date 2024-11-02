@@ -123,3 +123,78 @@
   level: 'info',
   timestamp: '2024-11-02 01:41:48.769 PM'
 }
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-11-02 03:23:38.012 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:22:31.650 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:28:57.376 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:38:59.320 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:42:21.925 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: production  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:45:28.014 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:45:51.367 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:48:22.696 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 04:50:23.917 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 05:14:01.165 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 05:14:40.560 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 05:29:14.550 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 05:31:47.442 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 05:35:12.393 PM'
+}
+{
+  message: 'Server on 4000 running. NodeENV: development  ',
+  level: 'info',
+  timestamp: '2024-11-02 05:57:15.789 PM'
+}

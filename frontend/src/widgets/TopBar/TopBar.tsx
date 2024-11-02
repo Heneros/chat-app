@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaSearch, FaBars } from 'react-icons/fa';
 
-import './TopBar.css';
+import  './TopBar.css';
 
 import { useLogoutMutation } from '@/features/user/userApiSlice';
 import {
@@ -22,7 +22,6 @@ interface ChatModalProps {
 export const TopBar: React.FC<ChatModalProps> = ({ setSearchTerm }) => {
     const token = useAppSelector(selectCurrentUserToken);
     const tokenGoogle = useAppSelector(selectCurrentUserGoogleToken);
-    /// console.log(tokenGoogle);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);

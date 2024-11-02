@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { ChatType } from '@/shared/types';
-import './ChatRoom.css';
+import  './ChatRoom.css';
 import { useGetByIdChatQuery } from '@/features/messages/messagesSlice';
 import {
     selectCurrentUserGoogleToken,

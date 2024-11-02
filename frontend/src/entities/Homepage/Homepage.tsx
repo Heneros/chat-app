@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { decodeToken } from 'react-jwt';
 
 import styles from './Homepage.module.css';
+// import * as styles from './Homepage.module.css';
 
 import {
     selectCurrentUserGithubToken,
@@ -17,7 +18,6 @@ import { ChatType } from '@/shared/types';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/store';
 
 export const Homepage = () => {
-    console.log(styles);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedChat, setSelectedChat] = useState<ChatType | null>(null);
 
@@ -28,7 +28,7 @@ export const Homepage = () => {
     const tokenGithubArray = useAppSelector(selectCurrentUserGoogleToken);
     const tokenGoogleArray = useAppSelector(selectCurrentUserGithubToken);
 
-    // console.log(tokenGithub);
+    console.log(styles);
     useEffect(() => {
         const token: string | null = tokenArray ?? null;
         const tokenGithub: string | null = tokenGithubArray ?? null;
@@ -51,7 +51,7 @@ export const Homepage = () => {
     }, [tokenArray, tokenGithubArray, tokenGoogleArray]);
 
     if (!styles) {
-        return <div>Loading1...</div>;
+        return <div>Loading21...</div>;
     }
 
     return (
