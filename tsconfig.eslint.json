@@ -8,5 +8,7 @@
         "frontend/src/**/*.ts",
         "frontend/src/**/*.tsx",
         "test/**/*.ts",
+        "global.d.ts",
+        "frontend/webpack.config.ts",
     ]
 }

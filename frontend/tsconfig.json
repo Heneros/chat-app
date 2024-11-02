@@ -2,10 +2,16 @@
     "extends": "../tsconfig.json",
     "compilerOptions": {
         "baseUrl": "./",
-        "jsx": "react",
+        "jsx": "react-jsx",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "strict": true,
+        "useDefineForClassFields": true,
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
         "module": "esnext",
         "target": "ES2020",
         "moduleResolution": "node",
@@ -38,9 +44,16 @@
             ]
         }
     },
+    "plugins": [
+        {
+            "name": "typescript-plugin-css-modules"
+        }
+    ],
     "include": [
         "src/**/*.ts",
-        "src/**/*.tsx"
+        "src/**/*.tsx",
+        "src/global.d.ts",
+        "webpack.config.ts",
     ],
     "exclude": [
         "node_modules"

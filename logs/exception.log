@@ -995,3 +995,151 @@
   ],
   timestamp: '2024-10-29 10:02:35.035 AM'
 }
+{
+  error: Error: listen EADDRINUSE: address already in use :::4000
+      at Server.setupListenHandle [as _listen2] (node:net:1897:16)
+      at listenInCluster (node:net:1945:12)
+      at Server.listen (node:net:2037:7)
+      at Object.<anonymous> (D:\Projects\chat-app\backend\app.ts:100:12)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module.m._compile (D:\Projects\chat-app\node_modules\ts-node\src\index.ts:1618:23)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Object.require.extensions.<computed> [as .ts] (D:\Projects\chat-app\node_modules\ts-node\src\index.ts:1621:12)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:1022:12) {
+    code: 'EADDRINUSE',
+    errno: -4091,
+    syscall: 'listen',
+    address: '::',
+    port: 4000
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::4000\n' +
+    'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1897:16)\n' +
+    '    at listenInCluster (node:net:1945:12)\n' +
+    '    at Server.listen (node:net:2037:7)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\app.ts:100:12)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1618:23)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1897:16)\n' +
+    '    at listenInCluster (node:net:1945:12)\n' +
+    '    at Server.listen (node:net:2037:7)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\chat-app\\backend\\app.ts:100:12)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module.m._compile (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1618:23)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Object.require.extensions.<computed> [as .ts] (D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts:1621:12)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:1022:12)',
+  exception: true,
+  date: 'Sat Nov 02 2024 09:03:43 GMT+0200 (Восточная Европа, стандартное время)',
+  process: {
+    pid: 10708,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\chat-app',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'D:\\Projects\\chat-app\\node_modules\\ts-node\\dist\\bin.js',
+      'D:\\Projects\\chat-app\\backend\\app.ts'
+    ],
+    memoryUsage: {
+      rss: 412098560,
+      heapTotal: 361267200,
+      heapUsed: 328270008,
+      external: 27034437,
+      arrayBuffers: 23064732
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 65224.671 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1897,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1945,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 2037,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\backend\\app.ts',
+      function: null,
+      line: 100,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1369,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 23,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Module.m._compile',
+      line: 1618,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\Projects\\chat-app\\node_modules\\ts-node\\src\\index.ts',
+      function: 'Object.require.extensions.<computed> [as .ts]',
+      line: 1621,
+      method: 'ts]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    }
+  ],
+  timestamp: '2024-11-02 09:03:43.926 AM'
+}

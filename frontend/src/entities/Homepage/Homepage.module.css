@@ -4,15 +4,16 @@
     height: 100vh;
     box-sizing: border-box;
 }
-.left-side{
+.leftSide{
     height: 100%;
     background-color: #2e4051;
     max-width: 30%;
     min-width: 35%;
 }
-.right-side{
+.rightSide{
     max-width: 70%;
     width: 100%;
     flex-grow: 1;
-        /* background-color: #1a2835; */
+    background-color: #1a2835;
 }
+

@@ -29,15 +29,44 @@ module.exports = {
             filename: 'index.html',
         }),
     ],
+
     module: {
         rules: [
             {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
-                use: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react',
+                            '@babel/preset-typescript',
+                        ],
+                    },
+                },
             },
             {
-                test: /\.css$/,
+                test: /\.module\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName:
+                                    '[name]__[local]--[hash:base64:5]',
+                            },
+                            importLoaders: 1,
+                            sourceMap: true,
+                        },
+                    },
+                    'postcss-loader',
+                ],
+            },
+            {
+                test: /\.(css)$/,
+                exclude: /\.module\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
             {

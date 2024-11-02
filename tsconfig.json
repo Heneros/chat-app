@@ -23,6 +23,9 @@
     }
   ],
   "include": [
+    "frontend/src/**/*.tsx",
+    "frontend/src/**/*.ts",
+    "frontend/webpack.config.ts",
     "backend/**/*.ts",
   ],
   "exclude": [

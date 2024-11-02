@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { decodeToken } from 'react-jwt';
 
-import './Homepage.css';
+import styles from './Homepage.module.css';
+
 import {
-    isTokenValid,
     selectCurrentUserGithubToken,
     selectCurrentUserGoogleToken,
     selectCurrentUserToken,
@@ -17,6 +17,7 @@ import { ChatType } from '@/shared/types';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/store';
 
 export const Homepage = () => {
+    console.log(styles);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedChat, setSelectedChat] = useState<ChatType | null>(null);
 
@@ -48,10 +49,14 @@ export const Homepage = () => {
             dispatch(setAuthenticated(false));
         }
     }, [tokenArray, tokenGithubArray, tokenGoogleArray]);
-    // console.log(tokenGoogle);
+
+    if (!styles) {
+        return <div>Loading1...</div>;
+    }
+
     return (
-        <div className="parent">
-            <div className="left-side">
+        <div className={styles.parent}>
+            <div className={styles.leftSide}>
                 <TopBar setSearchTerm={setSearchTerm} />
                 {isAuthenticated ? (
                     <AuthenticatedContent
@@ -59,10 +64,10 @@ export const Homepage = () => {
                         setSelectedChat={setSelectedChat}
                     />
                 ) : (
-                    <span>Please log in</span>
+                    <span>Please Log In</span>
                 )}
             </div>
-            <div className="right-side">
+            <div className={styles.rightSide}>
                 {isAuthenticated ? (
                     selectedChat ? (
                         <ChatRoom selectedChat={selectedChat} />
@@ -70,7 +75,7 @@ export const Homepage = () => {
                         <span>Select Message</span>
                     )
                 ) : (
-                    <span>Please login</span>
+                    <span>Please Log In</span>
                 )}
             </div>
         </div>
